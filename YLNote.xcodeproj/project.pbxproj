@@ -846,7 +846,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tangh.YLNote;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YLNote;
 				SWIFT_OBJC_BRIDGING_HEADER = "YLNote/Theme/YLNote-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -868,7 +868,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tangh.YLNote;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YLNote;
 				SWIFT_OBJC_BRIDGING_HEADER = "YLNote/Theme/YLNote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
