@@ -1,0 +1,1000 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B6AEF8E7A635C12F7790699 /* Pods_YLNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB38DB6FF77CE573EFE28BF7 /* Pods_YLNote.framework */; };
+		3F0514EF978C06B29C253C2F /* Pods_YLNote_YLNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398CC9979A9A24DD695FE563 /* Pods_YLNote_YLNoteUITests.framework */; };
+		5455087224C3932C00C24BCD /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5455087124C3932C00C24BCD /* Test.swift */; };
+		548FF88A24A87F3200ECF7F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF88924A87F3200ECF7F0 /* AppDelegate.m */; };
+		548FF89024A87F3200ECF7F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF88F24A87F3200ECF7F0 /* ViewController.m */; };
+		548FF89324A87F3200ECF7F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89124A87F3200ECF7F0 /* Main.storyboard */; };
+		548FF89524A87F3300ECF7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89424A87F3300ECF7F0 /* Assets.xcassets */; };
+		548FF89824A87F3300ECF7F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89624A87F3300ECF7F0 /* LaunchScreen.storyboard */; };
+		548FF89B24A87F3300ECF7F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF89A24A87F3300ECF7F0 /* main.m */; };
+		548FF8A524A87F3300ECF7F0 /* YLNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF8A424A87F3300ECF7F0 /* YLNoteTests.m */; };
+		548FF8B024A87F3300ECF7F0 /* YLNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF8AF24A87F3300ECF7F0 /* YLNoteUITests.m */; };
+		548FF8C024A87F4900ECF7F0 /* YLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF8BE24A87F4800ECF7F0 /* YLWebViewController.m */; };
+		54C274B024AC955200E9CF3F /* YLGCDTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274A924AC955200E9CF3F /* YLGCDTest.m */; };
+		54C274B124AC955200E9CF3F /* YLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274AA24AC955200E9CF3F /* YLThread.m */; };
+		54C274B224AC955200E9CF3F /* YLThreadSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274AD24AC955200E9CF3F /* YLThreadSync.m */; };
+		54C274B324AC955200E9CF3F /* YLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274AE24AC955200E9CF3F /* YLOperation.m */; };
+		54C274B424AC955200E9CF3F /* YLNSOperationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274AF24AC955200E9CF3F /* YLNSOperationTest.m */; };
+		54C274B824AC95CC00E9CF3F /* YLGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274B724AC95CC00E9CF3F /* YLGCDViewController.m */; };
+		54C274BB24AC960600E9CF3F /* YLClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274BA24AC960600E9CF3F /* YLClass.m */; };
+		54C274C024AF216500E9CF3F /* YLTestAutoReleaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274BF24AF216500E9CF3F /* YLTestAutoReleaseController.m */; };
+		54C274C324B30DA700E9CF3F /* YLClass+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274C224B30DA600E9CF3F /* YLClass+Test.m */; };
+		54C274C724B4174800E9CF3F /* YLLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274C624B4174800E9CF3F /* YLLayerViewController.m */; };
+		54C274C924B5A5BC00E9CF3F /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 54C274C824B5A5BC00E9CF3F /* demo.js */; };
+		54C274CC24B5D52600E9CF3F /* YLStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C274CB24B5D52600E9CF3F /* YLStudent.m */; };
+		54D07A8A24B8C9DF00F2A300 /* YLFather.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D07A8924B8C9DF00F2A300 /* YLFather.m */; };
+		54D07A8D24B8CA0200F2A300 /* YLSon.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D07A8C24B8CA0200F2A300 /* YLSon.m */; };
+		54D07A9024B8CB3200F2A300 /* YLFather+Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D07A8F24B8CB3200F2A300 /* YLFather+Job.m */; };
+		54D07A9924B8CC2300F2A300 /* YLNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D07A9824B8CC2300F2A300 /* YLNotesViewController.m */; };
+		54D07A9D24BACD6600F2A300 /* YLSDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D07A9C24BACD6600F2A300 /* YLSDViewController.m */; };
+		54D07AA524BB0F4F00F2A300 /* YLSDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D07AA224BB0EB600F2A300 /* YLSDTableViewCell.m */; };
+		54D07AA824BF548700F2A300 /* YLKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D07AA724BF548700F2A300 /* YLKVOViewController.m */; };
+		54DB8C1824C055E300C83700 /* YLHitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DB8C1724C055E300C83700 /* YLHitTestViewController.m */; };
+		54DB8C1F24C3789200C83700 /* YLSwiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DB8C1E24C3789200C83700 /* YLSwiftViewController.m */; };
+		54DB8C2224C378A300C83700 /* YLFlutterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DB8C2124C378A300C83700 /* YLFlutterViewController.m */; };
+		54DB8C2724C38BE700C83700 /* YLTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DB8C2624C38BE700C83700 /* YLTheme.swift */; };
+		7CF9D727AF55F73F668E08F6 /* Pods_YLNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF3A6E338910EA0E0BB7CF4 /* Pods_YLNoteTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		548FF8A124A87F3300ECF7F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 548FF87D24A87F3200ECF7F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 548FF88424A87F3200ECF7F0;
+			remoteInfo = YLNote;
+		};
+		548FF8AC24A87F3300ECF7F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 548FF87D24A87F3200ECF7F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 548FF88424A87F3200ECF7F0;
+			remoteInfo = YLNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		273E8879D27684D3E9614103 /* Pods-YLNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNote.debug.xcconfig"; path = "Target Support Files/Pods-YLNote/Pods-YLNote.debug.xcconfig"; sourceTree = "<group>"; };
+		398CC9979A9A24DD695FE563 /* Pods_YLNote_YLNoteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YLNote_YLNoteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5455087124C3932C00C24BCD /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		5455087324C396D000C24BCD /* YLNote-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YLNote-Bridging-Header.h"; sourceTree = "<group>"; };
+		548FF88524A87F3200ECF7F0 /* YLNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		548FF88824A87F3200ECF7F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		548FF88924A87F3200ECF7F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		548FF88E24A87F3200ECF7F0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		548FF88F24A87F3200ECF7F0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		548FF89224A87F3200ECF7F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		548FF89424A87F3300ECF7F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		548FF89724A87F3300ECF7F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		548FF89924A87F3300ECF7F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		548FF89A24A87F3300ECF7F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		548FF8A024A87F3300ECF7F0 /* YLNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YLNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		548FF8A424A87F3300ECF7F0 /* YLNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLNoteTests.m; sourceTree = "<group>"; };
+		548FF8A624A87F3300ECF7F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		548FF8AB24A87F3300ECF7F0 /* YLNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YLNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		548FF8AF24A87F3300ECF7F0 /* YLNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLNoteUITests.m; sourceTree = "<group>"; };
+		548FF8B124A87F3300ECF7F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		548FF8BE24A87F4800ECF7F0 /* YLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWebViewController.m; sourceTree = "<group>"; };
+		548FF8BF24A87F4800ECF7F0 /* YLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWebViewController.h; sourceTree = "<group>"; };
+		548FF8D624AC5F5E00ECF7F0 /* YLDefaultMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDefaultMacro.h; sourceTree = "<group>"; };
+		54C274A524AC955200E9CF3F /* YLGCDTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLGCDTest.h; sourceTree = "<group>"; };
+		54C274A624AC955200E9CF3F /* YLThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLThread.h; sourceTree = "<group>"; };
+		54C274A724AC955200E9CF3F /* YLNSOperationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLNSOperationTest.h; sourceTree = "<group>"; };
+		54C274A824AC955200E9CF3F /* YLOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLOperation.h; sourceTree = "<group>"; };
+		54C274A924AC955200E9CF3F /* YLGCDTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLGCDTest.m; sourceTree = "<group>"; };
+		54C274AA24AC955200E9CF3F /* YLThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLThread.m; sourceTree = "<group>"; };
+		54C274AC24AC955200E9CF3F /* YLThreadSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLThreadSync.h; sourceTree = "<group>"; };
+		54C274AD24AC955200E9CF3F /* YLThreadSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLThreadSync.m; sourceTree = "<group>"; };
+		54C274AE24AC955200E9CF3F /* YLOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLOperation.m; sourceTree = "<group>"; };
+		54C274AF24AC955200E9CF3F /* YLNSOperationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLNSOperationTest.m; sourceTree = "<group>"; };
+		54C274B624AC95CC00E9CF3F /* YLGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGCDViewController.h; sourceTree = "<group>"; };
+		54C274B724AC95CC00E9CF3F /* YLGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLGCDViewController.m; sourceTree = "<group>"; };
+		54C274B924AC960600E9CF3F /* YLClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClass.h; sourceTree = "<group>"; };
+		54C274BA24AC960600E9CF3F /* YLClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClass.m; sourceTree = "<group>"; };
+		54C274BC24AF13FC00E9CF3F /* YLTestAutoReleaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLTestAutoReleaseController.h; sourceTree = "<group>"; };
+		54C274BF24AF216500E9CF3F /* YLTestAutoReleaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLTestAutoReleaseController.m; sourceTree = "<group>"; };
+		54C274C124B30DA600E9CF3F /* YLClass+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YLClass+Test.h"; sourceTree = "<group>"; };
+		54C274C224B30DA600E9CF3F /* YLClass+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YLClass+Test.m"; sourceTree = "<group>"; };
+		54C274C524B4174800E9CF3F /* YLLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLLayerViewController.h; sourceTree = "<group>"; };
+		54C274C624B4174800E9CF3F /* YLLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLLayerViewController.m; sourceTree = "<group>"; };
+		54C274C824B5A5BC00E9CF3F /* demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo.js; sourceTree = SOURCE_ROOT; };
+		54C274CA24B5D52600E9CF3F /* YLStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLStudent.h; sourceTree = "<group>"; };
+		54C274CB24B5D52600E9CF3F /* YLStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLStudent.m; sourceTree = "<group>"; };
+		54C274CD24B5D58200E9CF3F /* YLJSProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLJSProtocol.h; sourceTree = "<group>"; };
+		54D07A8824B8C9DF00F2A300 /* YLFather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLFather.h; sourceTree = "<group>"; };
+		54D07A8924B8C9DF00F2A300 /* YLFather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLFather.m; sourceTree = "<group>"; };
+		54D07A8B24B8CA0200F2A300 /* YLSon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLSon.h; sourceTree = "<group>"; };
+		54D07A8C24B8CA0200F2A300 /* YLSon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLSon.m; sourceTree = "<group>"; };
+		54D07A8E24B8CB3200F2A300 /* YLFather+Job.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YLFather+Job.h"; sourceTree = "<group>"; };
+		54D07A8F24B8CB3200F2A300 /* YLFather+Job.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YLFather+Job.m"; sourceTree = "<group>"; };
+		54D07A9724B8CC2300F2A300 /* YLNotesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLNotesViewController.h; sourceTree = "<group>"; };
+		54D07A9824B8CC2300F2A300 /* YLNotesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLNotesViewController.m; sourceTree = "<group>"; };
+		54D07A9B24BACD6600F2A300 /* YLSDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLSDViewController.h; sourceTree = "<group>"; };
+		54D07A9C24BACD6600F2A300 /* YLSDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLSDViewController.m; sourceTree = "<group>"; };
+		54D07AA224BB0EB600F2A300 /* YLSDTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLSDTableViewCell.m; sourceTree = "<group>"; };
+		54D07AA324BB0EB600F2A300 /* YLSDTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLSDTableViewCell.h; sourceTree = "<group>"; };
+		54D07AA624BF548700F2A300 /* YLKVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLKVOViewController.h; sourceTree = "<group>"; };
+		54D07AA724BF548700F2A300 /* YLKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLKVOViewController.m; sourceTree = "<group>"; };
+		54DB8C1624C055E300C83700 /* YLHitTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLHitTestViewController.h; sourceTree = "<group>"; };
+		54DB8C1724C055E300C83700 /* YLHitTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLHitTestViewController.m; sourceTree = "<group>"; };
+		54DB8C1D24C3789200C83700 /* YLSwiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLSwiftViewController.h; sourceTree = "<group>"; };
+		54DB8C1E24C3789200C83700 /* YLSwiftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLSwiftViewController.m; sourceTree = "<group>"; };
+		54DB8C2024C378A300C83700 /* YLFlutterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLFlutterViewController.h; sourceTree = "<group>"; };
+		54DB8C2124C378A300C83700 /* YLFlutterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLFlutterViewController.m; sourceTree = "<group>"; };
+		54DB8C2624C38BE700C83700 /* YLTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLTheme.swift; sourceTree = "<group>"; };
+		5A27EA1156BF8D664E97CBFF /* Pods-YLNote-YLNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNote-YLNoteUITests.debug.xcconfig"; path = "Target Support Files/Pods-YLNote-YLNoteUITests/Pods-YLNote-YLNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BAB2027457CA0C28B9DBEF54 /* Pods-YLNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNoteTests.release.xcconfig"; path = "Target Support Files/Pods-YLNoteTests/Pods-YLNoteTests.release.xcconfig"; sourceTree = "<group>"; };
+		C9CC936E282AACC01F31CBA1 /* Pods-YLNoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNoteTests.debug.xcconfig"; path = "Target Support Files/Pods-YLNoteTests/Pods-YLNoteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB38DB6FF77CE573EFE28BF7 /* Pods_YLNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YLNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF3A6E338910EA0E0BB7CF4 /* Pods_YLNoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YLNoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3CBC7F0BAB7DE4B05DD186E /* Pods-YLNote-YLNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNote-YLNoteUITests.release.xcconfig"; path = "Target Support Files/Pods-YLNote-YLNoteUITests/Pods-YLNote-YLNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E8E719A45CBC6CF50E769964 /* Pods-YLNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNote.release.xcconfig"; path = "Target Support Files/Pods-YLNote/Pods-YLNote.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		548FF88224A87F3200ECF7F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B6AEF8E7A635C12F7790699 /* Pods_YLNote.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		548FF89D24A87F3300ECF7F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF9D727AF55F73F668E08F6 /* Pods_YLNoteTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		548FF8A824A87F3300ECF7F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0514EF978C06B29C253C2F /* Pods_YLNote_YLNoteUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01EAE44180A36E0819440766 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				273E8879D27684D3E9614103 /* Pods-YLNote.debug.xcconfig */,
+				E8E719A45CBC6CF50E769964 /* Pods-YLNote.release.xcconfig */,
+				5A27EA1156BF8D664E97CBFF /* Pods-YLNote-YLNoteUITests.debug.xcconfig */,
+				D3CBC7F0BAB7DE4B05DD186E /* Pods-YLNote-YLNoteUITests.release.xcconfig */,
+				C9CC936E282AACC01F31CBA1 /* Pods-YLNoteTests.debug.xcconfig */,
+				BAB2027457CA0C28B9DBEF54 /* Pods-YLNoteTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		548FF87C24A87F3200ECF7F0 = {
+			isa = PBXGroup;
+			children = (
+				548FF88724A87F3200ECF7F0 /* YLNote */,
+				548FF8A324A87F3300ECF7F0 /* YLNoteTests */,
+				548FF88624A87F3200ECF7F0 /* Products */,
+				548FF8AE24A87F3300ECF7F0 /* YLNoteUITests */,
+				01EAE44180A36E0819440766 /* Pods */,
+				A50FB64A69A84F8E19D42055 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		548FF88624A87F3200ECF7F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				548FF88524A87F3200ECF7F0 /* YLNote.app */,
+				548FF8A024A87F3300ECF7F0 /* YLNoteTests.xctest */,
+				548FF8AB24A87F3300ECF7F0 /* YLNoteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		548FF88724A87F3200ECF7F0 /* YLNote */ = {
+			isa = PBXGroup;
+			children = (
+				54DB8C2324C38AEC00C83700 /* Theme */,
+				54DB8C1C24C3786100C83700 /* Flutter */,
+				54DB8C1B24C3784C00C83700 /* Swift */,
+				54DB8C1924C3740200C83700 /* Tab2 */,
+				54C274C824B5A5BC00E9CF3F /* demo.js */,
+				54C274A424AC955200E9CF3F /* 多线程 */,
+				548FF8BD24A87F4800ECF7F0 /* Web */,
+				548FF88824A87F3200ECF7F0 /* AppDelegate.h */,
+				548FF88924A87F3200ECF7F0 /* AppDelegate.m */,
+				548FF8D624AC5F5E00ECF7F0 /* YLDefaultMacro.h */,
+				548FF88E24A87F3200ECF7F0 /* ViewController.h */,
+				548FF88F24A87F3200ECF7F0 /* ViewController.m */,
+				548FF89124A87F3200ECF7F0 /* Main.storyboard */,
+				548FF89424A87F3300ECF7F0 /* Assets.xcassets */,
+				548FF89624A87F3300ECF7F0 /* LaunchScreen.storyboard */,
+				548FF89924A87F3300ECF7F0 /* Info.plist */,
+				548FF89A24A87F3300ECF7F0 /* main.m */,
+			);
+			path = YLNote;
+			sourceTree = "<group>";
+		};
+		548FF8A324A87F3300ECF7F0 /* YLNoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				548FF8A424A87F3300ECF7F0 /* YLNoteTests.m */,
+				548FF8A624A87F3300ECF7F0 /* Info.plist */,
+			);
+			path = YLNoteTests;
+			sourceTree = "<group>";
+		};
+		548FF8AE24A87F3300ECF7F0 /* YLNoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				548FF8AF24A87F3300ECF7F0 /* YLNoteUITests.m */,
+				548FF8B124A87F3300ECF7F0 /* Info.plist */,
+			);
+			path = YLNoteUITests;
+			sourceTree = "<group>";
+		};
+		548FF8BD24A87F4800ECF7F0 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				548FF8BF24A87F4800ECF7F0 /* YLWebViewController.h */,
+				548FF8BE24A87F4800ECF7F0 /* YLWebViewController.m */,
+				54C274CD24B5D58200E9CF3F /* YLJSProtocol.h */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		54C274A424AC955200E9CF3F /* 多线程 */ = {
+			isa = PBXGroup;
+			children = (
+				54C274B624AC95CC00E9CF3F /* YLGCDViewController.h */,
+				54C274B724AC95CC00E9CF3F /* YLGCDViewController.m */,
+				54C274AB24AC955200E9CF3F /* 线程同步 */,
+				54C274A524AC955200E9CF3F /* YLGCDTest.h */,
+				54C274A924AC955200E9CF3F /* YLGCDTest.m */,
+				54C274A624AC955200E9CF3F /* YLThread.h */,
+				54C274AA24AC955200E9CF3F /* YLThread.m */,
+				54C274A724AC955200E9CF3F /* YLNSOperationTest.h */,
+				54C274AF24AC955200E9CF3F /* YLNSOperationTest.m */,
+				54C274A824AC955200E9CF3F /* YLOperation.h */,
+				54C274AE24AC955200E9CF3F /* YLOperation.m */,
+			);
+			path = "多线程";
+			sourceTree = SOURCE_ROOT;
+		};
+		54C274AB24AC955200E9CF3F /* 线程同步 */ = {
+			isa = PBXGroup;
+			children = (
+				54C274AC24AC955200E9CF3F /* YLThreadSync.h */,
+				54C274AD24AC955200E9CF3F /* YLThreadSync.m */,
+			);
+			path = "线程同步";
+			sourceTree = "<group>";
+		};
+		54C274B524AC959800E9CF3F /* keywords */ = {
+			isa = PBXGroup;
+			children = (
+				54C274B924AC960600E9CF3F /* YLClass.h */,
+				54C274BA24AC960600E9CF3F /* YLClass.m */,
+				54C274C124B30DA600E9CF3F /* YLClass+Test.h */,
+				54C274C224B30DA600E9CF3F /* YLClass+Test.m */,
+				54C274BC24AF13FC00E9CF3F /* YLTestAutoReleaseController.h */,
+				54C274BF24AF216500E9CF3F /* YLTestAutoReleaseController.m */,
+			);
+			path = keywords;
+			sourceTree = "<group>";
+		};
+		54C274C424B4172700E9CF3F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				54C274C524B4174800E9CF3F /* YLLayerViewController.h */,
+				54C274C624B4174800E9CF3F /* YLLayerViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		54D07A8724B8C9AC00F2A300 /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				54D07A8824B8C9DF00F2A300 /* YLFather.h */,
+				54D07A8924B8C9DF00F2A300 /* YLFather.m */,
+				54D07A8B24B8CA0200F2A300 /* YLSon.h */,
+				54D07A8C24B8CA0200F2A300 /* YLSon.m */,
+				54D07A8E24B8CB3200F2A300 /* YLFather+Job.h */,
+				54D07A8F24B8CB3200F2A300 /* YLFather+Job.m */,
+			);
+			path = runtime;
+			sourceTree = "<group>";
+		};
+		54D07A9A24B8D26C00F2A300 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				54C274CA24B5D52600E9CF3F /* YLStudent.h */,
+				54C274CB24B5D52600E9CF3F /* YLStudent.m */,
+				54D07AA624BF548700F2A300 /* YLKVOViewController.h */,
+				54D07AA724BF548700F2A300 /* YLKVOViewController.m */,
+				54DB8C1624C055E300C83700 /* YLHitTestViewController.h */,
+				54DB8C1724C055E300C83700 /* YLHitTestViewController.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
+		54D07A9E24BB01A900F2A300 /* SD */ = {
+			isa = PBXGroup;
+			children = (
+				54D07AA324BB0EB600F2A300 /* YLSDTableViewCell.h */,
+				54D07AA224BB0EB600F2A300 /* YLSDTableViewCell.m */,
+				54D07A9B24BACD6600F2A300 /* YLSDViewController.h */,
+				54D07A9C24BACD6600F2A300 /* YLSDViewController.m */,
+			);
+			path = SD;
+			sourceTree = "<group>";
+		};
+		54DB8C1924C3740200C83700 /* Tab2 */ = {
+			isa = PBXGroup;
+			children = (
+				54DB8C1A24C377C700C83700 /* Animation */,
+				54C274B524AC959800E9CF3F /* keywords */,
+				54D07A8724B8C9AC00F2A300 /* runtime */,
+				54D07A9A24B8D26C00F2A300 /* KVO */,
+				54D07A9724B8CC2300F2A300 /* YLNotesViewController.h */,
+				54D07A9824B8CC2300F2A300 /* YLNotesViewController.m */,
+			);
+			path = Tab2;
+			sourceTree = "<group>";
+		};
+		54DB8C1A24C377C700C83700 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				54C274C424B4172700E9CF3F /* UI */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		54DB8C1B24C3784C00C83700 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				54DB8C1D24C3789200C83700 /* YLSwiftViewController.h */,
+				54DB8C1E24C3789200C83700 /* YLSwiftViewController.m */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		54DB8C1C24C3786100C83700 /* Flutter */ = {
+			isa = PBXGroup;
+			children = (
+				54D07A9E24BB01A900F2A300 /* SD */,
+				54DB8C2024C378A300C83700 /* YLFlutterViewController.h */,
+				54DB8C2124C378A300C83700 /* YLFlutterViewController.m */,
+			);
+			path = Flutter;
+			sourceTree = "<group>";
+		};
+		54DB8C2324C38AEC00C83700 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				54DB8C2624C38BE700C83700 /* YLTheme.swift */,
+				5455087324C396D000C24BCD /* YLNote-Bridging-Header.h */,
+				5455087124C3932C00C24BCD /* Test.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A50FB64A69A84F8E19D42055 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB38DB6FF77CE573EFE28BF7 /* Pods_YLNote.framework */,
+				398CC9979A9A24DD695FE563 /* Pods_YLNote_YLNoteUITests.framework */,
+				CEF3A6E338910EA0E0BB7CF4 /* Pods_YLNoteTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		548FF88424A87F3200ECF7F0 /* YLNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 548FF8B424A87F3300ECF7F0 /* Build configuration list for PBXNativeTarget "YLNote" */;
+			buildPhases = (
+				1EB46F887761D6268A745B7B /* [CP] Check Pods Manifest.lock */,
+				548FF88124A87F3200ECF7F0 /* Sources */,
+				548FF88224A87F3200ECF7F0 /* Frameworks */,
+				548FF88324A87F3200ECF7F0 /* Resources */,
+				E36BC6EEC411CECFE5B2732D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YLNote;
+			productName = YLNote;
+			productReference = 548FF88524A87F3200ECF7F0 /* YLNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		548FF89F24A87F3300ECF7F0 /* YLNoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 548FF8B724A87F3300ECF7F0 /* Build configuration list for PBXNativeTarget "YLNoteTests" */;
+			buildPhases = (
+				6D8C6FABCE36195884E07025 /* [CP] Check Pods Manifest.lock */,
+				548FF89C24A87F3300ECF7F0 /* Sources */,
+				548FF89D24A87F3300ECF7F0 /* Frameworks */,
+				548FF89E24A87F3300ECF7F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				548FF8A224A87F3300ECF7F0 /* PBXTargetDependency */,
+			);
+			name = YLNoteTests;
+			productName = YLNoteTests;
+			productReference = 548FF8A024A87F3300ECF7F0 /* YLNoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		548FF8AA24A87F3300ECF7F0 /* YLNoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 548FF8BA24A87F3300ECF7F0 /* Build configuration list for PBXNativeTarget "YLNoteUITests" */;
+			buildPhases = (
+				32CB5D834D0C40CA324940DF /* [CP] Check Pods Manifest.lock */,
+				548FF8A724A87F3300ECF7F0 /* Sources */,
+				548FF8A824A87F3300ECF7F0 /* Frameworks */,
+				548FF8A924A87F3300ECF7F0 /* Resources */,
+				1BC5F34A39FC0329BBC84A84 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				548FF8AD24A87F3300ECF7F0 /* PBXTargetDependency */,
+			);
+			name = YLNoteUITests;
+			productName = YLNoteUITests;
+			productReference = 548FF8AB24A87F3300ECF7F0 /* YLNoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		548FF87D24A87F3200ECF7F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = tangh;
+				TargetAttributes = {
+					548FF88424A87F3200ECF7F0 = {
+						CreatedOnToolsVersion = 11.2;
+						LastSwiftMigration = 1120;
+					};
+					548FF89F24A87F3300ECF7F0 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 548FF88424A87F3200ECF7F0;
+					};
+					548FF8AA24A87F3300ECF7F0 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 548FF88424A87F3200ECF7F0;
+					};
+				};
+			};
+			buildConfigurationList = 548FF88024A87F3200ECF7F0 /* Build configuration list for PBXProject "YLNote" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 548FF87C24A87F3200ECF7F0;
+			productRefGroup = 548FF88624A87F3200ECF7F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				548FF88424A87F3200ECF7F0 /* YLNote */,
+				548FF89F24A87F3300ECF7F0 /* YLNoteTests */,
+				548FF8AA24A87F3300ECF7F0 /* YLNoteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		548FF88324A87F3200ECF7F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				548FF89824A87F3300ECF7F0 /* LaunchScreen.storyboard in Resources */,
+				548FF89524A87F3300ECF7F0 /* Assets.xcassets in Resources */,
+				548FF89324A87F3200ECF7F0 /* Main.storyboard in Resources */,
+				54C274C924B5A5BC00E9CF3F /* demo.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		548FF89E24A87F3300ECF7F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		548FF8A924A87F3300ECF7F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BC5F34A39FC0329BBC84A84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YLNote-YLNoteUITests/Pods-YLNote-YLNoteUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YLNote-YLNoteUITests/Pods-YLNote-YLNoteUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YLNote-YLNoteUITests/Pods-YLNote-YLNoteUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1EB46F887761D6268A745B7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YLNote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32CB5D834D0C40CA324940DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YLNote-YLNoteUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D8C6FABCE36195884E07025 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YLNoteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E36BC6EEC411CECFE5B2732D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YLNote/Pods-YLNote-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YLNote/Pods-YLNote-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YLNote/Pods-YLNote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		548FF88124A87F3200ECF7F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54D07AA524BB0F4F00F2A300 /* YLSDTableViewCell.m in Sources */,
+				548FF8C024A87F4900ECF7F0 /* YLWebViewController.m in Sources */,
+				54D07A9024B8CB3200F2A300 /* YLFather+Job.m in Sources */,
+				54DB8C1F24C3789200C83700 /* YLSwiftViewController.m in Sources */,
+				54D07A8D24B8CA0200F2A300 /* YLSon.m in Sources */,
+				54C274B824AC95CC00E9CF3F /* YLGCDViewController.m in Sources */,
+				548FF89024A87F3200ECF7F0 /* ViewController.m in Sources */,
+				54D07A8A24B8C9DF00F2A300 /* YLFather.m in Sources */,
+				54C274B224AC955200E9CF3F /* YLThreadSync.m in Sources */,
+				54C274BB24AC960600E9CF3F /* YLClass.m in Sources */,
+				54C274C724B4174800E9CF3F /* YLLayerViewController.m in Sources */,
+				54C274B024AC955200E9CF3F /* YLGCDTest.m in Sources */,
+				54C274B424AC955200E9CF3F /* YLNSOperationTest.m in Sources */,
+				54C274C024AF216500E9CF3F /* YLTestAutoReleaseController.m in Sources */,
+				54D07A9D24BACD6600F2A300 /* YLSDViewController.m in Sources */,
+				54DB8C2224C378A300C83700 /* YLFlutterViewController.m in Sources */,
+				548FF88A24A87F3200ECF7F0 /* AppDelegate.m in Sources */,
+				54C274B324AC955200E9CF3F /* YLOperation.m in Sources */,
+				548FF89B24A87F3300ECF7F0 /* main.m in Sources */,
+				54C274CC24B5D52600E9CF3F /* YLStudent.m in Sources */,
+				5455087224C3932C00C24BCD /* Test.swift in Sources */,
+				54D07AA824BF548700F2A300 /* YLKVOViewController.m in Sources */,
+				54DB8C1824C055E300C83700 /* YLHitTestViewController.m in Sources */,
+				54DB8C2724C38BE700C83700 /* YLTheme.swift in Sources */,
+				54C274C324B30DA700E9CF3F /* YLClass+Test.m in Sources */,
+				54C274B124AC955200E9CF3F /* YLThread.m in Sources */,
+				54D07A9924B8CC2300F2A300 /* YLNotesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		548FF89C24A87F3300ECF7F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				548FF8A524A87F3300ECF7F0 /* YLNoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		548FF8A724A87F3300ECF7F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				548FF8B024A87F3300ECF7F0 /* YLNoteUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		548FF8A224A87F3300ECF7F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 548FF88424A87F3200ECF7F0 /* YLNote */;
+			targetProxy = 548FF8A124A87F3300ECF7F0 /* PBXContainerItemProxy */;
+		};
+		548FF8AD24A87F3300ECF7F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 548FF88424A87F3200ECF7F0 /* YLNote */;
+			targetProxy = 548FF8AC24A87F3300ECF7F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		548FF89124A87F3200ECF7F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				548FF89224A87F3200ECF7F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		548FF89624A87F3300ECF7F0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				548FF89724A87F3300ECF7F0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		548FF8B224A87F3300ECF7F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		548FF8B324A87F3300ECF7F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		548FF8B524A87F3300ECF7F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 273E8879D27684D3E9614103 /* Pods-YLNote.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YLNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tangh.YLNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YLNote/Theme/YLNote-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		548FF8B624A87F3300ECF7F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E719A45CBC6CF50E769964 /* Pods-YLNote.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YLNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tangh.YLNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YLNote/Theme/YLNote-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		548FF8B824A87F3300ECF7F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9CC936E282AACC01F31CBA1 /* Pods-YLNoteTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YLNoteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tangh.YLNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YLNote.app/YLNote";
+			};
+			name = Debug;
+		};
+		548FF8B924A87F3300ECF7F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAB2027457CA0C28B9DBEF54 /* Pods-YLNoteTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YLNoteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tangh.YLNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YLNote.app/YLNote";
+			};
+			name = Release;
+		};
+		548FF8BB24A87F3300ECF7F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A27EA1156BF8D664E97CBFF /* Pods-YLNote-YLNoteUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YLNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tangh.YLNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YLNote;
+			};
+			name = Debug;
+		};
+		548FF8BC24A87F3300ECF7F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3CBC7F0BAB7DE4B05DD186E /* Pods-YLNote-YLNoteUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YLNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tangh.YLNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YLNote;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		548FF88024A87F3200ECF7F0 /* Build configuration list for PBXProject "YLNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				548FF8B224A87F3300ECF7F0 /* Debug */,
+				548FF8B324A87F3300ECF7F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		548FF8B424A87F3300ECF7F0 /* Build configuration list for PBXNativeTarget "YLNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				548FF8B524A87F3300ECF7F0 /* Debug */,
+				548FF8B624A87F3300ECF7F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		548FF8B724A87F3300ECF7F0 /* Build configuration list for PBXNativeTarget "YLNoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				548FF8B824A87F3300ECF7F0 /* Debug */,
+				548FF8B924A87F3300ECF7F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		548FF8BA24A87F3300ECF7F0 /* Build configuration list for PBXNativeTarget "YLNoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				548FF8BB24A87F3300ECF7F0 /* Debug */,
+				548FF8BC24A87F3300ECF7F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 548FF87D24A87F3200ECF7F0 /* Project object */;
+}
