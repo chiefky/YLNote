@@ -24,7 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-//    NSLog(@"%s",__func__);
+    NSLog(@"%s",__func__);
     self.window = [[UIWindow alloc] initWithFrame: YLSCREEN_BOUNDS];
     
     YLNotesViewController *noteVC = [[YLNotesViewController alloc] init];
