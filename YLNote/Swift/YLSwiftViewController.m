@@ -8,7 +8,7 @@
 
 #import "YLSwiftViewController.h"
 #import "YLDefaultMacro.h"
-
+#import "YLNote-Swift.h"
 @interface YLSwiftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView *table;
@@ -34,7 +34,10 @@
 }
 
 #pragma mark - tests
-
+- (void)testAlgorithm {
+    YLAlgorithmViewController *testVC = [[YLAlgorithmViewController alloc] init];
+    [self.navigationController pushViewController:testVC animated:YES];
+}
 
 #pragma mark - delegate & datadource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -100,8 +103,8 @@
 - (NSArray *)keywords {
     return @[
         @{
-            @"NSOperation":@[
-                    @"testSonOverwrite:子类方法重写",
+            @"算法":@[
+                    @"testAlgorithm:算法",
                     @"testCategory_associate_ivas:获取所有实例变量",
                     @"testCategory_associate_protertys:获取所有属性",
                     @"testCategory_associate_methds:获取所有实例方法",

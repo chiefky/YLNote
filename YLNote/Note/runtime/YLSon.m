@@ -16,13 +16,13 @@
 
 //+(void)initialize {
 //    //输出
-//    NSLog(@"%d", [self class] == object_getClass(self));
-//    //输出1
-//    NSLog(@"%d", class_isMetaClass(object_getClass(self)));
-//    //输出1
-//    NSLog(@"%d", class_isMetaClass(object_getClass([self class])));
-//    //输出1
-//    NSLog(@"%d", object_getClass(self) == object_getClass([self class]));
+////    NSLog(@"%d", [self class] == object_getClass(self));
+////    //输出1
+////    NSLog(@"%d", class_isMetaClass(object_getClass(self)));
+////    //输出1
+////    NSLog(@"%d", class_isMetaClass(object_getClass([self class])));
+////    //输出1
+////    NSLog(@"%d", object_getClass(self) == object_getClass([self class]));
 //    NSLog(@"%s",__FUNCTION__);
 //}
 

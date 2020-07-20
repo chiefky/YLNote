@@ -18,16 +18,16 @@
 //    NSLog(@"%s",__FUNCTION__);
 //}
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        ivar1 = 9;
-        self.propertyInt1 = 9;
-        self.propertyObj1 = [NSObject new];
-        NSLog(@"%s: %@,%ld,%ld",__FUNCTION__,self,ivar1,self.propertyInt1);
-    }
-    return self;
-}
+//- (instancetype)init {
+//    self = [super init];
+//    if (self) {
+//        ivar1 = 9;
+//        self.propertyInt1 = 9;
+//        self.propertyObj1 = [NSObject new];
+//        NSLog(@"%s: %@,%ld,%ld",__FUNCTION__,self,ivar1,self.propertyInt1);
+//    }
+//    return self;
+//}
 
 + (NSString *)defaultColor {
     return @"黄";

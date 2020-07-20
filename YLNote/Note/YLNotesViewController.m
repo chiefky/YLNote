@@ -15,6 +15,7 @@
 #import "YLFather.h"
 #import "YLFather+Job.h"
 #import "YLDefaultMacro.h"
+#import "NSObject+Test.h"
 
 static NSInteger static_globalInt = 10;// 静态全局变量
 static NSMutableArray *static_globalArray; //静态全局数组
@@ -24,7 +25,8 @@ NSMutableArray *globalArray; //全局数组
 
 @interface YLNotesViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)YLFather *father;
-@property (nonatomic,strong)YLSon *son;
+@property (nonatomic,strong)YLSon *son1;
+@property (nonatomic,strong)YLSon *son2;
 
 @property (nonatomic,copy)NSArray *testArray; // 测试copy属性
 
@@ -134,7 +136,8 @@ NSMutableArray *globalArray; //全局数组
      打印：(子类种找不到方法，去父类找）)
      2020-07-18 16:45:52.614581+0800 TestDemo[53882:5672936] -[YLFather hairColor]: red
      */
-    [self.son hairColor];
+    [self.son1 hairColor];
+    [self.son2 hairColor];
 }
 /// 分类initalize方法
 - (void)testCategoryInitalize {
@@ -242,6 +245,10 @@ NSMutableArray *globalArray; //全局数组
     }
     
     free(methodlist);
+}
+
+- (void)testClassMethod {
+    [YLFather performSelector:@selector(testTest)];
 }
 #pragma mark - 内存泄漏
 /// 内存泄漏（A、B互相持有，无法打破循环引用）
@@ -561,15 +568,21 @@ NSMutableArray *globalArray; //全局数组
                     @"testCategory_associate_ivas:获取所有实例变量",
                     @"testCategory_associate_protertys:获取所有属性",
                     @"testCategory_associate_methds:获取所有实例方法",
-                    @"testCategory_associate_class_methds:获取所有类方法"]},
+                    @"testCategory_associate_class_methds:获取所有类方法",
+                    @"testClassMethod:用类对象调实例方法",
+                    @"testMsg_send:消息传递",
+                    @"testMsg_Resolve:消息转发",
+                    @"testMsg_s:动态解析"]},
         @{
-            @"keywords":@[
+            @"内存管理":@[
+                    @"AutoReleasePool:",
+                    @"testAutorelease:",
                     @"testCopy:copy关键字",
                     @"testStrong:strong关键字",
                     @"testWeak:weak关键字",
                     @"test_unsafe_unretained:unsafe_unretained关键字",
                     @"testMemory:内存泄漏",
-                    @"testAutorelease:Autorelease"]},
+                    @"testAssociate:Autorelease"]},
         @{
             @"KVO":@[
                     @"testIsa_swizzing:isa指针换"]},
@@ -593,11 +606,18 @@ NSMutableArray *globalArray; //全局数组
     return _father;
 }
 
-- (YLSon *)son {
-    if (!_son) {
-        _son = [YLSon new];
+- (YLSon *)son1 {
+    if (!_son1) {
+        _son1 = [YLSon new];
     }
-    return _son;
+    return _son1;
+}
+
+- (YLSon *)son2 {
+    if (!_son2) {
+        _son2 = [YLSon new];
+    }
+    return _son2;
 }
 
 @end
