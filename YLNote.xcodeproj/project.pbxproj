@@ -12,6 +12,7 @@
 		5455087224C3932C00C24BCD /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5455087124C3932C00C24BCD /* Test.swift */; };
 		5455087624C5CA0800C24BCD /* NSObject+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 5455087524C5CA0800C24BCD /* NSObject+Test.m */; };
 		5455087A24C5CFCA00C24BCD /* YLAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5455087924C5CFCA00C24BCD /* YLAlgorithmViewController.swift */; };
+		5455087E24C640C300C24BCD /* YLBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5455087D24C640C300C24BCD /* YLBlockViewController.m */; };
 		548FF88A24A87F3200ECF7F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF88924A87F3200ECF7F0 /* AppDelegate.m */; };
 		548FF89024A87F3200ECF7F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF88F24A87F3200ECF7F0 /* ViewController.m */; };
 		548FF89324A87F3200ECF7F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89124A87F3200ECF7F0 /* Main.storyboard */; };
@@ -72,6 +73,8 @@
 		5455087424C5CA0800C24BCD /* NSObject+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
 		5455087524C5CA0800C24BCD /* NSObject+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Test.m"; sourceTree = "<group>"; };
 		5455087924C5CFCA00C24BCD /* YLAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAlgorithmViewController.swift; sourceTree = "<group>"; };
+		5455087C24C640C300C24BCD /* YLBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLBlockViewController.h; sourceTree = "<group>"; };
+		5455087D24C640C300C24BCD /* YLBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLBlockViewController.m; sourceTree = "<group>"; };
 		548FF88524A87F3200ECF7F0 /* YLNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		548FF88824A87F3200ECF7F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		548FF88924A87F3200ECF7F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -192,6 +195,15 @@
 				5455087924C5CFCA00C24BCD /* YLAlgorithmViewController.swift */,
 			);
 			path = "算法";
+			sourceTree = "<group>";
+		};
+		5455087B24C6400B00C24BCD /* block */ = {
+			isa = PBXGroup;
+			children = (
+				5455087C24C640C300C24BCD /* YLBlockViewController.h */,
+				5455087D24C640C300C24BCD /* YLBlockViewController.m */,
+			);
+			path = block;
 			sourceTree = "<group>";
 		};
 		548FF87C24A87F3200ECF7F0 = {
@@ -359,6 +371,7 @@
 		54DB8C1924C3740200C83700 /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				5455087B24C6400B00C24BCD /* block */,
 				54D07A9724B8CC2300F2A300 /* YLNotesViewController.h */,
 				54D07A9824B8CC2300F2A300 /* YLNotesViewController.m */,
 				54DB8C1A24C377C700C83700 /* Animation */,
@@ -670,6 +683,7 @@
 				54C274C724B4174800E9CF3F /* YLLayerViewController.m in Sources */,
 				54C274B024AC955200E9CF3F /* YLGCDTest.m in Sources */,
 				54C274B424AC955200E9CF3F /* YLNSOperationTest.m in Sources */,
+				5455087E24C640C300C24BCD /* YLBlockViewController.m in Sources */,
 				5455087624C5CA0800C24BCD /* NSObject+Test.m in Sources */,
 				54C274C024AF216500E9CF3F /* YLTestAutoReleaseController.m in Sources */,
 				54D07A9D24BACD6600F2A300 /* YLSDViewController.m in Sources */,

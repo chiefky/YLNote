@@ -6,8 +6,9 @@
 //  Copyright © 2020 tangh. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+
+typedef void (^YLBlock)(void);
 
 int main(int argc, char * argv[]) {
 
@@ -15,6 +16,12 @@ int main(int argc, char * argv[]) {
     @autoreleasepool {
         // Setup code that might create autoreleased objects goes here.
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
+   
+        int age =10;
+        YLBlock block = ^{
+            NSLog(@"age is %@",@(age));
+        };
+        block();
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }
