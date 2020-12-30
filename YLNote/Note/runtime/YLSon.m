@@ -41,4 +41,56 @@
     NSLog(@"%s: red",__FUNCTION__);
 }
 
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    NSLog(@"%s",__FUNCTION__);
+
+    return false;
+}
+
++ (BOOL)resolveClassMethod:(SEL)sel {
+    NSLog(@"%s",__FUNCTION__);
+
+    return false;
+}
+
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    NSLog(@"%s",__FUNCTION__);
+
+    return nil;
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+    NSLog(@"%s",__FUNCTION__);
+
+     //查找父类签名
+       NSMethodSignature *methodSignature = [super methodSignatureForSelector:aSelector];
+
+       if (methodSignature == nil)
+       {
+           methodSignature = [NSMethodSignature signatureWithObjCTypes:"v@:"];
+       }
+       return methodSignature;
+}
+
+// invocation 调用
+- (void)forwardInvocation:(NSInvocation *)anInvocation
+{
+    NSLog(@"%s",__FUNCTION__);
+
+    SEL sel = anInvocation.selector;
+
+    YLFather *person = YLFather.new;
+
+    if ([person respondsToSelector:sel])
+    {
+        [anInvocation invokeWithTarget:person];
+    } else {
+        NSLog(@"真的找不到 %@ 的方法实现！！！",NSStringFromSelector(sel));
+    }
+}
+
+- (void)doesNotRecognizeSelector:(SEL)aSelector {
+    NSLog(@"程序crash了");
+}
+
 @end

@@ -34,46 +34,86 @@ class YLAlgorithmViewController: UIViewController {
     }()
     
      lazy var keywords:[String: [String]] = {
-        return ["递归":["testSum:求和", "testFib:青蛙跳台"],
-                "二叉树":["testAlgorithm:", "testAlgorithm:"]]
+        return ["递归":["testSum:求和", "testFib:青蛙跳台","testInorderRecursion:二叉树中序遍历(递归)"],
+                "双指针":["testString:字符串翻转","testlookupMin:旋转数组中查找最小元素"],
+                "二分查找":["testSqrt:求平方根"],
+                "迭代":["testInorderIteration:中序遍历(迭代)", "testAlgorithm:"],
+             "栈":["testInvalid:求是否是有效括号"]]
     }()
 
     //MARK: - tests
+    //MARK:递归
     @objc func testSum() {
-        let sum = recursionSum(100)
+        let sum = rc_sum(100)
         print("1+2+...+ 100 = \(sum)")
     }
 
     @objc func testFib() {
         let n = 5
-        let sum = recursionFib(n)
+        let sum = rc_fib(n)
         print("青蛙跳到第\(n)阶台阶时共有\(sum)种跳法")
     }
+    /// test 中序遍历--递归
+      @objc func testInorderRecursion() {
+          let node1 = TreeNode(1)
+      
+          let node2 = TreeNode(2)
+          let node3 = TreeNode(3)
+          node1.left = nil
+          node1.right = node2;
+          node2.left = node3
+          node2.right = nil
+          
+          let res = rc_inorderTraversal(node1)
+          print("res == \(res)")
+      }
+      
     
-    //MARK: 递归
-    func recursionSum(_ n: Int) -> Int {
-        if n == 0 {
-            return 0
-        }
-        return recursionSum(n-1) + n
+    //MARK: 双指针
+    @objc func testString() {
+        var n:[Character] = ["a","b","c","f"]
+        dp_reverseString(&n);
+        print("转换后 n:\(n)");
     }
     
-    /// 斐波那契数列、青蛙跳台
-    /// - Parameter n: 第N阶跳台累计s多少种跳法
-    func recursionFib(_ n: Int) -> Int {
-          if n < 2 {
-              return 1
-          }
-        var sum = 0,a = 1,b=1;
-        for _ in 2...n {
-            sum = (a + b) % 100000007;
-            a = b;
-            b = sum;
-        }
-          return sum
-      }
+    func testlookupMin() {
+        let nums = [3,1,3]
+        let res = dp_lookupMinInArry(nums)
+        print("旋转数组中的最小元素：\(res)")
+        
+    }
     
-//MARK: 二叉树
+    //MARK:二分查找
+    /// test 二分查找，开方
+    @objc func testSqrt() {
+        let n = bs_mySqrt(4)
+        print("开方后 n:\(n)");
+    }
+    
+  
+    //MARK:迭代
+    /// test 中序遍历--迭代
+    @objc func testInorderIteration() {
+        let node1 = TreeNode(1)
+    
+        let node2 = TreeNode(2)
+        let node3 = TreeNode(3)
+        node1.left = nil
+        node1.right = node2;
+        node2.left = node3
+        node2.right = nil
+        
+        let res = ir_inorderTraversal(node1)
+        print("res == \(res)")
+    }
+ //MARK: 栈
+    @objc func testInvalid() {
+        let s = "[E"
+        let res = st_isValid(s)
+        print("结果是\(res)")
+    }
+
+ 
     
 }
 

@@ -47,45 +47,85 @@ NSMutableArray *globalArray; //全局数组
 /// 全局block
 - (void)testBlockType_Global {
     static NSInteger static_local_num = 100;
-
+    
+    NSLog(@"block %@",[^{
+        printf("__NSGlobalBlock__");
+    } class]);
+    
     // __NSGlobalBlock__：不使用外部变量、使用全局变量、全局静态变量、静态局部变量
-       NSLog(@"block1 %@",[^{
-           printf("__NSGlobalBlock__: %ld",static_local_num);
-       } class]);
-      
-      //__NSMallocBlock__: 未使用局部变量，且，对block进行了copy (引用计数+1)
-      void(^block3)(void) = ^{
-          NSLog(@"__NSGlobalBlock__");
-      };
-      NSLog(@"block4: %@",[block3 class]);
+    NSLog(@"block0 %@",[^{
+        printf("__NSGlobalBlock__: %ld",static_local_num);
+    } class]);
+    
+    
+    //__NSMallocBlock__: 未使用局部变量，且，对block进行了copy (引用计数+1)
+    void(^block1)(void) = ^{
+        NSLog(@"__NSGlobalBlock__");
+    };
+    NSLog(@"block1: %@",[block1 class]);
+
+ 
     
       // 使用全局变量，并对block进行copy(引用计数+1)
-      void(^block5)(void) = ^{
+      void(^block3)(void) = ^{
           NSLog(@"__NSGlobalBlock__: %ld",globalInt);
           
       };
-      NSLog(@"block6: %@",[block5 class]);
+      NSLog(@"block6: %@",[block3 class]);
 }
 
 /// 堆区block
 - (void)testBlockType_Malloc {
     NSInteger num = 3;
+    __block NSInteger mm = 8;
+    NSLog(@"A: %p-%p:%ld",&num,&mm,mm);
     //__NSMallocBlock__： 使用局部变量，且，对block进行copy
-       void(^block4)(void) = ^{
+       void(^block1)(void) = ^{
+           NSLog(@"B1: %p-%p:%ld",&num,&mm,mm);
+
            NSLog(@"__NSMallocBlock__: %ld",num);
+           mm = 9;
+           NSLog(@"B2: %p-%p:%ld",&num,&mm,mm);
+
            
        };
-       NSLog(@"block5: %@",[block4 class]);
+    NSLog(@"C: %p-%p:%ld",&num,&mm,mm);
+    mm = 11;
+    NSLog(@"D: %p-%p:%ld",&num,&mm,mm);
+
+    NSLog(@"block1: %@ -- ",[block1 class]);
+    block1();
+    NSLog(@"E: %p-%p:%ld",&num,&mm,mm);
+
 }
 
 /// 栈区block
 - (void)testBlockType_Stack {
     NSInteger num = 3;
+    NSMutableArray *arra = [NSMutableArray array];
+
     // __NSStackBlock__：使用局部变量，且未对block进行copy
-      NSLog(@"block2 %@",[^{
+      NSLog(@"block1 %@",[^{
           printf("__NSStackBlock__: %ld",num);
       } class]);
     
+  
+    __block NSInteger x = 8;// 将局部变量转换为一个struct
+    NSLog(@"block3前：(num:%p,x:%p,array:%p)",&num,&x,arra);
+    __weak void (^block3)(void) = ^{
+        x = 7; // block 内捕获的是struct的引用
+        NSLog(@"block3内：(num:%p,x:%p,array:%p)",&num,&x,arra);
+    };
+    block3();
+    NSLog(@"block3后：(num:%p,x:%p,array:%p)",&num,&x,arra);
+    NSLog(@"x=%@",@(x));
+    NSLog(@"block3 class:%@",[block3 class]);
+    NSLog(@"block_c class:%@ -- %@",[block3 copy],block3);
+    
+    NSLog(@"类型： %@",^{
+        
+    });
+ 
 }
 
 
@@ -175,15 +215,28 @@ NSMutableArray *globalArray; //全局数组
     /**
      一般情况下，如果我们要对 block 截获的局部变量进行赋值操作需添加__block 修饰符，而对全局变量，静态变量是不需要添加 修饰符的。 另外，block 里访问 self 或成员变量都会去截获   。
      */
-    __block NSInteger num = 1;
+    /**
+     __Block_byref_a_0 成员含义如下：
+
+     __isa: 指向所属类的指针，被初始化为 (void*)0
+     __forwarding: 指向对象在堆中的拷贝
+     __flags: 标志变量，在实现block的内部操作时会用到
+     __size: 对象的内存大小
+     a: 原始类型的变量
+     */
+    __block NSInteger num = 1;//被__block修饰的变量被封装成了一个对象，类型为__Block_byref_a_0，然后把&a作为参数传给了block。
+    NSLog(@"block前：(num:%p)",&num);
+
     // 使用局部变量，并对block进行copy
     void(^block)(void) = ^{
         num += 2;
-        NSLog(@"num: %ld",num);
-        
+        NSLog(@"block内：(num:%p)",&num);
+
     };
+    num = 5;
     block();
-    
+    NSLog(@"block后：(num:%p)",&num);
+
     /**
      
      另外，__block 变量在copy 时，由于__forwarding 的存在，栈上的 __forwarding指针会指向堆上的 __forwarding 变量，而堆上的__forwarding 指针指向其自身，所以，如果对__block 的变量修改，实际上是在修改堆上的    __block 变量。

@@ -415,32 +415,32 @@ assert(res == 0); \
 /// 2️⃣ Pthread - recursive (没有跑通)
 - (void)testPthread_recursive {
     
-    __block pthread_mutex_t lock;
-    // 初始化属性
-    pthread_mutexattr_t attr;
-    pthread_mutexattr_init(&attr);
-    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
-    // 初始化锁
-    pthread_mutex_init(&lock, &attr);
-    // 销毁属性
-    pthread_mutexattr_destroy(&attr);
-  
-    void (^RecursiveBlock)(int);
-    RecursiveBlock = ^(int value){
-        NSLog(@"*************************");
-        pthread_mutex_lock(&lock);
-        if (value > 0) {
-            NSLog(@"加锁层数 %d", value);
-            sleep(value);
-            RecursiveBlock(--value);
-        }
-        pthread_mutex_unlock(&lock);
-        NSLog(@"解锁层数：%d",value);
-        NSLog(@"*************************");
-        printf("\n");
-        
-    };
-    RecursiveBlock(3);
+//    __block pthread_mutex_t lock;
+//    // 初始化属性
+//    pthread_mutexattr_t attr;
+//    pthread_mutexattr_init(&attr);
+//    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+//    // 初始化锁
+//    pthread_mutex_init(&lock, &attr);
+//    // 销毁属性
+//    pthread_mutexattr_destroy(&attr);
+//  
+//    void (^RecursiveBlock)(int);
+//    RecursiveBlock = ^(int value){
+//        NSLog(@"*************************");
+//        pthread_mutex_lock(&lock);
+//        if (value > 0) {
+//            NSLog(@"加锁层数 %d", value);
+//            sleep(value);
+//            RecursiveBlock(--value);
+//        }
+//        pthread_mutex_unlock(&lock);
+//        NSLog(@"解锁层数：%d",value);
+//        NSLog(@"*************************");
+//        printf("\n");
+//        
+//    };
+//    RecursiveBlock(3);
 
 }
 #pragma mark - 条件锁

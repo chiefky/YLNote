@@ -6,7 +6,9 @@ target 'YLNote' do
   pod 'SDWebImage'
   pod 'JSPatch'
   pod 'Masonry'
-
+  pod 'MJExtension'
+  pod 'NullSafe'
+  
   target 'YLNoteTests' do
     inherit! :search_paths
     # Pods for testing

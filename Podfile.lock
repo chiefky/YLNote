@@ -3,6 +3,8 @@ PODS:
     - JSPatch/Core (= 1.1.3)
   - JSPatch/Core (1.1.3)
   - Masonry (1.1.0)
+  - MJExtension (3.2.2)
+  - NullSafe (2.0)
   - SDWebImage (5.8.1):
     - SDWebImage/Core (= 5.8.1)
   - SDWebImage/Core (5.8.1)
@@ -10,19 +12,25 @@ PODS:
 DEPENDENCIES:
   - JSPatch
   - Masonry
+  - MJExtension
+  - NullSafe
   - SDWebImage
 
 SPEC REPOS:
   trunk:
     - JSPatch
     - Masonry
+    - MJExtension
+    - NullSafe
     - SDWebImage
 
 SPEC CHECKSUMS:
   JSPatch: 02cfed591cb907bbfe80a346666e5a35fc2d349d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
 
-PODFILE CHECKSUM: cbe543faf5301a85895a0b553c6c29d22c9ef1f3
+PODFILE CHECKSUM: 2916c3dbaa18849de013962cf3a59c8262257966
 
 COCOAPODS: 1.8.4

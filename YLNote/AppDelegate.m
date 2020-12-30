@@ -13,6 +13,8 @@
 #import "YLGCDViewController.h"
 #import "YLSwiftViewController.h"
 #import "YLFlutterViewController.h"
+#import "YLUserViewController.h"
+
 #import "YLNote-Swift.h"
 
 @interface AppDelegate ()
@@ -41,7 +43,7 @@
     YLSwiftViewController *swiftVC = [[YLSwiftViewController alloc] init];
     swiftVC.title = @"Swift";
     swiftVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Swift" image:[UIImage imageNamed:@"swift"] tag:3];
-
+//
     UINavigationController *naviSwift = [[UINavigationController alloc] initWithRootViewController:swiftVC];
 
     YLFlutterViewController *flutterVC = [[YLFlutterViewController alloc] init];
@@ -49,23 +51,26 @@
     flutterVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Flutter" image:[UIImage imageNamed:@"flutter"] tag:3];
     UINavigationController *naviFlutter = [[UINavigationController alloc] initWithRootViewController:flutterVC];
 
+    YLUserViewController *userVC = [[YLUserViewController alloc] init];
+     userVC.title = @"User";
+    userVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"User" image:[UIImage imageNamed:@"Flutter"] tag:5];
+    UINavigationController *naviUser = [[UINavigationController alloc] initWithRootViewController:userVC];
 
      UITabBarController *tab = [[UITabBarController alloc] init];
-     tab.viewControllers = @[naviNote,naviGCD,naviSwift,naviFlutter];
+     tab.viewControllers = @[naviNote,naviGCD,naviSwift,naviFlutter,naviUser];
     [UITabBar appearance].tintColor = [UIColor orangeColor];
-    
     self.window.rootViewController = tab;
      [self.window makeKeyAndVisible];
      
     return YES;
 }
 
-- (void)jspatchSetting {
-    [JPEngine startEngine];
-    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"];
-    NSString *script = [NSString stringWithContentsOfFile:sourcePath encoding:NSUTF8StringEncoding error:nil];
-    [JPEngine evaluateScript:script];
-}
+//- (void)jspatchSetting {
+//    [JPEngine startEngine];
+//    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"];
+//    NSString *script = [NSString stringWithContentsOfFile:sourcePath encoding:NSUTF8StringEncoding error:nil];
+//    [JPEngine evaluateScript:script];
+//}
 
 
 @end

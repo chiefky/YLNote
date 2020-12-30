@@ -93,37 +93,37 @@
 JSValue是JSContext执行后的返回结果，他可以是任何js类型（比如基本数据类型和函数类型，对象类型等），并且都有对象的方法转换为native对象
      */
     //定义一个js并执行函数
-    JSValue *exeFunction1 = [self.jsContext evaluateScript:@"function hi(){ return 'hi' }; hi()"];
-    //执行一个闭包js
-    JSValue *exeFunction2 = [self.jsContext evaluateScript:@"(function(){ return 'hi' })()"];
+//    JSValue *exeFunction1 = [self.jsContext evaluateScript:@"function hi(){ return 'hi' }; hi()"];
+//    //执行一个闭包js
+//    JSValue *exeFunction2 = [self.jsContext evaluateScript:@"(function(){ return 'hi' })()"];
 }
 
 /// 通过js文件读取js代码并执行代码
 - (void)testEvaluateJSFile {
-    NSString * path = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"];
-    NSString * script = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    JSValue *constructor = [self.jsContext evaluateScript:script];
+//    NSString * path = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"];
+//    NSString * script = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+//    JSValue *constructor = [self.jsContext evaluateScript:script];
 }
 
 //注册js方法，然后在利用JSValue调用
 - (void)testRegiestJSFunction {
     //注册一个函数
-    [self.jsContext evaluateScript:@"var hello = function(){ return 3000po }"];
-    //调用
-    JSValue *value1 = [self.jsContext evaluateScript:@"hello()"];
-    
-    //注册一个匿名函数
-    JSValue *jsFunction = [self.jsContext evaluateScript:@" (function(){ return 'hello objc' })"];
-    //调用
-    JSValue *value2 = [jsFunction callWithArguments:nil];
+//    [self.jsContext evaluateScript:@"var hello = function(){ return 3000po }"];
+//    //调用
+//    JSValue *value1 = [self.jsContext evaluateScript:@"hello()"];
+//
+//    //注册一个匿名函数
+//    JSValue *jsFunction = [self.jsContext evaluateScript:@" (function(){ return 'hello objc' })"];
+//    //调用
+//    JSValue *value2 = [jsFunction callWithArguments:nil];
 }
 
 - (void)testJSFunction {
     /**
-     fun1 得到一个匿名函数，通过callWithArguments方法执行这个block
-     */
-    JSValue *fun1 = [self.jsContext evaluateScript:@"(function(){ return 'mmmm' })"];
-    JSValue *value = [fun1 callWithArguments:nil];
+//     fun1 得到一个匿名函数，通过callWithArguments方法执行这个block
+//     */
+//    JSValue *fun1 = [self.jsContext evaluateScript:@"(function(){ return 'mmmm' })"];
+//    JSValue *value = [fun1 callWithArguments:nil];
 }
 #pragma mark - js 调 native
 /** jsContext下标方法暴露js对象
@@ -151,7 +151,7 @@ JSValue是JSContext执行后的返回结果，他可以是任何js类型（比�
 - (void)useJSExprot {
     YLStudent *p = [[YLStudent alloc]init];
     self.jsContext[@"person"] = p;
-    JSValue *value = [self.jsContext evaluateScript:@"person.whatYouName()"];
+//    JSValue *value = [self.jsContext evaluateScript:@"person.whatYouName()"];
 }
 
 #pragma mark - 使用js 进行异常处理

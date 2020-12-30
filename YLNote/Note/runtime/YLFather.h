@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)gender;// 性别
 
 - (void)hairColor; // 发色
+- (void)eat;
 
 @end
 

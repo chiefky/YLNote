@@ -25,10 +25,8 @@
 }
 
 - (void)setupUI {
-    self.table = [[UITableView alloc] initWithFrame:YLSCREEN_BOUNDS style:UITableViewStylePlain];
     self.table.delegate = self;
     self.table.dataSource = self;
-    [self.view addSubview:self.table];
     
     [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 }
@@ -120,5 +118,11 @@
     ];
 }
 
-
+- (UITableView *)table {
+    if (!_table) {
+        _table = [[UITableView alloc] initWithFrame:YLSCREEN_BOUNDS style:UITableViewStylePlain];
+        [self.view addSubview:_table];
+    }
+    return _table;
+}
 @end

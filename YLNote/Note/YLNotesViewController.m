@@ -15,6 +15,10 @@
 #import "YLFather.h"
 #import "YLFather+Job.h"
 #import "YLDefaultMacro.h"
+#import "YLBlockViewController.h"
+#import "YLNotifiTestViewController.h"
+#import "YLTestViewController.h"
+
 #import "NSObject+Test.h"
 
 
@@ -246,6 +250,49 @@
 - (void)testClassMethod {
     [YLFather performSelector:@selector(testTest)];
 }
+
+- (void)testMsg_resolve {
+    [self.son1 eat];
+}
+
+- (void)testMsg_forwarding {
+    [self.son1 eat];
+}
+
+- (instancetype)initWithDict:(NSDictionary *)dict {
+
+    if (self = [self init]) {
+        //(1)获取类的属性及属性对应的类型
+        NSMutableArray * keys = [NSMutableArray array];
+        NSMutableArray * attributes = [NSMutableArray array];
+        /*
+         * 例子
+         * name = value3 attribute = T@"NSString",C,N,V_value3
+         * name = value4 attribute = T^i,N,V_value4
+         */
+        unsigned int outCount;
+        objc_property_t * properties = class_copyPropertyList([self class], &outCount);
+        for (int i = 0; i < outCount; i ++) {
+            objc_property_t property = properties[i];
+            //通过property_getName函数获得属性的名字
+            NSString * propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
+            [keys addObject:propertyName];
+            //通过property_getAttributes函数可以获得属性的名字和@encode编码
+            NSString * propertyAttribute = [NSString stringWithCString:property_getAttributes(property) encoding:NSUTF8StringEncoding];
+            [attributes addObject:propertyAttribute];
+        }
+        //立即释放properties指向的内存
+        free(properties);
+
+        //(2)根据类型给属性赋值
+        for (NSString * key in keys) {
+            if ([dict valueForKey:key] == nil) continue;
+            [self setValue:[dict valueForKey:key] forKey:key];
+        }
+    }
+    return self;
+
+}
 #pragma mark - 内存泄漏
 /// 内存泄漏（A、B互相持有，无法打破循环引用）
 - (void)testMemory {
@@ -270,6 +317,11 @@
      */
 }
 
+#pragma mark - block
+- (void)testBlock {
+    YLBlockViewController *bkVC = [[YLBlockViewController alloc] init];
+    [self.navigationController pushViewController:bkVC animated:YES];
+}
 
 #pragma mark - 关键字
 /// 测试copy关键字
@@ -347,6 +399,17 @@
     
 }
 
+#pragma mark - YLNotifiTestViewController
+
+- (void)testNotification {
+    YLNotifiTestViewController *vc = [[YLNotifiTestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)testNotification_block {
+    YLTestViewController *vc = [[YLTestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - delegate & datadource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -422,9 +485,9 @@
                     @"testCategory_associate_methds:获取所有实例方法",
                     @"testCategory_associate_class_methds:获取所有类方法",
                     @"testClassMethod:用类对象调实例方法",
-                    @"testMsg_send:消息传递",
-                    @"testMsg_Resolve:消息转发",
-                    @"testMsg_s:动态解析"]},
+                    @"testMsg_resolve:动态解析",
+                    @"testMsg_forwarding:消息转发",
+                    ]},
         @{
             @"内存管理":@[
                     @"AutoReleasePool:",
@@ -439,12 +502,11 @@
             @"KVO":@[
                     @"testIsa_swizzing:isa指针换"]},
         @{
-            @"block":@[@"testLocalVarBlock:引用局部变量[值捕获]",
-                       @"testStatic_LocalVarBlock:引用(静态)局部变量[指针捕获]",
-                       @"testGlobalVarBlock:引用全局变量[直接使用]",
-                       @"testStatic_globalVarBlock:引用(静态)全局变量[直接使用]",
-                       @"testBlockType:栈block、堆block、Global block",
-                       @"testBlock__block:使用__block修改局部变量值"]},
+            @"NSNotificationCenter":@[
+                    @"testNotification:手动实现NSNotificationCenter",
+            @"testNotification_block:使用block接口"]},
+        @{
+            @"block":@[@"testBlock:Block相关"]},
         @{
                    @"Runloop":@[
                            @"testRunloop_timrt:isa指针换"]},
