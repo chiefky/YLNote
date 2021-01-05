@@ -7,10 +7,17 @@
 //
 #import "YLNotesViewController.h"
 #import <objc/runtime.h>
+
 #import "YLUIKitNoteManger.h"
 #import "YLFoundationNoteManger.h"
 #import "YLWebNoteManager.h"
 #import "YLRuntimeNoteManager.h"
+#import "YLRunLoopNoteManager.h"
+#import "YLAutoReleaseNoteManager.h"
+#import "YLKVONoteManager.h"
+#import "YLGCDNoteManager.h"
+#import "YLAnimationNoteManager.h"
+#import "YLBlockNoteManager.h"
 
 #import "YLTestAutoReleaseController.h"
 #import "YLKVOViewController.h"
@@ -585,38 +592,25 @@
 
 - (NSArray *)keywords {
     return @[
+        //------- 1.6 to do -----
         [YLFoundationNoteManger allNotes],
         [YLUIKitNoteManger allNotes],
         [YLWebNoteManager allNotes],
         [YLRuntimeNoteManager allNotes],
-        @{
-            @"group":@"内存管理",
-            @"methods":@[
-                    @"AutoReleasePool:",
-                    @"testAutorelease:",
-                    @"testCopy:copy关键字",
-                    @"testStrong:strong关键字",
-                    @"testWeak:weak关键字",
-                    @"test_unsafe_unretained:unsafe_unretained关键字",
-                    @"testMemory:内存泄漏",
-                    @"testAssociate:Autorelease"]},
-        @{
-            @"group":@"KVO",
-            @"methods":@[
-                    @"testIsa_swizzing:isa指针换"]},
+       
+        //------- 1.7 to do -----
+        [YLAutoReleaseNoteManager allNotes],
+        [YLGCDNoteManager allNotes],
+        [YLKVONoteManager allNotes],
         @{
             @"group":@"NSNotificationCenter",
             @"methods":@[
                     @"testNotification:手动实现NSNotificationCenter",
                     @"testNotification_block:使用block接口"]},
-        @{
-            @"group":@"block",
-            @"methods":@[
-                    @"testBlock:Block相关"]},
-        @{
-            @"group":@"Runloop",
-            @"methods":@[
-                    @"testRunloop_timrt:isa指针换"]},
+        //------- 1.8 to do -----
+        [YLBlockNoteManager allNotes],
+        [YLRunLoopNoteManager allNotes],
+        [YLAnimationNoteManager allNotes],
     ];
 }
 
