@@ -7,6 +7,10 @@
 //
 #import "YLNotesViewController.h"
 #import <objc/runtime.h>
+#import "YLUIKitNoteManger.h"
+#import "YLFoundationNoteManger.h"
+#import "YLWebNoteManager.h"
+#import "YLRuntimeNoteManager.h"
 
 #import "YLTestAutoReleaseController.h"
 #import "YLKVOViewController.h"
@@ -76,9 +80,7 @@
     }else{
         [self.groupFoldStatus setObject:@(0) forKey:@(groupIndex)];
         flag = 1;
-        
     }
-    
     
     //刷新当前的分组
     NSIndexSet * set=[[NSIndexSet alloc] initWithIndex:groupIndex];
@@ -463,13 +465,13 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     NSDictionary *dic = self.keywords[section];
-    NSString * title = dic.allKeys.lastObject;
+    NSString * title = dic[@"group"];
     
     //    //1 自定义头部
     UIView * view = [[UIView alloc] init];
     view.backgroundColor=[UIColor whiteColor];
-//    view.layer.borderWidth = 1;
-//    view.layer.borderColor = [UIColor whiteColor].CGColor;
+    //    view.layer.borderWidth = 1;
+    //    view.layer.borderColor = [UIColor whiteColor].CGColor;
     //
     // 2 增加按钮
     UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -507,7 +509,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (cell) {
         NSDictionary *sectionDict = self.keywords[indexPath.section];
-        NSArray *sectionArry = sectionDict.allValues.lastObject;
+        NSArray * sectionArry =  sectionDict[@"methods"];
         NSString *titleValue = sectionArry[indexPath.row];
         NSArray *titleValues = [titleValue componentsSeparatedByString:@":"];
         
@@ -530,7 +532,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int flag = [self.groupFoldStatus[@(section)] intValue];
     NSDictionary *sectionDict = self.keywords[section];
-    NSArray * sectionArry =  sectionDict.allValues.lastObject;
+    NSArray * sectionArry =  sectionDict[@"methods"];
     if(flag) {
         return sectionArry.count;
     } else {
@@ -545,7 +547,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSDictionary *sectionDict = self.keywords[indexPath.section];
-    NSArray *sectionArry = sectionDict.allValues.lastObject;
+    NSArray * sectionArry =  sectionDict[@"methods"];
     NSString *value = sectionArry[indexPath.row];
     NSArray *selectorTitle = [value componentsSeparatedByString:@":"];
     NSString *selectorStr = selectorTitle.firstObject;
@@ -579,21 +581,25 @@
 - (NSArray *)keywords {
     return @[
         @{
-            @"runtime":@[
-                    @"testSonInitalize:子类的'+initialize'",
-                    @"testCategoryInitalize:分类的'+initialize'",
-                    @"testSonOverwrite:子类方法重写",
-                    @"testCategoryOverwrite:分类方法重写（原理同Initalize）",
-                    @"testCategory_associate_ivas:获取所有实例变量",
-                    @"testCategory_associate_protertys:获取所有属性",
-                    @"testCategory_associate_methds:获取所有实例方法",
-                    @"testCategory_associate_class_methds:获取所有类方法",
-                    @"testClassMethod:用类对象调实例方法",
-                    @"testMsg_resolve:动态解析",
-                    @"testMsg_forwarding:消息转发",
-            ]},
+            @"group":@"Foundation",
+            @"methods":@[
+                    @"testNil:nil、NIL、NSNULL区别",
+                    @"testSafeMutableArray:实现一个线程安全的 NSMutableArray",
+                    @"testAutomic:原子属性atomic的内部实现，是否绝对安全",
+                    @"testImpIsEqual_hash:实现 isEqual 和 hash 方法",
+                    @"testId_VS_InstanceType:id 和 instanceType 有什么区别",
+                    @"testSelf_VS_Super:self和super的区别",
+                    @"testSynthesize_VS_Dynamic:@synthesize和@dynamic分别有什么作用",
+                    @"testTypeOf:typeof 和 __typeof，typeof区别",
+                    @"testStruct_Class:struct和class的区别,值类型和引用类型"
+            ]
+        },
+        [YLUIKitNoteManger allNotes],
+        [YLWebNoteManager allNotes],
+        [YLRuntimeNoteManager allNotes],
         @{
-            @"内存管理":@[
+            @"group":@"内存管理",
+            @"methods":@[
                     @"AutoReleasePool:",
                     @"testAutorelease:",
                     @"testCopy:copy关键字",
@@ -603,16 +609,21 @@
                     @"testMemory:内存泄漏",
                     @"testAssociate:Autorelease"]},
         @{
-            @"KVO":@[
+            @"group":@"KVO",
+            @"methods":@[
                     @"testIsa_swizzing:isa指针换"]},
         @{
-            @"NSNotificationCenter":@[
+            @"group":@"NSNotificationCenter",
+            @"methods":@[
                     @"testNotification:手动实现NSNotificationCenter",
                     @"testNotification_block:使用block接口"]},
         @{
-            @"block":@[@"testBlock:Block相关"]},
+            @"group":@"block",
+            @"methods":@[
+                    @"testBlock:Block相关"]},
         @{
-            @"Runloop":@[
+            @"group":@"Runloop",
+            @"methods":@[
                     @"testRunloop_timrt:isa指针换"]},
     ];
 }
