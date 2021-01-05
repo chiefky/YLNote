@@ -509,22 +509,27 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (cell) {
         NSDictionary *sectionDict = self.keywords[indexPath.section];
-        NSArray * sectionArry =  sectionDict[@"methods"];
-        NSString *titleValue = sectionArry[indexPath.row];
-        NSArray *titleValues = [titleValue componentsSeparatedByString:@":"];
+        NSArray * sectionArry = sectionDict[@"methods"];
+        NSString *title = sectionArry[indexPath.row];
+        cell.textLabel.text = title;
+        cell.textLabel.font = [UIFont systemFontOfSize:12.0];
+        cell.textLabel.textColor = [UIColor grayColor];
+//        NSString *titleValue = sectionArry[indexPath.row];
+//        NSArray *titleValues = [titleValue componentsSeparatedByString:@":"];
+//
+//        NSDictionary *attrMethod = @{ NSForegroundColorAttributeName : [UIColor redColor] ,
+//                                      NSFontAttributeName: [UIFont systemFontOfSize:12]
+//        };
+//        NSDictionary *attrTitle = @{ NSForegroundColorAttributeName : [UIColor blackColor] ,
+//                                     NSFontAttributeName: [UIFont systemFontOfSize:12]
+//        };
+//        NSString * methodTitle = titleValues.firstObject;
+//        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:titleValue];
+//        [attrStr addAttributes:attrMethod range:NSMakeRange(0, methodTitle.length + 1)];
+//        [attrStr addAttributes:attrTitle range:NSMakeRange(methodTitle.length + 1, titleValue.length - methodTitle.length - 1)];
+//
+//        cell.textLabel.attributedText = attrStr;
         
-        NSDictionary *attrMethod = @{ NSForegroundColorAttributeName : [UIColor redColor] ,
-                                      NSFontAttributeName: [UIFont systemFontOfSize:12]
-        };
-        NSDictionary *attrTitle = @{ NSForegroundColorAttributeName : [UIColor blackColor] ,
-                                     NSFontAttributeName: [UIFont systemFontOfSize:12]
-        };
-        NSString * methodTitle = titleValues.firstObject;
-        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:titleValue];
-        [attrStr addAttributes:attrMethod range:NSMakeRange(0, methodTitle.length + 1)];
-        [attrStr addAttributes:attrTitle range:NSMakeRange(methodTitle.length + 1, titleValue.length - methodTitle.length - 1)];
-        
-        cell.textLabel.attributedText = attrStr;
     }
     return cell;
 }
@@ -580,20 +585,7 @@
 
 - (NSArray *)keywords {
     return @[
-        @{
-            @"group":@"Foundation",
-            @"methods":@[
-                    @"testNil:nil、NIL、NSNULL区别",
-                    @"testSafeMutableArray:实现一个线程安全的 NSMutableArray",
-                    @"testAutomic:原子属性atomic的内部实现，是否绝对安全",
-                    @"testImpIsEqual_hash:实现 isEqual 和 hash 方法",
-                    @"testId_VS_InstanceType:id 和 instanceType 有什么区别",
-                    @"testSelf_VS_Super:self和super的区别",
-                    @"testSynthesize_VS_Dynamic:@synthesize和@dynamic分别有什么作用",
-                    @"testTypeOf:typeof 和 __typeof，typeof区别",
-                    @"testStruct_Class:struct和class的区别,值类型和引用类型"
-            ]
-        },
+        [YLFoundationNoteManger allNotes],
         [YLUIKitNoteManger allNotes],
         [YLWebNoteManager allNotes],
         [YLRuntimeNoteManager allNotes],
