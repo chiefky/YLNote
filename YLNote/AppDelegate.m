@@ -40,7 +40,7 @@
 
     UINavigationController *naviGCD = [[UINavigationController alloc] initWithRootViewController:gcdVC];
     
-    YLSwiftViewController *swiftVC = [[YLSwiftViewController alloc] init];
+    YLAlgorithmViewController *swiftVC = [[YLAlgorithmViewController alloc] init];
     swiftVC.title = @"Swift";
     swiftVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Swift" image:[UIImage imageNamed:@"swift"] tag:3];
 //

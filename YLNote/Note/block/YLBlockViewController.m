@@ -22,7 +22,19 @@ NSMutableArray *globalArray; //全局数组
 
 @implementation YLBlockViewController
 
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+};
+
 - (void)setupUI {
+    int a = 2;
+    int b = 4;
+    swap(&a, &b);
+
+    NSLog(@"%d--%d",a,b);
+    
     self.table = [[UITableView alloc] initWithFrame:YLSCREEN_BOUNDS style:UITableViewStylePlain];
     self.table.delegate = self;
     self.table.dataSource = self;
@@ -36,7 +48,7 @@ NSMutableArray *globalArray; //全局数组
     [super viewDidLoad];
     [self setupUI];
 }
-#pragma mark - test
+#pragma mark - block 类型
 /// 三种形式的block
 /**
  1、不使用外部变量的 block 是全局 block
@@ -48,55 +60,76 @@ NSMutableArray *globalArray; //全局数组
 - (void)testBlockType_Global {
     static NSInteger static_local_num = 100;
     
-    NSLog(@"block %@",[^{
-        printf("__NSGlobalBlock__");
+    // __NSGlobalBlock__：不使用外部变量
+    NSLog(@"1. 不使用外部变量 %@",[^{
+        printf("1-block内部");
     } class]);
     
-    // __NSGlobalBlock__：不使用外部变量、使用全局变量、全局静态变量、静态局部变量
-    NSLog(@"block0 %@",[^{
-        printf("__NSGlobalBlock__: %ld",static_local_num);
+    // __NSGlobalBlock__：使用静态局部变量
+    NSLog(@"2. 使用静态局部变量 %@",[^{
+        printf("2-block内部: %ld",static_local_num);
     } class]);
     
+    // __NSGlobalBlock__：使用全局变量
+    NSLog(@"3. 使用全局变量 %@",[^{
+        printf("3-block内部: %ld",globalInt);
+    } class]);
     
-    //__NSMallocBlock__: 未使用局部变量，且，对block进行了copy (引用计数+1)
-    void(^block1)(void) = ^{
-        NSLog(@"__NSGlobalBlock__");
-    };
-    NSLog(@"block1: %@",[block1 class]);
+    // __NSGlobalBlock__：使用全局静态变量
+    NSLog(@"4. 使用全局静态变量 %@",[^{
+        printf("4-block内部: %ld",static_globalInt);
+    } class]);
 
- 
-    
-      // 使用全局变量，并对block进行copy(引用计数+1)
-      void(^block3)(void) = ^{
-          NSLog(@"__NSGlobalBlock__: %ld",globalInt);
-          
-      };
-      NSLog(@"block6: %@",[block3 class]);
+   
 }
 
 /// 堆区block
 - (void)testBlockType_Malloc {
-    NSInteger num = 3;
-    __block NSInteger mm = 8;
-    NSLog(@"A: %p-%p:%ld",&num,&mm,mm);
-    //__NSMallocBlock__： 使用局部变量，且，对block进行copy
+    //__NSMallocBlock__: 未使用局部变量，ARC下编译器自动对block进行了copy (引用计数+1)
        void(^block1)(void) = ^{
-           NSLog(@"B1: %p-%p:%ld",&num,&mm,mm);
+           NSLog(@"1-block内部");
+       };
+       NSLog(@"1. 未使用局部变量,ARC下编译器自动对block进行了copy: %@",[block1 class]);
 
-           NSLog(@"__NSMallocBlock__: %ld",num);
-           mm = 9;
-           NSLog(@"B2: %p-%p:%ld",&num,&mm,mm);
 
+    // 使用全局变量，并对block进行copy(引用计数+1)
+    void(^block2)(void) = ^{
+        NSLog(@"2-block内部: %ld",globalInt);
+        
+    };
+    NSLog(@"2. 使用全局变量，ARC下编译器自动对block进行了copy: %@",[block2 class]);
+    
+    //__NSMallocBlock__： 使用局部变量，ARC下编译器自动对block进行了copy
+    NSInteger num = 3;
+    __block NSInteger blockNum = 8;
+    NSMutableArray *arra = [NSMutableArray array];
+
+    void(^block3)(void) = ^{
+           NSLog(@"3-block内部 start");
+           NSLog(@"num:（%p, %ld)",&num,num);
+           NSLog(@"blockNum:（%p, %ld)",&blockNum,blockNum);
+           NSLog(@"array:（%p, %@)",&arra,arra);
+           NSLog(@"修改blockNum,arry的值");
+           blockNum = 333;
+           [arra addObjectsFromArray:@[@"11",@"22",@"53"]];
+           NSLog(@"3-block内部 end:（num:%p, %ld)(blockNum:%p, %ld）",&num,num,&blockNum,blockNum);
            
        };
-    NSLog(@"C: %p-%p:%ld",&num,&mm,mm);
-    mm = 11;
-    NSLog(@"D: %p-%p:%ld",&num,&mm,mm);
+    NSLog(@"3. 使用局部变量，ARC下编译器自动对block进行了copy: %@",[block3 class]);
+    NSLog(@"3.1 start:（num:%p, %ld),(blockNum:%p, %ld）,array:（%p, %@)",&num,num,&blockNum,blockNum,&arra,arra);
+    NSLog(@"3.2 : 修改arry的值");
+    arra = [@[@"strig"] mutableCopy];
+    NSLog(@"3.3 :（num:%p, %ld),(blockNum:%p, %ld）,array:（%p, %@)",&num,num,&blockNum,blockNum,&arra,arra);
 
-    NSLog(@"block1: %@ -- ",[block1 class]);
-    block1();
-    NSLog(@"E: %p-%p:%ld",&num,&mm,mm);
+    NSLog(@"3.4 : 修改blockNum,arry的值");
+    blockNum = 11;
+    [arra addObjectsFromArray:@[@"1",@"2",@"3"]];
+    NSLog(@"3.5 :（num:%p, %ld),(blockNum:%p, %ld）,array:（%p, %@)",&num,num,&blockNum,blockNum,&arra,arra);
 
+    
+    NSLog(@"3.4 : 执行block");
+    block3();
+    NSLog(@"3.5 end:（num:%p, %ld),(blockNum:%p, %ld）,array:（%p, %@)",&num,num,&blockNum,blockNum,&arra,arra);
 }
 
 /// 栈区block
@@ -105,24 +138,28 @@ NSMutableArray *globalArray; //全局数组
     NSMutableArray *arra = [NSMutableArray array];
 
     // __NSStackBlock__：使用局部变量，且未对block进行copy
-      NSLog(@"block1 %@",[^{
-          printf("__NSStackBlock__: %ld",num);
+      NSLog(@"1. 使用局部变量,且未对block进行copy: %@",[^{
+          printf("1-block内部 局部（auto）变量: %ld",num);
       } class]);
     
   
+
     __block NSInteger x = 8;// 将局部变量转换为一个struct
-    NSLog(@"block3前：(num:%p,x:%p,array:%p)",&num,&x,arra);
     __weak void (^block3)(void) = ^{
         x = 7; // block 内捕获的是struct的引用
-        NSLog(@"block3内：(num:%p,x:%p,array:%p)",&num,&x,arra);
+        NSLog(@"2-block内：(num:%p,x:%p,array:%p)",&num,&x,arra);
     };
+    NSLog(@"2. 使用局部变量,且对block声明为弱引用 class:%@",[block3 class]);
+    NSLog(@"******block执行前*******");
+    NSLog(@"2.1: (num:%p,x:%p,array:%p)",&num,&x,arra);
+
     block3();
-    NSLog(@"block3后：(num:%p,x:%p,array:%p)",&num,&x,arra);
-    NSLog(@"x=%@",@(x));
-    NSLog(@"block3 class:%@",[block3 class]);
-    NSLog(@"block_c class:%@ -- %@",[block3 copy],block3);
+    NSLog(@"2.2: (num:%p,x:%p,array:%p)",&num,&x,arra);
+    NSLog(@"2.3: x=%@",@(x));
+    NSLog(@"2.4: block:%@",block3);
+    NSLog(@"2.5: copy:%@",[block3 copy]);
     
-    NSLog(@"类型： %@",^{
+    NSLog(@"3. 空block： %@",^{
         
     });
  

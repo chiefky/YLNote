@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0B6AEF8E7A635C12F7790699 /* Pods_YLNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB38DB6FF77CE573EFE28BF7 /* Pods_YLNote.framework */; };
 		3F0514EF978C06B29C253C2F /* Pods_YLNote_YLNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398CC9979A9A24DD695FE563 /* Pods_YLNote_YLNoteUITests.framework */; };
+		543580F6259DBBEF00452D76 /* YLLogMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 543580F5259DBBEF00452D76 /* YLLogMessageManager.m */; };
+		543580F925A2F48A00452D76 /* SwapNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543580F825A2F48A00452D76 /* SwapNumbers.swift */; };
+		543580FF25A3198A00452D76 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543580FE25A3198A00452D76 /* BinaryTree.swift */; };
+		5435810125A37EC500452D76 /* YLAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5435810025A37EC500452D76 /* YLAlgorithmViewController.swift */; };
 		548FF88A24A87F3200ECF7F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF88924A87F3200ECF7F0 /* AppDelegate.m */; };
 		548FF89324A87F3200ECF7F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89124A87F3200ECF7F0 /* Main.storyboard */; };
 		548FF89524A87F3300ECF7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89424A87F3300ECF7F0 /* Assets.xcassets */; };
@@ -20,11 +24,10 @@
 		54A35D3D24CED6B20076DFB6 /* DoublePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3324CED6B10076DFB6 /* DoublePointer.swift */; };
 		54A35D3E24CED6B20076DFB6 /* YLTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3424CED6B10076DFB6 /* YLTreeNode.swift */; };
 		54A35D3F24CED6B20076DFB6 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3524CED6B10076DFB6 /* Recursion.swift */; };
-		54A35D4024CED6B20076DFB6 /* YLAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3624CED6B10076DFB6 /* YLAlgorithmViewController.swift */; };
+		54A35D4024CED6B20076DFB6 /* YLAlgorithmViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3624CED6B10076DFB6 /* YLAlgorithmViewController2.swift */; };
 		54A35D4124CED6B20076DFB6 /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3724CED6B10076DFB6 /* BinarySearch.swift */; };
 		54A35D4224CED6B20076DFB6 /* Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3824CED6B10076DFB6 /* Iterator.swift */; };
 		54A35D4324CED6B20076DFB6 /* Iteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3924CED6B10076DFB6 /* Iteration.swift */; };
-		54A35D4424CED6B20076DFB6 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3A24CED6B10076DFB6 /* BinaryTree.swift */; };
 		54A35D4524CED6B20076DFB6 /* YLSwiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3B24CED6B10076DFB6 /* YLSwiftViewController.m */; };
 		54A35D4E24CED6FE0076DFB6 /* YLSDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D4924CED6FE0076DFB6 /* YLSDViewController.m */; };
 		54A35D4F24CED6FE0076DFB6 /* YLSDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D4B24CED6FE0076DFB6 /* YLSDTableViewCell.m */; };
@@ -81,6 +84,12 @@
 /* Begin PBXFileReference section */
 		273E8879D27684D3E9614103 /* Pods-YLNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNote.debug.xcconfig"; path = "Target Support Files/Pods-YLNote/Pods-YLNote.debug.xcconfig"; sourceTree = "<group>"; };
 		398CC9979A9A24DD695FE563 /* Pods_YLNote_YLNoteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YLNote_YLNoteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		543580F4259DBBEF00452D76 /* YLLogMessageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLLogMessageManager.h; sourceTree = "<group>"; };
+		543580F5259DBBEF00452D76 /* YLLogMessageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLLogMessageManager.m; sourceTree = "<group>"; };
+		543580F825A2F48A00452D76 /* SwapNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapNumbers.swift; sourceTree = "<group>"; };
+		543580FD25A3063600452D76 /* DataStructure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DataStructure.md; sourceTree = "<group>"; };
+		543580FE25A3198A00452D76 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		5435810025A37EC500452D76 /* YLAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAlgorithmViewController.swift; sourceTree = "<group>"; };
 		548FF88524A87F3200ECF7F0 /* YLNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		548FF88824A87F3200ECF7F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		548FF88924A87F3200ECF7F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,11 +110,10 @@
 		54A35D3324CED6B10076DFB6 /* DoublePointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoublePointer.swift; sourceTree = "<group>"; };
 		54A35D3424CED6B10076DFB6 /* YLTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLTreeNode.swift; sourceTree = "<group>"; };
 		54A35D3524CED6B10076DFB6 /* Recursion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
-		54A35D3624CED6B10076DFB6 /* YLAlgorithmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLAlgorithmViewController.swift; sourceTree = "<group>"; };
+		54A35D3624CED6B10076DFB6 /* YLAlgorithmViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLAlgorithmViewController2.swift; sourceTree = "<group>"; };
 		54A35D3724CED6B10076DFB6 /* BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		54A35D3824CED6B10076DFB6 /* Iterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iterator.swift; sourceTree = "<group>"; };
 		54A35D3924CED6B10076DFB6 /* Iteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iteration.swift; sourceTree = "<group>"; };
-		54A35D3A24CED6B10076DFB6 /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		54A35D3B24CED6B10076DFB6 /* YLSwiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLSwiftViewController.m; sourceTree = "<group>"; };
 		54A35D4824CED6FE0076DFB6 /* YLSDTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLSDTableViewCell.h; sourceTree = "<group>"; };
 		54A35D4924CED6FE0076DFB6 /* YLSDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLSDViewController.m; sourceTree = "<group>"; };
@@ -220,6 +228,32 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		543580F3259DBBAB00452D76 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				543580F4259DBBEF00452D76 /* YLLogMessageManager.h */,
+				543580F5259DBBEF00452D76 /* YLLogMessageManager.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		543580F725A2F46600452D76 /* 算法 */ = {
+			isa = PBXGroup;
+			children = (
+				543580F825A2F48A00452D76 /* SwapNumbers.swift */,
+				543580FE25A3198A00452D76 /* BinaryTree.swift */,
+			);
+			path = "算法";
+			sourceTree = "<group>";
+		};
+		543580FC25A305CB00452D76 /* 数据结构 */ = {
+			isa = PBXGroup;
+			children = (
+				543580FD25A3063600452D76 /* DataStructure.md */,
+			);
+			path = "数据结构";
+			sourceTree = "<group>";
+		};
 		548FF87C24A87F3200ECF7F0 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +279,9 @@
 		548FF88724A87F3200ECF7F0 /* YLNote */ = {
 			isa = PBXGroup;
 			children = (
+				543580FC25A305CB00452D76 /* 数据结构 */,
+				543580F725A2F46600452D76 /* 算法 */,
+				543580F3259DBBAB00452D76 /* Log */,
 				54A35D9C24CED7A30076DFB6 /* 多线程 */,
 				54A35D5124CED7290076DFB6 /* Note */,
 				54A35D8324CED7290076DFB6 /* Theme */,
@@ -287,8 +324,9 @@
 			isa = PBXGroup;
 			children = (
 				54A35D3024CED6B10076DFB6 /* YLSwiftViewController.h */,
-				54A35D3124CED6B10076DFB6 /* 算法 */,
 				54A35D3B24CED6B10076DFB6 /* YLSwiftViewController.m */,
+				5435810025A37EC500452D76 /* YLAlgorithmViewController.swift */,
+				54A35D3124CED6B10076DFB6 /* 算法 */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -300,11 +338,10 @@
 				54A35D3324CED6B10076DFB6 /* DoublePointer.swift */,
 				54A35D3424CED6B10076DFB6 /* YLTreeNode.swift */,
 				54A35D3524CED6B10076DFB6 /* Recursion.swift */,
-				54A35D3624CED6B10076DFB6 /* YLAlgorithmViewController.swift */,
+				54A35D3624CED6B10076DFB6 /* YLAlgorithmViewController2.swift */,
 				54A35D3724CED6B10076DFB6 /* BinarySearch.swift */,
 				54A35D3824CED6B10076DFB6 /* Iterator.swift */,
 				54A35D3924CED6B10076DFB6 /* Iteration.swift */,
-				54A35D3A24CED6B10076DFB6 /* BinaryTree.swift */,
 			);
 			path = "算法";
 			sourceTree = "<group>";
@@ -750,8 +787,9 @@
 				54A35D8824CED7290076DFB6 /* YLKVOViewController.m in Sources */,
 				54A35DAF24CED7A30076DFB6 /* YLGCDViewController.m in Sources */,
 				54A35D4324CED6B20076DFB6 /* Iteration.swift in Sources */,
-				54A35D4024CED6B20076DFB6 /* YLAlgorithmViewController.swift in Sources */,
+				54A35D4024CED6B20076DFB6 /* YLAlgorithmViewController2.swift in Sources */,
 				54A35D9524CED7290076DFB6 /* YLClass+Test.m in Sources */,
+				5435810125A37EC500452D76 /* YLAlgorithmViewController.swift in Sources */,
 				54A35D8924CED7290076DFB6 /* YLNotifiTestViewController.m in Sources */,
 				54A35D8724CED7290076DFB6 /* YLStudent.m in Sources */,
 				54A35DB224CF216F0076DFB6 /* YLTestViewController.m in Sources */,
@@ -759,6 +797,7 @@
 				54A35D4524CED6B20076DFB6 /* YLSwiftViewController.m in Sources */,
 				54A6517C24D4305C005FB5AD /* YLUserViewController.m in Sources */,
 				54A35D9A24CED7290076DFB6 /* YLTheme.swift in Sources */,
+				543580F925A2F48A00452D76 /* SwapNumbers.swift in Sources */,
 				54A35D3F24CED6B20076DFB6 /* Recursion.swift in Sources */,
 				54A35DAA24CED7A30076DFB6 /* YLNSOperationTest.m in Sources */,
 				54A35D9424CED7290076DFB6 /* YLNotesViewController.m in Sources */,
@@ -775,14 +814,15 @@
 				54A35D9B24CED7290076DFB6 /* Test.swift in Sources */,
 				54A35DAE24CED7A30076DFB6 /* YLThread.m in Sources */,
 				54A35D4F24CED6FE0076DFB6 /* YLSDTableViewCell.m in Sources */,
-				54A35D4424CED6B20076DFB6 /* BinaryTree.swift in Sources */,
 				54A35D3C24CED6B20076DFB6 /* Stack.swift in Sources */,
 				54A35DAD24CED7A30076DFB6 /* YLThreadSync.m in Sources */,
+				543580F6259DBBEF00452D76 /* YLLogMessageManager.m in Sources */,
 				54A35D4224CED6B20076DFB6 /* Iterator.swift in Sources */,
 				54A35DAB24CED7A30076DFB6 /* YLOperation.m in Sources */,
 				54A35D3D24CED6B20076DFB6 /* DoublePointer.swift in Sources */,
 				54A35D8624CED7290076DFB6 /* YLHitTestViewController.m in Sources */,
 				54A35D4E24CED6FE0076DFB6 /* YLSDViewController.m in Sources */,
+				543580FF25A3198A00452D76 /* BinaryTree.swift in Sources */,
 				548FF89B24A87F3300ECF7F0 /* main.m in Sources */,
 				54A35D9124CED7290076DFB6 /* YLFather+Job.m in Sources */,
 				54A35D9624CED7290076DFB6 /* YLClass.m in Sources */,

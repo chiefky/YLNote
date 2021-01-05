@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YLAlgorithmViewController: UIViewController {
+class YLAlgorithmViewController2: UIViewController {
 
     let cellIdentifier = "cellIdentifier"
     
@@ -117,7 +117,7 @@ class YLAlgorithmViewController: UIViewController {
     
 }
 
-extension YLAlgorithmViewController: UITableViewDataSource,UITableViewDelegate {
+extension YLAlgorithmViewController2: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let allSecValues = Array(keywords.values)
         let secItems = allSecValues[indexPath.section]

@@ -8,7 +8,8 @@ target 'YLNote' do
   pod 'Masonry'
   pod 'MJExtension'
   pod 'NullSafe'
-  
+#  pod 'HDWindowLogger'
+
   target 'YLNoteTests' do
     inherit! :search_paths
     # Pods for testing
