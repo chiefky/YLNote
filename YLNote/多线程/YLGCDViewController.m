@@ -21,10 +21,8 @@
 //@property (atomic, copy) NSString *atomicStr;
 @property (nonatomic, strong) NSLock *lock;
 @property (nonatomic, copy) NSString *atomicStr;
-
-
-
-
+@property (nonatomic,strong)NSMutableDictionary *groupFoldStatus;
+@property (nonatomic,strong)NSMutableDictionary *groupHeaderImages;
 
 @end
 
@@ -43,7 +41,7 @@
 }
 
 - (void)setupUI {
-    self.table = [[UITableView alloc] initWithFrame:YLSCREEN_BOUNDS style:UITableViewStylePlain];
+    self.table = [[UITableView alloc] initWithFrame:YLSCREEN_BOUNDS style:UITableViewStyleGrouped];
     self.table.delegate = self;
     self.table.dataSource = self;
     [self.view addSubview:self.table];
@@ -53,6 +51,46 @@
 
 - (void)logNum:(NSString *)numStr {
     NSLog(@"任务%@：---%@",numStr,[NSThread currentThread]);
+}
+
+#pragma mark - 点击分组信息
+- (void)clickGroupAction:(UIButton *)button{
+    NSLog(@"clicked %ld",button.tag);
+    
+    int groupIndex = (int)button.tag;
+    int flag = 0;//用来控制重新实例化按钮
+    
+    if([self.groupFoldStatus[@(groupIndex)] intValue]==0){
+        [self.groupFoldStatus setObject:@(1) forKey:@(groupIndex)];
+        flag = 0;
+    }else{
+        [self.groupFoldStatus setObject:@(0) forKey:@(groupIndex)];
+        flag = 1;
+        
+    }
+    
+    
+    //刷新当前的分组
+    NSIndexSet * set=[[NSIndexSet alloc] initWithIndex:groupIndex];
+    [self.table reloadSections:set withRowAnimation:UITableViewRowAnimationNone];
+    
+    UIImageView * imageView = self.groupHeaderImages[@(groupIndex)];
+    
+    //模拟动画，每次都重新刷新了因此仿射变化恢复到原始状态了
+    if(flag){
+        imageView.transform=CGAffineTransformRotate(imageView.transform, M_PI_2);
+    }
+    //
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        if(flag==0){
+            imageView.transform=CGAffineTransformMakeRotation( M_PI_2);
+        }else{
+            imageView.transform=CGAffineTransformMakeRotation(0);
+            
+        }
+    }];
+    
 }
 
 #pragma mark - NSOperation
@@ -500,10 +538,49 @@
     return self.keywords.count;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSDictionary *sectionDict = self.keywords[section];
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40.0f;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    return sectionDict.allKeys.lastObject;
+    NSDictionary *dic = self.keywords[section];
+    NSString * title = dic.allKeys.lastObject;
+    
+    //    //1 自定义头部
+    UIView * view = [[UIView alloc] init];
+    view.backgroundColor=[UIColor whiteColor];
+//    view.layer.borderWidth = 1;
+//    view.layer.borderColor = [UIColor whiteColor].CGColor;
+    //
+    // 2 增加按钮
+    UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    button.titleEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 0);
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:15.0];
+    button.frame = CGRectMake(0, 0, YLSCREEN_WIDTH, 40);
+    button.tag = section;
+    [button addTarget:self action:@selector(clickGroupAction:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:button];
+    
+    //3 添加左边的箭头
+    UIImageView * imageView=[[UIImageView alloc] initWithFrame:CGRectMake(5, 20.0-15.0/2, 15, 15)];
+    imageView.image=[UIImage imageNamed:@"arrow"];
+    imageView.tag=101;
+    [button addSubview:imageView];
+    [self.groupHeaderImages setObject:imageView forKey:@(section)];
+    
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView * view=[[UIView alloc] init];
+    view.backgroundColor = [UIColor redColor];
+    return view;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -531,10 +608,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSDictionary *sectionDict = self.keywords[section];
-    NSArray *sectionArry = sectionDict.allValues.lastObject;
-    return sectionArry.count;
-    
+     int flag = [self.groupFoldStatus[@(section)] intValue];
+       NSDictionary *sectionDict = self.keywords[section];
+       NSArray * sectionArry =  sectionDict.allValues.lastObject;
+       if(flag) {
+           return sectionArry.count;
+       } else {
+           return 0;
+       }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -556,6 +637,20 @@
 }
 
 #pragma mark - lazy
+- (NSMutableDictionary *)groupHeaderImages {
+    if (!_groupHeaderImages) {
+        _groupHeaderImages = [NSMutableDictionary dictionary];
+    }
+    return _groupHeaderImages;
+}
+
+- (NSMutableDictionary *)groupFoldStatus {
+    if (!_groupFoldStatus) {
+        _groupFoldStatus = [NSMutableDictionary dictionary];
+    }
+    return _groupFoldStatus;
+}
+
 - (NSArray *)keywords {
     return @[
         @{
