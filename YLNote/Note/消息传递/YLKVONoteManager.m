@@ -9,10 +9,25 @@
 #import "YLKVONoteManager.h"
 
 @implementation YLKVONoteManager
+//+ (NSDictionary *)allNotes {
+//    return  @{
+//        @"group":@"KVO",
+//        @"questions":@[@"testIsa_swizzing:isa指针换"]
+//    };
+//}
+
 + (NSDictionary *)allNotes {
-    return  @{
+    return @{
         @"group":@"KVO",
-        @"methods":@[@"testIsa_swizzing:isa指针换"]
+        @"questions":
+            @[
+                @{
+                    @"description":@"isa指针换",
+                    @"answer":@"testRunloop_timrt",
+                    @"class": NSStringFromClass(self),
+                    @"type": @(0)
+                }
+            ]
     };
 }
 @end

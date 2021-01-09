@@ -139,7 +139,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int flag = [self.foldStatus[@(section)] intValue];
     NSDictionary *sectionDict = self.keywords[section];
-    NSArray * sectionArry = sectionDict[@"methods"];
+    NSArray * sectionArry = sectionDict[@"question"];
     if(flag) {
         return sectionArry.count;
     } else {
@@ -158,7 +158,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (cell) {
                NSDictionary *sectionDict = self.keywords[indexPath.section];
-              NSArray *sectionArry = sectionDict[@"methods"];
+              NSArray *sectionArry = sectionDict[@"question"];
 
 //                      NSArray *sectionArry = sectionDict.allValues.lastObject;
 //                      NSString *titleValue = sectionArry[indexPath.row];
@@ -185,7 +185,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *sectionDict = self.keywords[indexPath.section];
-    NSArray *sectionArry = sectionDict[@"methods"];
+    NSArray *sectionArry = sectionDict[@"question"];
     NSString *method = sectionArry[indexPath.row];
     NSArray *selectorTitles = [method componentsSeparatedByString:@":"];
     NSString *title = selectorTitles.firstObject;
@@ -211,20 +211,20 @@
     return @[
         @{
             @"group":@"数字交换",
-            @"methods":@[
+            @"questions":@[
                     @"使用临时变量:swapNumbersWithTemp",
                     @"使用四则运算:swapNumbersWithArithmetic",
                     @"使用异或运算:swapNumbersWithXOR"]
         },
         @{
             @"group":@"求二叉树深度",
-            @"methods":@[
+            @"questions":@[
                     @"1",
                     @"2"]
         },
         @{
             @"group":@"二叉树遍历",
-            @"methods":@[
+            @"questions":@[
                     @"1",
                     @"2"]
         }

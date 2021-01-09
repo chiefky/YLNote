@@ -19,21 +19,34 @@
     return instance;
 }
 
+//+ (NSDictionary *)allNotes {
+//    return         @{
+//        @"group":@"UIKit",
+//        @"questions":@[
+//                @"UIView 和 CALayer 是什么关系",
+//                @"Bounds 和 Frame 的区别",
+//                @"setNeedsDisplay 和 layoutIfNeeded 两者是什么关系",
+//                @"谈谈对UIResponder的理解",
+//                @"loadView的作用",
+//                @"使用 drawRect有什么影响",
+//                @"keyWindow 和 delegate的window有何区别"
+//        ]
+//    };
+//}
+
 + (NSDictionary *)allNotes {
-    return         @{
+    return @{
         @"group":@"UIKit",
-        @"methods":@[
-                @"UIView 和 CALayer 是什么关系",
-                @"Bounds 和 Frame 的区别",
-                @"setNeedsDisplay 和 layoutIfNeeded 两者是什么关系",
-                @"谈谈对UIResponder的理解",
-                @"loadView的作用",
-                @"使用 drawRect有什么影响",
-                @"keyWindow 和 delegate的window有何区别"
-        ]
+        @"questions":
+            @[
+                @{
+                    @"description":@"isa指针换",
+                    @"answer":@"testRunloop_timrt",
+                    @"class": NSStringFromClass(self),
+                    @"type": @(0)
+                }
+            ]
     };
 }
-
-
 
 @end

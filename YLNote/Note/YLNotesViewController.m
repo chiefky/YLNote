@@ -486,7 +486,7 @@
     [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     button.titleEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 0);
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:15.0];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:16.0];
     button.frame = CGRectMake(0, 0, YLSCREEN_WIDTH, 40);
     button.tag = section;
     [button addTarget:self action:@selector(clickGroupAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -516,27 +516,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (cell) {
         NSDictionary *sectionDict = self.keywords[indexPath.section];
-        NSArray * sectionArry = sectionDict[@"methods"];
-        NSString *title = sectionArry[indexPath.row];
-        cell.textLabel.text = title;
-        cell.textLabel.font = [UIFont systemFontOfSize:12.0];
+        NSArray * questions = sectionDict[@"questions"];
+        NSDictionary *question = questions[indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row + 1,question[@"description"]];;
         cell.textLabel.textColor = [UIColor grayColor];
-//        NSString *titleValue = sectionArry[indexPath.row];
-//        NSArray *titleValues = [titleValue componentsSeparatedByString:@":"];
-//
-//        NSDictionary *attrMethod = @{ NSForegroundColorAttributeName : [UIColor redColor] ,
-//                                      NSFontAttributeName: [UIFont systemFontOfSize:12]
-//        };
-//        NSDictionary *attrTitle = @{ NSForegroundColorAttributeName : [UIColor blackColor] ,
-//                                     NSFontAttributeName: [UIFont systemFontOfSize:12]
-//        };
-//        NSString * methodTitle = titleValues.firstObject;
-//        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:titleValue];
-//        [attrStr addAttributes:attrMethod range:NSMakeRange(0, methodTitle.length + 1)];
-//        [attrStr addAttributes:attrTitle range:NSMakeRange(methodTitle.length + 1, titleValue.length - methodTitle.length - 1)];
-//
-//        cell.textLabel.attributedText = attrStr;
-        
+        cell.textLabel.font = [UIFont systemFontOfSize:13.0];
     }
     return cell;
 }
@@ -544,34 +528,29 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int flag = [self.groupFoldStatus[@(section)] intValue];
     NSDictionary *sectionDict = self.keywords[section];
-    NSArray * sectionArry =  sectionDict[@"methods"];
+    NSArray * questions =  sectionDict[@"questions"];
     if(flag) {
-        return sectionArry.count;
+        return questions.count;
     } else {
         return 0;
     }
-    
-    //    NSDictionary *sectionDict = self.keywords[section];
-    //    NSArray *sectionArry = sectionDict.allValues.lastObject;
-    //    return sectionArry.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSDictionary *sectionDict = self.keywords[indexPath.section];
-    NSArray * sectionArry =  sectionDict[@"methods"];
-    NSString *value = sectionArry[indexPath.row];
-    NSArray *selectorTitle = [value componentsSeparatedByString:@":"];
-    NSString *selectorStr = selectorTitle.firstObject;
-    SEL selector = NSSelectorFromString(selectorStr);
-    
+    NSArray * questions =  sectionDict[@"questions"];
+    NSDictionary *question = questions[indexPath.row];
+    NSString *method = question[@"answer"]; //selectorTitle.firstObject;
+    SEL selector = NSSelectorFromString(method);
+    Class cls = NSClassFromString(question[@"class"]);
     //检查是否有"myMethod"这个名称的方法
-    if ([self respondsToSelector:selector]) {
+    if ([cls respondsToSelector:selector]) {
         //           [self performSelector:sel];
-        if (!self) { return; }
-        IMP imp = [self methodForSelector:selector];
+        if (!cls) { return; }
+        IMP imp = [cls methodForSelector:selector];
         void (*func)(id, SEL) = (void *)imp;
-        func(self, selector);
+        func(cls, selector);
     }
 }
 
@@ -602,11 +581,13 @@
         [YLAutoReleaseNoteManager allNotes],
         [YLGCDNoteManager allNotes],
         [YLKVONoteManager allNotes],
-        @{
-            @"group":@"NSNotificationCenter",
-            @"methods":@[
-                    @"testNotification:手动实现NSNotificationCenter",
-                    @"testNotification_block:使用block接口"]},
+        
+//        @{
+//            @"group":@"NSNotificationCenter",
+//            @"questions":@[
+//                    @"testNotification:手动实现NSNotificationCenter",
+//                    @"testNotification_block:使用block接口"]},
+        
         //------- 1.8 to do -----
         [YLBlockNoteManager allNotes],
         [YLRunLoopNoteManager allNotes],

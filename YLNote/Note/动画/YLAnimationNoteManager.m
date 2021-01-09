@@ -10,12 +10,28 @@
 
 @implementation YLAnimationNoteManager
 
+//+ (NSDictionary *)allNotes {
+//    return  @{
+//        @"group":@"动画",
+//        @"questions":@[
+//                @"testRunloop_timrt:isa指针换"]
+//        
+//    };
+//}
+
 + (NSDictionary *)allNotes {
-    return  @{
+    return @{
         @"group":@"动画",
-        @"methods":@[
-                @"testRunloop_timrt:isa指针换"]
-        
+        @"questions":
+            @[
+                @{
+                    @"description":@"isa指针换",
+                    @"answer":@"testRunloop_timrt",
+                    @"class": NSStringFromClass(self),
+                    @"type": @(0)
+                }
+            ]
     };
 }
+
 @end

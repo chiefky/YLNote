@@ -10,18 +10,33 @@
 
 @implementation YLAutoReleaseNoteManager
 
+//+ (NSDictionary *)allNotes {
+//    return @{
+//        @"group":@"内存管理",
+//        @"questions":@[
+//                @"AutoReleasePool:",
+//                @"testAutorelease:",
+//                @"testCopy:copy关键字",
+//                @"testStrong:strong关键字",
+//                @"testWeak:weak关键字",
+//                @"test_unsafe_unretained:unsafe_unretained关键字",
+//                @"testMemory:内存泄漏",
+//                @"testAssociate:Autorelease"]
+//    };
+//}
 + (NSDictionary *)allNotes {
     return @{
         @"group":@"内存管理",
-        @"methods":@[
-                @"AutoReleasePool:",
-                @"testAutorelease:",
-                @"testCopy:copy关键字",
-                @"testStrong:strong关键字",
-                @"testWeak:weak关键字",
-                @"test_unsafe_unretained:unsafe_unretained关键字",
-                @"testMemory:内存泄漏",
-                @"testAssociate:Autorelease"]
+        @"questions":
+            @[
+                @{
+                    @"description":@"isa指针换",
+                    @"answer":@"testRunloop_timrt",
+                    @"class": NSStringFromClass(self),
+                    @"type": @(0)
+                }
+            ]
     };
 }
+
 @end

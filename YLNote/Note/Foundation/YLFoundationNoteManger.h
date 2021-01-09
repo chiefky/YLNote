@@ -14,6 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nonnull instancetype)sharedManager;
 + (NSDictionary *)allNotes;
+
++ (void)testSafeArray;
+
++ (void)testAutomicProperty;
++ (void)testNonAutomicProperty;
+
++ (void)testIsEqualAndHash;
++ (void)testHashFunction;
 @end
 
 NS_ASSUME_NONNULL_END

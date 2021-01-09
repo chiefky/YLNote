@@ -9,12 +9,21 @@
 #import "YLRunLoopNoteManager.h"
 
 @implementation YLRunLoopNoteManager
+
 + (NSDictionary *)allNotes {
-    return  @{
+    return @{
         @"group":@"Runloop",
-        @"methods":@[
-                @"testRunloop_timrt:isa指针换"]
-        
+        @"questions":
+            @[
+                @{
+                    @"description":@"isa指针换",
+                    @"answer":@"testRunloop_timrt",
+                    @"class": NSStringFromClass(self),
+                    @"type": @(0)
+                }
+            ]
     };
 }
+
+
 @end

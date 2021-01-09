@@ -9,14 +9,29 @@
 #import "YLBlockNoteManager.h"
 
 @implementation YLBlockNoteManager
+//+ (NSDictionary *)allNotes {
+//    return
+//  @{
+//      @"group":@"block",
+//      @"questions":@[
+//              @"testBlock:Block相关"]
+//
+//  };
+//
+//}
+
 + (NSDictionary *)allNotes {
-    return
-  @{
-      @"group":@"block",
-      @"methods":@[
-              @"testBlock:Block相关"]
-      
-  };
-    
+    return @{
+        @"group":@"block",
+        @"questions":
+            @[
+                @{
+                    @"description":@"Block相关",
+                    @"answer":@"testBlock",
+                    @"class": NSStringFromClass(self),
+                    @"type": @(0)
+                }
+            ]
+    };
 }
 @end
