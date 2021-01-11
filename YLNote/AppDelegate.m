@@ -43,7 +43,6 @@
     YLAlgorithmViewController *swiftVC = [[YLAlgorithmViewController alloc] init];
     swiftVC.title = @"Swift";
     swiftVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Swift" image:[UIImage imageNamed:@"swift"] tag:3];
-//
     UINavigationController *naviSwift = [[UINavigationController alloc] initWithRootViewController:swiftVC];
 
     YLFlutterViewController *flutterVC = [[YLFlutterViewController alloc] init];
@@ -53,7 +52,7 @@
 
     YLUserViewController *userVC = [[YLUserViewController alloc] init];
      userVC.title = @"User";
-    userVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"User" image:[UIImage imageNamed:@"Flutter"] tag:5];
+    userVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"User" image:[UIImage imageNamed:@"user"] tag:5];
     UINavigationController *naviUser = [[UINavigationController alloc] initWithRootViewController:userVC];
 
      UITabBarController *tab = [[UITabBarController alloc] init];

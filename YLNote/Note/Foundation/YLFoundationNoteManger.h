@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (nonnull instancetype)sharedManager;
 + (NSDictionary *)allNotes;
 
++ (void)testStaticValue;
+
 + (void)testSafeArray;
 
 + (void)testAutomicProperty;

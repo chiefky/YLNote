@@ -27,6 +27,10 @@
 		5435813525A5D4A100452D76 /* YLSafeMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435813425A5D4A100452D76 /* YLSafeMutableArray.m */; };
 		5435813925A72F2900452D76 /* YLDinosaur.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435813825A72F2900452D76 /* YLDinosaur.m */; };
 		5435813C25A9674700452D76 /* YLPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435813B25A9674700452D76 /* YLPerson.m */; };
+		5435813F25A9A15D00452D76 /* YLEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435813E25A9A15D00452D76 /* YLEditor.m */; };
+		5435814225A9A22D00452D76 /* YLArticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435814125A9A22C00452D76 /* YLArticalViewController.m */; };
+		5435814625A9B8AC00452D76 /* YLWindowLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435814525A9B8AC00452D76 /* YLWindowLoader.m */; };
+		5435814A25AC3D8D00452D76 /* YLAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435814925AC3D8D00452D76 /* YLAlertManager.m */; };
 		548FF88A24A87F3200ECF7F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF88924A87F3200ECF7F0 /* AppDelegate.m */; };
 		548FF89324A87F3200ECF7F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89124A87F3200ECF7F0 /* Main.storyboard */; };
 		548FF89524A87F3300ECF7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89424A87F3300ECF7F0 /* Assets.xcassets */; };
@@ -131,6 +135,14 @@
 		5435813825A72F2900452D76 /* YLDinosaur.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDinosaur.m; sourceTree = "<group>"; };
 		5435813A25A9674700452D76 /* YLPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLPerson.h; sourceTree = "<group>"; };
 		5435813B25A9674700452D76 /* YLPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLPerson.m; sourceTree = "<group>"; };
+		5435813D25A9A15D00452D76 /* YLEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLEditor.h; sourceTree = "<group>"; };
+		5435813E25A9A15D00452D76 /* YLEditor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLEditor.m; sourceTree = "<group>"; };
+		5435814025A9A22C00452D76 /* YLArticalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLArticalViewController.h; sourceTree = "<group>"; };
+		5435814125A9A22C00452D76 /* YLArticalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLArticalViewController.m; sourceTree = "<group>"; };
+		5435814425A9B8AC00452D76 /* YLWindowLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLWindowLoader.h; sourceTree = "<group>"; };
+		5435814525A9B8AC00452D76 /* YLWindowLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLWindowLoader.m; sourceTree = "<group>"; };
+		5435814825AC3D8D00452D76 /* YLAlertManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAlertManager.h; sourceTree = "<group>"; };
+		5435814925AC3D8D00452D76 /* YLAlertManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAlertManager.m; sourceTree = "<group>"; };
 		548FF88524A87F3200ECF7F0 /* YLNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		548FF88824A87F3200ECF7F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		548FF88924A87F3200ECF7F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -299,6 +311,11 @@
 		5435810225A4CF2600452D76 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				5435814725AC3CFB00452D76 /* Uitility */,
+				5435813D25A9A15D00452D76 /* YLEditor.h */,
+				5435813E25A9A15D00452D76 /* YLEditor.m */,
+				5435814025A9A22C00452D76 /* YLArticalViewController.h */,
+				5435814125A9A22C00452D76 /* YLArticalViewController.m */,
 				5435813625A72E7200452D76 /* SafeAutomic */,
 				5435810E25A4D14800452D76 /* YLFoundationNoteManger.h */,
 				5435810425A4CF8700452D76 /* YLFoundationNoteManger.m */,
@@ -310,6 +327,7 @@
 		5435810625A4D05C00452D76 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				5435814325A9B75B00452D76 /* WindowLoader */,
 				5435811925A4D67000452D76 /* YLUIKitNoteManger.h */,
 				5435811825A4D67000452D76 /* YLUIKitNoteManger.m */,
 			);
@@ -382,6 +400,24 @@
 				5435813825A72F2900452D76 /* YLDinosaur.m */,
 			);
 			name = SafeAutomic;
+			sourceTree = "<group>";
+		};
+		5435814325A9B75B00452D76 /* WindowLoader */ = {
+			isa = PBXGroup;
+			children = (
+				5435814425A9B8AC00452D76 /* YLWindowLoader.h */,
+				5435814525A9B8AC00452D76 /* YLWindowLoader.m */,
+			);
+			path = WindowLoader;
+			sourceTree = "<group>";
+		};
+		5435814725AC3CFB00452D76 /* Uitility */ = {
+			isa = PBXGroup;
+			children = (
+				5435814825AC3D8D00452D76 /* YLAlertManager.h */,
+				5435814925AC3D8D00452D76 /* YLAlertManager.m */,
+			);
+			path = Uitility;
 			sourceTree = "<group>";
 		};
 		548FF87C24A87F3200ECF7F0 = {
@@ -931,11 +967,13 @@
 				54A35D8F24CED7290076DFB6 /* YLSon.m in Sources */,
 				54A35D5024CED6FE0076DFB6 /* YLFlutterViewController.m in Sources */,
 				54A35D4124CED6B20076DFB6 /* BinarySearch.swift in Sources */,
+				5435814A25AC3D8D00452D76 /* YLAlertManager.m in Sources */,
 				54A35DAC24CED7A30076DFB6 /* YLGCDTest.m in Sources */,
 				54A35D8824CED7290076DFB6 /* YLKVOViewController.m in Sources */,
 				54A35DAF24CED7A30076DFB6 /* YLGCDViewController.m in Sources */,
 				54A35D4324CED6B20076DFB6 /* Iteration.swift in Sources */,
 				54A35D4024CED6B20076DFB6 /* YLAlgorithmViewController2.swift in Sources */,
+				5435814225A9A22D00452D76 /* YLArticalViewController.m in Sources */,
 				54A35D9524CED7290076DFB6 /* YLClass+Test.m in Sources */,
 				5435810125A37EC500452D76 /* YLAlgorithmViewController.swift in Sources */,
 				5435813525A5D4A100452D76 /* YLSafeMutableArray.m in Sources */,
@@ -978,12 +1016,14 @@
 				54A35D4224CED6B20076DFB6 /* Iterator.swift in Sources */,
 				54A35DAB24CED7A30076DFB6 /* YLOperation.m in Sources */,
 				5435812125A4D96B00452D76 /* YLKVONoteManager.m in Sources */,
+				5435813F25A9A15D00452D76 /* YLEditor.m in Sources */,
 				54A35D3D24CED6B20076DFB6 /* DoublePointer.swift in Sources */,
 				54A35D8624CED7290076DFB6 /* YLHitTestViewController.m in Sources */,
 				5435811425A4D23D00452D76 /* test.swift in Sources */,
 				54A35D4E24CED6FE0076DFB6 /* YLSDViewController.m in Sources */,
 				543580FF25A3198A00452D76 /* BinaryTree.swift in Sources */,
 				548FF89B24A87F3300ECF7F0 /* main.m in Sources */,
+				5435814625A9B8AC00452D76 /* YLWindowLoader.m in Sources */,
 				54A35D9124CED7290076DFB6 /* YLFather+Job.m in Sources */,
 				5435813C25A9674700452D76 /* YLPerson.m in Sources */,
 				54A35D9624CED7290076DFB6 /* YLClass.m in Sources */,

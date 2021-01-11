@@ -8,6 +8,8 @@ target 'YLNote' do
   pod 'Masonry'
   pod 'MJExtension'
   pod 'NullSafe'
+  pod 'RZRichTextView'
+
 #  pod 'HDWindowLogger'
 
   target 'YLNoteTests' do
