@@ -1,8 +1,8 @@
 //
-//  YLEditor.h
+//  YLFileManager.h
 //  YLNote
 //
-//  Created by tangh on 2021/1/9.
+//  Created by tangh on 2021/1/11.
 //  Copyright © 2021 tangh. All rights reserved.
 //
 
@@ -10,8 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YLEditor : NSObject
+@interface YLFileManager : NSObject
 
++ (NSDictionary *)readLocalFileWithName:(NSString *)name;
 @end
 
 NS_ASSUME_NONNULL_END

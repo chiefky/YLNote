@@ -75,9 +75,7 @@
     
 }
 #pragma mark - 点击分组信息
-- (void)clickGroupAction:(UIButton *)button{
-    NSLog(@"clicked %ld",button.tag);
-    
+- (void)clickGroupAction:(UIButton *)button{    
     int groupIndex = (int)button.tag;
     int flag = 0;//用来控制重新实例化按钮
     

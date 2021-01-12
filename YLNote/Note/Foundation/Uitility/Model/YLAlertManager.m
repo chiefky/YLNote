@@ -18,7 +18,7 @@
 /// @param action 按钮标题
 /// @param handler 确认按钮响应事件
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)content actionTitle:(NSString *)action handler:(void (^)(UIAlertAction * _Nonnull))handler {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:content preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:content preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:action style:UIAlertActionStyleCancel handler:handler];
     [alert addAction:cancelAction];
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];

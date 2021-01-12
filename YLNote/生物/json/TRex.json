@@ -1,0 +1,37 @@
+
+{
+    "organismId":"90029939939",
+    "name":"霸王龙",
+    "levSpecices":{
+        "speciesId":"889928288",
+        "name":"XX种",
+        "levGenus":{
+            "genusId":"7906074884",
+            "name":"暴龙属",
+            "levFamily":{
+                "familyId":"6000040050",
+                "name":"暴龙科",
+                "levOrder":{
+                    "orderId":"50000005",
+                    "name":"蜥臀目",
+                    "levClass":{
+                        "classId":"40000",
+                        "name":"蜥形纲",
+                        "levPhylum":{
+                            "phylumId":"3000300",
+                            "name":"脊索动物门",
+                            "levKingdom":{
+                                "kingdomId":"20020002",
+                                "name":"动物界",
+                                "levDomain":{
+                                    "domainId":"100x9091",
+                                    "name":"真核域"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

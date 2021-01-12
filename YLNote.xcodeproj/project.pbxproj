@@ -13,7 +13,6 @@
 		543580F925A2F48A00452D76 /* SwapNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543580F825A2F48A00452D76 /* SwapNumbers.swift */; };
 		543580FF25A3198A00452D76 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543580FE25A3198A00452D76 /* BinaryTree.swift */; };
 		5435810125A37EC500452D76 /* YLAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5435810025A37EC500452D76 /* YLAlgorithmViewController.swift */; };
-		5435810525A4CF8700452D76 /* YLFoundationNoteManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435810425A4CF8700452D76 /* YLFoundationNoteManger.m */; };
 		5435811225A4D18900452D76 /* YLWebNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435811125A4D18900452D76 /* YLWebNoteManager.m */; };
 		5435811425A4D23D00452D76 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5435811325A4D23D00452D76 /* test.swift */; };
 		5435811725A4D4D600452D76 /* YLRuntimeNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435811625A4D4D600452D76 /* YLRuntimeNoteManager.m */; };
@@ -24,13 +23,25 @@
 		5435812825A4DB2C00452D76 /* YLAnimationNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435812725A4DB2C00452D76 /* YLAnimationNoteManager.m */; };
 		5435812C25A4DB6B00452D76 /* YLRunLoopNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435812B25A4DB6B00452D76 /* YLRunLoopNoteManager.m */; };
 		5435812F25A4DC8C00452D76 /* YLBlockNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435812E25A4DC8C00452D76 /* YLBlockNoteManager.m */; };
-		5435813525A5D4A100452D76 /* YLSafeMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435813425A5D4A100452D76 /* YLSafeMutableArray.m */; };
-		5435813925A72F2900452D76 /* YLDinosaur.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435813825A72F2900452D76 /* YLDinosaur.m */; };
-		5435813C25A9674700452D76 /* YLPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435813B25A9674700452D76 /* YLPerson.m */; };
-		5435813F25A9A15D00452D76 /* YLEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435813E25A9A15D00452D76 /* YLEditor.m */; };
-		5435814225A9A22D00452D76 /* YLArticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435814125A9A22C00452D76 /* YLArticalViewController.m */; };
 		5435814625A9B8AC00452D76 /* YLWindowLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435814525A9B8AC00452D76 /* YLWindowLoader.m */; };
-		5435814A25AC3D8D00452D76 /* YLAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435814925AC3D8D00452D76 /* YLAlertManager.m */; };
+		5435814E25AC49EA00452D76 /* YLOrganism.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435814D25AC49EA00452D76 /* YLOrganism.m */; };
+		5435816525AC631600452D76 /* YLDinodsaul.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435816425AC631600452D76 /* YLDinodsaul.m */; };
+		5435817225AC715300452D76 /* YLClassificationLevelDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435817125AC715300452D76 /* YLClassificationLevelDomain.m */; };
+		5435817525AC716900452D76 /* YLClassificationLevelKingdom.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435817425AC716900452D76 /* YLClassificationLevelKingdom.m */; };
+		5435817825AD6E9F00452D76 /* YLClassificationLevelPhylum.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435817725AD6E9F00452D76 /* YLClassificationLevelPhylum.m */; };
+		5435817B25AD6F0A00452D76 /* YLClassificationLevelSuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435817A25AD6F0A00452D76 /* YLClassificationLevelSuperClass.m */; };
+		5435817E25AD6F6500452D76 /* YLClassificationLevelSuperGenus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435817D25AD6F6500452D76 /* YLClassificationLevelSuperGenus.m */; };
+		5435818125AD6FF800452D76 /* YLClassificationLevelSuperOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435818025AD6FF700452D76 /* YLClassificationLevelSuperOrder.m */; };
+		5435818425AD704100452D76 /* YLClassificationLevelSuperFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435818325AD704100452D76 /* YLClassificationLevelSuperFamily.m */; };
+		5435818725AD70C600452D76 /* YLClassificationLevelSuperSpecies.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435818625AD70C600452D76 /* YLClassificationLevelSuperSpecies.m */; };
+		5435818A25AD8F1A00452D76 /* TRex.json in Resources */ = {isa = PBXBuildFile; fileRef = 5435818925AD8F1A00452D76 /* TRex.json */; };
+		5435819525AD94F200452D76 /* YLAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435818F25AD94F200452D76 /* YLAlertManager.m */; };
+		5435819625AD94F200452D76 /* YLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435819325AD94F200452D76 /* YLFileManager.m */; };
+		5435819B25AD952200452D76 /* YLPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435819725AD952200452D76 /* YLPerson.m */; };
+		543581A725AD953E00452D76 /* YLFoundationNoteManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 543581A125AD953E00452D76 /* YLFoundationNoteManger.m */; };
+		543581A825AD953E00452D76 /* YLArticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 543581A325AD953E00452D76 /* YLArticalViewController.m */; };
+		543581AB25AD95FF00452D76 /* YLLStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 543581AA25AD95FF00452D76 /* YLLStudent.m */; };
+		543581B225ADBA4200452D76 /* YLSafeMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 543581B125ADBA4200452D76 /* YLSafeMutableArray.m */; };
 		548FF88A24A87F3200ECF7F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF88924A87F3200ECF7F0 /* AppDelegate.m */; };
 		548FF89324A87F3200ECF7F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89124A87F3200ECF7F0 /* Main.storyboard */; };
 		548FF89524A87F3300ECF7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548FF89424A87F3300ECF7F0 /* Assets.xcassets */; };
@@ -108,8 +119,6 @@
 		543580FD25A3063600452D76 /* DataStructure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DataStructure.md; sourceTree = "<group>"; };
 		543580FE25A3198A00452D76 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		5435810025A37EC500452D76 /* YLAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAlgorithmViewController.swift; sourceTree = "<group>"; };
-		5435810425A4CF8700452D76 /* YLFoundationNoteManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLFoundationNoteManger.m; sourceTree = "<group>"; };
-		5435810E25A4D14800452D76 /* YLFoundationNoteManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLFoundationNoteManger.h; sourceTree = "<group>"; };
 		5435811025A4D18900452D76 /* YLWebNoteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLWebNoteManager.h; sourceTree = "<group>"; };
 		5435811125A4D18900452D76 /* YLWebNoteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLWebNoteManager.m; sourceTree = "<group>"; };
 		5435811325A4D23D00452D76 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
@@ -129,20 +138,43 @@
 		5435812B25A4DB6B00452D76 /* YLRunLoopNoteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLRunLoopNoteManager.m; sourceTree = "<group>"; };
 		5435812D25A4DC8C00452D76 /* YLBlockNoteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLBlockNoteManager.h; sourceTree = "<group>"; };
 		5435812E25A4DC8C00452D76 /* YLBlockNoteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLBlockNoteManager.m; sourceTree = "<group>"; };
-		5435813325A5D4A100452D76 /* YLSafeMutableArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLSafeMutableArray.h; sourceTree = "<group>"; };
-		5435813425A5D4A100452D76 /* YLSafeMutableArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLSafeMutableArray.m; sourceTree = "<group>"; };
-		5435813725A72F2900452D76 /* YLDinosaur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDinosaur.h; sourceTree = "<group>"; };
-		5435813825A72F2900452D76 /* YLDinosaur.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDinosaur.m; sourceTree = "<group>"; };
-		5435813A25A9674700452D76 /* YLPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLPerson.h; sourceTree = "<group>"; };
-		5435813B25A9674700452D76 /* YLPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLPerson.m; sourceTree = "<group>"; };
-		5435813D25A9A15D00452D76 /* YLEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLEditor.h; sourceTree = "<group>"; };
-		5435813E25A9A15D00452D76 /* YLEditor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLEditor.m; sourceTree = "<group>"; };
-		5435814025A9A22C00452D76 /* YLArticalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLArticalViewController.h; sourceTree = "<group>"; };
-		5435814125A9A22C00452D76 /* YLArticalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLArticalViewController.m; sourceTree = "<group>"; };
 		5435814425A9B8AC00452D76 /* YLWindowLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLWindowLoader.h; sourceTree = "<group>"; };
 		5435814525A9B8AC00452D76 /* YLWindowLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLWindowLoader.m; sourceTree = "<group>"; };
-		5435814825AC3D8D00452D76 /* YLAlertManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAlertManager.h; sourceTree = "<group>"; };
-		5435814925AC3D8D00452D76 /* YLAlertManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAlertManager.m; sourceTree = "<group>"; };
+		5435814C25AC49EA00452D76 /* YLOrganism.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLOrganism.h; sourceTree = "<group>"; };
+		5435814D25AC49EA00452D76 /* YLOrganism.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLOrganism.m; sourceTree = "<group>"; };
+		5435816325AC631600452D76 /* YLDinodsaul.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDinodsaul.h; sourceTree = "<group>"; };
+		5435816425AC631600452D76 /* YLDinodsaul.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDinodsaul.m; sourceTree = "<group>"; };
+		5435817125AC715300452D76 /* YLClassificationLevelDomain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClassificationLevelDomain.m; sourceTree = "<group>"; };
+		5435817325AC716900452D76 /* YLClassificationLevelKingdom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClassificationLevelKingdom.h; sourceTree = "<group>"; };
+		5435817425AC716900452D76 /* YLClassificationLevelKingdom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClassificationLevelKingdom.m; sourceTree = "<group>"; };
+		5435817625AD6E9F00452D76 /* YLClassificationLevelPhylum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClassificationLevelPhylum.h; sourceTree = "<group>"; };
+		5435817725AD6E9F00452D76 /* YLClassificationLevelPhylum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClassificationLevelPhylum.m; sourceTree = "<group>"; };
+		5435817925AD6F0A00452D76 /* YLClassificationLevelSuperClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClassificationLevelSuperClass.h; sourceTree = "<group>"; };
+		5435817A25AD6F0A00452D76 /* YLClassificationLevelSuperClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClassificationLevelSuperClass.m; sourceTree = "<group>"; };
+		5435817C25AD6F6500452D76 /* YLClassificationLevelSuperGenus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClassificationLevelSuperGenus.h; sourceTree = "<group>"; };
+		5435817D25AD6F6500452D76 /* YLClassificationLevelSuperGenus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClassificationLevelSuperGenus.m; sourceTree = "<group>"; };
+		5435817F25AD6FF700452D76 /* YLClassificationLevelSuperOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClassificationLevelSuperOrder.h; sourceTree = "<group>"; };
+		5435818025AD6FF700452D76 /* YLClassificationLevelSuperOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClassificationLevelSuperOrder.m; sourceTree = "<group>"; };
+		5435818225AD704100452D76 /* YLClassificationLevelSuperFamily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClassificationLevelSuperFamily.h; sourceTree = "<group>"; };
+		5435818325AD704100452D76 /* YLClassificationLevelSuperFamily.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClassificationLevelSuperFamily.m; sourceTree = "<group>"; };
+		5435818525AD70C600452D76 /* YLClassificationLevelSuperSpecies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClassificationLevelSuperSpecies.h; sourceTree = "<group>"; };
+		5435818625AD70C600452D76 /* YLClassificationLevelSuperSpecies.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClassificationLevelSuperSpecies.m; sourceTree = "<group>"; };
+		5435818825AD77AF00452D76 /* YLClassificationLevelDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLClassificationLevelDomain.h; sourceTree = "<group>"; };
+		5435818925AD8F1A00452D76 /* TRex.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TRex.json; sourceTree = "<group>"; };
+		5435818F25AD94F200452D76 /* YLAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLAlertManager.m; path = YLNote/Note/Foundation/Uitility/Model/YLAlertManager.m; sourceTree = SOURCE_ROOT; };
+		5435819125AD94F200452D76 /* YLAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLAlertManager.h; path = YLNote/Note/Foundation/Uitility/Model/YLAlertManager.h; sourceTree = SOURCE_ROOT; };
+		5435819225AD94F200452D76 /* YLFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLFileManager.h; path = YLNote/Note/Foundation/Uitility/Model/YLFileManager.h; sourceTree = SOURCE_ROOT; };
+		5435819325AD94F200452D76 /* YLFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLFileManager.m; path = YLNote/Note/Foundation/Uitility/Model/YLFileManager.m; sourceTree = SOURCE_ROOT; };
+		5435819725AD952200452D76 /* YLPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLPerson.m; path = YLNote/Models/YLPerson.m; sourceTree = SOURCE_ROOT; };
+		5435819A25AD952200452D76 /* YLPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLPerson.h; path = YLNote/Models/YLPerson.h; sourceTree = SOURCE_ROOT; };
+		543581A125AD953E00452D76 /* YLFoundationNoteManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLFoundationNoteManger.m; path = YLNote/Foundation/YLFoundationNoteManger.m; sourceTree = SOURCE_ROOT; };
+		543581A325AD953E00452D76 /* YLArticalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLArticalViewController.m; path = YLNote/Note/Foundation/Uitility/Controller/YLArticalViewController.m; sourceTree = SOURCE_ROOT; };
+		543581A425AD953E00452D76 /* YLArticalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLArticalViewController.h; path = YLNote/Note/Foundation/Uitility/Controller/YLArticalViewController.h; sourceTree = SOURCE_ROOT; };
+		543581A525AD953E00452D76 /* YLFoundationNoteManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLFoundationNoteManger.h; path = YLNote/Foundation/YLFoundationNoteManger.h; sourceTree = SOURCE_ROOT; };
+		543581A925AD95FF00452D76 /* YLLStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLLStudent.h; path = YLNote/Models/YLLStudent.h; sourceTree = SOURCE_ROOT; };
+		543581AA25AD95FF00452D76 /* YLLStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLLStudent.m; path = YLNote/Models/YLLStudent.m; sourceTree = SOURCE_ROOT; };
+		543581B025ADBA4200452D76 /* YLSafeMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLSafeMutableArray.h; sourceTree = "<group>"; };
+		543581B125ADBA4200452D76 /* YLSafeMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLSafeMutableArray.m; sourceTree = "<group>"; };
 		548FF88524A87F3200ECF7F0 /* YLNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		548FF88824A87F3200ECF7F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		548FF88924A87F3200ECF7F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -311,15 +343,10 @@
 		5435810225A4CF2600452D76 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				543581A525AD953E00452D76 /* YLFoundationNoteManger.h */,
+				543581A125AD953E00452D76 /* YLFoundationNoteManger.m */,
+				543581AF25ADB8DC00452D76 /* DemoModels */,
 				5435814725AC3CFB00452D76 /* Uitility */,
-				5435813D25A9A15D00452D76 /* YLEditor.h */,
-				5435813E25A9A15D00452D76 /* YLEditor.m */,
-				5435814025A9A22C00452D76 /* YLArticalViewController.h */,
-				5435814125A9A22C00452D76 /* YLArticalViewController.m */,
-				5435813625A72E7200452D76 /* SafeAutomic */,
-				5435810E25A4D14800452D76 /* YLFoundationNoteManger.h */,
-				5435810425A4CF8700452D76 /* YLFoundationNoteManger.m */,
-				5435813225A5D44500452D76 /* SafeMutableArray */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -382,24 +409,16 @@
 			path = "性能优化";
 			sourceTree = "<group>";
 		};
-		5435813225A5D44500452D76 /* SafeMutableArray */ = {
+		5435813625A72E7200452D76 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5435813325A5D4A100452D76 /* YLSafeMutableArray.h */,
-				5435813425A5D4A100452D76 /* YLSafeMutableArray.m */,
+				5435819A25AD952200452D76 /* YLPerson.h */,
+				5435819725AD952200452D76 /* YLPerson.m */,
+				543581A925AD95FF00452D76 /* YLLStudent.h */,
+				543581AA25AD95FF00452D76 /* YLLStudent.m */,
 			);
-			path = SafeMutableArray;
-			sourceTree = "<group>";
-		};
-		5435813625A72E7200452D76 /* SafeAutomic */ = {
-			isa = PBXGroup;
-			children = (
-				5435813A25A9674700452D76 /* YLPerson.h */,
-				5435813B25A9674700452D76 /* YLPerson.m */,
-				5435813725A72F2900452D76 /* YLDinosaur.h */,
-				5435813825A72F2900452D76 /* YLDinosaur.m */,
-			);
-			name = SafeAutomic;
+			name = Models;
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		5435814325A9B75B00452D76 /* WindowLoader */ = {
@@ -414,10 +433,91 @@
 		5435814725AC3CFB00452D76 /* Uitility */ = {
 			isa = PBXGroup;
 			children = (
-				5435814825AC3D8D00452D76 /* YLAlertManager.h */,
-				5435814925AC3D8D00452D76 /* YLAlertManager.m */,
+				543581AE25ADB86900452D76 /* View */,
+				543581AD25ADB85F00452D76 /* Controller */,
+				543581AC25ADB85600452D76 /* Model */,
 			);
 			path = Uitility;
+			sourceTree = "<group>";
+		};
+		5435814B25AC444000452D76 /* 生物 */ = {
+			isa = PBXGroup;
+			children = (
+				5435816E25AC709800452D76 /* 分类等级 */,
+				5435816025AC624500452D76 /* json */,
+				5435814C25AC49EA00452D76 /* YLOrganism.h */,
+				5435814D25AC49EA00452D76 /* YLOrganism.m */,
+				5435816325AC631600452D76 /* YLDinodsaul.h */,
+				5435816425AC631600452D76 /* YLDinodsaul.m */,
+			);
+			path = "生物";
+			sourceTree = "<group>";
+		};
+		5435816025AC624500452D76 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				5435818925AD8F1A00452D76 /* TRex.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		5435816E25AC709800452D76 /* 分类等级 */ = {
+			isa = PBXGroup;
+			children = (
+				5435818825AD77AF00452D76 /* YLClassificationLevelDomain.h */,
+				5435817125AC715300452D76 /* YLClassificationLevelDomain.m */,
+				5435817325AC716900452D76 /* YLClassificationLevelKingdom.h */,
+				5435817425AC716900452D76 /* YLClassificationLevelKingdom.m */,
+				5435817625AD6E9F00452D76 /* YLClassificationLevelPhylum.h */,
+				5435817725AD6E9F00452D76 /* YLClassificationLevelPhylum.m */,
+				5435817925AD6F0A00452D76 /* YLClassificationLevelSuperClass.h */,
+				5435817A25AD6F0A00452D76 /* YLClassificationLevelSuperClass.m */,
+				5435817F25AD6FF700452D76 /* YLClassificationLevelSuperOrder.h */,
+				5435818025AD6FF700452D76 /* YLClassificationLevelSuperOrder.m */,
+				5435818225AD704100452D76 /* YLClassificationLevelSuperFamily.h */,
+				5435818325AD704100452D76 /* YLClassificationLevelSuperFamily.m */,
+				5435817C25AD6F6500452D76 /* YLClassificationLevelSuperGenus.h */,
+				5435817D25AD6F6500452D76 /* YLClassificationLevelSuperGenus.m */,
+				5435818525AD70C600452D76 /* YLClassificationLevelSuperSpecies.h */,
+				5435818625AD70C600452D76 /* YLClassificationLevelSuperSpecies.m */,
+			);
+			path = "分类等级";
+			sourceTree = "<group>";
+		};
+		543581AC25ADB85600452D76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5435819125AD94F200452D76 /* YLAlertManager.h */,
+				5435818F25AD94F200452D76 /* YLAlertManager.m */,
+				5435819225AD94F200452D76 /* YLFileManager.h */,
+				5435819325AD94F200452D76 /* YLFileManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		543581AD25ADB85F00452D76 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				543581A425AD953E00452D76 /* YLArticalViewController.h */,
+				543581A325AD953E00452D76 /* YLArticalViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		543581AE25ADB86900452D76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		543581AF25ADB8DC00452D76 /* DemoModels */ = {
+			isa = PBXGroup;
+			children = (
+				543581B025ADBA4200452D76 /* YLSafeMutableArray.h */,
+				543581B125ADBA4200452D76 /* YLSafeMutableArray.m */,
+			);
+			path = DemoModels;
 			sourceTree = "<group>";
 		};
 		548FF87C24A87F3200ECF7F0 = {
@@ -445,6 +545,8 @@
 		548FF88724A87F3200ECF7F0 /* YLNote */ = {
 			isa = PBXGroup;
 			children = (
+				5435813625A72E7200452D76 /* Models */,
+				5435814B25AC444000452D76 /* 生物 */,
 				543580FC25A305CB00452D76 /* 数据结构 */,
 				543580F725A2F46600452D76 /* 算法 */,
 				543580F3259DBBAB00452D76 /* Log */,
@@ -833,6 +935,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5435818A25AD8F1A00452D76 /* TRex.json in Resources */,
 				548FF89824A87F3300ECF7F0 /* LaunchScreen.storyboard in Resources */,
 				548FF89524A87F3300ECF7F0 /* Assets.xcassets in Resources */,
 				548FF89324A87F3200ECF7F0 /* Main.storyboard in Resources */,
@@ -966,66 +1069,76 @@
 			files = (
 				54A35D8F24CED7290076DFB6 /* YLSon.m in Sources */,
 				54A35D5024CED6FE0076DFB6 /* YLFlutterViewController.m in Sources */,
+				5435817525AC716900452D76 /* YLClassificationLevelKingdom.m in Sources */,
 				54A35D4124CED6B20076DFB6 /* BinarySearch.swift in Sources */,
-				5435814A25AC3D8D00452D76 /* YLAlertManager.m in Sources */,
+				543581A725AD953E00452D76 /* YLFoundationNoteManger.m in Sources */,
 				54A35DAC24CED7A30076DFB6 /* YLGCDTest.m in Sources */,
 				54A35D8824CED7290076DFB6 /* YLKVOViewController.m in Sources */,
 				54A35DAF24CED7A30076DFB6 /* YLGCDViewController.m in Sources */,
 				54A35D4324CED6B20076DFB6 /* Iteration.swift in Sources */,
 				54A35D4024CED6B20076DFB6 /* YLAlgorithmViewController2.swift in Sources */,
-				5435814225A9A22D00452D76 /* YLArticalViewController.m in Sources */,
 				54A35D9524CED7290076DFB6 /* YLClass+Test.m in Sources */,
 				5435810125A37EC500452D76 /* YLAlgorithmViewController.swift in Sources */,
-				5435813525A5D4A100452D76 /* YLSafeMutableArray.m in Sources */,
 				54A35D8924CED7290076DFB6 /* YLNotifiTestViewController.m in Sources */,
 				54A35D8724CED7290076DFB6 /* YLStudent.m in Sources */,
 				54A35DB224CF216F0076DFB6 /* YLTestViewController.m in Sources */,
 				54A35D9724CED7290076DFB6 /* YLTestAutoReleaseController.m in Sources */,
+				5435818125AD6FF800452D76 /* YLClassificationLevelSuperOrder.m in Sources */,
 				54A35D4524CED6B20076DFB6 /* YLSwiftViewController.m in Sources */,
 				5435811A25A4D67000452D76 /* YLUIKitNoteManger.m in Sources */,
 				54A6517C24D4305C005FB5AD /* YLUserViewController.m in Sources */,
 				5435811E25A4D8AC00452D76 /* YLAutoReleaseNoteManager.m in Sources */,
+				5435817B25AD6F0A00452D76 /* YLClassificationLevelSuperClass.m in Sources */,
 				54A35D9A24CED7290076DFB6 /* YLTheme.swift in Sources */,
-				5435810525A4CF8700452D76 /* YLFoundationNoteManger.m in Sources */,
+				5435817825AD6E9F00452D76 /* YLClassificationLevelPhylum.m in Sources */,
 				543580F925A2F48A00452D76 /* SwapNumbers.swift in Sources */,
 				54A35D3F24CED6B20076DFB6 /* Recursion.swift in Sources */,
 				5435812C25A4DB6B00452D76 /* YLRunLoopNoteManager.m in Sources */,
 				54A35DAA24CED7A30076DFB6 /* YLNSOperationTest.m in Sources */,
 				54A35D9424CED7290076DFB6 /* YLNotesViewController.m in Sources */,
 				548FF88A24A87F3200ECF7F0 /* AppDelegate.m in Sources */,
+				543581AB25AD95FF00452D76 /* YLLStudent.m in Sources */,
 				5435811725A4D4D600452D76 /* YLRuntimeNoteManager.m in Sources */,
 				54A6517924D43033005FB5AD /* YLUser.m in Sources */,
 				54A35D9924CED7290076DFB6 /* YLWebViewController.m in Sources */,
 				54A35D3E24CED6B20076DFB6 /* YLTreeNode.swift in Sources */,
 				54A35D9324CED7290076DFB6 /* YLLayerViewController.m in Sources */,
+				5435819625AD94F200452D76 /* YLFileManager.m in Sources */,
+				5435814E25AC49EA00452D76 /* YLOrganism.m in Sources */,
 				54A35D8B24CED7290076DFB6 /* YLNotificationCenter.m in Sources */,
+				5435816525AC631600452D76 /* YLDinodsaul.m in Sources */,
+				5435818725AD70C600452D76 /* YLClassificationLevelSuperSpecies.m in Sources */,
 				54A35D9824CED7290076DFB6 /* YLBlockViewController.m in Sources */,
 				54A35D9024CED7290076DFB6 /* YLFather.m in Sources */,
+				5435817E25AD6F6500452D76 /* YLClassificationLevelSuperGenus.m in Sources */,
 				54A35D8E24CED7290076DFB6 /* NSObject+Test.m in Sources */,
 				54A35D8A24CED7290076DFB6 /* YLNotification.m in Sources */,
+				543581A825AD953E00452D76 /* YLArticalViewController.m in Sources */,
 				5435811225A4D18900452D76 /* YLWebNoteManager.m in Sources */,
 				54A35D9B24CED7290076DFB6 /* Test.swift in Sources */,
 				5435812525A4D9DF00452D76 /* YLGCDNoteManager.m in Sources */,
-				5435813925A72F2900452D76 /* YLDinosaur.m in Sources */,
 				54A35DAE24CED7A30076DFB6 /* YLThread.m in Sources */,
+				543581B225ADBA4200452D76 /* YLSafeMutableArray.m in Sources */,
+				5435819B25AD952200452D76 /* YLPerson.m in Sources */,
 				54A35D4F24CED6FE0076DFB6 /* YLSDTableViewCell.m in Sources */,
 				54A35D3C24CED6B20076DFB6 /* Stack.swift in Sources */,
 				54A35DAD24CED7A30076DFB6 /* YLThreadSync.m in Sources */,
 				5435812F25A4DC8C00452D76 /* YLBlockNoteManager.m in Sources */,
+				5435818425AD704100452D76 /* YLClassificationLevelSuperFamily.m in Sources */,
 				543580F6259DBBEF00452D76 /* YLLogMessageManager.m in Sources */,
+				5435819525AD94F200452D76 /* YLAlertManager.m in Sources */,
 				54A35D4224CED6B20076DFB6 /* Iterator.swift in Sources */,
 				54A35DAB24CED7A30076DFB6 /* YLOperation.m in Sources */,
 				5435812125A4D96B00452D76 /* YLKVONoteManager.m in Sources */,
-				5435813F25A9A15D00452D76 /* YLEditor.m in Sources */,
 				54A35D3D24CED6B20076DFB6 /* DoublePointer.swift in Sources */,
 				54A35D8624CED7290076DFB6 /* YLHitTestViewController.m in Sources */,
 				5435811425A4D23D00452D76 /* test.swift in Sources */,
 				54A35D4E24CED6FE0076DFB6 /* YLSDViewController.m in Sources */,
+				5435817225AC715300452D76 /* YLClassificationLevelDomain.m in Sources */,
 				543580FF25A3198A00452D76 /* BinaryTree.swift in Sources */,
 				548FF89B24A87F3300ECF7F0 /* main.m in Sources */,
 				5435814625A9B8AC00452D76 /* YLWindowLoader.m in Sources */,
 				54A35D9124CED7290076DFB6 /* YLFather+Job.m in Sources */,
-				5435813C25A9674700452D76 /* YLPerson.m in Sources */,
 				54A35D9624CED7290076DFB6 /* YLClass.m in Sources */,
 				5435812825A4DB2C00452D76 /* YLAnimationNoteManager.m in Sources */,
 			);

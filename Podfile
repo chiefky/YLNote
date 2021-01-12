@@ -9,7 +9,8 @@ target 'YLNote' do
   pod 'MJExtension'
   pod 'NullSafe'
   pod 'RZRichTextView'
-
+  pod 'YYModel'
+  
 #  pod 'HDWindowLogger'
 
   target 'YLNoteTests' do

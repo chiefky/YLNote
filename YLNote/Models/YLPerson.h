@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger ageNonAuto;   //有一个nonatomic的属性,表示是非原子的
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) NSDate *birthday;
+@property (nonatomic, strong)NSDate *birthday;
+@property (nonatomic, assign) BOOL gender; // 0: 男，1：女
 
 + (instancetype)personWithName:(NSString *)name birthday:(nonnull NSDate *)birthday;
 

@@ -19,6 +19,7 @@ PODS:
     - SDWebImage/Core (= 5.8.1)
   - SDWebImage/Core (5.8.1)
   - TZImagePickerController (3.5.8)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - JSPatch
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - NullSafe
   - RZRichTextView
   - SDWebImage
+  - YYModel
 
 SPEC REPOS:
   trunk:
@@ -38,6 +40,7 @@ SPEC REPOS:
     - RZRichTextView
     - SDWebImage
     - TZImagePickerController
+    - YYModel
 
 SPEC CHECKSUMS:
   JSPatch: 02cfed591cb907bbfe80a346666e5a35fc2d349d
@@ -48,7 +51,8 @@ SPEC CHECKSUMS:
   RZRichTextView: f17f9fe7e60983090893d1585a429af1a92d40e2
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   TZImagePickerController: 7fd9702897ef8c0b7c951e5463f4bcf398296f9e
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 656ba0e7d6b1e707f08203680c65264760509bac
+PODFILE CHECKSUM: b225eeb559dda63f992e0f98c48e80783e8b6e00
 
 COCOAPODS: 1.8.4

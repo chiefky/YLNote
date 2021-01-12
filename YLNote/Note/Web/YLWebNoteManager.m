@@ -40,13 +40,25 @@
         @"questions":
             @[
                 @{
-                    @"description":@"isa指针换",
-                    @"answer":@"testRunloop_timrt",
+                    @"description":@"JS 和 OC 互相调用的几种方式",
+                    @"answer":@"testJSBridgeOC",
                     @"class": NSStringFromClass(self),
                     @"type": @(0)
-                }
+                },
+                @{
+                                  @"description":@"使用 WKWedView 时遇到过哪些问题",
+                                  @"answer":@"testWKWebViewCookie",
+                                  @"class": NSStringFromClass(self),
+                                  @"type": @(0)
+                              }
             ]
     };
 }
++ (void)testJSBridgeOC {
+    
+}
 
++ (void)testWKWebViewCookie {
+    
+}
 @end

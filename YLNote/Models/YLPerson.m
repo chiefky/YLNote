@@ -14,6 +14,7 @@
     YLPerson *person = [[YLPerson alloc] init];
     person.name = name;
     person.birthday = birthday;
+    person.gender = 0;
     return person;
 }
 
@@ -23,6 +24,7 @@
     YLPerson *person = [[[self class] alloc] init]; // 注意此处是【self class】
     person.name = self.name;
     person.birthday = self.birthday;
+    person.gender = self.gender;
     return person;
 }
 #pragma mark - hash方法重写
@@ -57,8 +59,9 @@
     
     BOOL equalName = (!self.name && !person.name) || [self.name isEqualToString:person.name];
     BOOL equalBirthday = (!self.birthday && !person.birthday) || [self.birthday isEqualToDate:person.birthday];
-    
-    return equalName && equalBirthday ;
+    BOOL equalGender = self.gender == person.gender;
+
+    return equalName && equalBirthday && equalGender;
 }
 
 

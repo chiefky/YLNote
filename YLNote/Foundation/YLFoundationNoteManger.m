@@ -7,12 +7,15 @@
 //
 
 #import "YLFoundationNoteManger.h"
+#import <YYModel/YYModel.h>
 #import "YLArticalViewController.h"
+#import "YLFileManager.h"
 #import "YLWindowLoader.h"
 #import "YLAlertManager.h"
 #import "YLSafeMutableArray.h"
-#import "YLDinosaur.h"
 #import "YLPerson.h"
+#import "YLLStudent.h"
+#import "YLDinodsaul.h"
 
 @interface YLFoundationNoteManger ()
 
@@ -87,25 +90,25 @@
                 },
                 @{
                     @"description":@"self和super的区别",
-                    @"answer":@"",
+                    @"answer":@"testSelfAndSuper",
                     @"class": NSStringFromClass(self),
                     @"type": @(0)
                 },
                 @{
                     @"description":@"@synthesize和@dynamic分别有什么作用",
-                    @"answer":@"",
+                    @"answer":@"testSynthesizeAndDyamic",
                     @"class": NSStringFromClass(self),
                     @"type": @(0)
                 },
                 @{
-                    @"description":@"typeof 和 __typeof，typeof区别",
-                    @"answer":@"",
+                    @"description":@"typeof() 和 __typeof__()，__typeof()区别",
+                    @"answer":@"testTypeOf",
                     @"class": NSStringFromClass(self),
                     @"type": @(0)
                 },
                 @{
-                    @"description":@"struct和class的区别,值类型和引用类型",
-                    @"answer":@"",
+                    @"description":@"值类型(struct)和引用类型(class)",
+                    @"answer":@"testStructAndClass",
                     @"class": NSStringFromClass(self),
                     @"type": @(0)
                 }
@@ -117,7 +120,7 @@
 #pragma mark - nil、NILL、NSNULL区别
 + (void)testNilAndNSNull {
     NSString *msg = @"nil、NIL 可以说是等价的，都代表内存中一块空地址。\n NSNULL 代表一个指向 nil 的对象。";
-    [YLAlertManager showAlertWithTitle:nil message:msg actionTitle:@"OK" handler:nil];
+    [YLAlertManager showAlertWithTitle:@"nil、NILL、NSNULL" message:msg actionTitle:@"OK" handler:nil];
 }
 
 #pragma mark - iOS定义静态变量、静态常量、全局变量
@@ -154,7 +157,7 @@ instancetype 和 id 都是万能指针，指向对象。
  */
 + (void)testIdAndInstancetype {
     NSString *msg = @" 相同点:instancetype 和 id 都是万能指针，指向对象。\n不同点： 1.id 在编译的时候不能判断对象的真实类型，instancetype 在编译的时候可以判断对象的真实类型。\n    2.id 可以用来定义变量，可以作为返回值类型，可以作为形参类型；instancetype 只能作为返回值类型";
-    [YLAlertManager showAlertWithTitle:nil message:msg actionTitle:@"OK" handler:nil];
+    [YLAlertManager showAlertWithTitle:@"id & instancetype" message:msg actionTitle:@"OK" handler:nil];
 }
 
 #pragma mark - NSMutableArray Safe实现
@@ -245,7 +248,6 @@ instancetype 和 id 都是万能指针，指向对象。
 }
 
 #pragma mark - hash & isEqual
-
 static NSString * const kKey1 = @"kYLPerson1";
 static NSString * const kKey2 = @"kYLPerson2";
 
@@ -263,8 +265,6 @@ static NSString * const kKey2 = @"kYLPerson2";
  NSDictionary在查找key时, 也利用了key的hash值来提高查找的效率
  */
 + (void)testIsEqualAndHash {
-    //    YLDinosaur *dino1 = [YLDinosaur dinosaurWithName:@"霸王龙" superorder:@"蜥臀目" suborder:@"兽脚亚目" subsuborder:@"坚尾龙类"];
-    //    YLDinosaur *dino2 = [YLDinosaur dinosaurWithName:@"霸王龙" superorder:@"蜥臀目" suborder:@"兽脚亚目" subsuborder:@"坚尾龙类"];
     NSDate *currDate = [NSDate date];
     YLPerson *per1 = [YLPerson personWithName:kKey1 birthday:currDate];
     YLPerson *per2 = [YLPerson personWithName:kKey2 birthday:currDate];
@@ -297,9 +297,9 @@ static NSString * const kKey2 = @"kYLPerson2";
     
     NSLog(@"🦖 ------- dictionary key start ---------");
     NSMutableDictionary *dictionaryKey1 = [NSMutableDictionary dictionary];
-    [dictionaryKey1 setObject:@"YLDinosaur" forKey:per1];
+    [dictionaryKey1 setObject:@"YLPerson" forKey:per1];
     NSMutableDictionary *dictionaryKey2 = [NSMutableDictionary dictionary];
-    [dictionaryKey2 setObject:@"YLDinosaur" forKey:per2];
+    [dictionaryKey2 setObject:@"YLPerson" forKey:per2];
     NSLog(@"🦖 key end ---------");
 }
 
@@ -316,9 +316,81 @@ static NSString * const kKey2 = @"kYLPerson2";
     [set addObject:person2];
 #warning 文章中说是2
     NSLog(@"set count = %ld", set.count); // 2 ???
+}
+
+#pragma mark - self & super
+/// self和super的区别
++ (void)testSelfAndSuper_classFunc {
+    NSDictionary *plumDict = [YLFileManager readLocalFileWithName:@"TRex"];
+    YLDinodsaul *TRex = [YLDinodsaul yy_modelWithDictionary:plumDict];
+    [TRex testClass];
+}
+
+#pragma mark - @synthesize和@dynamic
+/**
+ @property有两个对应的词，一个是 @synthesize，一个是 @dynamic。如果 @synthesize和 @dynamic都没写，那么默认的就是@syntheszie var = _var;
+
+ @synthesize 的语义是如果你没有手动实现 setter 方法和 getter 方法，那么编译器会自动为你加上这两个方法。
+
+ @dynamic 告诉编译器：属性的 setter 与 getter 方法由用户自己实现，不自动生成。（当然对于 readonly 的属性只需提供 getter 即可）。假如一个属性被声明为 @dynamic var，然后你没有提供 @setter方法和 @getter 方法，编译的时候没问题，但是当程序运行到 instance.var = someVar，由于缺 setter 方法会导致程序崩溃；或者当运行到 someVar = var 时，由于缺 getter 方法同样会导致崩溃。编译时没问题，运行时才执行相应的方法，这就是所谓的动态绑定
+ */
+// @synthesize和@dynamic分别有什么作用？
++ (void)testSynthesizeAndDyamic {
+    YLLStudent *st = [[YLLStudent alloc] init];
+    // synthesize 属性(修改内部实例变量)
+    st.studentId = @"北京大学";
+    NSLog(@"studentId 1%@",st.studentId);
     
+    [st setStudentId:@"shanghai"];
+    NSLog(@"studentId 2--%@",[st studentId]);
+  
+    // dynamic 属性
+    NSLog(@"studentTel --%@",st.studentTel); // crash: -[YLLStudent studentTel]: unrecognized
+}
 
+#pragma mark - typeof 和 __typeof，typeof 的区别?
+/**
+ __typeof__() 和 __typeof() 是 C语言 的编译器特定扩展，因为标准 C 不包含这样的运算符。 标准 C 要求编译器用双下划线前缀语言扩展（这也是为什么你不应该为自己的函数，变量等做这些）
 
+ typeof() 与前两者完全相同的，只不过去掉了下划线，同时现代的编译器也可以理解。
+
+ 所以这三个意思是相同的，但没有一个是标准C，不同的编译器会按需选择符合标准的写法。
+
+ #
+ */
++ (void)testTypeOf {
+    YLLStudent *st = [[YLLStudent alloc] init];
+    st.studentId = @"1000209";
+    st.name = @"张⑨";
+    CGFloat teamCoefficient = 0.98;
+    
+// 1   __weak __typeof(self) weakSelf = self;
+// 2   __weak typeof (self) weakSelf = self;
+ 
+    __weak __typeof__(self) weakSelf = self;
+    st.bomusBlock = ^NSString * _Nullable(NSUInteger attendanceDays, double performance, double salary) {
+        CGFloat result = (attendanceDays / 30 * 0.3 + performance * 0.7) * teamCoefficient * salary;
+        [weakSelf hello];
+        
+        return [NSString stringWithFormat:@"%f",result];
+    };
+     NSLog(@"%@ 的奖金为：%@",st.name,st.bonus);
+    
+}
+
++ (void)hello {
+    NSLog(@"say hello");
+}
+
+#pragma mark - 值类型 & 引用类型
+/**
+ 类： 引用类型（位于栈上面的指针（引用）和位于堆上的实体对象）
+ 结构体：值类型（实例直接位于栈中）
+ */
+// struct和class的区别
++ (void)testStructAndClass {
+    NSString *msg = @"类： 引用类型（位于栈上面的指针（引用）和位于堆上的实体对象）\n结构体：值类型（实例直接位于栈中）";
+    [YLAlertManager showAlertWithTitle:@"值类型&引用类型" message:msg actionTitle:@"OK" handler:nil];
 }
 
 @end
