@@ -1,5 +1,5 @@
 //
-//  YLBlockNoteManager.h
+//  YLMessageNoteManager.h
 //  YLNote
 //
 //  Created by tangh on 2021/1/6.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YLBlockNoteManager : NSObject
+@interface YLMessageNoteManager : NSObject
 + (nonnull instancetype)sharedManager;
 + (NSDictionary *)allNotes;
 

@@ -7,6 +7,7 @@
 //
 
 #import "YLBlockViewController.h"
+#import "YLBlockUsageViewController.h"
 #import "YLDefaultMacro.h"
 static NSInteger static_globalInt = 10;// 静态全局变量
 static NSMutableArray *static_globalArray; //静态全局数组
@@ -285,6 +286,11 @@ void swap(int *a, int *b){
     
 }
 
+- (void)testBlock__usage {
+    YLBlockUsageViewController *usageVC = [[YLBlockUsageViewController alloc] init];
+    [self presentViewController:usageVC animated:YES completion:nil];
+}
+
 #pragma mark - delegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -334,13 +340,14 @@ void swap(int *a, int *b){
 - (NSArray *)keywords {
     return @[
         @"testBlockType_Global:全局block",
-        @"testBlockType_Malloc:堆去block",
+        @"testBlockType_Malloc:堆区block",
         @"testBlockType_Stack:栈区block",
         @"testLocalVarBlock:引用局部变量[值捕获]",
     @"testStatic_LocalVarBlock:引用(静态)局部变量[指针捕获]",
     @"testGlobalVarBlock:引用全局变量[直接使用]",
     @"testStatic_globalVarBlock:引用(静态)全局变量[直接使用]",
-    @"testBlock__block:使用__block修改局部变量值"];
+    @"testBlock__block:使用__block修改局部变量值",
+    @"testBlock__usage:Block基本用法(传值/作为参数/作为返回值等)"];
 }
 
 

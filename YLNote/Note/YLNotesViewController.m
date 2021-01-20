@@ -17,7 +17,7 @@
 #import "YLKVONoteManager.h"
 #import "YLGCDNoteManager.h"
 #import "YLAnimationNoteManager.h"
-#import "YLBlockNoteManager.h"
+#import "YLMessageNoteManager.h"
 
 #import "YLTestAutoReleaseController.h"
 #import "YLKVOViewController.h"
@@ -365,11 +365,6 @@
      */
 }
 
-#pragma mark - block
-- (void)testBlock {
-    YLBlockViewController *bkVC = [[YLBlockViewController alloc] init];
-    [self.navigationController pushViewController:bkVC animated:YES];
-}
 
 #pragma mark - 关键字
 /// 测试copy关键字
@@ -587,7 +582,7 @@
 //                    @"testNotification_block:使用block接口"]},
         
         //------- 1.8 to do -----
-        [YLBlockNoteManager allNotes],
+        [YLMessageNoteManager allNotes],
         [YLRunLoopNoteManager allNotes],
         [YLAnimationNoteManager allNotes],
     ];
