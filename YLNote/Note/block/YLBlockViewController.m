@@ -288,7 +288,8 @@ void swap(int *a, int *b){
 
 - (void)testBlock__usage {
     YLBlockUsageViewController *usageVC = [[YLBlockUsageViewController alloc] init];
-    [self presentViewController:usageVC animated:YES completion:nil];
+    usageVC.title = @"block的用法";
+    [self.navigationController pushViewController:usageVC animated:YES];
 }
 
 #pragma mark - delegate

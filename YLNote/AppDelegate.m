@@ -57,19 +57,20 @@
 
      UITabBarController *tab = [[UITabBarController alloc] init];
      tab.viewControllers = @[naviNote,naviGCD,naviSwift,naviFlutter,naviUser];
-    [UITabBar appearance].tintColor = [UIColor orangeColor];
     self.window.rootViewController = tab;
      [self.window makeKeyAndVisible];
      
+    [self appearanceSetting];
     return YES;
 }
 
-//- (void)jspatchSetting {
-//    [JPEngine startEngine];
-//    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"];
-//    NSString *script = [NSString stringWithContentsOfFile:sourcePath encoding:NSUTF8StringEncoding error:nil];
-//    [JPEngine evaluateScript:script];
-//}
+- (void)appearanceSetting {
+    [UITabBar appearance].barTintColor = [UIColor whiteColor];
+    [UITabBar appearance].tintColor = [UIColor orangeColor];
+    [UINavigationBar appearance].barTintColor = [UIColor orangeColor];
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [UINavigationBar appearance].titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:18],NSForegroundColorAttributeName:[UIColor whiteColor]};
 
+}
 
 @end

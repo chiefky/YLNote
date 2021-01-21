@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 累加器
 @interface YLIterator : NSObject
 
-@property (nonatomic,copy,readonly) NSString *result;
+@property (nonatomic,strong) NSString *result;
 
 // 返回值为block的方法，block的返回值为这个类的本身，参数为NSString
 - (YLIterator*(^)(NSString *parameter))add;

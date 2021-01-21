@@ -16,6 +16,7 @@
 #import "YLAutoReleaseNoteManager.h"
 #import "YLKVONoteManager.h"
 #import "YLGCDNoteManager.h"
+#import "YLThirdLibNoteManager.h"
 #import "YLAnimationNoteManager.h"
 #import "YLMessageNoteManager.h"
 
@@ -479,7 +480,7 @@
     [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     button.titleEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 0);
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:16.0];
+    button.titleLabel.font = [UIFont systemFontOfSize:16.0];
     button.frame = CGRectMake(0, 0, YLSCREEN_WIDTH, 40);
     button.tag = section;
     [button addTarget:self action:@selector(clickGroupAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -585,6 +586,7 @@
         [YLMessageNoteManager allNotes],
         [YLRunLoopNoteManager allNotes],
         [YLAnimationNoteManager allNotes],
+        [YLThirdLibNoteManager allNotes],
     ];
 }
 
