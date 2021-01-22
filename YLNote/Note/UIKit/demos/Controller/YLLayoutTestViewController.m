@@ -95,12 +95,13 @@
     [self.view addSubview:showUsage];
     showUsage.frame = CGRectMake(40, 540, YLSCREEN_WIDTH - 80, 40);
 
-    [self test_addSubview_c];
+    [self.view addSubview:self.cView];
+    [self.cView addSubview:self.tmpView];
 }
 
 #pragma mark - action
 - (void)changeAction {
-    [self testLayoutIfNeeded];
+    [self testFrame];
 }
 
 - (void)showAction {

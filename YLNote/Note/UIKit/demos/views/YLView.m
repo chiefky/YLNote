@@ -39,6 +39,11 @@
     [super layoutSubviews];
 }
 
+- (void)drawRect:(CGRect)rect {
+    NSLog(@"%s: [%ld]",__func__,self.tag);
+    [super drawRect:rect];
+}
+
 
 @end
 
