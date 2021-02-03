@@ -6,7 +6,7 @@
 //  Copyright © 2021 tangh. All rights reserved.
 //
 
-#import "YLTableViewController.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

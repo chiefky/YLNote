@@ -7,17 +7,10 @@
 //
 
 #import "YLAnimationNoteManager.h"
+#import "YLNote-Swift.h"
+#import "YLWindowLoader.h"
 
 @implementation YLAnimationNoteManager
-
-//+ (NSDictionary *)allNotes {
-//    return  @{
-//        @"group":@"动画",
-//        @"questions":@[
-//                @"testRunloop_timrt:isa指针换"]
-//        
-//    };
-//}
 
 + (NSDictionary *)allNotes {
     return @{
@@ -25,8 +18,8 @@
         @"questions":
             @[
                 @{
-                    @"description":@"isa指针换",
-                    @"answer":@"testRunloop_timrt",
+                    @"description":@"动画咩咩咩",
+                    @"answer":@"testAnimation",
                     @"class": NSStringFromClass(self),
                     @"type": @(0)
                 }
@@ -34,4 +27,15 @@
     };
 }
 
++ (void)testAnimation {
+    UIViewController *currentVC = [YLWindowLoader getCurrentVC];
+    YLAnimationViewController *animateVC = [[YLAnimationViewController alloc] init];
+    if (currentVC.navigationController) {
+        [currentVC.navigationController pushViewController:animateVC animated:YES];
+    } else {
+        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:currentVC];
+        [navi pushViewController:animateVC animated:YES];
+    }
+
+}
 @end

@@ -18,12 +18,16 @@
 - (YLIterator * _Nonnull (^)(NSString * _Nonnull))add {
 #warning 这里block是堆区还是栈区block，参数放在什么位置
         // 给block起个别名，然后作为返回值返回
-        YLIterator*(^aliasBlock)(NSString*) = ^(NSString *param) {
-            self.result = [self.result stringByAppendingString:param];
-            return self;
-        };
-        return aliasBlock;
-
+//        YLIterator*(^aliasBlock)(NSString*) = ^(NSString *param) {
+//            self.result = [self.result stringByAppendingString:param];
+//            return self;
+//        };
+//        return aliasBlock;
+    return ^(NSString *param) {
+        self.result = [self.result stringByAppendingString:param];
+        return self;
+    };
+    
 }
 
 - (NSString *)result {

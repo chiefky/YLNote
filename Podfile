@@ -11,7 +11,7 @@ target 'YLNote' do
   pod 'RZRichTextView'
   pod 'YYModel'
   pod 'YBImageBrowser'
-
+  pod 'SnapKit'
 #  pod 'HDWindowLogger'
 
   target 'YLNoteTests' do

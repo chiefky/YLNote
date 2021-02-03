@@ -7,12 +7,14 @@
 //
 
 #import "YLDrawrectViewController.h"
+#import "YLSetting.h"
 #import <Masonry/Masonry.h>
 #import "YLCircleView.h"
 @interface YLDrawrectViewController ()
 
 @property (nonatomic,strong)UIStepper *steper;
 @property (nonatomic,strong)YLCircleView *circleView;
+@property (nonatomic,strong)YLTouchView *touchView;
 
 @end
 
@@ -27,6 +29,7 @@
 
 #pragma mark - ui
 - (void)setupUI {
+    CGFloat topValue = self.navigationController.navigationBar.bounds.size.height + [YLSetting defaultSettingCenter].statusBarHeight;
     self.steper = [[UIStepper alloc]init];
     self.steper.value = 80;
     self.steper.stepValue = 20;
@@ -59,15 +62,36 @@
         make.height.mas_equalTo(80);
     }];
     
-//    [self changeColorFromStepper];
+    [self.view addSubview:self.touchView];
+    self.touchView.backgroundColor = [UIColor blueColor];
+    [self.touchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(topValue+20);
+        make.width.height.mas_equalTo(300);
+        make.centerX.mas_equalTo(0);
+    }];
 }
+
 #pragma mark - actions
 - (void)changeColorFromStepper {
     CGFloat valueFloat = self.steper.value;
     NSLog(@"self.steper.value:%@",@(valueFloat));
-    UIColor *color = [UIColor colorWithRed:valueFloat/255.0 green:20/255.0 blue:valueFloat/255.0 alpha:1];
+    UIColor *color = [UIColor colorWithRed:valueFloat/255.0 green:125/255.0 blue:255/255.0 alpha:1];
     self.circleView.color = color;
-    [self.circleView setNeedsDisplay];
+}
+
+#pragma mark -
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%s",__FUNCTION__);
+}
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%s",__FUNCTION__);
+}
+#pragma mark -lazy
+- (YLTouchView *)touchView {
+    if (!_touchView) {
+        _touchView = [[YLTouchView alloc] init];
+    }
+    return _touchView;
 }
 
 @end

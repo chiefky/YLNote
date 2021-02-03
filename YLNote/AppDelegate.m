@@ -33,6 +33,7 @@
     noteVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"笔记" image:[UIImage imageNamed:@"note"] tag:3];
     noteVC.title = @"笔记";
     UINavigationController *naviNote = [[UINavigationController alloc] initWithRootViewController:noteVC];
+    naviNote.navigationBar.translucent = NO;
     
     YLGCDViewController *gcdVC = [[YLGCDViewController alloc] init];
     gcdVC.title = @"多线程";
@@ -50,12 +51,19 @@
     flutterVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Flutter" image:[UIImage imageNamed:@"flutter"] tag:3];
     UINavigationController *naviFlutter = [[UINavigationController alloc] initWithRootViewController:flutterVC];
 
-    YLUserViewController *userVC = [[YLUserViewController alloc] init];
-     userVC.title = @"User";
-    userVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"User" image:[UIImage imageNamed:@"user"] tag:5];
-    UINavigationController *naviUser = [[UINavigationController alloc] initWithRootViewController:userVC];
+//    YLUserViewController *userVC = [[YLUserViewController alloc] init];
+//     userVC.title = @"User";
+//    userVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"User" image:[UIImage imageNamed:@"user"] tag:5];
+    
+    YLMemoryViewController *memVC = [[YLMemoryViewController alloc] init];
+    
+    memVC.title = @"性能";
+    memVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"性能" image:[UIImage imageNamed:@"user"] tag:5];
+
+    UINavigationController *naviUser = [[UINavigationController alloc] initWithRootViewController:memVC];
 
      UITabBarController *tab = [[UITabBarController alloc] init];
+    tab.tabBar.translucent = NO;
      tab.viewControllers = @[naviNote,naviGCD,naviSwift,naviFlutter,naviUser];
     self.window.rootViewController = tab;
      [self.window makeKeyAndVisible];
@@ -65,11 +73,11 @@
 }
 
 - (void)appearanceSetting {
-    [UITabBar appearance].barTintColor = [UIColor whiteColor];
-    [UITabBar appearance].tintColor = [UIColor orangeColor];
-    [UINavigationBar appearance].barTintColor = [UIColor orangeColor];
-    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-    [UINavigationBar appearance].titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:18],NSForegroundColorAttributeName:[UIColor whiteColor]};
+    [UITabBar appearance].barTintColor = [YLTheme defaultInstance].tabTintColor;
+    [UITabBar appearance].tintColor = [YLTheme defaultInstance].mainColor;
+    [UINavigationBar appearance].barTintColor = [YLTheme defaultInstance].mainColor ;
+    [UINavigationBar appearance].tintColor = [YLTheme defaultInstance].naviTintColor;
+    [UINavigationBar appearance].titleTextAttributes = @{NSFontAttributeName:[YLTheme defaultInstance].mainFont,NSForegroundColorAttributeName:[YLTheme defaultInstance].backColor};
 
 }
 
