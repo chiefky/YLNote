@@ -39,7 +39,7 @@ class YLDynamicAnimatorViewController: UIViewController {
     
     // MARK: - func
     func setupUI() {
-        view.backgroundColor = YLTheme.defaultInstance.backColor
+        view.backgroundColor = YLTheme.main().backColor
         title = "试验:左滑显示级联菜单"
         self.edgesForExtendedLayout = [] // 从导航栏底下开始布局
         

@@ -27,7 +27,13 @@ extension UIImage {
         UIGraphicsEndImageContext();
         return newImage;
     }
-    
-    
 }
 
+//MARK: Skin (一键换肤)
+extension UIImage {
+    static func getSkinImageFromSkinPlist(str: String) -> UIImage? {
+        let dict = YLSkinMananger.defaultManager().skinMap
+        guard let selectColor = dict["selectColor"] as? String else { return nil }
+        return UIImage(named: "\(str)_\(selectColor)")
+    }
+}

@@ -16,6 +16,7 @@
 #import "YLPerson.h"
 #import "YLLStudent.h"
 #import "YLDinodsaul.h"
+#import "YLNote-Swift.h"
 
 @interface YLFoundationNoteManger ()
 
@@ -184,6 +185,41 @@ instancetype 和 id 都是万能指针，指向对象。
     }
 }
 
++ (void)testSafeArray2 {
+      dispatch_queue_t queue = dispatch_queue_create("Dan", NULL);
+       dispatch_async(queue, ^{
+        NSLog(@"current : %@", [NSThread currentThread]);
+        dispatch_queue_t serialQueue = dispatch_queue_create("Dan-serial", DISPATCH_QUEUE_SERIAL);
+
+        dispatch_sync(serialQueue, ^{
+            // block 1
+            NSLog(@"current 1: %@", [NSThread currentThread]);
+        });
+
+        dispatch_sync(serialQueue, ^{
+            // block 2
+            NSLog(@"current 2: %@", [NSThread currentThread]);
+        });
+
+        dispatch_async(serialQueue, ^{
+            // block 3
+            NSLog(@"current 3: %@", [NSThread currentThread]);
+        });
+
+        dispatch_async(serialQueue, ^{
+            // block 4
+            NSLog(@"current 4: %@", [NSThread currentThread]);
+        });
+    });
+
+    // 结果如下
+    //    current  : <NSThread: 0x604000263440>{number = 3, name = (null)}
+    //    current 1: <NSThread: 0x604000263440>{number = 3, name = (null)}
+    //    current 2: <NSThread: 0x604000263440>{number = 3, name = (null)}
+    //    current 3: <NSThread: 0x604000263440>{number = 3, name = (null)}
+    //    current 4: <NSThread: 0x604000263440>{number = 3, name = (null)}
+
+}
 #pragma mark - atomic & nonatomic
 /// atomic 修饰的属性是绝对安全的吗
 /**
@@ -321,7 +357,7 @@ static NSString * const kKey2 = @"kYLPerson2";
 #pragma mark - self & super
 /// self和super的区别
 + (void)testSelfAndSuper_classFunc {
-    NSDictionary *plumDict = [YLFileManager readLocalFileWithName:@"TRex"];
+    NSDictionary *plumDict = [YLFileManager jsonParseWithLocalFileName:@"TRex"];
     YLDinodsaul *TRex = [YLDinodsaul yy_modelWithDictionary:plumDict];
     [TRex testClass];
 }

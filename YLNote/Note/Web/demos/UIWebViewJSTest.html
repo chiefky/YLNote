@@ -1,0 +1,79 @@
+<html>
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style>
+                                
+       .btn-block {
+            display: block;
+            height: 45px;
+            line-height: 45px;
+            margin: 10px auto;
+            color: #fff;
+            width: 80%;
+            background: #DA407A;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+               font-size: 14px;
+        }
+            
+        .content {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        </style>
+
+        <script type="text/javascript">
+            
+            /// 在Swift中通过JSContext注入模型，然后调用模型的方法(JS调用Swift方法)
+            function printInfo() {
+                WebViewJavascriptBridge.showDic({
+                        'title' : '标题',
+                        'description' : '描述',
+                        'url' : 'https://www.jianshu.com/u/50bd017bb4ba'
+                    })
+            }
+        
+        </script>
+    </header>
+    
+    <body class="main">
+        <div>
+            <h4 style="margin-bottom:0;">2.JS中调native方法:</h4>
+            <div class="btn-block" onclick="WebViewJavascriptBridge.popVC()">
+                js调用App的'popVC()'方法
+            </div>
+            
+            <div class="btn-block" onclick="WebViewJavascriptBridge.showDic({
+                    'title' : '标题',
+                    'description' : '内容',
+                    'url' : 'https://www.jianshu.com/u/50bd017bb4ba'
+                })">js调用App的'showDic()'方法</div>
+            
+            
+            <div class="btn-block" onclick="WebViewJavascriptBridge.showDialogMessage('弹窗标题', '弹窗内容')">
+                js调用App的'showAlert()'方法
+            </div>
+            
+            <h4 style="margin-bottom:0;">3.先在JS中调native方法，再由native回调到JS方法中:</h4>
+
+            <div class="btn-block" onclick="WebViewJavascriptBridge.callHandler('jsHandlerFunc')">
+                js调用App的'callHandler:^{}'方法并执行回调
+            </div>
+            <div class="content" id="js-content">此处显示回调内容</div>
+            <script type="text/javascript">
+                
+                function jsHandlerFunc(argument) {
+                    document.getElementById('js-content').innerHTML = "回调内容：我是 " + argument['name'] + ",今年 " + argument['age'] + "岁";
+                }
+            
+            </script>
+
+        
+        </div>
+
+        
+    </body>
+</html>

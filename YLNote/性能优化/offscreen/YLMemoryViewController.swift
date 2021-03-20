@@ -37,6 +37,11 @@ class YLMemoryViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc func test_addShadow() {
+        let vc = YLCollectionViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     //MARK: lazy
     lazy var datas: [[String: Any]] = {
         return [["title":"离屏渲染",
@@ -93,8 +98,8 @@ extension YLMemoryViewController: UITableViewDelegate,UITableViewDataSource {
         header.backgroundColor = #colorLiteral(red: 1, green: 0.9340484738, blue: 0.8118715882, alpha: 0.6)
         let label = UILabel()
         label.frame = CGRect(x: 10, y: 10, width: YLScreenSize.width - 20, height: 20)
-        label.textColor = YLTheme.defaultInstance.mainColor
-        label.font = YLTheme.defaultInstance.textFont
+        label.textColor = YLTheme.main().themeColor
+        label.font = YLTheme.main().titleFont
         label.text = sectionModel["title"] as? String ?? ""
         header.addSubview(label)
         return header
@@ -123,8 +128,8 @@ extension YLMemoryViewController: UITableViewDelegate,UITableViewDataSource {
             let datas = sectionModel["datas"] as? [String] else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier:cellReuseIdentifier, for: indexPath)
         cell.textLabel?.text = datas[safe: indexPath.row]
-        cell.textLabel?.textColor = YLTheme.defaultInstance.textColor
-        cell.textLabel?.font = YLTheme.defaultInstance.textFont
+        cell.textLabel?.textColor = YLTheme.main().textColor
+        cell.textLabel?.font = YLTheme.main().titleFont
         cell.selectionStyle = .none
         return cell
     }

@@ -102,7 +102,11 @@
                     @"type": @(0)
                 },
                 @{
-                    
+                    @"description": @"抹去navigationbar 返回按钮title 有几种方式",
+                    @"answer":@"testNavigationBackTitle",
+                    @"class": NSStringFromClass(self),
+                    @"type": @(0)
+
                 }
             ]
     };
@@ -112,6 +116,7 @@
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
     YLLifeCycleViewController *lifeVC = [[YLLifeCycleViewController alloc] init];
     if (currentVC.navigationController) {
+        [UIView setAnimationsEnabled:YES];
         [currentVC.navigationController pushViewController:lifeVC animated:YES];
     } else {
         UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:currentVC];
@@ -160,8 +165,7 @@
         UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:currentVC];
         [navi pushViewController:articalVC animated:YES];
         
-    }
-    
+    }    
 }
 
 /// layoutSubviews触发条件有哪些
@@ -224,6 +228,19 @@
 
 + (void)testKeyWindow {
     
+}
+
++ (void)testNavigationBackTitle {
+    
+    UIViewController *currentVC = [YLWindowLoader getCurrentVC];
+    YLEmptyViewController *emptyVC = [[YLEmptyViewController alloc] init];
+    if (currentVC.navigationController) {
+        [currentVC.navigationController pushViewController:emptyVC animated:YES];
+    } else {
+        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:currentVC];
+        [navi pushViewController:emptyVC animated:YES];
+    }
+
 }
 
 

@@ -229,7 +229,7 @@ extension YLAnimationViewController:UITableViewDelegate,UITableViewDataSource {
         label.frame = CGRect(origin: CGPoint(x: 10, y: 10), size: CGSize(width: YLScreenSize.width - 20, height: 20))
         header.addSubview(label)
         label.text = animationTitles[section]
-        label.textColor = YLTheme.defaultInstance.mainColor
+        label.textColor = YLTheme.main().themeColor
 
         return header
     }
@@ -248,8 +248,8 @@ extension YLAnimationViewController:UITableViewDelegate,UITableViewDataSource {
         let data = datas[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellReuseIdentifier, for: indexPath)
         cell.textLabel?.text = data.rawValue
-        cell.textLabel?.textColor = YLTheme.defaultInstance.subTextColor
-        cell.textLabel?.font = YLTheme.defaultInstance.subtextFont
+        cell.textLabel?.textColor = YLTheme.main().subTextColor
+        cell.textLabel?.font = YLTheme.main().textFont
         return cell
     }
     

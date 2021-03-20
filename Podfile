@@ -12,6 +12,7 @@ target 'YLNote' do
   pod 'YYModel'
   pod 'YBImageBrowser'
   pod 'SnapKit'
+  pod "EFMarkdown"
 #  pod 'HDWindowLogger'
 
   target 'YLNoteTests' do

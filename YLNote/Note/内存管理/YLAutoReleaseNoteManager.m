@@ -30,11 +30,24 @@
         @"questions":
             @[
                 @{
+                    @"description":@"内存缓存",
+                    @"answer":@"testRunloop_timrt",
+                    @"class": NSStringFromClass(self),
+                    @"type": @(0)
+                },
+                @{
+                    @"description":@"磁盘缓存",
+                    @"answer":@"testRunloop_timrt",
+                    @"class": NSStringFromClass(self),
+                    @"type": @(0)
+                },
+                @{
                     @"description":@"isa指针换",
                     @"answer":@"testRunloop_timrt",
                     @"class": NSStringFromClass(self),
                     @"type": @(0)
                 }
+
             ]
     };
 }

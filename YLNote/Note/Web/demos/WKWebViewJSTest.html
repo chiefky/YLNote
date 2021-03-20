@@ -1,0 +1,138 @@
+<html>
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style>
+            
+            .main {
+             text-align: center; //让div内部文字居中
+             background-color: #fdf;
+             border-radius: 20px;
+             width: 100%;
+             height: 100%;
+             margin: auto;
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             }
+             
+             
+            .headerArea {
+                background-color: #fdf;
+                padding-top:30px;
+            }
+            
+            .bodyArea {
+                padding-top:30px;
+            }
+            /*
+            bodyArea.menuArea {
+                margin: auto;
+                border: 3px solid #73AD21;
+            }
+            
+            bodyArea.contentArea {
+                margin: auto;
+            }*/
+            
+            img {
+                display: block;
+                margin: 0 auto;
+                padding: 20px 0;
+                
+            }
+            .button {
+                background-color: #DA407A; /* pink */
+                border: none;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                padding: 15px 32px;
+                font-size: 25px;
+                display: block;
+
+                /*
+                 display: inline-block;
+                 */
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+
+            p {
+                font-size: 25px;
+                background-color:#999999;
+                color: white;
+            }
+            
+            p.margin {
+                padding: 15px 32px;
+            }
+            
+            .button2 {width: 50%;}
+        </style>
+        <script type="text/javascript">
+            
+            //1. 使用URL拦截传参
+            function showAlertActionClicked(){
+                location.href = "js_native://alert";
+            }
+            function showAlert(content) {
+                alert('原生调用js方法 传来的参数 = ' + content);
+            }
+            //2. 使用messageHandlers传参
+            // 需要回调更新图片（JS向native传字典....）
+            function requestNativeThenCallBack() {
+                var callBack = function(data) {
+                    avatarUrl.innerHTML = data["src"];
+                    avatar.src = data["src"];
+                }
+                
+                var testData = { name:"回调函数", method:callBack.toString()} // 此处不能直接将回调函数传给iOS需要将回调函数转成字符串,其他的保持不变即可
+                // 向wkwebview发送消息注册回调函数
+                window.webkit.messageHandlers.requestNativeThenCallBack.postMessage(testData);
+            }
+        
+            // 不需要回调 （JS向native传null）
+            function requestNative() {
+                // window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
+                window.webkit.messageHandlers.requestNative.postMessage(null);
+            }
+        
+        /// 在Swift中通过JSContext注入模型，然后调用模型的方法(JS调用Swift方法)
+        function printInfo() {
+            WebViewJavascriptBridge.showDic({
+                    'title' : '标题',
+                    'description' : '描述',
+                    'url' : 'https://www.jianshu.com/u/50bd017bb4ba'
+                })
+        }
+        
+        </script>
+    </header>
+    
+    <body class="main">
+                
+        <div id="container" style="width:100%">
+
+        <div id="header" style="background-color:#FFA500;">
+            <h1 style="margin-bottom:0;">WKWebView:JS与native交互</h1></div>
+
+        <div id="menu" style="background-color:#FFD700;height:300px;width:20%;float:left;">
+        <img id="avatar" style="width:80%" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3142877760,854034002&fm=11&gp=0.jpg" alt="some_text">
+        </div>
+
+        <div id="content" style="background-color:#EEEEEE;height:300px;width:80%;float:left;">
+            <button class="button"  onclick="showAlertActionClicked()">scheme:URL拦截显示Alert</button>
+            <button class="button" onclick="requestNative()">MessageHanlder:null</button>
+            <button class="button" onclick="requestNativeThenCallBack()">MessageHanlder:回调函数</button>
+        </div>
+
+        <div id="footer" style="background-color:#ffffff;clear:both;text-align:center;">
+            <p id="avatarUrl" class="margin" style="word-break:break-word" >暂无内容</p>
+        </div>
+
+        </div>
+        
+    </body>
+</html>

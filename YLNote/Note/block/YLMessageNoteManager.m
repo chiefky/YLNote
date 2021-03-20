@@ -9,6 +9,8 @@
 #import "YLMessageNoteManager.h"
 #import "YLBlockViewController.h"
 #import "YLWindowLoader.h"
+#import "YLNote-Swift.h"
+
 
 @implementation YLMessageNoteManager
 //+ (NSDictionary *)allNotes {

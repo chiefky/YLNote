@@ -24,7 +24,7 @@ class YLDisplayLinkViewController: UIViewController {
     
     // MARK: - func
     func setupUI() {
-        view.backgroundColor = YLTheme.defaultInstance.backColor
+        view.backgroundColor = YLTheme.main().backColor
         title = "DisplayLink"
         self.edgesForExtendedLayout = [] // 从导航栏底下开始布局
         view.addSubview(self.aView)

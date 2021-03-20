@@ -6,10 +6,10 @@
 //  Copyright © 2020 tangh. All rights reserved.
 //
 
-#import "YLSwiftViewController.h"
+#import "YLOCSwiftViewController.h"
 #import "YLDefaultMacro.h"
 #import "YLNote-Swift.h"
-@interface YLSwiftViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface YLOCSwiftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView *table;
 @property (nonatomic,copy)NSArray *keywords;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation YLSwiftViewController
+@implementation YLOCSwiftViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

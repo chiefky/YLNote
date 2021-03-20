@@ -59,7 +59,7 @@ class YLAlgorithmViewController: UIViewController {
     }
     //MARK: functions
     // 练习一：交换数字
-    @objc func testSwap(index: Any) {
+    @objc func test_swap(index: Any) {
         print("响应了\(index)")
         if let index = index as? Int {
             var a = 11,b = 99
@@ -80,7 +80,7 @@ class YLAlgorithmViewController: UIViewController {
     }
     
     // 练习二：求二叉树的深度
-    @objc func testBinaryDepth(index: Any) {
+    @objc func test_binaryDepth(index: Any) {
         let rootNode = BinaryTreeNode(val: 1)
         let node1 = BinaryTreeNode(val: 3)
         let node2 = BinaryTreeNode(val: 4)
@@ -111,7 +111,7 @@ class YLAlgorithmViewController: UIViewController {
     }
     
     /// 练习三：输入一课二叉树的根结点，判断该树是不是平衡二叉树
-    @objc func testIsBalanced(index:Any) {
+    @objc func test_isBalanced(index:Any) {
         let rootNode = BinaryTreeNode.createTree(values: [5,3,4,6,7])
         let result = isBalancedByRecursion(rootNode)
         print("result: \(result)")
@@ -128,22 +128,22 @@ class YLAlgorithmViewController: UIViewController {
     
     lazy var keywords:[NSDictionary] = {
         return [["group":"数字交换",
-                 "methods":[
-                    "使用临时变量*testSwapWithIndex:",
-                    "使用四则运算*testSwapWithIndex:",
-                    "使用异或运算*testSwapWithIndex:"]
+                 "questions":[
+                    "swapWithIndex: 使用临时变量",
+                    "swapWithIndex: 使用四则运算",
+                    "swapWithIndex: 使用异或运算"]
             ],
                 [
                     "group":"求二叉树深度",
-                    "methods":[
-                        "使用递归*testBinaryDepthWithIndex:",
-                        "使用栈+DFS*testBinaryDepthWithIndex:",
-                        "使用队列+BFS*testBinaryDepthWithIndex:"]
+                    "questions":[
+                        "binaryDepthWithIndex: 使用递归",
+                        "binaryDepthWithIndex: 使用栈+DFS",
+                        "binaryDepthWithIndex: 使用队列+BFS"]
             ],
                 [
                     "group":"判断是否为平衡二叉树",
-                    "methods":[
-                        "使用递归*testIsBalancedWithIndex:"]
+                    "questions":[
+                        "isBalancedWithIndex: 使用递归"]
             ]
         ];
     }()
@@ -167,14 +167,12 @@ extension YLAlgorithmViewController: UITableViewDataSource,UITableViewDelegate {
         if let groupTitle = dic["group"] as? String {
             let view = UIView()
             view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//            view.layer.borderWidth = 0.5
-//            view.layer.borderColor = UIColor.lightGray.cgColor
             
             let butn = UIButton(type: .custom)
             butn.contentHorizontalAlignment = .left;
             butn.setTitle(groupTitle, for: .normal)
-            butn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-            butn.setTitleColor(#colorLiteral(red: 0.9999321103, green: 0.5021160245, blue: 0.004759457428, alpha: 1), for: .normal)
+            butn.titleLabel?.font = YLTheme.main().titleFont
+            butn.setTitleColor(YLTheme.main().themeColor, for: .normal)
             butn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
             butn.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40)
             butn.tag = section
@@ -200,7 +198,7 @@ extension YLAlgorithmViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let flag = self.foldStatus[section] as? Int, flag == 1 {
             let dict = self.keywords[section]
-            if let sectionArray = dict["methods"] as? NSArray {
+            if let sectionArray = dict["questions"] as? NSArray {
                 return sectionArray.count
             }
         }
@@ -210,32 +208,43 @@ extension YLAlgorithmViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sectionDict = self.keywords[indexPath.section];
-        guard let sectionArry = sectionDict["methods"] as? NSArray else { return UITableViewCell() }
+        guard let questions = sectionDict["questions"] as? [String] else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let method = sectionArry[indexPath.row] as? String;
-        let selectorTitles = method?.components(separatedBy: "*")
-        let title = selectorTitles?.first;
-        cell.textLabel?.text = title
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
-        return cell;
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sectionDict = self.keywords[indexPath.section];
-        guard let sectionArry = sectionDict["methods"] as? NSArray else { return }
-        let method = sectionArry[indexPath.row] as? String;
-        let selectorTitles = method?.components(separatedBy: "*")
-        guard let selectorStr = selectorTitles?.last else { return };
-        let selector = NSSelectorFromString(selectorStr);
-        //检查是否有"myMethod"这个名称的方法
-        if (self.responds(to: selector)) {
-            print("点击了\(indexPath.row)")
-            #warning("If I’m not mistaken, perform is an Objective-C function that takes an id for the with parameter, so Swift is wrapping the 1 in a NSValue object before calling it. What you’re getting is probably the address of that object.Try to change handler’s value parameter type to Any and see if that works better. [Note that #selector doesn’t carry type information so the compiler can’t detect type mismatches]")
-            self.perform(selector, with: indexPath.row)
+
+        if let question = questions[safe: indexPath.row] {
+            let arraySubstrings: [Substring] = question.split(separator: " ")
+            if let first = arraySubstrings.first, let last = arraySubstrings.last {
+                cell.textLabel?.text = "\(first)" + "\(indexPath.row) " + "\(last)"
+            }
+            
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
         }
         
+        return cell;
     }
-    
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let sectionDict = self.keywords[indexPath.section];
+         guard let sectionArry = sectionDict["questions"] as? [String] else { return }
+         let question = sectionArry[safe: indexPath.row];
+         let questionArry = question?.components(separatedBy: " ")
+         guard let questionFunc = questionArry?.first else { return };
+         let functionName = "test_"+questionFunc
+        
+         #warning("函数自省的方式")
+        // 第二种： 带参数🌰
+        if functionName.contains(":") {
+            let funcc = NSSelectorFromString(functionName)
+            self.perform(funcc, with: indexPath.row)
+        }
+        return;
+        
+        /// 第一种 不带参数
+        let function = Selector(functionName)
+        guard self.responds(to: function) else { return }
+        self.perform(function)
+    }
+         
+
 }
 

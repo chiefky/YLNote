@@ -23,21 +23,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBh-sb-czs" customClass="YLTestView" customModule="YLNote" customModuleProvider="target">
-                    <rect key="frame" x="24" y="77" width="82" height="84"/>
+                    <rect key="frame" x="24" y="59" width="82" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19z-yX-THF" customClass="YLTestView" customModule="YLNote" customModuleProvider="target">
-                    <rect key="frame" x="119" y="77" width="82" height="84"/>
+                    <rect key="frame" x="119" y="59" width="82" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lNr-qZ-TkG" customClass="YLTestView" customModule="YLNote" customModuleProvider="target">
-                    <rect key="frame" x="211" y="77" width="82" height="84"/>
+                    <rect key="frame" x="211" y="59" width="82" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUi-OA-erQ" customClass="YLTestView" customModule="YLNote" customModuleProvider="target">
-                    <rect key="frame" x="308" y="77" width="82" height="84"/>
+                    <rect key="frame" x="308" y="59" width="82" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>

@@ -12,7 +12,38 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YLFileManager : NSObject
 
-+ (NSDictionary *)readLocalFileWithName:(NSString *)name;
+
+@end
+
+
+@interface YLFileManager (NSBundle)
+
+
+/// 读取本地JSON文件并转Dictionary对象
+/// @param name 文件名（格式: .json）
++ (NSDictionary *)jsonParseWithLocalFileName:(NSString *)name;
+
+/// 读取本地文件并转Data对象
+/// @param name 文件名
+/// @param type 文件类型
++ (NSData *)dataWithLocalFileName:(NSString *)name type:(NSString *)type;
+
+@end
+
+@interface YLFileManager (Sandbox)
+
++ (NSString *)sandboxHomePath;
+
++ (NSString *)sandboxDoucumentPath;
+
++ (NSString *)sandboxLibraryPath;
+
++ (NSString *)sandboxCachePath;
+
++ (NSString *)sandboxTmpPath;
+
++ (NSDictionary *)dictionaryWithLocalFilePath:(NSString *)filePath;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -60,7 +60,7 @@ typedef NSString *(^BlockName_child)(NSInteger gender); // gender 可写可不�
 
 #pragma mark - data
 - (void)requestDataWithParam:(id)param page:(NSInteger)page {
-    NSDictionary *block_usageDict = [YLFileManager readLocalFileWithName:@"blockusage"]; // 后台返回json
+    NSDictionary *block_usageDict = [YLFileManager jsonParseWithLocalFileName:@"blockusage"]; // 后台返回json
      YLNetworkAPIResponse *response = [[YLNetworkAPIResponse alloc] initWithDictionary:block_usageDict];
     if (!response || ![response.data isKindOfClass:[NSDictionary class]]) {
         [YLAlertManager showToastWithMessage:YLNetworkDataformatErrorDesc senconds:3];

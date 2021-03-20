@@ -54,7 +54,6 @@
     
     self.circleView = [[YLCircleView alloc] init];
     [self.view addSubview:self.circleView];
-    
     [self.circleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.top.mas_equalTo(button.mas_bottom).offset(20);
@@ -69,6 +68,7 @@
         make.width.height.mas_equalTo(300);
         make.centerX.mas_equalTo(0);
     }];
+    
 }
 
 #pragma mark - actions

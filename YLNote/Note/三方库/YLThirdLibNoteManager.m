@@ -9,6 +9,7 @@
 #import "YLThirdLibNoteManager.h"
 #import "YLArticalViewController.h"
 #import "YLWindowLoader.h"
+#import "YLNote-Swift.h"
 
 @implementation YLThirdLibNoteManager
 

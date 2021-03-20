@@ -64,7 +64,7 @@ extension YLSlipMenuView:UITableViewDelegate,UITableViewDataSource {
         cell.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         cell.textLabel?.textAlignment = .center
         cell.textLabel?.text = datas[indexPath.row]
-        cell.textLabel?.textColor = YLTheme.defaultInstance.naviTintColor
+        cell.textLabel?.textColor = YLTheme.main().naviTintColor
         return cell
     }
     

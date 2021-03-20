@@ -235,8 +235,8 @@ extension YLLayoutViewController: UITableViewDelegate,UITableViewDataSource {
         header.backgroundColor = #colorLiteral(red: 1, green: 0.9340484738, blue: 0.8118715882, alpha: 0.6)
         let label = UILabel()
         label.frame = CGRect(x: 10, y: 10, width: YLScreenSize.width - 20, height: 20)
-        label.textColor = YLTheme.defaultInstance.mainColor
-        label.font = YLTheme.defaultInstance.textFont
+        label.textColor = YLTheme.main().themeColor
+        label.font = YLTheme.main().titleFont
         label.text = section == 0 ? "can responder to 'layoutSubviews'" : "not responder to 'layoutSubviews'"
         header.addSubview(label)
         return header
@@ -258,8 +258,8 @@ extension YLLayoutViewController: UITableViewDelegate,UITableViewDataSource {
         let array = indexPath.section == 0 ? datas_responder : datas_non_responder;
         let cell = tableView.dequeueReusableCell(withIdentifier:cellReuseIdentifier, for: indexPath)
         cell.textLabel?.text = array[indexPath.row]
-        cell.textLabel?.textColor = YLTheme.defaultInstance.textColor
-        cell.textLabel?.font = YLTheme.defaultInstance.textFont
+        cell.textLabel?.textColor = YLTheme.main().textColor
+        cell.textLabel?.font = YLTheme.main().titleFont
         cell.selectionStyle = .none
         return cell
     }
