@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YLWKWebListViewController: UIViewController {
+class YLWKWebDemoListViewController: UIViewController {
     let cellIdentifier = "kYLWKWebListViewControllerCell"
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class YLWKWebListViewController: UIViewController {
     
 }
 
-extension YLWKWebListViewController: UITableViewDelegate,UITableViewDataSource {
+extension YLWKWebDemoListViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return demos.count
     }
