@@ -10,3 +10,5 @@
 #import "UIView+Tools.h"
 #import "YLArticalViewController.h"
 #import "YLFileManager.h"
+#import "TestCookieViewController.h"
+#import "YLCookieManager.h"

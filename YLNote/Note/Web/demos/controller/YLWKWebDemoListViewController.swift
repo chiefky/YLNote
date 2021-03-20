@@ -9,7 +9,7 @@
 import UIKit
 
 class YLWKWebDemoListViewController: UIViewController {
-    let cellIdentifier = "kYLWKWebListViewControllerCell"
+    let cellIdentifier = "kYYLWKWebDemoListViewControllerCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class YLWKWebDemoListViewController: UIViewController {
             WebDemoData(title:"通过拦截URL进行JS交互",demoID:"web_URL"),
             WebDemoData(title:"使用MessageHandler进行JS交互",demoID:"web_MessageHandler"),
         WebDemoData(title:"使用JavaScriptCore进行JS交互",demoID:"web_JavaScriptCore"),
-        WebDemoData(title:"WKWebView cookie设置--test 死了",demoID:"url_Cookie")]
+        WebDemoData(title:"WKWebView cookie设置--test 待确认 ",demoID:"url_Cookie")]
     }()
     
 }

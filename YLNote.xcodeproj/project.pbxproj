@@ -49,6 +49,8 @@
 		543581BE25AEEBB800452D76 /* YLAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 543581BC25AEEBB800452D76 /* YLAlertManager.m */; };
 		543581C125AEEC7300452D76 /* YLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 543581C025AEEC7300452D76 /* YLLayer.m */; };
 		543581C425AEEE2400452D76 /* YLOmnipotentDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 543581C325AEEE2400452D76 /* YLOmnipotentDelegate.m */; };
+		5452D5802605E0CB0007FDDA /* TestCookieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D57F2605E0CB0007FDDA /* TestCookieViewController.m */; };
+		5452D5832605E1C10007FDDA /* YLCookieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5452D5822605E1C10007FDDA /* YLCookieManager.m */; };
 		545F871525AEFC75008BE6E2 /* YLViewBoundsTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F871425AEFC75008BE6E2 /* YLViewBoundsTestController.m */; };
 		545F871825AF1652008BE6E2 /* UIView+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F871725AF1652008BE6E2 /* UIView+Tools.m */; };
 		545F871E25B19A9F008BE6E2 /* YLPicScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F871D25B19A9F008BE6E2 /* YLPicScanViewController.m */; };
@@ -151,7 +153,7 @@
 		54A35DB224CF216F0076DFB6 /* YLTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A35DB124CF216F0076DFB6 /* YLTestViewController.m */; };
 		54A6517924D43033005FB5AD /* YLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6517824D43033005FB5AD /* YLUser.m */; };
 		54A6517C24D4305C005FB5AD /* YLUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6517B24D4305C005FB5AD /* YLUserViewController.m */; };
-		54BB262E2601DD0B001A98B4 /* YLWKWebListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BB262D2601DD0B001A98B4 /* YLWKWebListViewController.swift */; };
+		54BB262E2601DD0B001A98B4 /* YLWKWebDemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BB262D2601DD0B001A98B4 /* YLWKWebDemoListViewController.swift */; };
 		54BB26302601E095001A98B4 /* YLMessageHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BB262F2601E095001A98B4 /* YLMessageHandlerViewController.swift */; };
 		54BB263C260333EF001A98B4 /* Web-WeChatAuthon.md in Resources */ = {isa = PBXBuildFile; fileRef = 54BB263A260333EF001A98B4 /* Web-WeChatAuthon.md */; };
 		54BB263D260333EF001A98B4 /* Web-Cookie.md in Resources */ = {isa = PBXBuildFile; fileRef = 54BB263B260333EF001A98B4 /* Web-Cookie.md */; };
@@ -270,6 +272,10 @@
 		543581C025AEEC7300452D76 /* YLLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLLayer.m; sourceTree = "<group>"; };
 		543581C225AEEE2400452D76 /* YLOmnipotentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLOmnipotentDelegate.h; sourceTree = "<group>"; };
 		543581C325AEEE2400452D76 /* YLOmnipotentDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLOmnipotentDelegate.m; sourceTree = "<group>"; };
+		5452D57E2605E0CB0007FDDA /* TestCookieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCookieViewController.h; sourceTree = "<group>"; };
+		5452D57F2605E0CB0007FDDA /* TestCookieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCookieViewController.m; sourceTree = "<group>"; };
+		5452D5812605E1C10007FDDA /* YLCookieManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLCookieManager.h; sourceTree = "<group>"; };
+		5452D5822605E1C10007FDDA /* YLCookieManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLCookieManager.m; sourceTree = "<group>"; };
 		545F871325AEFC75008BE6E2 /* YLViewBoundsTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLViewBoundsTestController.h; sourceTree = "<group>"; };
 		545F871425AEFC75008BE6E2 /* YLViewBoundsTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLViewBoundsTestController.m; sourceTree = "<group>"; };
 		545F871625AF1652008BE6E2 /* UIView+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Tools.h"; sourceTree = "<group>"; };
@@ -432,7 +438,7 @@
 		54A6517A24D4305C005FB5AD /* YLUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLUserViewController.h; sourceTree = "<group>"; };
 		54A6517B24D4305C005FB5AD /* YLUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLUserViewController.m; sourceTree = "<group>"; };
 		54AEE76024CECF2200A6CFC7 /* YLNote-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YLNote-Bridging-Header.h"; sourceTree = "<group>"; };
-		54BB262D2601DD0B001A98B4 /* YLWKWebListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLWKWebListViewController.swift; sourceTree = "<group>"; };
+		54BB262D2601DD0B001A98B4 /* YLWKWebDemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLWKWebDemoListViewController.swift; sourceTree = "<group>"; };
 		54BB262F2601E095001A98B4 /* YLMessageHandlerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLMessageHandlerViewController.swift; sourceTree = "<group>"; };
 		54BB263A260333EF001A98B4 /* Web-WeChatAuthon.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Web-WeChatAuthon.md"; sourceTree = "<group>"; };
 		54BB263B260333EF001A98B4 /* Web-Cookie.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Web-Cookie.md"; sourceTree = "<group>"; };
@@ -1191,11 +1197,13 @@
 		54BB264C2603AC42001A98B4 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				54BB262D2601DD0B001A98B4 /* YLWKWebListViewController.swift */,
+				54BB262D2601DD0B001A98B4 /* YLWKWebDemoListViewController.swift */,
 				5487BE8E2600AE9400C6AEAE /* YLWebSchemeController.swift */,
 				54BB262F2601E095001A98B4 /* YLMessageHandlerViewController.swift */,
 				54BB263E26033C8B001A98B4 /* YLScriptCoreViewController.swift */,
 				54CAC36B2605C05E008A7BDF /* YLWebCookieViewController.swift */,
+				5452D57E2605E0CB0007FDDA /* TestCookieViewController.h */,
+				5452D57F2605E0CB0007FDDA /* TestCookieViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1205,6 +1213,8 @@
 			children = (
 				54BB264226035E84001A98B4 /* YLSwiftJavaScriptTools.swift */,
 				54BB264A2603AC3D001A98B4 /* YLWKCookieViewController.swift */,
+				5452D5812605E1C10007FDDA /* YLCookieManager.h */,
+				5452D5822605E1C10007FDDA /* YLCookieManager.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1577,6 +1587,7 @@
 				5435817B25AD6F0A00452D76 /* YLClassificationLevelSuperClass.m in Sources */,
 				54A35D9A24CED7290076DFB6 /* YLTheme.swift in Sources */,
 				5435817825AD6E9F00452D76 /* YLClassificationLevelPhylum.m in Sources */,
+				5452D5832605E1C10007FDDA /* YLCookieManager.m in Sources */,
 				5487BDDC25DC727300C6AEAE /* UITabbarItem+Theme.swift in Sources */,
 				543580F925A2F48A00452D76 /* SwapNumbers.swift in Sources */,
 				54A35D3F24CED6B20076DFB6 /* Recursion.swift in Sources */,
@@ -1643,8 +1654,9 @@
 				5400B31B25BAEB5C00DC4C49 /* YLAnimationHelper.swift in Sources */,
 				5435812F25A4DC8C00452D76 /* YLMessageNoteManager.m in Sources */,
 				5435818425AD704100452D76 /* YLClassificationLevelSuperFamily.m in Sources */,
+				5452D5802605E0CB0007FDDA /* TestCookieViewController.m in Sources */,
 				545F873025B5A4D9008BE6E2 /* YLIterator.m in Sources */,
-				54BB262E2601DD0B001A98B4 /* YLWKWebListViewController.swift in Sources */,
+				54BB262E2601DD0B001A98B4 /* YLWKWebDemoListViewController.swift in Sources */,
 				543580F6259DBBEF00452D76 /* YLLogMessageManager.m in Sources */,
 				54BB26302601E095001A98B4 /* YLMessageHandlerViewController.swift in Sources */,
 				54A35D4224CED6B20076DFB6 /* Iterator.swift in Sources */,

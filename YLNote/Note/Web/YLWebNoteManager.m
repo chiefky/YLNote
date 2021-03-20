@@ -58,7 +58,7 @@
 
 + (void)testDemos {
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLWKWebListViewController *vc = [[YLWKWebListViewController alloc] init];
+    YLWKWebDemoListViewController *vc = [[YLWKWebDemoListViewController alloc] init];
     if (currentVC.navigationController) {
         [currentVC.navigationController pushViewController:vc animated:YES];
     } else {
