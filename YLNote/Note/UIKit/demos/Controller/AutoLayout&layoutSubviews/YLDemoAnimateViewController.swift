@@ -1,5 +1,5 @@
 //
-//  YLAnimateViewController.swift
+//  YLDemoAnimateViewController.swift
 //  YLNote
 //
 //  Created by tangh on 2021/1/26.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YLAnimateViewController: UIViewController {
+class YLDemoAnimateViewController: UIViewController {
 
     @IBOutlet weak var pinkHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var pinkView: YLLayoutView!

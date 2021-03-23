@@ -76,6 +76,7 @@
 }
 
 - (void)addObject:(id)anObject {
+
     dispatch_barrier_async(self.syncQueue, ^{
         if (!anObject) {
             return ;

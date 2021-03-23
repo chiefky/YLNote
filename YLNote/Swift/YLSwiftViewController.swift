@@ -68,7 +68,8 @@ class YLSwiftViewController: UIViewController {
     }
     //MARK:group - 基础知识
     @objc func test_artical() {
-        let vc = YLArticleMDViewController(markdown: "Swift基础")
+        let vc = YLArticleMDViewController()
+        vc.fileName = "Swift基础"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -133,7 +134,8 @@ class YLSwiftViewController: UIViewController {
           }
         testSubstring_usage()
         
-        let vc = YLArticleMDViewController(markdown: "Substring与String区别")
+        let vc = YLArticleMDViewController()
+        vc.fileName = "Substring与String区别"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -216,7 +218,8 @@ class YLSwiftViewController: UIViewController {
 
     //MARK:group - 函数派发
     @objc func test_function() {
-        let vc = YLArticleMDViewController(markdown: "Swift函数派发机制")
+        let vc = YLArticleMDViewController()
+        vc.fileName = "Swift函数派发机制"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

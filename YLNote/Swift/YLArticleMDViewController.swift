@@ -12,16 +12,16 @@ import EFMarkdown
 
 class YLArticleMDViewController: UIViewController {
 
-    var fileName:String
+    @objc var fileName:String = "一面"
     
-    @objc init(markdown name: String) {
-        fileName = name
-        super.init(nibName:nil, bundle:nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    @objc init(markdown name: String) {
+//        fileName = name
+//        super.init(nibName:nil, bundle:nil)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

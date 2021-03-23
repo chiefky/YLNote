@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+@class YLNoteGroup;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YLFoundationNoteManger : NSObject
 
 + (nonnull instancetype)sharedManager;
-+ (NSDictionary *)allNotes;
++ (YLNoteGroup *)dataGroup;
+//+ (NSDictionary *)allNotes;
 
 + (void)testStaticValue;
 

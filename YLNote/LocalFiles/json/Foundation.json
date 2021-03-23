@@ -1,0 +1,69 @@
+{
+    "group":"Foundation",
+    "questions":[
+        {
+            "description":"iOS定义静态变量、静态常量、全局变量",
+            "answer":"pushToDemoWith:",
+            "class": {"className":"YLArticleMDViewController","classType":1,"xibType": 0,"atrticleTitle":"Foundation-静态变量"},
+            "type": 0
+        },
+        {"description":"nil、NIL、NSNULL区别",
+            "answer":"testNilAndNSNull",
+            "class": {"className":"","classType":0,"xibType": 0},
+            "type": 0
+        },
+        {"description":"实现一个线程安全的 NSMutableArray",
+            "answer":"pushToDemoWith:",
+            "class": {"className":"YLDemoSafeArrayViewController","classType":0,"xibType": 0},
+            "type": 0
+        },
+        {"description": "atomic仅仅是对set线程安全并不保证对其数据的操作也安全",
+            "answer":"pushToDemoWith:",
+            "class": {"className":"YLDemoNonAutomicViewController","classType":0,"xibType": 0},
+            "type": 0},
+        {"description":"对nonatomic属性操作实现线程安全使用举例",
+            "answer":"pushToDemoWith:",
+            "class": {"className":"YLDemoNonAutomicViewController","classType":0,"xibType": 0},
+            "type": 0
+        },
+        {"description":"isEqual 和 hash 有什么联系",
+            "answer":"pushToDemoWith:",
+            "class": {"className":"YLDemoHashEqualViewController","classType":0,"xibType": 0},
+            "type": 0
+        },
+        {"description":"如何重写自己的hash方法",
+            "answer":"pushToDemoWith:",
+            "class": {"className":"YLDemoHashEqualViewController","classType":0,"xibType": 0},
+            "type": 0
+        },
+        {"description":"id 和 instanceType 有什么区别",
+            "answer":"testIdAndInstancetype",
+            "class": {"className":"","classType":0,"xibType": 0},
+            "type": 0
+        },
+        {
+            "description":"self和super的区别",
+            "answer":"testSelfAndSuper_classFunc",
+            "class": {"className":"","classType":0,"xibType": 0},
+            "type": 0
+        },
+        {
+            "description":"@synthesize和@dynamic分别有什么作用",
+            "answer":"pushToDemoWith:",
+            "class": {"className":"YLDemoDynamicViewController","classType":0,"xibType": 0},
+            "type": 0
+        },
+        {
+            "description":"typeof() 和 __typeof__()，__typeof()区别",
+            "answer":"pushToDemoWith:",
+            "class": {"className":"YLDemoTypeofViewController","classType":0,"xibType": 0},
+            "type": 0
+        },
+        {
+            "description":"值类型(struct)和引用类型(class)",
+            "answer":"testStructAndClass",
+            "class": {"className":"","classType":0,"xibType": 0},
+            "type": 0
+        }
+    ]
+}

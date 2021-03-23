@@ -12,7 +12,7 @@
 #import "YLWindowLoader.h"
 #import "YLAlertManager.h"
 #import "YLViewBoundsTestController.h"
-#import "YLDrawrectViewController.h"
+#import "YLDemoDrawrectViewController.h"
 
 #import "YLView.h"
 #import "YLLayer.h"
@@ -114,7 +114,7 @@
 
 + (void)testLifeCycle {
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLLifeCycleViewController *lifeVC = [[YLLifeCycleViewController alloc] init];
+    YLDemoLifeCycleViewController *lifeVC = [[YLDemoLifeCycleViewController alloc] init];
     if (currentVC.navigationController) {
         [UIView setAnimationsEnabled:YES];
         [currentVC.navigationController pushViewController:lifeVC animated:YES];
@@ -122,21 +122,6 @@
         UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:currentVC];
         [navi pushViewController:lifeVC animated:YES];
     }
-}
-/**
- UIView 继承 UIResponder，而 UIResponder 是响应者对象，可以对iOS 中的事件响应及传递，CALayer 没有继承自 UIResponder，所以 CALayer 不具备响应处理事件的能力。CALayer 是 QuartzCore 中的类，是一个比较底层的用来绘制内容的类，用来绘制UI
- 
- UIView 对 CALayer 封装属性，对 UIView 设置 frame、center、bounds 等位置信息时，其实都是UIView 对 CALayer 进一层封装，使得我们可以很方便地设置控件的位置；例如圆角、阴影等属性， UIView 就没有进一步封装，所以我们还是需要去设置 Layer 的属性来实现功能。
- 
- UIView 是 CALayer 的代理，UIView 持有一个 CALayer 的属性，并且是该属性的代理，用来提供一些 CALayer 行的数据，例如动画和绘制。
- 
- */
-/// 打印UIview 和CALayer的继承关系
-+ (void)testUIViewAndCALayer {
-    YLView *ylView = [[YLView alloc] init];
-    YLLayer *ylLayer = [[YLLayer alloc] init];
-    [[YLOmnipotentDelegate sharedOmnipotent] getSuperClassTreeForClass:[ylView class]];
-    [[YLOmnipotentDelegate sharedOmnipotent] getSuperClassTreeForClass:[ylLayer class]];
 }
 
 /**
@@ -150,28 +135,11 @@
     [YLAlertManager showAlertWithTitle:@"" message:@" 因为UIView依赖于CALayer提供的内容，而CALayer又依赖于UIView提供的容器来显示绘制的内容，所以UIView的显示可以说是CALayer要显示绘制的图形。当要显示时，CALayer会准备好一个CGContextRef(图形上下文)，然后调用它的delegate(这里就是UIView)的drawLayer:inContext:方法，并且传入已经准备好的CGContextRef对象，在drawLayer:inContext:方法中UIView又会调用自己的drawRect:方法。" actionTitle:@"ok" handler:nil];
 }
 
-/**
- Bounds：一般是相对于自身来说的，是控件的内部尺寸。如果你修改了 Bounds，那么子控件的相对位置也会发生改变。
- 
- Frame ：是相对于父控件来说的，是控件的外部尺寸。
- */
-+ (void)testBoundsAndFrame {
-    UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLViewBoundsTestController *articalVC = [[YLViewBoundsTestController alloc] init];
-    if (currentVC.navigationController) {
-        [currentVC.navigationController pushViewController:articalVC animated:YES];
-    } else {
-        
-        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:currentVC];
-        [navi pushViewController:articalVC animated:YES];
-        
-    }    
-}
 
 /// layoutSubviews触发条件有哪些
 + (void)testLayoutSubviews {
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLLayoutViewController *layoutVC = [[YLLayoutViewController alloc] init];
+    YLDemoLayoutViewController *layoutVC = [[YLDemoLayoutViewController alloc] init];
     if (currentVC.navigationController) {
         [currentVC.navigationController pushViewController:layoutVC animated:YES];
     } else {
@@ -183,7 +151,7 @@
 /// layoutIfNeeded的用法
 + (void)testLayoutIfNeeded {
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLAnimateViewController *layoutVC = [[YLAnimateViewController alloc] init];
+    YLDemoAnimateViewController *layoutVC = [[YLDemoAnimateViewController alloc] init];
     if (currentVC.navigationController) {
         [currentVC.navigationController pushViewController:layoutVC animated:YES];
     } else {
@@ -195,7 +163,7 @@
 
 + (void)testDrawrect {
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLDrawrectViewController *layoutVC = [[YLDrawrectViewController alloc] init];
+    YLDemoDrawrectViewController *layoutVC = [[YLDemoDrawrectViewController alloc] init];
     if (currentVC.navigationController) {
         [currentVC.navigationController pushViewController:layoutVC animated:YES];
     } else {
@@ -206,7 +174,7 @@
 
 + (void)testUIResponder{
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLResponderViewController *layoutVC = [[YLResponderViewController alloc] init];
+    YLDemoResponderViewController *layoutVC = [[YLDemoResponderViewController alloc] init];
     if (currentVC.navigationController) {
         [currentVC.navigationController pushViewController:layoutVC animated:YES];
     } else {
@@ -233,7 +201,7 @@
 + (void)testNavigationBackTitle {
     
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLEmptyViewController *emptyVC = [[YLEmptyViewController alloc] init];
+    YLDemoEmptyViewController *emptyVC = [[YLDemoEmptyViewController alloc] init];
     if (currentVC.navigationController) {
         [currentVC.navigationController pushViewController:emptyVC animated:YES];
     } else {

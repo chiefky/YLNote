@@ -6,9 +6,10 @@
 //  Copyright © 2020 tangh. All rights reserved.
 //
 #import "YLNotesViewController.h"
+#import "YLNote-Swift.h"
+
 #import <objc/runtime.h>
 
-#import "YLUIKitNoteManger.h"
 #import "YLFoundationNoteManger.h"
 #import "YLWebNoteManager.h"
 #import "YLRuntimeNoteManager.h"
@@ -22,20 +23,20 @@
 
 #import "YLTestAutoReleaseController.h"
 #import "YLKVOViewController.h"
+#import "YLBlockViewController.h"
+#import "YLNotifiTestViewController.h"
+#import "YLTestViewController.h"
 
 #import "YLSon.h"
 #import "YLFather.h"
 #import "YLFather+Job.h"
 #import "YLDefaultMacro.h"
-#import "YLBlockViewController.h"
-#import "YLNotifiTestViewController.h"
-#import "YLTestViewController.h"
-
+#import "YLNoteData.h"
 #import "NSObject+Test.h"
 
 
 
-@interface YLNotesViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface YLNotesViewController ()<UITableViewDelegate,UITableViewDataSource,YLGroupDataSource>
 @property (nonatomic,strong)YLFather *father;
 @property (nonatomic,strong)YLSon *son1;
 @property (nonatomic,strong)YLSon *son2;
@@ -47,9 +48,15 @@
 @property (nonatomic,strong)YLFather *stFather; // 测试strong属性
 
 @property (nonatomic,strong)UITableView *table;
-@property (nonatomic,copy)NSArray *keywords;
+@property (nonatomic,copy)NSArray<YLNoteGroup *> *keywords;
 @property (nonatomic,strong)NSMutableDictionary *groupFoldStatus;
 @property (nonatomic,strong)NSMutableDictionary *groupHeaderImages;
+
+@property (nonatomic,weak) NSObject<YLGroupDataSource> *datasource;
+@property (nonatomic,weak) NSObject<YLGroupDataDelegate> *delegate;
+
+@property (nonatomic,strong) YLNoteGroupDataManager *dataManager;
+
 
 @end
 
@@ -64,6 +71,9 @@
     [self.view addSubview:self.table];
     
     [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    self.dataManager = [[YLNoteGroupDataManager alloc] init];
+//    self.datasource = self.dataManager;
+//    self.delegate = self.dataManager;
 }
 
 
@@ -465,8 +475,8 @@
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    NSDictionary *dic = self.keywords[section];
-    NSString * title = dic[@"group"];
+    YLNoteGroup *group = self.keywords[section];
+    NSString * title = group.groupName;
     
     //    //1 自定义头部
     UIView * view = [[UIView alloc] init];
@@ -509,10 +519,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (cell) {
-        NSDictionary *sectionDict = self.keywords[indexPath.section];
-        NSArray * questions = sectionDict[@"questions"];
-        NSDictionary *question = questions[indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row + 1,question[@"description"]];;
+        YLNoteGroup *group = self.keywords[indexPath.section];
+        YLNoteItem *question = group.questions[indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row + 1,question
+                               .itemDesc];;
         cell.textLabel.textColor = [UIColor grayColor];
         cell.textLabel.font = [UIFont systemFontOfSize:13.0];
     }
@@ -521,31 +531,31 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int flag = [self.groupFoldStatus[@(section)] intValue];
-    NSDictionary *sectionDict = self.keywords[section];
-    NSArray * questions =  sectionDict[@"questions"];
+    YLNoteGroup *group = self.keywords[section];
     if(flag) {
-        return questions.count;
+        return group.questions.count;
     } else {
         return 0;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YLNoteGroup *group = self.keywords[indexPath.section];
+    YLNoteItem *question = group.questions[indexPath.row];
+    [self.delegate didSelectRowWith:question];
+    return;
     
-    NSDictionary *sectionDict = self.keywords[indexPath.section];
-    NSArray * questions =  sectionDict[@"questions"];
-    NSDictionary *question = questions[indexPath.row];
-    NSString *method = question[@"answer"]; //selectorTitle.firstObject;
-    SEL selector = NSSelectorFromString(method);
-    Class cls = NSClassFromString(question[@"class"]);
-    //检查是否有"myMethod"这个名称的方法
-    if ([cls respondsToSelector:selector]) {
-        //           [self performSelector:sel];
-        if (!cls) { return; }
-        IMP imp = [cls methodForSelector:selector];
-        void (*func)(id, SEL) = (void *)imp;
-        func(cls, selector);
-    }
+//    NSString *method = question.functionName; //selectorTitle.firstObject;
+//    SEL selector = NSSelectorFromString(method);
+//    Class cls = NSClassFromString(question.className);
+//    //检查是否有"myMethod"这个名称的方法
+//    if ([cls respondsToSelector:selector]) {
+//        //           [self performSelector:sel];
+//        if (!cls) { return; }
+//        IMP imp = [cls methodForSelector:selector];
+//        void (*func)(id, SEL) = (void *)imp;
+//        func(cls, selector);
+//    }
 }
 
 #pragma mark - lazy
@@ -563,32 +573,40 @@
     return _groupFoldStatus;
 }
 
-- (NSArray *)keywords {
-    return @[
-        //------- 1.6 to do -----
-        [YLFoundationNoteManger allNotes],
-        [YLUIKitNoteManger allNotes],
-        [YLWebNoteManager allNotes],
-        [YLRuntimeNoteManager allNotes],
-       
-        //------- 1.7 to do -----
-        [YLAutoReleaseNoteManager allNotes],
-        [YLGCDNoteManager allNotes],
-        [YLKVONoteManager allNotes],
-        
-//        @{
-//            @"group":@"NSNotificationCenter",
-//            @"questions":@[
-//                    @"testNotification:手动实现NSNotificationCenter",
-//                    @"testNotification_block:使用block接口"]},
-        
-        //------- 1.8 to do -----
-        [YLMessageNoteManager allNotes],
-        [YLRunLoopNoteManager allNotes],
-        [YLAnimationNoteManager allNotes],
-        [YLThirdLibNoteManager allNotes],
-    ];
+- (NSArray<YLNoteGroup *> *)keywords {
+    // 判断代理对象是否实现这个方法，没有实现会导致崩溃
+    if ([self.datasource respondsToSelector:@selector(dataGroup)]) {
+        return [self.datasource dataGroup];
+    } else {
+        return 0;
+    }
+    
 }
+
+//- (NSArray *)keywords {
+//    return @[
+//        [YLUIKitNoteManger allNotes],
+//        [YLWebNoteManager allNotes],
+//        [YLRuntimeNoteManager allNotes],
+//
+//        //------- 1.7 to do -----
+//        [YLAutoReleaseNoteManager allNotes],
+//        [YLGCDNoteManager allNotes],
+//        [YLKVONoteManager allNotes],
+//
+////        @{
+////            @"group":@"NSNotificationCenter",
+////            @"questions":@[
+////                    @"testNotification:手动实现NSNotificationCenter",
+////                    @"testNotification_block:使用block接口"]},
+//
+//        //------- 1.8 to do -----
+//        [YLMessageNoteManager allNotes],
+//        [YLRunLoopNoteManager allNotes],
+//        [YLAnimationNoteManager allNotes],
+//        [YLThirdLibNoteManager allNotes],
+//    ];
+//}
 
 - (YLFather *)father {
     if (!_father) {

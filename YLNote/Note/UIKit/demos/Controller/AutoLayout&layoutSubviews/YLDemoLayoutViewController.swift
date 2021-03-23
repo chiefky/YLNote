@@ -42,7 +42,7 @@ class YLTableView: UITableView {
     //    }
 }
 
-class YLLayoutViewController: UIViewController {
+class YLDemoLayoutViewController: UIViewController {
     
     @IBOutlet weak var table: YLTableView!
     @IBOutlet weak var tipView: UIView!
@@ -225,7 +225,7 @@ class YLLayoutViewController: UIViewController {
     
 }
 
-extension YLLayoutViewController: UITableViewDelegate,UITableViewDataSource {
+extension YLDemoLayoutViewController: UITableViewDelegate,UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }

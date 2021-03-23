@@ -1,5 +1,5 @@
 //
-//  YLEmptyViewController.swift
+//  YLDemoEmptyViewController.swift
 //  YLNote
 //
 //  Created by tangh on 2021/2/13.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YLEmptyViewController: UIViewController {
+class YLDemoEmptyViewController: UIViewController {
     deinit {
         // 返回内部类名
         print("deinit: \(object_getClassName(self))")

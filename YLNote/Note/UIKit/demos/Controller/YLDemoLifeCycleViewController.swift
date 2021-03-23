@@ -8,9 +8,11 @@
 
 import UIKit
 
-class YLLifeCycleViewController: UIViewController {
+class YLDemoLifeCycleViewController: UIViewController {
 
-    
+    deinit {
+        print("\(self)：\(#function)");
+    }
     convenience init(name: String) {
         print("\(#function)");
         self.init(nibName:nil, bundle:nil)

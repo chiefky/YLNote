@@ -69,4 +69,5 @@
 - (void)testClass {
     NSLog(@"%@ - %@",[self class],[super class]);
 }
+
 @end

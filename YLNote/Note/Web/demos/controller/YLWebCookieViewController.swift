@@ -110,6 +110,9 @@ extension YLWebCookieViewController: WKUIDelegate,WKNavigationDelegate {
             return
         }
         
+        let tmpUrl = "hms://redirect_url?authorization_code=DQB6e3x9qjH7dks9yCjXCiE%2FYXJ7oTRrbMiHVNYs0o85FSmIaGzmZtGSkigQOpS9JMxDZWskocLI59sL43AzolhWx%2BeSHGc28P9nnhoWiZ6mGNMVjcjCPjDhIcUQp%2FsZ%2FQq%2Fs%2FQN4HY4uadnI0n5AmiQt95t7b4LgsJ3%2BKnvo9WSMpkIgLouUww4fiD%2FE5T9ls1j4xHeqCUEnnfkR8As3ni41FyfctaL120WZlNCuThJRhmdtQ7TMU6IdFF32AuwsEm1miKlg12CXR%2BiLMc%3D&state=state"
+        
+        
         if url.contains("authorization_code") {
             print("---: 重定向到 redirect_url成功")
             let code = navigationAction.request.url?.query?.components(separatedBy: "=")[1]

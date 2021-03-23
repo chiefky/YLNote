@@ -1,16 +1,16 @@
 //
-//  YLDrawrectViewController.m
+//  YLDemoDrawrectViewController.m
 //  YLNote
 //
 //  Created by tangh on 2021/1/22.
 //  Copyright © 2021 tangh. All rights reserved.
 //
 
-#import "YLDrawrectViewController.h"
+#import "YLDemoDrawrectViewController.h"
 #import "YLSetting.h"
 #import <Masonry/Masonry.h>
 #import "YLCircleView.h"
-@interface YLDrawrectViewController ()
+@interface YLDemoDrawrectViewController ()
 
 @property (nonatomic,strong)UIStepper *steper;
 @property (nonatomic,strong)YLCircleView *circleView;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation YLDrawrectViewController
+@implementation YLDemoDrawrectViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

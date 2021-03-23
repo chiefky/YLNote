@@ -41,7 +41,7 @@ class YLSwiftTopicsViewController: UIViewController {
     
     @objc func test_function() {
 
-        let vc = YLArticleMDViewController(markdown: "一面")
+        let vc = YLArticleMDViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

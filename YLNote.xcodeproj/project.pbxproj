@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B6AEF8E7A635C12F7790699 /* Pods_YLNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB38DB6FF77CE573EFE28BF7 /* Pods_YLNote.framework */; };
 		3F0514EF978C06B29C253C2F /* Pods_YLNote_YLNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398CC9979A9A24DD695FE563 /* Pods_YLNote_YLNoteUITests.framework */; };
-		5400B31225BAE42A00DC4C49 /* YLResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400B31125BAE42A00DC4C49 /* YLResponderViewController.swift */; };
+		5400B31225BAE42A00DC4C49 /* YLDemoResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400B31125BAE42A00DC4C49 /* YLDemoResponderViewController.swift */; };
 		5400B31425BAE8E000DC4C49 /* YLMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400B31325BAE8E000DC4C49 /* YLMenuView.swift */; };
 		5400B31925BAEA6600DC4C49 /* CAlayer+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400B31825BAEA6600DC4C49 /* CAlayer+Tools.swift */; };
 		5400B31B25BAEB5C00DC4C49 /* YLAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400B31A25BAEB5C00DC4C49 /* YLAnimationHelper.swift */; };
@@ -20,7 +20,6 @@
 		5435811225A4D18900452D76 /* YLWebNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435811125A4D18900452D76 /* YLWebNoteManager.m */; };
 		5435811425A4D23D00452D76 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5435811325A4D23D00452D76 /* test.swift */; };
 		5435811725A4D4D600452D76 /* YLRuntimeNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435811625A4D4D600452D76 /* YLRuntimeNoteManager.m */; };
-		5435811A25A4D67000452D76 /* YLUIKitNoteManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435811825A4D67000452D76 /* YLUIKitNoteManger.m */; };
 		5435811E25A4D8AC00452D76 /* YLAutoReleaseNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435811D25A4D8AC00452D76 /* YLAutoReleaseNoteManager.m */; };
 		5435812125A4D96B00452D76 /* YLKVONoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435812025A4D96B00452D76 /* YLKVONoteManager.m */; };
 		5435812525A4D9DF00452D76 /* YLGCDNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5435812425A4D9DF00452D76 /* YLGCDNoteManager.m */; };
@@ -66,7 +65,7 @@
 		545F875325B96388008BE6E2 /* NSObject+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F875225B96388008BE6E2 /* NSObject+Parser.m */; };
 		545F875A25B97336008BE6E2 /* YLThirdLibNoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F875925B97336008BE6E2 /* YLThirdLibNoteManager.m */; };
 		545F876225BA8599008BE6E2 /* YLCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F876125BA8599008BE6E2 /* YLCircleView.m */; };
-		545F876625BA8750008BE6E2 /* YLDrawrectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F876525BA8750008BE6E2 /* YLDrawrectViewController.m */; };
+		545F876625BA8750008BE6E2 /* YLDemoDrawrectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F876525BA8750008BE6E2 /* YLDemoDrawrectViewController.m */; };
 		5487BD9325C4404300C6AEAE /* YLDisplayLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487BD9225C4404300C6AEAE /* YLDisplayLinkViewController.swift */; };
 		5487BD9525C4461500C6AEAE /* YLDynamicAnimatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487BD9425C4461500C6AEAE /* YLDynamicAnimatorViewController.swift */; };
 		5487BD9725C50AB000C6AEAE /* YLSlipMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5487BD9625C50AB000C6AEAE /* YLSlipMenuView.xib */; };
@@ -87,7 +86,7 @@
 		5487BDC225D65AD000C6AEAE /* YLSwiftTopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487BDC125D65AD000C6AEAE /* YLSwiftTopicsViewController.swift */; };
 		5487BDC425D6E49500C6AEAE /* 一面.md in Resources */ = {isa = PBXBuildFile; fileRef = 5487BDC325D6E49500C6AEAE /* 一面.md */; };
 		5487BDC625D6E91000C6AEAE /* YLArticleMDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487BDC525D6E91000C6AEAE /* YLArticleMDViewController.swift */; };
-		5487BDC825D6F6C100C6AEAE /* YLEmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487BDC725D6F6C100C6AEAE /* YLEmptyViewController.swift */; };
+		5487BDC825D6F6C100C6AEAE /* YLDemoEmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487BDC725D6F6C100C6AEAE /* YLDemoEmptyViewController.swift */; };
 		5487BDCC25D6FD9A00C6AEAE /* Swift基础.md in Resources */ = {isa = PBXBuildFile; fileRef = 5487BDCB25D6FD9A00C6AEAE /* Swift基础.md */; };
 		5487BDCF25D7D8FA00C6AEAE /* YLSwiftBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487BDCE25D7D8FA00C6AEAE /* YLSwiftBaseViewController.swift */; };
 		5487BDD125D7DFB700C6AEAE /* YLSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487BDD025D7DFB700C6AEAE /* YLSwiftViewController.swift */; };
@@ -112,7 +111,7 @@
 		548FF89B24A87F3300ECF7F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF89A24A87F3300ECF7F0 /* main.m */; };
 		548FF8A524A87F3300ECF7F0 /* YLNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF8A424A87F3300ECF7F0 /* YLNoteTests.m */; };
 		548FF8B024A87F3300ECF7F0 /* YLNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FF8AF24A87F3300ECF7F0 /* YLNoteUITests.m */; };
-		54A0C41725BEAACC00D02B43 /* YLLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A0C41525BEAACC00D02B43 /* YLLayoutViewController.xib */; };
+		54A0C41725BEAACC00D02B43 /* YLDemoLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A0C41525BEAACC00D02B43 /* YLDemoLayoutViewController.xib */; };
 		54A35D3C24CED6B20076DFB6 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3224CED6B10076DFB6 /* Stack.swift */; };
 		54A35D3D24CED6B20076DFB6 /* DoublePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3324CED6B10076DFB6 /* DoublePointer.swift */; };
 		54A35D3E24CED6B20076DFB6 /* YLTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A35D3424CED6B10076DFB6 /* YLTreeNode.swift */; };
@@ -167,10 +166,25 @@
 		54CAC36A2605BD73008A7BDF /* YLWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CAC3692605BD73008A7BDF /* YLWKWebView.swift */; };
 		54CAC36C2605C05E008A7BDF /* YLWebCookieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CAC36B2605C05E008A7BDF /* YLWebCookieViewController.swift */; };
 		54CAC36E2605DC6B008A7BDF /* cookie.js in Resources */ = {isa = PBXBuildFile; fileRef = 54CAC36D2605DC6B008A7BDF /* cookie.js */; };
-		54DE85EE25BEC2D400EB8CE0 /* YLLifeCycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE85ED25BEC2D400EB8CE0 /* YLLifeCycleViewController.swift */; };
-		54FB599D25BFFE5300E3FCA4 /* YLAnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FB599B25BFFE5300E3FCA4 /* YLAnimateViewController.swift */; };
-		54FB599E25BFFE5300E3FCA4 /* YLAnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FB599C25BFFE5300E3FCA4 /* YLAnimateViewController.xib */; };
-		54FB59A025C0292B00E3FCA4 /* YLLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FB599F25C0292B00E3FCA4 /* YLLayoutViewController.swift */; };
+		54DE85EE25BEC2D400EB8CE0 /* YLDemoLifeCycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE85ED25BEC2D400EB8CE0 /* YLDemoLifeCycleViewController.swift */; };
+		54FA55042608835C00AE0A83 /* YLNoteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FA55032608835C00AE0A83 /* YLNoteData.m */; };
+		54FA5511260891C400AE0A83 /* YLGroupDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA5510260891C400AE0A83 /* YLGroupDataSource.swift */; };
+		54FA55212608B7B700AE0A83 /* YLNoteGroupDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA55202608B7B700AE0A83 /* YLNoteGroupDataManager.swift */; };
+		54FA552D2608D00B00AE0A83 /* YLDemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FA552C2608D00B00AE0A83 /* YLDemoBaseViewController.m */; };
+		54FA55332608D31400AE0A83 /* YLDemoLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FA55322608D31400AE0A83 /* YLDemoLayerViewController.m */; };
+		54FA55C52609CA8A00AE0A83 /* YLDemoSafeArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FA55C42609CA8A00AE0A83 /* YLDemoSafeArrayViewController.m */; };
+		54FA55D42609CB5400AE0A83 /* YLDemoNonAutomicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FA55D32609CB5400AE0A83 /* YLDemoNonAutomicViewController.m */; };
+		54FA55DA2609CBDA00AE0A83 /* YLDemoHashEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FA55D92609CBDA00AE0A83 /* YLDemoHashEqualViewController.m */; };
+		54FA55E02609CC3900AE0A83 /* YLDemoDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FA55DF2609CC3900AE0A83 /* YLDemoDynamicViewController.m */; };
+		54FA55E62609D0D800AE0A83 /* YLDemoTypeofViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FA55E52609D0D800AE0A83 /* YLDemoTypeofViewController.m */; };
+		54FA55F42609D39500AE0A83 /* Foundation.json in Resources */ = {isa = PBXBuildFile; fileRef = 54FA55F32609D39500AE0A83 /* Foundation.json */; };
+		54FA55FB2609D69F00AE0A83 /* Web.json in Resources */ = {isa = PBXBuildFile; fileRef = 54FA55F82609D69F00AE0A83 /* Web.json */; };
+		54FA55FC2609D69F00AE0A83 /* tmp.json in Resources */ = {isa = PBXBuildFile; fileRef = 54FA55F92609D69F00AE0A83 /* tmp.json */; };
+		54FA55FD2609D69F00AE0A83 /* UIKit.json in Resources */ = {isa = PBXBuildFile; fileRef = 54FA55FA2609D69F00AE0A83 /* UIKit.json */; };
+		54FA56022609D8A200AE0A83 /* Foundation-静态变量.md in Resources */ = {isa = PBXBuildFile; fileRef = 54FA56012609D8A200AE0A83 /* Foundation-静态变量.md */; };
+		54FB599D25BFFE5300E3FCA4 /* YLDemoAnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FB599B25BFFE5300E3FCA4 /* YLDemoAnimateViewController.swift */; };
+		54FB599E25BFFE5300E3FCA4 /* YLDemoAnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FB599C25BFFE5300E3FCA4 /* YLDemoAnimateViewController.xib */; };
+		54FB59A025C0292B00E3FCA4 /* YLDemoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FB599F25C0292B00E3FCA4 /* YLDemoLayoutViewController.swift */; };
 		54FB59A525C2948D00E3FCA4 /* YLAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FB59A325C2948D00E3FCA4 /* YLAnimationViewController.swift */; };
 		54FB59A625C2948D00E3FCA4 /* YLAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FB59A425C2948D00E3FCA4 /* YLAnimationViewController.xib */; };
 		54FB59AB25C2954100E3FCA4 /* YLTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FB59AA25C2954100E3FCA4 /* YLTestView.xib */; };
@@ -200,7 +214,7 @@
 /* Begin PBXFileReference section */
 		273E8879D27684D3E9614103 /* Pods-YLNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNote.debug.xcconfig"; path = "Target Support Files/Pods-YLNote/Pods-YLNote.debug.xcconfig"; sourceTree = "<group>"; };
 		398CC9979A9A24DD695FE563 /* Pods_YLNote_YLNoteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YLNote_YLNoteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5400B31125BAE42A00DC4C49 /* YLResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLResponderViewController.swift; sourceTree = "<group>"; };
+		5400B31125BAE42A00DC4C49 /* YLDemoResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLDemoResponderViewController.swift; sourceTree = "<group>"; };
 		5400B31325BAE8E000DC4C49 /* YLMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLMenuView.swift; sourceTree = "<group>"; };
 		5400B31825BAEA6600DC4C49 /* CAlayer+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAlayer+Tools.swift"; sourceTree = "<group>"; };
 		5400B31A25BAEB5C00DC4C49 /* YLAnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAnimationHelper.swift; sourceTree = "<group>"; };
@@ -215,8 +229,6 @@
 		5435811325A4D23D00452D76 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		5435811525A4D4D600452D76 /* YLRuntimeNoteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLRuntimeNoteManager.h; sourceTree = "<group>"; };
 		5435811625A4D4D600452D76 /* YLRuntimeNoteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLRuntimeNoteManager.m; sourceTree = "<group>"; };
-		5435811825A4D67000452D76 /* YLUIKitNoteManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLUIKitNoteManger.m; sourceTree = "<group>"; };
-		5435811925A4D67000452D76 /* YLUIKitNoteManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLUIKitNoteManger.h; sourceTree = "<group>"; };
 		5435811C25A4D8AC00452D76 /* YLAutoReleaseNoteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAutoReleaseNoteManager.h; sourceTree = "<group>"; };
 		5435811D25A4D8AC00452D76 /* YLAutoReleaseNoteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAutoReleaseNoteManager.m; sourceTree = "<group>"; };
 		5435811F25A4D96B00452D76 /* YLKVONoteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLKVONoteManager.h; sourceTree = "<group>"; };
@@ -308,8 +320,8 @@
 		545F875B25B97BD6008BE6E2 /* YLNetErrorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLNetErrorCode.h; sourceTree = "<group>"; };
 		545F876025BA8599008BE6E2 /* YLCircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLCircleView.h; sourceTree = "<group>"; };
 		545F876125BA8599008BE6E2 /* YLCircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLCircleView.m; sourceTree = "<group>"; };
-		545F876425BA8750008BE6E2 /* YLDrawrectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDrawrectViewController.h; sourceTree = "<group>"; };
-		545F876525BA8750008BE6E2 /* YLDrawrectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDrawrectViewController.m; sourceTree = "<group>"; };
+		545F876425BA8750008BE6E2 /* YLDemoDrawrectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDemoDrawrectViewController.h; sourceTree = "<group>"; };
+		545F876525BA8750008BE6E2 /* YLDemoDrawrectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDemoDrawrectViewController.m; sourceTree = "<group>"; };
 		5487BD9225C4404300C6AEAE /* YLDisplayLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLDisplayLinkViewController.swift; sourceTree = "<group>"; };
 		5487BD9425C4461500C6AEAE /* YLDynamicAnimatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLDynamicAnimatorViewController.swift; sourceTree = "<group>"; };
 		5487BD9625C50AB000C6AEAE /* YLSlipMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLSlipMenuView.xib; sourceTree = "<group>"; };
@@ -331,7 +343,7 @@
 		5487BDC125D65AD000C6AEAE /* YLSwiftTopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLSwiftTopicsViewController.swift; sourceTree = "<group>"; };
 		5487BDC325D6E49500C6AEAE /* 一面.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "一面.md"; sourceTree = "<group>"; };
 		5487BDC525D6E91000C6AEAE /* YLArticleMDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLArticleMDViewController.swift; sourceTree = "<group>"; };
-		5487BDC725D6F6C100C6AEAE /* YLEmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLEmptyViewController.swift; sourceTree = "<group>"; };
+		5487BDC725D6F6C100C6AEAE /* YLDemoEmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLDemoEmptyViewController.swift; sourceTree = "<group>"; };
 		5487BDCB25D6FD9A00C6AEAE /* Swift基础.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Swift基础.md"; sourceTree = "<group>"; };
 		5487BDCE25D7D8FA00C6AEAE /* YLSwiftBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLSwiftBaseViewController.swift; sourceTree = "<group>"; };
 		5487BDD025D7DFB700C6AEAE /* YLSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLSwiftViewController.swift; sourceTree = "<group>"; };
@@ -365,7 +377,7 @@
 		548FF8AF24A87F3300ECF7F0 /* YLNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLNoteUITests.m; sourceTree = "<group>"; };
 		548FF8B124A87F3300ECF7F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		548FF8D624AC5F5E00ECF7F0 /* YLDefaultMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDefaultMacro.h; sourceTree = "<group>"; };
-		54A0C41525BEAACC00D02B43 /* YLLayoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLLayoutViewController.xib; sourceTree = "<group>"; };
+		54A0C41525BEAACC00D02B43 /* YLDemoLayoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLDemoLayoutViewController.xib; sourceTree = "<group>"; };
 		54A35D3024CED6B10076DFB6 /* YLOCSwiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLOCSwiftViewController.h; sourceTree = "<group>"; };
 		54A35D3224CED6B10076DFB6 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		54A35D3324CED6B10076DFB6 /* DoublePointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoublePointer.swift; sourceTree = "<group>"; };
@@ -452,11 +464,34 @@
 		54CAC3692605BD73008A7BDF /* YLWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLWKWebView.swift; sourceTree = "<group>"; };
 		54CAC36B2605C05E008A7BDF /* YLWebCookieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLWebCookieViewController.swift; sourceTree = "<group>"; };
 		54CAC36D2605DC6B008A7BDF /* cookie.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = cookie.js; sourceTree = "<group>"; };
-		54DE85ED25BEC2D400EB8CE0 /* YLLifeCycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLifeCycleViewController.swift; sourceTree = "<group>"; };
+		54DE85ED25BEC2D400EB8CE0 /* YLDemoLifeCycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLDemoLifeCycleViewController.swift; sourceTree = "<group>"; };
 		54DE85F225BFE38300EB8CE0 /* 视图加载过程.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "视图加载过程.md"; sourceTree = "<group>"; };
-		54FB599B25BFFE5300E3FCA4 /* YLAnimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAnimateViewController.swift; sourceTree = "<group>"; };
-		54FB599C25BFFE5300E3FCA4 /* YLAnimateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLAnimateViewController.xib; sourceTree = "<group>"; };
-		54FB599F25C0292B00E3FCA4 /* YLLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLLayoutViewController.swift; sourceTree = "<group>"; };
+		54FA55022608835C00AE0A83 /* YLNoteData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLNoteData.h; sourceTree = "<group>"; };
+		54FA55032608835C00AE0A83 /* YLNoteData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLNoteData.m; sourceTree = "<group>"; };
+		54FA5510260891C400AE0A83 /* YLGroupDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLGroupDataSource.swift; sourceTree = "<group>"; };
+		54FA55202608B7B700AE0A83 /* YLNoteGroupDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLNoteGroupDataManager.swift; sourceTree = "<group>"; };
+		54FA552B2608D00B00AE0A83 /* YLDemoBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDemoBaseViewController.h; sourceTree = "<group>"; };
+		54FA552C2608D00B00AE0A83 /* YLDemoBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDemoBaseViewController.m; sourceTree = "<group>"; };
+		54FA55312608D31400AE0A83 /* YLDemoLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDemoLayerViewController.h; sourceTree = "<group>"; };
+		54FA55322608D31400AE0A83 /* YLDemoLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDemoLayerViewController.m; sourceTree = "<group>"; };
+		54FA55C32609CA8A00AE0A83 /* YLDemoSafeArrayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDemoSafeArrayViewController.h; sourceTree = "<group>"; };
+		54FA55C42609CA8A00AE0A83 /* YLDemoSafeArrayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDemoSafeArrayViewController.m; sourceTree = "<group>"; };
+		54FA55D22609CB5400AE0A83 /* YLDemoNonAutomicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDemoNonAutomicViewController.h; sourceTree = "<group>"; };
+		54FA55D32609CB5400AE0A83 /* YLDemoNonAutomicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDemoNonAutomicViewController.m; sourceTree = "<group>"; };
+		54FA55D82609CBDA00AE0A83 /* YLDemoHashEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDemoHashEqualViewController.h; sourceTree = "<group>"; };
+		54FA55D92609CBDA00AE0A83 /* YLDemoHashEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDemoHashEqualViewController.m; sourceTree = "<group>"; };
+		54FA55DE2609CC3900AE0A83 /* YLDemoDynamicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDemoDynamicViewController.h; sourceTree = "<group>"; };
+		54FA55DF2609CC3900AE0A83 /* YLDemoDynamicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDemoDynamicViewController.m; sourceTree = "<group>"; };
+		54FA55E42609D0D800AE0A83 /* YLDemoTypeofViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLDemoTypeofViewController.h; sourceTree = "<group>"; };
+		54FA55E52609D0D800AE0A83 /* YLDemoTypeofViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLDemoTypeofViewController.m; sourceTree = "<group>"; };
+		54FA55F32609D39500AE0A83 /* Foundation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Foundation.json; sourceTree = "<group>"; };
+		54FA55F82609D69F00AE0A83 /* Web.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Web.json; sourceTree = "<group>"; };
+		54FA55F92609D69F00AE0A83 /* tmp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tmp.json; sourceTree = "<group>"; };
+		54FA55FA2609D69F00AE0A83 /* UIKit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UIKit.json; sourceTree = "<group>"; };
+		54FA56012609D8A200AE0A83 /* Foundation-静态变量.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Foundation-静态变量.md"; sourceTree = "<group>"; };
+		54FB599B25BFFE5300E3FCA4 /* YLDemoAnimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLDemoAnimateViewController.swift; sourceTree = "<group>"; };
+		54FB599C25BFFE5300E3FCA4 /* YLDemoAnimateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLDemoAnimateViewController.xib; sourceTree = "<group>"; };
+		54FB599F25C0292B00E3FCA4 /* YLDemoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLDemoLayoutViewController.swift; sourceTree = "<group>"; };
 		54FB59A125C02A3B00E3FCA4 /* UIKit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UIKit.md; sourceTree = "<group>"; };
 		54FB59A325C2948D00E3FCA4 /* YLAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAnimationViewController.swift; sourceTree = "<group>"; };
 		54FB59A425C2948D00E3FCA4 /* YLAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLAnimationViewController.xib; sourceTree = "<group>"; };
@@ -543,9 +578,9 @@
 		5435810225A4CF2600452D76 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				54FA55C12609CA6100AE0A83 /* demos */,
 				543581A525AD953E00452D76 /* YLFoundationNoteManger.h */,
 				543581A125AD953E00452D76 /* YLFoundationNoteManger.m */,
-				543581AF25ADB8DC00452D76 /* DemoModels */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -554,8 +589,6 @@
 			isa = PBXGroup;
 			children = (
 				545F876325BA86ED008BE6E2 /* demos */,
-				5435811925A4D67000452D76 /* YLUIKitNoteManger.h */,
-				5435811825A4D67000452D76 /* YLUIKitNoteManger.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -661,6 +694,10 @@
 		5435816025AC624500452D76 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				54FA55F92609D69F00AE0A83 /* tmp.json */,
+				54FA55FA2609D69F00AE0A83 /* UIKit.json */,
+				54FA55F82609D69F00AE0A83 /* Web.json */,
+				54FA55F32609D39500AE0A83 /* Foundation.json */,
 				5435818925AD8F1A00452D76 /* TRex.json */,
 				545F873E25B5B812008BE6E2 /* blockusage.json */,
 			);
@@ -711,17 +748,19 @@
 			isa = PBXGroup;
 			children = (
 				54DE85F125BFE33100EB8CE0 /* AutoLayout&layoutSubviews */,
-				545F876425BA8750008BE6E2 /* YLDrawrectViewController.h */,
-				545F876525BA8750008BE6E2 /* YLDrawrectViewController.m */,
+				545F876425BA8750008BE6E2 /* YLDemoDrawrectViewController.h */,
+				545F876525BA8750008BE6E2 /* YLDemoDrawrectViewController.m */,
 				545F871325AEFC75008BE6E2 /* YLViewBoundsTestController.h */,
 				545F871425AEFC75008BE6E2 /* YLViewBoundsTestController.m */,
 				545F871C25B19A9F008BE6E2 /* YLPicScanViewController.h */,
 				545F871D25B19A9F008BE6E2 /* YLPicScanViewController.m */,
 				545F872325B573ED008BE6E2 /* YLPicBrowserViewController.h */,
 				545F872425B573ED008BE6E2 /* YLPicBrowserViewController.m */,
-				5400B31125BAE42A00DC4C49 /* YLResponderViewController.swift */,
-				54DE85ED25BEC2D400EB8CE0 /* YLLifeCycleViewController.swift */,
+				5400B31125BAE42A00DC4C49 /* YLDemoResponderViewController.swift */,
+				54DE85ED25BEC2D400EB8CE0 /* YLDemoLifeCycleViewController.swift */,
 				5487BD9C25C5664A00C6AEAE /* YLOffsetScreenViewController.swift */,
+				54FA55312608D31400AE0A83 /* YLDemoLayerViewController.h */,
+				54FA55322608D31400AE0A83 /* YLDemoLayerViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -735,13 +774,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		543581AF25ADB8DC00452D76 /* DemoModels */ = {
+		543581AF25ADB8DC00452D76 /* models */ = {
 			isa = PBXGroup;
 			children = (
 				543581B025ADBA4200452D76 /* YLSafeMutableArray.h */,
 				543581B125ADBA4200452D76 /* YLSafeMutableArray.m */,
 			);
-			path = DemoModels;
+			path = models;
 			sourceTree = "<group>";
 		};
 		545F872D25B5A4C9008BE6E2 /* Tool */ = {
@@ -821,6 +860,7 @@
 		5487BDCA25D6FC5800C6AEAE /* markdown */ = {
 			isa = PBXGroup;
 			children = (
+				54FA56012609D8A200AE0A83 /* Foundation-静态变量.md */,
 				54BB26482603A75E001A98B4 /* Web-JS交互.md */,
 				54BB263B260333EF001A98B4 /* Web-Cookie.md */,
 				54BB263A260333EF001A98B4 /* Web-WeChatAuthon.md */,
@@ -1003,7 +1043,9 @@
 		54A35D5124CED7290076DFB6 /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				5487BDC725D6F6C100C6AEAE /* YLEmptyViewController.swift */,
+				54FA550B2608914B00AE0A83 /* BaseClass */,
+				54FA54F62608723500AE0A83 /* NoteData */,
+				5487BDC725D6F6C100C6AEAE /* YLDemoEmptyViewController.swift */,
 				5435814725AC3CFB00452D76 /* Uitility */,
 				545F875425B972B6008BE6E2 /* 三方库 */,
 				54A35D5224CED7290076DFB6 /* YLNotesViewController.h */,
@@ -1011,6 +1053,7 @@
 				5435810225A4CF2600452D76 /* Foundation */,
 				5435810625A4D05C00452D76 /* UIKit */,
 				5435810F25A4D17300452D76 /* Web */,
+				54A35D7C24CED7290076DFB6 /* block */,
 				5435813125A4DD4700452D76 /* 性能优化 */,
 				5435813025A4DD3A00452D76 /* 数据存储 */,
 				5435812925A4DB5200452D76 /* Runloop */,
@@ -1022,7 +1065,6 @@
 				54A35D5A24CED7290076DFB6 /* Notification */,
 				54A35D7024CED7290076DFB6 /* 动画 */,
 				54A35D7524CED7290076DFB6 /* keywords */,
-				54A35D7C24CED7290076DFB6 /* block */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -1244,12 +1286,82 @@
 		54DE85F125BFE33100EB8CE0 /* AutoLayout&layoutSubviews */ = {
 			isa = PBXGroup;
 			children = (
-				54FB599F25C0292B00E3FCA4 /* YLLayoutViewController.swift */,
-				54A0C41525BEAACC00D02B43 /* YLLayoutViewController.xib */,
-				54FB599B25BFFE5300E3FCA4 /* YLAnimateViewController.swift */,
-				54FB599C25BFFE5300E3FCA4 /* YLAnimateViewController.xib */,
+				54FB599F25C0292B00E3FCA4 /* YLDemoLayoutViewController.swift */,
+				54A0C41525BEAACC00D02B43 /* YLDemoLayoutViewController.xib */,
+				54FB599B25BFFE5300E3FCA4 /* YLDemoAnimateViewController.swift */,
+				54FB599C25BFFE5300E3FCA4 /* YLDemoAnimateViewController.xib */,
 			);
 			path = "AutoLayout&layoutSubviews";
+			sourceTree = "<group>";
+		};
+		54FA54F62608723500AE0A83 /* NoteData */ = {
+			isa = PBXGroup;
+			children = (
+				54FA55022608835C00AE0A83 /* YLNoteData.h */,
+				54FA55032608835C00AE0A83 /* YLNoteData.m */,
+			);
+			path = NoteData;
+			sourceTree = "<group>";
+		};
+		54FA550B2608914B00AE0A83 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				54FA550E2608916800AE0A83 /* controller */,
+				54FA550D2608916200AE0A83 /* view */,
+				54FA550C2608915C00AE0A83 /* model */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		54FA550C2608915C00AE0A83 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				54FA5510260891C400AE0A83 /* YLGroupDataSource.swift */,
+				54FA55202608B7B700AE0A83 /* YLNoteGroupDataManager.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		54FA550D2608916200AE0A83 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		54FA550E2608916800AE0A83 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				54FA552B2608D00B00AE0A83 /* YLDemoBaseViewController.h */,
+				54FA552C2608D00B00AE0A83 /* YLDemoBaseViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		54FA55C12609CA6100AE0A83 /* demos */ = {
+			isa = PBXGroup;
+			children = (
+				543581AF25ADB8DC00452D76 /* models */,
+				54FA55C22609CA6A00AE0A83 /* controller */,
+			);
+			path = demos;
+			sourceTree = "<group>";
+		};
+		54FA55C22609CA6A00AE0A83 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				54FA55C32609CA8A00AE0A83 /* YLDemoSafeArrayViewController.h */,
+				54FA55C42609CA8A00AE0A83 /* YLDemoSafeArrayViewController.m */,
+				54FA55D22609CB5400AE0A83 /* YLDemoNonAutomicViewController.h */,
+				54FA55D32609CB5400AE0A83 /* YLDemoNonAutomicViewController.m */,
+				54FA55D82609CBDA00AE0A83 /* YLDemoHashEqualViewController.h */,
+				54FA55D92609CBDA00AE0A83 /* YLDemoHashEqualViewController.m */,
+				54FA55DE2609CC3900AE0A83 /* YLDemoDynamicViewController.h */,
+				54FA55DF2609CC3900AE0A83 /* YLDemoDynamicViewController.m */,
+				54FA55E42609D0D800AE0A83 /* YLDemoTypeofViewController.h */,
+				54FA55E52609D0D800AE0A83 /* YLDemoTypeofViewController.m */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		54FB59A225C2946C00E3FCA4 /* Controllers */ = {
@@ -1397,13 +1509,15 @@
 			files = (
 				5435818A25AD8F1A00452D76 /* TRex.json in Resources */,
 				54BB2646260379E9001A98B4 /* WKWebViewJSTest.html in Resources */,
-				54A0C41725BEAACC00D02B43 /* YLLayoutViewController.xib in Resources */,
+				54A0C41725BEAACC00D02B43 /* YLDemoLayoutViewController.xib in Resources */,
 				548FF89824A87F3300ECF7F0 /* LaunchScreen.storyboard in Resources */,
 				54BB263C260333EF001A98B4 /* Web-WeChatAuthon.md in Resources */,
 				54CAC36E2605DC6B008A7BDF /* cookie.js in Resources */,
+				54FA55FD2609D69F00AE0A83 /* UIKit.json in Resources */,
 				5487BDBA25CB03DD00C6AEAE /* YLCollectionViewController.xib in Resources */,
 				5487BDD325D80AB900C6AEAE /* Substring与String区别.md in Resources */,
 				5487BDCC25D6FD9A00C6AEAE /* Swift基础.md in Resources */,
+				54FA55FC2609D69F00AE0A83 /* tmp.json in Resources */,
 				54BB26492603A75E001A98B4 /* Web-JS交互.md in Resources */,
 				54FB59AB25C2954100E3FCA4 /* YLTestView.xib in Resources */,
 				5487BDB425C9FC5100C6AEAE /* YLCornerViewController.xib in Resources */,
@@ -1411,13 +1525,16 @@
 				545F873F25B5B812008BE6E2 /* blockusage.json in Resources */,
 				548FF89324A87F3200ECF7F0 /* Main.storyboard in Resources */,
 				54FB59A625C2948D00E3FCA4 /* YLAnimationViewController.xib in Resources */,
+				54FA56022609D8A200AE0A83 /* Foundation-静态变量.md in Resources */,
 				54C274C924B5A5BC00E9CF3F /* demo.js in Resources */,
 				5487BDC025CB0FCD00C6AEAE /* YLCollectionViewCell.xib in Resources */,
+				54FA55FB2609D69F00AE0A83 /* Web.json in Resources */,
 				5487BDC425D6E49500C6AEAE /* 一面.md in Resources */,
 				5487BD9725C50AB000C6AEAE /* YLSlipMenuView.xib in Resources */,
 				54BB263D260333EF001A98B4 /* Web-Cookie.md in Resources */,
 				5487BDD625D80B3E00C6AEAE /* substring_string.webp in Resources */,
-				54FB599E25BFFE5300E3FCA4 /* YLAnimateViewController.xib in Resources */,
+				54FA55F42609D39500AE0A83 /* Foundation.json in Resources */,
+				54FB599E25BFFE5300E3FCA4 /* YLDemoAnimateViewController.xib in Resources */,
 				54BB2647260379E9001A98B4 /* UIWebViewJSTest.html in Resources */,
 				5487BDD825D84E6800C6AEAE /* Swift函数派发机制.md in Resources */,
 			);
@@ -1550,9 +1667,11 @@
 				54A35D8F24CED7290076DFB6 /* YLSon.m in Sources */,
 				54BB264326035E84001A98B4 /* YLSwiftJavaScriptTools.swift in Sources */,
 				54A35D5024CED6FE0076DFB6 /* YLFlutterViewController.m in Sources */,
+				54FA55DA2609CBDA00AE0A83 /* YLDemoHashEqualViewController.m in Sources */,
 				5487BDA125C7C66F00C6AEAE /* UIViewTools.swift in Sources */,
 				54FB59B125C4338100E3FCA4 /* UitilityTools.swift in Sources */,
-				545F876625BA8750008BE6E2 /* YLDrawrectViewController.m in Sources */,
+				54FA55D42609CB5400AE0A83 /* YLDemoNonAutomicViewController.m in Sources */,
+				545F876625BA8750008BE6E2 /* YLDemoDrawrectViewController.m in Sources */,
 				5435817525AC716900452D76 /* YLClassificationLevelKingdom.m in Sources */,
 				54A35D4124CED6B20076DFB6 /* BinarySearch.swift in Sources */,
 				543581A725AD953E00452D76 /* YLFoundationNoteManger.m in Sources */,
@@ -1564,11 +1683,12 @@
 				54A35DAC24CED7A30076DFB6 /* YLGCDTest.m in Sources */,
 				54A35D8824CED7290076DFB6 /* YLKVOViewController.m in Sources */,
 				5400B31925BAEA6600DC4C49 /* CAlayer+Tools.swift in Sources */,
-				5487BDC825D6F6C100C6AEAE /* YLEmptyViewController.swift in Sources */,
+				5487BDC825D6F6C100C6AEAE /* YLDemoEmptyViewController.swift in Sources */,
 				54A35DAF24CED7A30076DFB6 /* YLGCDViewController.m in Sources */,
 				54A35D4324CED6B20076DFB6 /* Iteration.swift in Sources */,
 				54CAC36A2605BD73008A7BDF /* YLWKWebView.swift in Sources */,
 				54A35D4024CED6B20076DFB6 /* YLAlgorithmViewController2.swift in Sources */,
+				54FA55042608835C00AE0A83 /* YLNoteData.m in Sources */,
 				54A35D9524CED7290076DFB6 /* YLClass+Test.m in Sources */,
 				5435810125A37EC500452D76 /* YLAlgorithmViewController.swift in Sources */,
 				5487BDC225D65AD000C6AEAE /* YLSwiftTopicsViewController.swift in Sources */,
@@ -1580,13 +1700,15 @@
 				54A35D9724CED7290076DFB6 /* YLTestAutoReleaseController.m in Sources */,
 				545F872225B1A875008BE6E2 /* YLSetting.m in Sources */,
 				5435818125AD6FF800452D76 /* YLClassificationLevelSuperOrder.m in Sources */,
+				54FA55E02609CC3900AE0A83 /* YLDemoDynamicViewController.m in Sources */,
 				54A35D4524CED6B20076DFB6 /* YLOCSwiftViewController.m in Sources */,
-				5435811A25A4D67000452D76 /* YLUIKitNoteManger.m in Sources */,
 				54A6517C24D4305C005FB5AD /* YLUserViewController.m in Sources */,
 				5435811E25A4D8AC00452D76 /* YLAutoReleaseNoteManager.m in Sources */,
 				5435817B25AD6F0A00452D76 /* YLClassificationLevelSuperClass.m in Sources */,
 				54A35D9A24CED7290076DFB6 /* YLTheme.swift in Sources */,
 				5435817825AD6E9F00452D76 /* YLClassificationLevelPhylum.m in Sources */,
+				54FA5511260891C400AE0A83 /* YLGroupDataSource.swift in Sources */,
+				54FA55C52609CA8A00AE0A83 /* YLDemoSafeArrayViewController.m in Sources */,
 				5452D5832605E1C10007FDDA /* YLCookieManager.m in Sources */,
 				5487BDDC25DC727300C6AEAE /* UITabbarItem+Theme.swift in Sources */,
 				543580F925A2F48A00452D76 /* SwapNumbers.swift in Sources */,
@@ -1609,11 +1731,13 @@
 				54A35D3E24CED6B20076DFB6 /* YLTreeNode.swift in Sources */,
 				5487BE5D25E36F7200C6AEAE /* UIColorTools.swift in Sources */,
 				54CAC36C2605C05E008A7BDF /* YLWebCookieViewController.swift in Sources */,
+				54FA55212608B7B700AE0A83 /* YLNoteGroupDataManager.swift in Sources */,
 				545F873C25B5B6B2008BE6E2 /* YLBlockUsageViewController.m in Sources */,
 				5487BDA425C7D22000C6AEAE /* YLCornerList.m in Sources */,
 				5487BD9D25C5664A00C6AEAE /* YLOffsetScreenViewController.swift in Sources */,
-				54DE85EE25BEC2D400EB8CE0 /* YLLifeCycleViewController.swift in Sources */,
+				54DE85EE25BEC2D400EB8CE0 /* YLDemoLifeCycleViewController.swift in Sources */,
 				5487BE6125E3A45900C6AEAE /* NSObjectTools.swift in Sources */,
+				54FA55E62609D0D800AE0A83 /* YLDemoTypeofViewController.m in Sources */,
 				54A35D9324CED7290076DFB6 /* YLLayerViewController.m in Sources */,
 				5487BD9F25C566B000C6AEAE /* UIImageTools.swift in Sources */,
 				545F875325B96388008BE6E2 /* NSObject+Parser.m in Sources */,
@@ -1641,13 +1765,14 @@
 				5435812525A4D9DF00452D76 /* YLGCDNoteManager.m in Sources */,
 				545F873925B5B41A008BE6E2 /* YLQuestion.m in Sources */,
 				545F875A25B97336008BE6E2 /* YLThirdLibNoteManager.m in Sources */,
-				54FB599D25BFFE5300E3FCA4 /* YLAnimateViewController.swift in Sources */,
+				54FB599D25BFFE5300E3FCA4 /* YLDemoAnimateViewController.swift in Sources */,
 				54A35DAE24CED7A30076DFB6 /* YLThread.m in Sources */,
+				54FA55332608D31400AE0A83 /* YLDemoLayerViewController.m in Sources */,
 				545F876225BA8599008BE6E2 /* YLCircleView.m in Sources */,
 				54BB264B2603AC3D001A98B4 /* YLWKCookieViewController.swift in Sources */,
 				543581B225ADBA4200452D76 /* YLSafeMutableArray.m in Sources */,
 				5435819B25AD952200452D76 /* YLPerson.m in Sources */,
-				54FB59A025C0292B00E3FCA4 /* YLLayoutViewController.swift in Sources */,
+				54FB59A025C0292B00E3FCA4 /* YLDemoLayoutViewController.swift in Sources */,
 				54A35D4F24CED6FE0076DFB6 /* YLSDTableViewCell.m in Sources */,
 				54A35D3C24CED6B20076DFB6 /* Stack.swift in Sources */,
 				54A35DAD24CED7A30076DFB6 /* YLThreadSync.m in Sources */,
@@ -1661,8 +1786,9 @@
 				54BB26302601E095001A98B4 /* YLMessageHandlerViewController.swift in Sources */,
 				54A35D4224CED6B20076DFB6 /* Iterator.swift in Sources */,
 				54A35DAB24CED7A30076DFB6 /* YLOperation.m in Sources */,
-				5400B31225BAE42A00DC4C49 /* YLResponderViewController.swift in Sources */,
+				5400B31225BAE42A00DC4C49 /* YLDemoResponderViewController.swift in Sources */,
 				545F874325B81706008BE6E2 /* YLNetworkBaseAPI.m in Sources */,
+				54FA552D2608D00B00AE0A83 /* YLDemoBaseViewController.m in Sources */,
 				5487BD9B25C50B5700C6AEAE /* YLSlipMenuView.swift in Sources */,
 				5487BDB325C9FC5100C6AEAE /* YLCornerViewController.swift in Sources */,
 				5435812125A4D96B00452D76 /* YLKVONoteManager.m in Sources */,

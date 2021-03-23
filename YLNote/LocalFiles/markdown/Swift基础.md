@@ -337,14 +337,78 @@
    >
    > 
 
+5. ### swift中使用类名初始化实例变量
+
+   > 1. 获取类名
+   >
+   >    ```swift
+   >     let vcName = String(describing: YLDemoLifeCycleViewController.self)
+   >    ```
+   >
+   > 2. 通过类名得到类型
+   >
+   >    ```swift
+   >    var vcClass: AnyClass? = NSClassFromString(name)
+   >    if isSwift { // 如果是swift类，类名前需要带上包名
+   >        vcClass = NSClassFromString("包名" + "." + name) //VCName:表示试图控制器的类名
+   >    }
+   >    // 然后判断类型
+   >    guard let typeClass = vcClass as? UIViewController.Type else {
+   >         print("vcClass不能当做UIViewController")
+   >         return
+   >     }
+   >    
+   >    ```
+   >
+   > 3. 得到实例
+   >
+   >    ```swift
+   >    var myVC = typeClass.init() // 没有xib
+   >    if useXib { 
+   >      //如果有xib，通过xib初始化
+   >        myVC = typeClass.init(nibName: name, bundle: nil)
+   >    }
+   >    ```
+   >
+   >    
+
+   6. ### 函数自省
+
+   ```swift
+      /// 第一种
+   
+       let function = Selector(functionName)
+   
+       guard self.responds(to: function) else { return }
+   
+       self.perform(function)
+   
+        
+   
+       return;
+   
+       // 第二种： 带参数🌰
+   
+       if functionName.contains(":") {
+   
+         let funcc = NSSelectorFromString("selectorArg1:Arg2:")
+   
+         self.perform(funcc, with: "1", with: "2")
+   
+       }
+   
+   ```
+
    
 
-5. id类型和Any类型的区别？
+   
 
-6. **从OC向Swift迁移的时候遇到过什么问题？**
+6. id类型和Any类型的区别？
 
-7. **字符串分割：`component(separatdBy:) ` vs `.split(separator: )`区别：**
+7. **从OC向Swift迁移的时候遇到过什么问题？**
 
-8. **怎么理解面向协议编程？**
+8. **字符串分割：`component(separatdBy:) ` vs `.split(separator: )`区别：**
 
-9. 
+9. **怎么理解面向协议编程？**
+
+10. 

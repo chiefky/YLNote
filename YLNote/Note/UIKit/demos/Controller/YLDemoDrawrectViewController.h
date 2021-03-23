@@ -1,5 +1,5 @@
 //
-//  YLDrawrectViewController.h
+//  YLDemoDrawrectViewController.h
 //  YLNote
 //
 //  Created by tangh on 2021/1/22.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YLDrawrectViewController : UIViewController
+@interface YLDemoDrawrectViewController : UIViewController
 
 @end
 

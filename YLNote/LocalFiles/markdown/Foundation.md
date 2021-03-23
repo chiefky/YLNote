@@ -47,5 +47,7 @@ __unsafe_unretained MyViewController * myVC;
 >  
 > ```
 
+### 单例
+
 
 

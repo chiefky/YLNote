@@ -70,8 +70,8 @@
 
 + (void)testJStoNative {
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLArticleMDViewController *vc = [[YLArticleMDViewController alloc] initWithMarkdown:@"Web-JS交互"];
-    
+    YLArticleMDViewController *vc = [[YLArticleMDViewController alloc] init];
+    vc.fileName = @"Web-JS交互";
     if (currentVC.navigationController) {
         [currentVC.navigationController pushViewController:vc animated:YES];
     } else {
@@ -82,8 +82,9 @@
 
 + (void)testWeChatAuthon {
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLArticleMDViewController *vc = [[YLArticleMDViewController alloc] initWithMarkdown:@"Web-WeChatAuthon"];
-    
+    YLArticleMDViewController *vc = [[YLArticleMDViewController alloc] init];
+    vc.fileName = @"Web-WeChatAuthon";
+
     if (currentVC.navigationController) {
         [currentVC.navigationController pushViewController:vc animated:YES];
     } else {
@@ -94,8 +95,9 @@
 
 + (void)testCookie {
     UIViewController *currentVC = [YLWindowLoader getCurrentVC];
-    YLArticleMDViewController *vc = [[YLArticleMDViewController alloc] initWithMarkdown:@"Web-Cookie"];
-    
+    YLArticleMDViewController *vc = [[YLArticleMDViewController alloc] init];
+    vc.fileName = @"Web-Cookie";
+
     if (currentVC.navigationController) {
         [currentVC.navigationController pushViewController:vc animated:YES];
     } else {

@@ -1,5 +1,5 @@
 //
-//  YLResponderViewController.swift
+//  YLDemoResponderViewController.swift
 //  YLNote
 //
 //  Created by tangh on 2021/1/22.
@@ -12,7 +12,7 @@ import UIKit
  https://blog.gocy.tech/2016/11/19/iOS-touch-handling/
  https://www.jianshu.com/p/2dda99a0e09a
  */
-class YLResponderViewController: UIViewController {
+class YLDemoResponderViewController: UIViewController {
 
     
     var naviView: YLMenuView!
@@ -50,7 +50,7 @@ class YLResponderViewController: UIViewController {
 
 }
 
-extension YLResponderViewController: UIGestureRecognizerDelegate {
+extension YLDemoResponderViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         return naviView.shouldReceiveGesture(touch:touch)
     }

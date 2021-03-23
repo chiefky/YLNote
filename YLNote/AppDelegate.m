@@ -45,7 +45,7 @@ NSString *kTabBarItemKeySelectedColorName     = @"kTabBarItemKeySelectedColorNam
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [[YLSkinMananger defaultManager] checkAndUpdateSkinSettingWithCompleteBlock:^(NSDictionary * _Nonnull dict) {
-        NSLog(@"******+++= %@",dict);
+//        NSLog(@"******+++= %@",dict);
     }];
 
     [self appearanceSetting];
