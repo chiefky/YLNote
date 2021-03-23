@@ -72,8 +72,8 @@
     
     [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.dataManager = [[YLNoteGroupDataManager alloc] init];
-//    self.datasource = self.dataManager;
-//    self.delegate = self.dataManager;
+    self.datasource = self.dataManager;
+    self.delegate = self.dataManager;
 }
 
 

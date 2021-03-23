@@ -20,18 +20,27 @@ class YLNoteGroupDataManager: NSObject {
     var webDatas: NSDictionary {
         return YLFileManager.jsonParse(withLocalFileName: "Web") as NSDictionary
     }
-    var blockDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "tmp") as NSDictionary
+    var runloopDatas: NSDictionary {
+        return YLFileManager.jsonParse(withLocalFileName: "Runloop") as NSDictionary
+    }
+    var runtimeDatas: NSDictionary {
+        return YLFileManager.jsonParse(withLocalFileName: "Runtime") as NSDictionary
     }
     
     var messageDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "tmp") as NSDictionary
+        return YLFileManager.jsonParse(withLocalFileName: "Message") as NSDictionary
     }
     
-    var runtimeDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "tmp") as NSDictionary
+    var memoryDatas: NSDictionary {
+        return YLFileManager.jsonParse(withLocalFileName: "Memory") as NSDictionary
     }
-    
+    var optimizationDatas: NSDictionary {
+        return YLFileManager.jsonParse(withLocalFileName: "ProgramOptimization") as NSDictionary
+    }
+    var threadDatas: NSDictionary {
+        return YLFileManager.jsonParse(withLocalFileName: "Thread") as NSDictionary
+    }
+
     func pushToVC(_ vc: UIViewController? ) {
         if let vc = vc {
             let currentVC = YLWindowLoader.getCurrentVC()
@@ -121,11 +130,14 @@ extension YLNoteGroupDataManager: YLGroupDataSource {
         
         let uikit = YLNoteGroup.yy_model(with: uikitDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "uikit", questions: [])
         let web = YLNoteGroup.yy_model(with: webDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "web", questions: [])
-        let block = YLNoteGroup.yy_model(with: blockDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "block", questions: [])
-        let message = YLNoteGroup.yy_model(with: messageDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "message", questions: [])
+        let runloop = YLNoteGroup.yy_model(with: runloopDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "runloop", questions: [])
+
         let runtime = YLNoteGroup.yy_model(with: runtimeDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "runtime", questions: [])
-        
-        return [foundation,uikit,web,block,message,runtime]
+        let message = YLNoteGroup.yy_model(with: messageDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "message", questions: [])
+        let memory = YLNoteGroup.yy_model(with: memoryDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "memory", questions: [])
+        let optimization = YLNoteGroup.yy_model(with: optimizationDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "optimization", questions: [])
+        let thread = YLNoteGroup.yy_model(with: threadDatas as! [AnyHashable : Any]) ?? YLNoteGroup.init(name: "thread", questions: [])
+        return [foundation,uikit,web,runloop,runtime,message,memory,optimization,thread]
     }
     
 
