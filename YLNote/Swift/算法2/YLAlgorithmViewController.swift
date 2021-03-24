@@ -11,6 +11,8 @@ import UIKit
 class YLAlgorithmViewController: UIViewController {
     
     let cellIdentifier = "cellIdentifier"
+    let headerIdentifier = "headerIdentifier"
+
     var foldStatus:NSMutableDictionary = [:]
     var headImageViews:NSMutableDictionary = [:]
     
@@ -25,6 +27,7 @@ class YLAlgorithmViewController: UIViewController {
     func setupUI() {
         self.view.addSubview(table)
         table.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        table.register(YLGroupHeaderView.self, forHeaderFooterViewReuseIdentifier: headerIdentifier)
     }
     
 
@@ -148,11 +151,17 @@ class YLAlgorithmViewController: UIViewController {
         ];
     }()
 
+    
+    lazy var allDatas: [YLNoteSectionData]? = {
+        let json = YLFileManager.jsonParse(withLocalFileName: "Alfgo")
+        let datas = NSArray.yy_modelArray(with: YLNoteSectionData.self, json: json) as? [YLNoteSectionData]
+        return datas
+    }()
 }
 
 extension YLAlgorithmViewController: UITableViewDataSource,UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.keywords.count
+        return self.allDatas?.count ?? 0
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40.0
@@ -163,30 +172,17 @@ extension YLAlgorithmViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let dic = keywords[section]
-        if let groupTitle = dic["group"] as? String {
-            let view = UIView()
-            view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            
-            let butn = UIButton(type: .custom)
-            butn.contentHorizontalAlignment = .left;
-            butn.setTitle(groupTitle, for: .normal)
-            butn.titleLabel?.font = YLTheme.main().titleFont
-            butn.setTitleColor(YLTheme.main().themeColor, for: .normal)
-            butn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
-            butn.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40)
-            butn.tag = section
-            butn.addTarget(self, action: #selector(clickGroupAction(sender:)), for: .touchUpInside)
-            view.addSubview(butn)
-            
-            let imageView = UIImageView(frame: CGRect(x: 5, y: 10, width: 20, height: 20))
-            imageView.image = #imageLiteral(resourceName: "arrow")
-            imageView.tag = 101
-            butn.addSubview(imageView)
-            headImageViews[section] = imageView
-            return view
+        guard let sectionData = self.allDatas?[section], let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerIdentifier) as? YLGroupHeaderView else { return UIView() }
+        header.title = sectionData.groupData.groupName
+        header.unfoldStatus = sectionData.unfoldStatus
+        header.actionHandler = {
+            sectionData.unfoldStatus = !sectionData.unfoldStatus
+            //刷新当前的分组
+            let set = IndexSet(integer: section)
+            tableView.reloadSections(set, with: .none)
+
         }
-        return nil
+        return header
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -196,27 +192,18 @@ extension YLAlgorithmViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let flag = self.foldStatus[section] as? Int, flag == 1 {
-            let dict = self.keywords[section]
-            if let sectionArray = dict["questions"] as? NSArray {
-                return sectionArray.count
-            }
-        }
+        guard let sectionData = self.allDatas?[section], sectionData.unfoldStatus == true else { return 0 }
+        return sectionData.groupData.questions.count
         
-        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let sectionDict = self.keywords[indexPath.section];
-        guard let questions = sectionDict["questions"] as? [String] else { return UITableViewCell() }
+        guard let sectionData = self.allDatas?[indexPath.section] else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
 
-        if let question = questions[safe: indexPath.row] {
-            let arraySubstrings: [Substring] = question.split(separator: " ")
-            if let first = arraySubstrings.first, let last = arraySubstrings.last {
-                cell.textLabel?.text = "\(first)" + "\(indexPath.row) " + "\(last)"
-            }
-            
+        if let question = sectionData.groupData.questions[safe: indexPath.row] {
+            let title = question.itemDesc
+            cell.textLabel?.text = title + ": （" + question.functionName + "\(indexPath.row) ）"
             cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
         }
         
@@ -224,12 +211,8 @@ extension YLAlgorithmViewController: UITableViewDataSource,UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         let sectionDict = self.keywords[indexPath.section];
-         guard let sectionArry = sectionDict["questions"] as? [String] else { return }
-         let question = sectionArry[safe: indexPath.row];
-         let questionArry = question?.components(separatedBy: " ")
-         guard let questionFunc = questionArry?.first else { return };
-         let functionName = "test_"+questionFunc
+        guard let sectionData = self.allDatas?[indexPath.section],let question = sectionData.groupData.questions[safe: indexPath.row] else { return }
+        let functionName = "test_" + question.functionName
         
          #warning("函数自省的方式")
         // 第二种： 带参数🌰

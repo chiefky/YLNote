@@ -106,8 +106,8 @@ NSString *kTabBarItemKeySelectedColorName     = @"kTabBarItemKeySelectedColorNam
 
 /// <#Description#>
 - (void)appearanceSetting {
-//    [UITabBar appearance].barTintColor = [YLTheme main].tabTintColor;
-//    [UITabBar appearance].tintColor = [YLTheme main].themeColor;
+    [UITabBar appearance].barTintColor = [YLTheme main].tabTintColor;
+    [UITabBar appearance].tintColor = [YLTheme main].themeColor;
     [UINavigationBar appearance].barTintColor = [YLTheme main].themeColor ;
     [UINavigationBar appearance].tintColor = [YLTheme main].naviTintColor;
     [UINavigationBar appearance].titleTextAttributes = @{NSFontAttributeName:[YLTheme main].mainFont,NSForegroundColorAttributeName:[YLTheme main].backColor};

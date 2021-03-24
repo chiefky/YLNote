@@ -32,22 +32,22 @@ class YLDemoResponderViewController: UIViewController {
         }
         
         naviView = YLMenuView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - top - bottom))
+//        naviView.maxPopupHeight = 300;
         self.view.addSubview(naviView)
     }
     
     func setupUI() {
         self.view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         self.title = "UIResponder"
-               let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTap(_:)))
-               tap.delegate = self
-               self.view.addGestureRecognizer(tap)
-
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTap(_:)))
+        tap.delegate = self
+        self.view.addGestureRecognizer(tap)
     }
     
     @objc func didTap(_ tap: UITapGestureRecognizer) {
-            NSLog("Background was tapped !")
+        NSLog("Background was tapped !")
     }
-
+    
 }
 
 extension YLDemoResponderViewController: UIGestureRecognizerDelegate {

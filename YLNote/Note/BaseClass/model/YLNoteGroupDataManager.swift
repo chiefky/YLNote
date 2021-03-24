@@ -11,34 +11,34 @@ import YYModel
 
 class YLNoteGroupDataManager: NSObject {
     
-    var foundationDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "Foundation") as NSDictionary;
+    var foundationDatas: NSDictionary? {
+        return YLFileManager.jsonParse(withLocalFileName: "Foundation") as? NSDictionary;
     }
-    var uikitDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "UIKit") as NSDictionary
+    var uikitDatas: NSDictionary? {
+        return YLFileManager.jsonParse(withLocalFileName: "UIKit") as? NSDictionary
     }
-    var webDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "Web") as NSDictionary
+    var webDatas: NSDictionary? {
+        return YLFileManager.jsonParse(withLocalFileName: "Web") as? NSDictionary
     }
-    var runloopDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "Runloop") as NSDictionary
+    var runloopDatas: NSDictionary? {
+        return YLFileManager.jsonParse(withLocalFileName: "Runloop") as? NSDictionary
     }
-    var runtimeDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "Runtime") as NSDictionary
-    }
-    
-    var messageDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "Message") as NSDictionary
+    var runtimeDatas: NSDictionary? {
+        return YLFileManager.jsonParse(withLocalFileName: "Runtime") as? NSDictionary
     }
     
-    var memoryDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "Memory") as NSDictionary
+    var messageDatas: NSDictionary? {
+        return YLFileManager.jsonParse(withLocalFileName: "Message") as? NSDictionary
     }
-    var optimizationDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "ProgramOptimization") as NSDictionary
+    
+    var memoryDatas: NSDictionary? {
+        return YLFileManager.jsonParse(withLocalFileName: "Memory") as? NSDictionary
     }
-    var threadDatas: NSDictionary {
-        return YLFileManager.jsonParse(withLocalFileName: "Thread") as NSDictionary
+    var optimizationDatas: NSDictionary? {
+        return YLFileManager.jsonParse(withLocalFileName: "ProgramOptimization") as? NSDictionary
+    }
+    var threadDatas: NSDictionary? {
+        return YLFileManager.jsonParse(withLocalFileName: "Thread") as? NSDictionary
     }
 
     func pushToVC(_ vc: UIViewController? ) {
@@ -54,8 +54,8 @@ class YLNoteGroupDataManager: NSObject {
             }
         }
     }
-    @objc func pushToDemo(with item: YLNoteItem) {
-        let demoClass = item.itemClass
+    @objc func pushToDemo(with item: YLQuestionItem) {
+        let demoClass = item.demoItem
         let vcClass: AnyClass? = demoClass.classType ? NSClassFromString("YLNote" + "." + demoClass.className) : NSClassFromString(demoClass.className)
         guard let typeClass = vcClass as? UIViewController.Type else {
             print("vcClass不能当做UIViewController")
@@ -103,8 +103,8 @@ class YLNoteGroupDataManager: NSObject {
     }
     
     @objc func testSelfAndSuper_classFunc() {
-        let plumDict = YLFileManager.jsonParse(withLocalFileName: "TRex")// [YLFileManager jsonParseWithLocalFileName:@"TRex"];
-        let TRex = YLDinodsaul.yy_model(with: plumDict)
+        guard let dict = YLFileManager.jsonParse(withLocalFileName: "TRex") as? NSDictionary else { return }
+        let TRex = YLDinodsaul.yy_model(with: dict as! [AnyHashable : Any])
         TRex?.testClass()
     }
 
@@ -120,7 +120,7 @@ class YLNoteGroupDataManager: NSObject {
     }
 }
 
-extension YLNoteGroupDataManager: YLGroupDataSource {
+extension YLNoteGroupDataManager: YLGroupDataProtocol {
     var name: String {
         return String(describing: YLNoteGroupDataManager.self)
     }
@@ -140,11 +140,7 @@ extension YLNoteGroupDataManager: YLGroupDataSource {
         return [foundation,uikit,web,runloop,runtime,message,memory,optimization,thread]
     }
     
-
-}
-
-extension YLNoteGroupDataManager: YLGroupDataDelegate {
-    func didSelectRow(with item: YLNoteItem) {
+    func didSelectRow(with item: YLQuestionItem) {
 //        var count: UInt32 = 0;
 //        let cls: AnyClass? = object_getClass(self);
 //

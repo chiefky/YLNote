@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 读取本地JSON文件并转Dictionary对象
 /// @param name 文件名（格式: .json）
-+ (NSDictionary *)jsonParseWithLocalFileName:(NSString *)name;
++ (id)jsonParseWithLocalFileName:(NSString *)name;
 
 /// 读取本地文件并转Data对象
 /// @param name 文件名

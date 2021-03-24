@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YLNoteItemDemoClass : NSObject
+@interface YLQuestionDemoItem : NSObject
 @property (nonatomic, copy) NSString *title; // 导航标题
 @property (nonatomic, copy) NSString *atrticleTitle; // 文章标题
 @property (nonatomic, copy) NSString *className; // 类名
@@ -23,8 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YLNoteItem : NSObject
-@property (nonatomic, strong) YLNoteItemDemoClass *itemClass; // demo类
+@interface YLQuestionItem : NSObject
+@property (nonatomic, strong) YLQuestionDemoItem *demoItem; // 问题对应的demo类
 @property (nonatomic, copy) NSString *functionName;// demo方法名
 @property (nonatomic, copy) NSString *itemDesc;// demo问题描述
 
@@ -32,9 +32,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YLNoteGroup : NSObject
 @property (nonatomic, copy) NSString *groupName; // 问题名称
-@property (nonatomic, copy) NSArray<YLNoteItem*> *questions;// demo方法名
+@property (nonatomic, copy) NSArray<YLQuestionItem*> *questions;// demo方法名
 
 - (instancetype)initWithName:(NSString *)groupName questions:(nullable NSArray *)array;
+
+@end
+
+@interface YLNoteSectionData : NSObject
+
+@property (nonatomic, assign) NSUInteger index;
+@property (nonatomic, assign) BOOL unfoldStatus; // 展开状态 Yes:展开
+@property (nonatomic, strong) YLNoteGroup *groupData;
+
+- (instancetype)initWithSection:(NSUInteger)index status:(BOOL)status data:(YLNoteGroup *)data;
 
 @end
 

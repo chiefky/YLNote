@@ -22,6 +22,7 @@ enum AnimationType:String {
     case displaylink = "计时器动画(CADisplayLink)"
     case dynamicAnimator = "仿真效果动画(UIDynamicAnimator)"
     case emitterLayer = "粒子动画(CAEmitterLayer)"
+    case test = "旋转动画test"
 }
 
 class YLAnimationViewController: UIViewController {
@@ -161,6 +162,10 @@ class YLAnimationViewController: UIViewController {
             print("testEmitterLayer")
         }
 
+        func testDemo() {
+            let vc = YLDemoTestAniViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         switch type {
         case .simple: testSimple()
         case .transform: testTransform()
@@ -172,6 +177,7 @@ class YLAnimationViewController: UIViewController {
         case .displaylink: testDisplayLink()
         case .dynamicAnimator: testDynamicAnimator()
         case .emitterLayer: testEmitterLayer()
+        case .test: testDemo()
         }
     }
     
@@ -202,7 +208,7 @@ class YLAnimationViewController: UIViewController {
 
     lazy var otherAnimations: [AnimationType] = {
         
-        return [.displaylink,.dynamicAnimator,.emitterLayer]
+        return [.test,.displaylink,.dynamicAnimator,.emitterLayer]
     }()
     
     var animationDatas: [[AnimationType]] {

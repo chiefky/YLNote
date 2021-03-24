@@ -13,6 +13,8 @@
 		5400B31425BAE8E000DC4C49 /* YLMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400B31325BAE8E000DC4C49 /* YLMenuView.swift */; };
 		5400B31925BAEA6600DC4C49 /* CAlayer+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400B31825BAEA6600DC4C49 /* CAlayer+Tools.swift */; };
 		5400B31B25BAEB5C00DC4C49 /* YLAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400B31A25BAEB5C00DC4C49 /* YLAnimationHelper.swift */; };
+		540B8F48260B5EBA00475BC5 /* Alfgo.json in Resources */ = {isa = PBXBuildFile; fileRef = 540B8F47260B5EBA00475BC5 /* Alfgo.json */; };
+		540B8F4D260B72E800475BC5 /* Swift.json in Resources */ = {isa = PBXBuildFile; fileRef = 540B8F4C260B72E800475BC5 /* Swift.json */; };
 		543580F6259DBBEF00452D76 /* YLLogMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 543580F5259DBBEF00452D76 /* YLLogMessageManager.m */; };
 		543580F925A2F48A00452D76 /* SwapNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543580F825A2F48A00452D76 /* SwapNumbers.swift */; };
 		543580FF25A3198A00452D76 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543580FE25A3198A00452D76 /* BinaryTree.swift */; };
@@ -196,7 +198,11 @@
 		54FD67332609F50B00F7E113 /* Memory.json in Resources */ = {isa = PBXBuildFile; fileRef = 54FD67322609F50B00F7E113 /* Memory.json */; };
 		54FD673B2609F54700F7E113 /* Thread.json in Resources */ = {isa = PBXBuildFile; fileRef = 54FD673A2609F54700F7E113 /* Thread.json */; };
 		54FD67452609F6A900F7E113 /* ProgramOptimization.json in Resources */ = {isa = PBXBuildFile; fileRef = 54FD67442609F6A900F7E113 /* ProgramOptimization.json */; };
-		54FD67592609FBB000F7E113 /* YLGroupHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FD67582609FBB000F7E113 /* YLGroupHeaderView.m */; };
+		54FD6765260A0B5000F7E113 /* YLDemoResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FD6764260A0B5000F7E113 /* YLDemoResponderView.swift */; };
+		54FD676D260A436500F7E113 /* YLGroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FD676C260A436500F7E113 /* YLGroupHeaderView.swift */; };
+		54FD6772260A438A00F7E113 /* YLGroupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FD6771260A438A00F7E113 /* YLGroupHeaderView.xib */; };
+		54FD67A2260AFA3B00F7E113 /* YLDemoTestAniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FD67A0260AFA3B00F7E113 /* YLDemoTestAniViewController.swift */; };
+		54FD67A3260AFA3B00F7E113 /* YLDemoTestAniViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FD67A1260AFA3B00F7E113 /* YLDemoTestAniViewController.xib */; };
 		7CF9D727AF55F73F668E08F6 /* Pods_YLNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF3A6E338910EA0E0BB7CF4 /* Pods_YLNoteTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +230,8 @@
 		5400B31325BAE8E000DC4C49 /* YLMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLMenuView.swift; sourceTree = "<group>"; };
 		5400B31825BAEA6600DC4C49 /* CAlayer+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAlayer+Tools.swift"; sourceTree = "<group>"; };
 		5400B31A25BAEB5C00DC4C49 /* YLAnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAnimationHelper.swift; sourceTree = "<group>"; };
+		540B8F47260B5EBA00475BC5 /* Alfgo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Alfgo.json; sourceTree = "<group>"; };
+		540B8F4C260B72E800475BC5 /* Swift.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Swift.json; sourceTree = "<group>"; };
 		543580F4259DBBEF00452D76 /* YLLogMessageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLLogMessageManager.h; sourceTree = "<group>"; };
 		543580F5259DBBEF00452D76 /* YLLogMessageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLLogMessageManager.m; sourceTree = "<group>"; };
 		543580F825A2F48A00452D76 /* SwapNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapNumbers.swift; sourceTree = "<group>"; };
@@ -510,8 +518,11 @@
 		54FD67322609F50B00F7E113 /* Memory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Memory.json; sourceTree = "<group>"; };
 		54FD673A2609F54700F7E113 /* Thread.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Thread.json; sourceTree = "<group>"; };
 		54FD67442609F6A900F7E113 /* ProgramOptimization.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProgramOptimization.json; sourceTree = "<group>"; };
-		54FD67572609FBB000F7E113 /* YLGroupHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGroupHeaderView.h; sourceTree = "<group>"; };
-		54FD67582609FBB000F7E113 /* YLGroupHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLGroupHeaderView.m; sourceTree = "<group>"; };
+		54FD6764260A0B5000F7E113 /* YLDemoResponderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLDemoResponderView.swift; sourceTree = "<group>"; };
+		54FD676C260A436500F7E113 /* YLGroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLGroupHeaderView.swift; sourceTree = "<group>"; };
+		54FD6771260A438A00F7E113 /* YLGroupHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLGroupHeaderView.xib; sourceTree = "<group>"; };
+		54FD67A0260AFA3B00F7E113 /* YLDemoTestAniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLDemoTestAniViewController.swift; sourceTree = "<group>"; };
+		54FD67A1260AFA3B00F7E113 /* YLDemoTestAniViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLDemoTestAniViewController.xib; sourceTree = "<group>"; };
 		5A27EA1156BF8D664E97CBFF /* Pods-YLNote-YLNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNote-YLNoteUITests.debug.xcconfig"; path = "Target Support Files/Pods-YLNote-YLNoteUITests/Pods-YLNote-YLNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAB2027457CA0C28B9DBEF54 /* Pods-YLNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNoteTests.release.xcconfig"; path = "Target Support Files/Pods-YLNoteTests/Pods-YLNoteTests.release.xcconfig"; sourceTree = "<group>"; };
 		C9CC936E282AACC01F31CBA1 /* Pods-YLNoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLNoteTests.debug.xcconfig"; path = "Target Support Files/Pods-YLNoteTests/Pods-YLNoteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -711,6 +722,8 @@
 				54FD673A2609F54700F7E113 /* Thread.json */,
 				5435818925AD8F1A00452D76 /* TRex.json */,
 				545F873E25B5B812008BE6E2 /* blockusage.json */,
+				540B8F47260B5EBA00475BC5 /* Alfgo.json */,
+				540B8F4C260B72E800475BC5 /* Swift.json */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -838,7 +851,7 @@
 		545F876325BA86ED008BE6E2 /* demos */ = {
 			isa = PBXGroup;
 			children = (
-				5400B31A25BAEB5C00DC4C49 /* YLAnimationHelper.swift */,
+				54FD6760260A04BA00F7E113 /* model */,
 				543581AD25ADB85F00452D76 /* Controller */,
 				54BFDEF125BAC1D200420AF5 /* views */,
 			);
@@ -1291,6 +1304,7 @@
 				543581B325AEE9E600452D76 /* YLView.h */,
 				543581B425AEE9E600452D76 /* YLView.m */,
 				5400B31325BAE8E000DC4C49 /* YLMenuView.swift */,
+				54FD6764260A0B5000F7E113 /* YLDemoResponderView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1330,8 +1344,8 @@
 		54FA550D2608916200AE0A83 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				54FD67572609FBB000F7E113 /* YLGroupHeaderView.h */,
-				54FD67582609FBB000F7E113 /* YLGroupHeaderView.m */,
+				54FD676C260A436500F7E113 /* YLGroupHeaderView.swift */,
+				54FD6771260A438A00F7E113 /* YLGroupHeaderView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1379,6 +1393,8 @@
 				54FB59AE25C4288D00E3FCA4 /* YLBasicAnimateViewController.swift */,
 				5487BD9225C4404300C6AEAE /* YLDisplayLinkViewController.swift */,
 				5487BD9425C4461500C6AEAE /* YLDynamicAnimatorViewController.swift */,
+				54FD67A0260AFA3B00F7E113 /* YLDemoTestAniViewController.swift */,
+				54FD67A1260AFA3B00F7E113 /* YLDemoTestAniViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1407,6 +1423,14 @@
 			children = (
 			);
 			path = "代理";
+			sourceTree = "<group>";
+		};
+		54FD6760260A04BA00F7E113 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5400B31A25BAEB5C00DC4C49 /* YLAnimationHelper.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		A50FB64A69A84F8E19D42055 /* Frameworks */ = {
@@ -1532,13 +1556,16 @@
 				54BB2646260379E9001A98B4 /* WKWebViewJSTest.html in Resources */,
 				54A0C41725BEAACC00D02B43 /* YLDemoLayoutViewController.xib in Resources */,
 				548FF89824A87F3300ECF7F0 /* LaunchScreen.storyboard in Resources */,
+				54FD6772260A438A00F7E113 /* YLGroupHeaderView.xib in Resources */,
 				54FD67262609F31500F7E113 /* Runtime.json in Resources */,
 				54BB263C260333EF001A98B4 /* Web-WeChatAuthon.md in Resources */,
+				540B8F48260B5EBA00475BC5 /* Alfgo.json in Resources */,
 				54CAC36E2605DC6B008A7BDF /* cookie.js in Resources */,
 				54FA55FD2609D69F00AE0A83 /* UIKit.json in Resources */,
 				5487BDBA25CB03DD00C6AEAE /* YLCollectionViewController.xib in Resources */,
 				54FD67332609F50B00F7E113 /* Memory.json in Resources */,
 				5487BDD325D80AB900C6AEAE /* Substring与String区别.md in Resources */,
+				54FD67A3260AFA3B00F7E113 /* YLDemoTestAniViewController.xib in Resources */,
 				5487BDCC25D6FD9A00C6AEAE /* Swift基础.md in Resources */,
 				54FA55FC2609D69F00AE0A83 /* Runloop.json in Resources */,
 				54BB26492603A75E001A98B4 /* Web-JS交互.md in Resources */,
@@ -1552,6 +1579,7 @@
 				54C274C924B5A5BC00E9CF3F /* demo.js in Resources */,
 				5487BDC025CB0FCD00C6AEAE /* YLCollectionViewCell.xib in Resources */,
 				54FA55FB2609D69F00AE0A83 /* Web.json in Resources */,
+				540B8F4D260B72E800475BC5 /* Swift.json in Resources */,
 				5487BDC425D6E49500C6AEAE /* 一面.md in Resources */,
 				5487BD9725C50AB000C6AEAE /* YLSlipMenuView.xib in Resources */,
 				54FD67452609F6A900F7E113 /* ProgramOptimization.json in Resources */,
@@ -1779,7 +1807,6 @@
 				543581C425AEEE2400452D76 /* YLOmnipotentDelegate.m in Sources */,
 				5435818725AD70C600452D76 /* YLClassificationLevelSuperSpecies.m in Sources */,
 				54A35D9824CED7290076DFB6 /* YLBlockViewController.m in Sources */,
-				54FD67592609FBB000F7E113 /* YLGroupHeaderView.m in Sources */,
 				54A35D9024CED7290076DFB6 /* YLFather.m in Sources */,
 				5435817E25AD6F6500452D76 /* YLClassificationLevelSuperGenus.m in Sources */,
 				54A35D8E24CED7290076DFB6 /* NSObject+Test.m in Sources */,
@@ -1790,6 +1817,7 @@
 				543581B825AEEBA800452D76 /* YLArticalViewController.m in Sources */,
 				54A35D9B24CED7290076DFB6 /* Test.swift in Sources */,
 				5435812525A4D9DF00452D76 /* YLGCDNoteManager.m in Sources */,
+				54FD67A2260AFA3B00F7E113 /* YLDemoTestAniViewController.swift in Sources */,
 				545F873925B5B41A008BE6E2 /* YLQuestion.m in Sources */,
 				545F875A25B97336008BE6E2 /* YLThirdLibNoteManager.m in Sources */,
 				54FB599D25BFFE5300E3FCA4 /* YLDemoAnimateViewController.swift in Sources */,
@@ -1797,6 +1825,7 @@
 				54FA55332608D31400AE0A83 /* YLDemoLayerViewController.m in Sources */,
 				545F876225BA8599008BE6E2 /* YLCircleView.m in Sources */,
 				54BB264B2603AC3D001A98B4 /* YLWKCookieViewController.swift in Sources */,
+				54FD6765260A0B5000F7E113 /* YLDemoResponderView.swift in Sources */,
 				543581B225ADBA4200452D76 /* YLSafeMutableArray.m in Sources */,
 				5435819B25AD952200452D76 /* YLPerson.m in Sources */,
 				54FB59A025C0292B00E3FCA4 /* YLDemoLayoutViewController.swift in Sources */,
@@ -1818,6 +1847,7 @@
 				54FA552D2608D00B00AE0A83 /* YLDemoBaseViewController.m in Sources */,
 				5487BD9B25C50B5700C6AEAE /* YLSlipMenuView.swift in Sources */,
 				5487BDB325C9FC5100C6AEAE /* YLCornerViewController.swift in Sources */,
+				54FD676D260A436500F7E113 /* YLGroupHeaderView.swift in Sources */,
 				5435812125A4D96B00452D76 /* YLKVONoteManager.m in Sources */,
 				54A35D3D24CED6B20076DFB6 /* DoublePointer.swift in Sources */,
 				54A35D8624CED7290076DFB6 /* YLHitTestViewController.m in Sources */,

@@ -1,0 +1,116 @@
+[
+    {
+        "index": 0,
+        "unfoldStatus": false,
+        "groupData": {
+            "group":"基础知识",
+            "questions": [
+                {
+                    "description":"文章",
+                    "answer":"artical",
+                    "class": {},
+                },
+                {
+                    "description":"字符串分割区别",
+                    "answer":"separatorString",
+                    "class": {},
+                },
+                {
+                    "description":"Substring与String区别",
+                    "answer":"substring_vs_string",
+                    "class": {},
+                }]
+        },
+    },
+    {
+        "index": 0,
+        "unfoldStatus": false,
+        "groupData": {
+            "group":"Swift与OC使用对比",
+            "questions": [
+                {
+                    "description":"property:属性",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"enum:枚举",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"lazy:懒加载",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"block:闭包",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"singleton:单例",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },                
+                {
+                    "description":"init_deinit:初始化和析构",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"function:函数调用",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"protocol:协议/代理",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"notification:通知",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"extension:扩展",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                
+                
+            ]
+        }
+    },
+    {
+        "index": 2,
+        "unfoldStatus": false,
+        "groupData": {
+            "group":"函数派发",
+            "questions": [
+                {
+                    "description":"function:函数派发机制",
+                    "answer":"isBalancedWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"direct:直接派发",
+                    "answer":"isBalancedWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"table:函数表派发",
+                    "answer":"isBalancedWithIndex:",
+                    "class": {},
+                },                    {
+                    "description":"message:消息派发",
+                    "answer":"isBalancedWithIndex:",
+                    "class": {},
+                }
+            ]
+        },
+    }
+    
+    
+]

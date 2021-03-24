@@ -23,5 +23,7 @@
     
     
     // MARK: 可选实现
-    @objc optional func didSelectRow(with item:YLNoteItem)
+    @objc optional func didSelectRow(with item:YLQuestionItem)
 }
+
+@objc protocol YLGroupDataProtocol: YLGroupDataSource,YLGroupDataDelegate {}

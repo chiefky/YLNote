@@ -1,64 +1,109 @@
 //
-//  YLMenuView.swift
+//  YLDemoResponderView.swift
 //  YLNote
 //
-//  Created by tangh on 2021/1/22.
+//  Created by tangh on 2021/3/23.
 //  Copyright © 2021 tangh. All rights reserved.
 //
 
 import UIKit
 
-class YLMenuView: UIView {
+class YLDemoResponderView: UIView {
+
+    var maxPopupHeight:CGFloat = 300.0
     
-    
-    var maxPopupHeight : CGFloat = 0{
-        didSet{
-            
-            
-            itemTableView.frame = CGRect(x: 0, y: self.bounds.height - maxPopupHeight, width: self.bounds.width, height: maxPopupHeight)
-            let frame = CGRect(x: controlButtonPadding.x, y: self.bounds.height - maxPopupHeight - controlButtonPadding.y - buttonSize.height, width: 32, height: 32)
-            
-            controlButton.frame = frame//CGRect(x: 30, y: 100, width: 32, height: 32)
-            //CGRect(x: controlButtonPadding.x, y: self.bounds.height - controlButtonPadding.y - buttonSize.height, width: buttonSize.width, height: buttonSize.height)
-            
-            if !itemTableView.transform.isIdentity{
-                itemTableView.transform = CGAffineTransform(translationX: 0, y: maxPopupHeight)
-            }
-            
+    var items: [String] =  ["abc","def","hij","aaaa","bbbb", "dddd","????"] {
+        didSet {
+            table.reloadData()
         }
     }
-    
-    let reuseId = "YLMenuView.cell.reuseid"
-    
-    
+    let reusedId = "kYLDemoResponderView"
     var buttonSize = CGSize(width: 32, height: 32)
     let controlButtonPadding = CGPoint(x: 11, y: 11)
-    
-    var items = ["abc","def","hij","aaaa","bbbb", "dddd","????"]
-    
     let singleDuration : TimeInterval = 0.5
     let durationBetween : TimeInterval = 0.08
     let tableUpDuration : TimeInterval = 0.46
     let tableDownDuration : TimeInterval = 0.8
-    
-    var animationTimer : Timer!
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        maxPopupHeight = 300
-        initSubviews()
+        initalUI()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    func initSubviews(){
-        itemTableView.contentInset = UIEdgeInsets(top: buttonSize.height / 2, left: 0, bottom: 0, right: 0)
-        itemTableView.contentOffset = CGPoint(x:0,y:-(buttonSize.height / 2))
+    func initalUI() {
+        self.table.register(UITableViewCell.self, forCellReuseIdentifier: reusedId)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if self.frame != CGRect.zero {
+            reloadAllSubuViews()
+        }
+    }
+    
+    func reloadAllSubuViews() {
+        self.table.snp.remakeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(300)
+        }
+        
+        self.controlButton.snp.remakeConstraints { (make) in
+            make.left.equalTo(20)
+            make.size.equalTo(buttonSize)
+            make.bottom.equalTo(self.table.snp.top)
+        }
+    }
+    
+    //MARK: - Actions
+    
+    @objc func controlButtonTapped(){
+        let goingToOpen = !self.table.transform.isIdentity
+        if goingToOpen {
+            animateTableShow()
+        }else{
+            animateTableClose()
+        }
+    }
+        
+    lazy var table: UITableView = {
+        let tab = UITableView(frame: .zero, style: .plain)
+        tab.rowHeight = 44;
+        tab.backgroundColor = .systemPink
+        tab.dataSource = self
+        tab.delegate = self
+        self.addSubview(tab)
+        return tab
+    }()
+    
+    lazy var controlButton: UIButton = {
+        let butn = UIButton(type: .custom)
+        butn.addTarget(self, action: #selector(self.controlButtonTapped), for: .touchUpInside)
+        butn.backgroundColor = UIColor.red
+        butn.layer.cornerRadius = buttonSize.width / 2
+        butn.layer.shadowColor = UIColor.black.cgColor
+        butn.layer.shadowOpacity = 0.3
+        butn.layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        butn.layer.shadowRadius = 1
+        self.addSubview(butn)
+        
+        
+        return butn
+    }()
+
+    lazy var arrowLayer: CALayer = {
+        let arrowLayer = CAShapeLayer.cleanLayer()
+        arrowLayer.frame = self.controlButton.layer.bounds
+        arrowLayer.strokeColor = UIColor.darkGray.cgColor
+        arrowLayer.lineWidth = 2
+        arrowLayer.path = arrowPath().cgPath
         self.controlButton.layer.addSublayer(arrowLayer)
-    }
-    
+        return layer
+    }()
     
     func arrowPath() -> UIBezierPath{
         let arrowLen = buttonSize.width * 0.42
@@ -76,71 +121,17 @@ class YLMenuView: UIView {
         
     }
     
-    
-    //MARK: - Actions
-    
-    @objc func controlButtonTapped(){
-        let goingToOpen = !self.itemTableView.transform.isIdentity
-        if goingToOpen {
-            animateTableShow()
-        }else{
-            animateTableClose()
-        }
-    }
-    
-    //MARK: - lazy
-    lazy var itemTableView: UITableView = {
-        let itemTableView = UITableView()
-        
-        itemTableView.dataSource = self
-        itemTableView.delegate = self
-        itemTableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseId)
-        
-        itemTableView.backgroundColor = UIColor.white.withAlphaComponent(0.85)
-        itemTableView.separatorColor = UIColor.black.withAlphaComponent(0.22)
-        itemTableView.frame = CGRect(x: 0, y: self.bounds.height - maxPopupHeight, width: self.bounds.width, height: maxPopupHeight)
-        itemTableView.transform = CGAffineTransform(translationX: 0, y: maxPopupHeight)
-        itemTableView.tableFooterView = UIView()
-        self.addSubview(itemTableView)
-        return itemTableView
-    }()
-    
-    lazy var controlButton: UIButton = {
-        let controlButton = UIButton()
-        controlButton.addTarget(self, action: #selector(self.controlButtonTapped), for: .touchUpInside)
-        let frame = CGRect(x: controlButtonPadding.x, y: self.bounds.height - maxPopupHeight - 200, width: 32, height: 32)
-        controlButton.frame = frame
-        controlButton.backgroundColor = UIColor.white
-        controlButton.layer.cornerRadius = buttonSize.width / 2
-        controlButton.layer.shadowColor = UIColor.black.cgColor
-        controlButton.layer.shadowOpacity = 0.3
-        controlButton.layer.shadowOffset = CGSize(width: 0, height: 1.5)
-        controlButton.layer.shadowRadius = 1
-        self.addSubview(controlButton)
-        return controlButton
-    }()
-    
-    lazy var arrowLayer: CAShapeLayer = {
-        let arrowLayer = CAShapeLayer.cleanLayer()
-        arrowLayer.frame = controlButton.layer.bounds
-        arrowLayer.strokeColor = UIColor.darkGray.cgColor
-        arrowLayer.lineWidth = 2
-        arrowLayer.path = arrowPath().cgPath
-        return arrowLayer
-    }()
+
 }
 
-
-extension YLMenuView : UITableViewDataSource ,UITableViewDelegate{
-    
-    
+extension YLDemoResponderView: UITableViewDelegate,UITableViewDataSource {
     
     //MARK: - Delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        NSLog("Select Table : \(indexPath.row) with content : \(items[indexPath.row])")
+        NSLog("Select Table : \(indexPath.row) with content : \(String(describing: items[indexPath.row]))")
     }
     
     //MARK: - DataSource
@@ -153,10 +144,10 @@ extension YLMenuView : UITableViewDataSource ,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: reuseId)
+        var cell : UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: reusedId)
         
         if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: reuseId)
+            cell = UITableViewCell(style: .default, reuseIdentifier: reusedId)
         }
         
         
@@ -172,47 +163,34 @@ extension YLMenuView : UITableViewDataSource ,UITableViewDelegate{
     
 }
 
-
 //MARK : - Animation
-extension YLMenuView {
+extension YLDemoResponderView {
     
     fileprivate func animateTableShow(){
-        for cell in self.itemTableView.visibleCells{
+        for cell in self.table.visibleCells {
             cell.alpha = 0
-            cell.transform = CGAffineTransform(translationX: 0, y: self.itemTableView.bounds.height)
+            cell.transform = CGAffineTransform(translationX: 0, y: self.table.bounds.height)
         }
-        
-        
-        
         let buttonAnimDuration = self.tableUpDuration/1.05
-        
         let buttonAnimator = UIViewPropertyAnimator(duration: buttonAnimDuration, controlPoint1: CGPoint(x:0.14,y:0.6), controlPoint2:  CGPoint(x:0.47,y:1.05), animations: {
             
             self.controlButton.transform = CGAffineTransform(translationX: 0, y: -(self.controlButton.frame.midY - (self.bounds.height - self.maxPopupHeight)) )
         })
-        
         buttonAnimator.startAnimation()
-        
+       
         let arrowAnim = YLAnimationHelper.animation(keyPath: "transform.rotation", from: 0, to: CGFloat.pi, duration: buttonAnimDuration)
-        
         self.arrowLayer.transform = CATransform3DMakeRotation(-CGFloat.pi, 0, 0, 1)
-        
         self.arrowLayer.add(arrowAnim, forKey: nil)
-        
-        
         let tableAnimator = UIViewPropertyAnimator(duration: self.tableUpDuration, controlPoint1: CGPoint(x:0.14,y:0.6), controlPoint2:  CGPoint(x:0.47,y:1.05), animations: {
-            
-            self.itemTableView.transform = .identity
+            self.table.transform = .identity
         })
         
         
         let cellAnimationDelay = tableUpDuration * 0.15
-        
         tableAnimator.startAnimation(afterDelay: 0.15)
         
         
-        for (idx ,cell) in self.itemTableView.visibleCells.enumerated(){
-            
+        for (idx ,cell) in self.table.visibleCells.enumerated(){
             let positionAnimator = UIViewPropertyAnimator(duration: self.singleDuration, controlPoint1: CGPoint(x:0.14,y:0.6), controlPoint2:  CGPoint(x:0.47,y:1.05), animations: {
                 
                 cell.transform = .identity
@@ -252,7 +230,7 @@ extension YLMenuView {
         let tableAnimator = UIViewPropertyAnimator(duration: self.tableDownDuration, controlPoint1: CGPoint(x:0.1,y:0.7), controlPoint2:  CGPoint(x:0.22,y:1), animations: {
             
             
-            self.itemTableView.transform = CGAffineTransform(translationX: 0, y:self.maxPopupHeight)
+            self.table.transform = CGAffineTransform(translationX: 0, y:self.maxPopupHeight)
         })
         
         
@@ -260,7 +238,7 @@ extension YLMenuView {
         tableAnimator.startAnimation()
         
         
-        for cell in self.itemTableView.visibleCells{
+        for cell in self.table.visibleCells {
             
             
             let alphaAnimator = UIViewPropertyAnimator(duration: self.singleDuration, controlPoint1: CGPoint(x:0.6,y:0.3), controlPoint2:  CGPoint(x:0.95,y:0.8), animations: {
@@ -272,23 +250,5 @@ extension YLMenuView {
             
         }
         
-    }
-}
-
-
-
-//MARK: - Hit Test
-extension YLMenuView {
-    func shouldReceiveGesture(touch:UITouch) -> Bool{
-        let point = touch.location(in: self)
-        
-        if self.controlButton.frame.contains(point) {
-            return false
-        }
-        if self.itemTableView.transform.isIdentity && self.itemTableView.frame.contains(point) {
-            return false
-        }
-        
-        return true
     }
 }

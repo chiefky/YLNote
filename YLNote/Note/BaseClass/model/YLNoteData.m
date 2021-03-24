@@ -12,7 +12,7 @@
 
 @end
 
-@implementation YLNoteItemDemoClass
+@implementation YLQuestionDemoItem
 
 @end
 
@@ -25,7 +25,7 @@
 }
 
 + (NSDictionary *) modelContainerPropertyGenericClass {
-    return @{@"questions": [YLNoteItem class]};
+    return @{@"questions": [YLQuestionItem class]};
 }
 
 - (instancetype)initWithName:(NSString *)groupName questions:(nullable NSArray *)array {
@@ -40,10 +40,10 @@
 @end
 
 
-@interface YLNoteItem ()
+@interface YLQuestionItem ()
 
 @end
-@implementation YLNoteItem
+@implementation YLQuestionItem
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{@"functionName":@"answer",
              @"itemDesc":@"description",
@@ -52,9 +52,28 @@
 }
 
 + (NSDictionary *) modelContainerPropertyGenericClass {
-    return @{@"itemClass": [YLNoteItemDemoClass class]};
+    return @{@"itemClass": [YLQuestionDemoItem class]};
 }
 
 
 @end
 
+
+@implementation YLNoteSectionData
+
+- (instancetype)initWithSection:(NSUInteger)index status:(BOOL)status data:(YLNoteGroup *)data {
+    self = [super init];
+    if (self) {
+        self.unfoldStatus = status;
+        self.index = index;
+        self.groupData = data;
+    }
+    return self;
+}
+
+
++ (NSDictionary *) modelContainerPropertyGenericClass {
+    return @{@"groupData": [YLNoteGroup class]};
+}
+
+@end

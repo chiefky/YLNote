@@ -17,7 +17,7 @@
 
 
 // 本地JSON文件-->NSDictionary
-+ (NSDictionary *)jsonParseWithLocalFileName:(NSString *)name {
++ (id)jsonParseWithLocalFileName:(NSString *)name {
     // 对数据进行JSON格式化并返回字典形式
     NSData *data = [YLFileManager dataWithLocalFileName:name type:@"json"];
     return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];

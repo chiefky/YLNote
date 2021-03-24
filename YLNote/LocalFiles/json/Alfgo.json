@@ -1,0 +1,63 @@
+[
+    {
+        "index": 0,
+        "unfoldStatus": false,
+        "groupData": {
+            "group":"数字交换",
+            "questions": [
+                {
+                    "description":"使用临时变量",
+                    "answer":"swapWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"使用四则运算",
+                    "answer":"swapWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"使用异或运算",
+                    "answer":"swapWithIndex:",
+                    "class": {},
+                }]
+        },
+    },
+    {
+        "index": 0,
+        "unfoldStatus": false,
+        "groupData": {
+            "group":"求二叉树深度",
+            "questions": [
+                {
+                    "description":"使用递归",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"使用栈+DFS",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                },
+                {
+                    "description":"使用队列+BFS",
+                    "answer":"binaryDepthWithIndex:",
+                    "class": {},
+                }]
+        }
+    },
+    {
+        "index": 2,
+        "unfoldStatus": false,
+        "groupData": {
+            "group":"判断是否是平衡二叉树",
+            "questions": [
+                {
+                    "description":"使用递归",
+                    "answer":"isBalancedWithIndex:",
+                    "class": {},
+                }]
+        },
+    }
+    
+    
+]

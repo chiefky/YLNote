@@ -36,7 +36,7 @@
 
 
 
-@interface YLNotesViewController ()<UITableViewDelegate,UITableViewDataSource,YLGroupDataSource>
+@interface YLNotesViewController ()<UITableViewDelegate,UITableViewDataSource,YLGroupDataProtocol>
 @property (nonatomic,strong)YLFather *father;
 @property (nonatomic,strong)YLSon *son1;
 @property (nonatomic,strong)YLSon *son2;
@@ -48,21 +48,13 @@
 @property (nonatomic,strong)YLFather *stFather; // 测试strong属性
 
 @property (nonatomic,strong)UITableView *table;
-@property (nonatomic,copy)NSArray<YLNoteGroup *> *keywords;
-@property (nonatomic,strong)NSMutableDictionary *groupFoldStatus;
-@property (nonatomic,strong)NSMutableDictionary *groupHeaderImages;
+@property (nonatomic,strong) NSObject<YLGroupDataProtocol> *dataDelegate;
 
-@property (nonatomic,weak) NSObject<YLGroupDataSource> *datasource;
-@property (nonatomic,weak) NSObject<YLGroupDataDelegate> *delegate;
-
-@property (nonatomic,strong) YLNoteGroupDataManager *dataManager;
-
+@property (nonatomic,copy) NSMutableArray<YLNoteSectionData *> *sectionDatas;
 
 @end
 
 @implementation YLNotesViewController
-
-
 
 - (void)setupUI {
     self.table = [[UITableView alloc] initWithFrame:YLSCREEN_BOUNDS style:UITableViewStyleGrouped];
@@ -71,9 +63,9 @@
     [self.view addSubview:self.table];
     
     [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    self.dataManager = [[YLNoteGroupDataManager alloc] init];
-    self.datasource = self.dataManager;
-    self.delegate = self.dataManager;
+    [self.table registerClass:[YLGroupHeaderView class] forHeaderFooterViewReuseIdentifier:@"kYLGroupHeaderView"];
+
+    self.dataDelegate = [[YLNoteGroupDataManager alloc] init];
 }
 
 
@@ -86,39 +78,17 @@
     
 }
 #pragma mark - 点击分组信息
-- (void)clickGroupAction:(UIButton *)button{    
-    int groupIndex = (int)button.tag;
-    int flag = 0;//用来控制重新实例化按钮
-    
-    if([self.groupFoldStatus[@(groupIndex)] intValue]==0){
-        [self.groupFoldStatus setObject:@(1) forKey:@(groupIndex)];
-        flag = 0;
-    }else{
-        [self.groupFoldStatus setObject:@(0) forKey:@(groupIndex)];
-        flag = 1;
+- (void)clickGroupAction:(UIButton *)sender {
+    YLNoteSectionData *sectionData = self.sectionDatas[sender.tag - 1000];
+    BOOL groupStatus = sectionData.unfoldStatus;
+    if(!groupStatus){
+        sectionData.unfoldStatus = YES;
+    } else {
+        sectionData.unfoldStatus = NO;
     }
-    
     //刷新当前的分组
-    NSIndexSet * set=[[NSIndexSet alloc] initWithIndex:groupIndex];
+    NSIndexSet * set=[[NSIndexSet alloc] initWithIndex:sender.tag - 1000];
     [self.table reloadSections:set withRowAnimation:UITableViewRowAnimationNone];
-    
-    UIImageView * imageView = self.groupHeaderImages[@(groupIndex)];
-    
-    //模拟动画，每次都重新刷新了因此仿射变化恢复到原始状态了
-    if(flag){
-        imageView.transform=CGAffineTransformRotate(imageView.transform, M_PI_2);
-    }
-    //
-    [UIView animateWithDuration:0.3 animations:^{
-        
-        if(flag==0){
-            imageView.transform=CGAffineTransformMakeRotation( M_PI_2);
-        }else{
-            imageView.transform=CGAffineTransformMakeRotation(0);
-            
-        }
-    }];
-    
 }
 
 #pragma mark - runtime
@@ -467,43 +437,65 @@
 
 #pragma mark - delegate & datadource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.keywords.count;
+    return self.sectionDatas.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 40.0f;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
+    YLNoteSectionData *sectionData = self.sectionDatas[section];
+    BOOL unfoldStatus = sectionData.unfoldStatus;
+
+    YLGroupHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"kYLGroupHeaderView"];
+    if (headerView) {
+        headerView.title = self.sectionDatas[section].groupData.groupName;
+        headerView.unfoldStatus = unfoldStatus;
+        headerView.actionHandler = ^{
+            sectionData.unfoldStatus = !unfoldStatus;
+            //刷新当前的分组
+            NSIndexSet * set = [[NSIndexSet alloc] initWithIndex:section];
+            [self.table reloadSections:set withRowAnimation:UITableViewRowAnimationNone];
+        };
+    }
+    return headerView;
+
+        //1 自定义头部
     
-    YLNoteGroup *group = self.keywords[section];
-    NSString * title = group.groupName;
-    
-    //    //1 自定义头部
-    UIView * view = [[UIView alloc] init];
-    view.backgroundColor=[UIColor whiteColor];
-    //    view.layer.borderWidth = 1;
-    //    view.layer.borderColor = [UIColor whiteColor].CGColor;
-    //
-    // 2 增加按钮
-    UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    button.titleEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 0);
-    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    button.titleLabel.font = [UIFont systemFontOfSize:16.0];
-    button.frame = CGRectMake(0, 0, YLSCREEN_WIDTH, 40);
-    button.tag = section;
-    [button addTarget:self action:@selector(clickGroupAction:) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:button];
-    
-    //3 添加左边的箭头
-    UIImageView * imageView=[[UIImageView alloc] initWithFrame:CGRectMake(5, 20.0-15.0/2, 15, 15)];
-    imageView.image=[UIImage imageNamed:@"arrow"];
-    imageView.tag=101;
-    [button addSubview:imageView];
-    [self.groupHeaderImages setObject:imageView forKey:@(section)];
-    
-    return view;
+//    UITableViewHeaderFooterView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"kYLNotesViewControllerHeader"];
+//    if (!view) {
+//          view = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, YLSCREEN_WIDTH, 40)];
+//        //    view.layer.borderWidth = 1;
+//        //    view.layer.borderColor = [UIColor whiteColor].CGColor;
+//        //
+//        NSString * title = [NSString stringWithFormat:@"%p", view];// group.groupName;
+//
+//        // 2 增加按钮
+//        UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
+//        [button setTitle:title forState:UIControlStateNormal];
+//        [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+//        button.titleEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 0);
+//        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//        button.titleLabel.font = [UIFont systemFontOfSize:16.0];
+//        button.frame = CGRectMake(0, 0, YLSCREEN_WIDTH, 40);
+//        button.tag = section + 1000;
+//        [button addTarget:self action:@selector(clickGroupAction:) forControlEvents:UIControlEventTouchUpInside];
+//        [view addSubview:button];
+//
+//        //3 添加左边的箭头
+//
+//        UIImageView * imageView=[[UIImageView alloc] initWithFrame:CGRectMake(5, 20.0-15.0/2, 15, 15)];
+//        if (unfoldStatus) { //展开
+//            imageView.image = [UIImage imageNamed:@"arrow_unfold"];
+//            }else{ //未展开
+//                imageView.image = [UIImage imageNamed:@"arrow_fold"];
+//        }
+//
+//        imageView.tag = 101;
+//        [view addSubview:imageView];
+//    }
+//    return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -519,8 +511,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (cell) {
-        YLNoteGroup *group = self.keywords[indexPath.section];
-        YLNoteItem *question = group.questions[indexPath.row];
+        YLNoteGroup *group = self.sectionDatas[indexPath.section].groupData;
+        YLQuestionItem *question = group.questions[indexPath.row];
         cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row + 1,question
                                .itemDesc];;
         cell.textLabel.textColor = [UIColor grayColor];
@@ -530,57 +522,44 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int flag = [self.groupFoldStatus[@(section)] intValue];
-    YLNoteGroup *group = self.keywords[section];
-    if(flag) {
-        return group.questions.count;
+    YLNoteSectionData *sectionData = self.sectionDatas[section];
+    if(sectionData.unfoldStatus) {
+        return sectionData.groupData.questions.count;
     } else {
         return 0;
     }
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    YLNoteGroup *group = self.keywords[indexPath.section];
-    YLNoteItem *question = group.questions[indexPath.row];
-    [self.delegate didSelectRowWith:question];
+    YLNoteGroup *group = self.sectionDatas[indexPath.section].groupData;
+    YLQuestionItem *question = group.questions[indexPath.row];
+    [self.dataDelegate didSelectRowWith:question];
     return;
-    
-//    NSString *method = question.functionName; //selectorTitle.firstObject;
-//    SEL selector = NSSelectorFromString(method);
-//    Class cls = NSClassFromString(question.className);
-//    //检查是否有"myMethod"这个名称的方法
-//    if ([cls respondsToSelector:selector]) {
-//        //           [self performSelector:sel];
-//        if (!cls) { return; }
-//        IMP imp = [cls methodForSelector:selector];
-//        void (*func)(id, SEL) = (void *)imp;
-//        func(cls, selector);
-//    }
 }
 
 #pragma mark - lazy
-- (NSMutableDictionary *)groupHeaderImages {
-    if (!_groupHeaderImages) {
-        _groupHeaderImages = [NSMutableDictionary dictionary];
-    }
-    return _groupHeaderImages;
-}
+//- (NSMutableDictionary *)groupHeaderImages {
+//    if (!_groupHeaderImages) {
+//        _groupHeaderImages = [NSMutableDictionary dictionary];
+//    }
+//    return _groupHeaderImages;
+//}
+//
+//
 
-- (NSMutableDictionary *)groupFoldStatus {
-    if (!_groupFoldStatus) {
-        _groupFoldStatus = [NSMutableDictionary dictionary];
+- (NSMutableArray<YLNoteSectionData *> *)sectionDatas {
+    if (!_sectionDatas) {
+        _sectionDatas = [NSMutableArray array];
+        if ([self.dataDelegate respondsToSelector:@selector(dataGroup)]) {
+            NSArray *tmpData = [self.dataDelegate dataGroup];
+            [tmpData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                YLNoteSectionData *sectionData = [[YLNoteSectionData alloc] initWithSection:idx status:NO data:obj];
+                [_sectionDatas addObject:sectionData];
+            }];
+        }
     }
-    return _groupFoldStatus;
-}
-
-- (NSArray<YLNoteGroup *> *)keywords {
-    // 判断代理对象是否实现这个方法，没有实现会导致崩溃
-    if ([self.datasource respondsToSelector:@selector(dataGroup)]) {
-        return [self.datasource dataGroup];
-    } else {
-        return 0;
-    }
-    
+    return _sectionDatas;
 }
 
 //- (NSArray *)keywords {

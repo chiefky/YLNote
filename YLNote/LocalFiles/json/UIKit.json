@@ -51,6 +51,12 @@
             "description": "抹去navigationbar 返回按钮title 有几种方式",
             "answer":"pushToDemoWith:",
             "class": {"className":"YLDemoEmptyViewController","classType":1,"xibType": 0},
+        },
+        {
+            "description": "动画",
+            "answer":"pushToDemoWith:",
+            "class": {"className":"YLAnimationViewController","classType":1,"xibType": 1},
         }
+
     ]
 }
