@@ -15,6 +15,13 @@
 		5400B31B25BAEB5C00DC4C49 /* YLAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400B31A25BAEB5C00DC4C49 /* YLAnimationHelper.swift */; };
 		540B8F48260B5EBA00475BC5 /* Alfgo.json in Resources */ = {isa = PBXBuildFile; fileRef = 540B8F47260B5EBA00475BC5 /* Alfgo.json */; };
 		540B8F4D260B72E800475BC5 /* Swift.json in Resources */ = {isa = PBXBuildFile; fileRef = 540B8F4C260B72E800475BC5 /* Swift.json */; };
+		540B8F52260B95FA00475BC5 /* ThirdFoundation.json in Resources */ = {isa = PBXBuildFile; fileRef = 540B8F51260B95FA00475BC5 /* ThirdFoundation.json */; };
+		540B8F5F260C755A00475BC5 /* YLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B8F5D260C755A00475BC5 /* YLHomeViewController.swift */; };
+		540B8F60260C755A00475BC5 /* YLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 540B8F5E260C755A00475BC5 /* YLHomeViewController.xib */; };
+		540B8F69260C757800475BC5 /* YLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B8F67260C757800475BC5 /* YLLoginViewController.swift */; };
+		540B8F6A260C757800475BC5 /* YLLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 540B8F68260C757800475BC5 /* YLLoginViewController.xib */; };
+		540B8F70260C81A600475BC5 /* YLNoteUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B8F6F260C81A600475BC5 /* YLNoteUserManager.swift */; };
+		540B8F7B260C9BA200475BC5 /* ProgrammingMode.json in Resources */ = {isa = PBXBuildFile; fileRef = 540B8F7A260C9BA200475BC5 /* ProgrammingMode.json */; };
 		543580F6259DBBEF00452D76 /* YLLogMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 543580F5259DBBEF00452D76 /* YLLogMessageManager.m */; };
 		543580F925A2F48A00452D76 /* SwapNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543580F825A2F48A00452D76 /* SwapNumbers.swift */; };
 		543580FF25A3198A00452D76 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543580FE25A3198A00452D76 /* BinaryTree.swift */; };
@@ -232,6 +239,13 @@
 		5400B31A25BAEB5C00DC4C49 /* YLAnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAnimationHelper.swift; sourceTree = "<group>"; };
 		540B8F47260B5EBA00475BC5 /* Alfgo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Alfgo.json; sourceTree = "<group>"; };
 		540B8F4C260B72E800475BC5 /* Swift.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Swift.json; sourceTree = "<group>"; };
+		540B8F51260B95FA00475BC5 /* ThirdFoundation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ThirdFoundation.json; sourceTree = "<group>"; };
+		540B8F5D260C755A00475BC5 /* YLHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLHomeViewController.swift; sourceTree = "<group>"; };
+		540B8F5E260C755A00475BC5 /* YLHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLHomeViewController.xib; sourceTree = "<group>"; };
+		540B8F67260C757800475BC5 /* YLLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLoginViewController.swift; sourceTree = "<group>"; };
+		540B8F68260C757800475BC5 /* YLLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YLLoginViewController.xib; sourceTree = "<group>"; };
+		540B8F6F260C81A600475BC5 /* YLNoteUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLNoteUserManager.swift; sourceTree = "<group>"; };
+		540B8F7A260C9BA200475BC5 /* ProgrammingMode.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProgrammingMode.json; sourceTree = "<group>"; };
 		543580F4259DBBEF00452D76 /* YLLogMessageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLLogMessageManager.h; sourceTree = "<group>"; };
 		543580F5259DBBEF00452D76 /* YLLogMessageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLLogMessageManager.m; sourceTree = "<group>"; };
 		543580F825A2F48A00452D76 /* SwapNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapNumbers.swift; sourceTree = "<group>"; };
@@ -573,6 +587,67 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		540B8F59260C752300475BC5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				540B8F5C260C753B00475BC5 /* model */,
+				540B8F5B260C753300475BC5 /* controller */,
+				540B8F5A260C752A00475BC5 /* view */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		540B8F5A260C752A00475BC5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		540B8F5B260C753300475BC5 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				540B8F5D260C755A00475BC5 /* YLHomeViewController.swift */,
+				540B8F5E260C755A00475BC5 /* YLHomeViewController.xib */,
+				540B8F67260C757800475BC5 /* YLLoginViewController.swift */,
+				540B8F68260C757800475BC5 /* YLLoginViewController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		540B8F5C260C753B00475BC5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		540B8F6E260C818D00475BC5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				540B8F6F260C81A600475BC5 /* YLNoteUserManager.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		540B8F82260C9C5200475BC5 /* notes */ = {
+			isa = PBXGroup;
+			children = (
+				540B8F51260B95FA00475BC5 /* ThirdFoundation.json */,
+				54FA55F32609D39500AE0A83 /* Foundation.json */,
+				54FA55FA2609D69F00AE0A83 /* UIKit.json */,
+				54FA55F82609D69F00AE0A83 /* Web.json */,
+				54FA55F92609D69F00AE0A83 /* Runloop.json */,
+				54FD67252609F31500F7E113 /* Runtime.json */,
+				54FD672D2609F39000F7E113 /* Message.json */,
+				54FD67322609F50B00F7E113 /* Memory.json */,
+				54FD67442609F6A900F7E113 /* ProgramOptimization.json */,
+				54FD673A2609F54700F7E113 /* Thread.json */,
+				540B8F7A260C9BA200475BC5 /* ProgrammingMode.json */,
+			);
+			path = notes;
+			sourceTree = "<group>";
+		};
 		543580F3259DBBAB00452D76 /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -711,15 +786,7 @@
 		5435816025AC624500452D76 /* json */ = {
 			isa = PBXGroup;
 			children = (
-				54FA55F32609D39500AE0A83 /* Foundation.json */,
-				54FA55FA2609D69F00AE0A83 /* UIKit.json */,
-				54FA55F82609D69F00AE0A83 /* Web.json */,
-				54FA55F92609D69F00AE0A83 /* Runloop.json */,
-				54FD67252609F31500F7E113 /* Runtime.json */,
-				54FD672D2609F39000F7E113 /* Message.json */,
-				54FD67322609F50B00F7E113 /* Memory.json */,
-				54FD67442609F6A900F7E113 /* ProgramOptimization.json */,
-				54FD673A2609F54700F7E113 /* Thread.json */,
+				540B8F82260C9C5200475BC5 /* notes */,
 				5435818925AD8F1A00452D76 /* TRex.json */,
 				545F873E25B5B812008BE6E2 /* blockusage.json */,
 				540B8F47260B5EBA00475BC5 /* Alfgo.json */,
@@ -1067,6 +1134,8 @@
 		54A35D5124CED7290076DFB6 /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				540B8F6E260C818D00475BC5 /* User */,
+				540B8F59260C752300475BC5 /* Home */,
 				5487BDC725D6F6C100C6AEAE /* YLDemoEmptyViewController.swift */,
 				54A35D5224CED7290076DFB6 /* YLNotesViewController.h */,
 				54A35D7424CED7290076DFB6 /* YLNotesViewController.m */,
@@ -1561,11 +1630,14 @@
 				54BB263C260333EF001A98B4 /* Web-WeChatAuthon.md in Resources */,
 				540B8F48260B5EBA00475BC5 /* Alfgo.json in Resources */,
 				54CAC36E2605DC6B008A7BDF /* cookie.js in Resources */,
+				540B8F60260C755A00475BC5 /* YLHomeViewController.xib in Resources */,
 				54FA55FD2609D69F00AE0A83 /* UIKit.json in Resources */,
 				5487BDBA25CB03DD00C6AEAE /* YLCollectionViewController.xib in Resources */,
 				54FD67332609F50B00F7E113 /* Memory.json in Resources */,
 				5487BDD325D80AB900C6AEAE /* Substring与String区别.md in Resources */,
 				54FD67A3260AFA3B00F7E113 /* YLDemoTestAniViewController.xib in Resources */,
+				540B8F6A260C757800475BC5 /* YLLoginViewController.xib in Resources */,
+				540B8F52260B95FA00475BC5 /* ThirdFoundation.json in Resources */,
 				5487BDCC25D6FD9A00C6AEAE /* Swift基础.md in Resources */,
 				54FA55FC2609D69F00AE0A83 /* Runloop.json in Resources */,
 				54BB26492603A75E001A98B4 /* Web-JS交互.md in Resources */,
@@ -1588,6 +1660,7 @@
 				5487BDD625D80B3E00C6AEAE /* substring_string.webp in Resources */,
 				54FA55F42609D39500AE0A83 /* Foundation.json in Resources */,
 				54FB599E25BFFE5300E3FCA4 /* YLDemoAnimateViewController.xib in Resources */,
+				540B8F7B260C9BA200475BC5 /* ProgrammingMode.json in Resources */,
 				54FD673B2609F54700F7E113 /* Thread.json in Resources */,
 				54BB2647260379E9001A98B4 /* UIWebViewJSTest.html in Resources */,
 				5487BDD825D84E6800C6AEAE /* Swift函数派发机制.md in Resources */,
@@ -1718,6 +1791,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540B8F5F260C755A00475BC5 /* YLHomeViewController.swift in Sources */,
 				54A35D8F24CED7290076DFB6 /* YLSon.m in Sources */,
 				54BB264326035E84001A98B4 /* YLSwiftJavaScriptTools.swift in Sources */,
 				54A35D5024CED6FE0076DFB6 /* YLFlutterViewController.m in Sources */,
@@ -1726,6 +1800,7 @@
 				54FB59B125C4338100E3FCA4 /* UitilityTools.swift in Sources */,
 				54FA55D42609CB5400AE0A83 /* YLDemoNonAutomicViewController.m in Sources */,
 				545F876625BA8750008BE6E2 /* YLDemoDrawrectViewController.m in Sources */,
+				540B8F70260C81A600475BC5 /* YLNoteUserManager.swift in Sources */,
 				5435817525AC716900452D76 /* YLClassificationLevelKingdom.m in Sources */,
 				54A35D4124CED6B20076DFB6 /* BinarySearch.swift in Sources */,
 				543581A725AD953E00452D76 /* YLFoundationNoteManger.m in Sources */,
@@ -1758,6 +1833,7 @@
 				54A35D4524CED6B20076DFB6 /* YLOCSwiftViewController.m in Sources */,
 				54A6517C24D4305C005FB5AD /* YLUserViewController.m in Sources */,
 				5435811E25A4D8AC00452D76 /* YLAutoReleaseNoteManager.m in Sources */,
+				540B8F69260C757800475BC5 /* YLLoginViewController.swift in Sources */,
 				5435817B25AD6F0A00452D76 /* YLClassificationLevelSuperClass.m in Sources */,
 				54A35D9A24CED7290076DFB6 /* YLTheme.swift in Sources */,
 				5435817825AD6E9F00452D76 /* YLClassificationLevelPhylum.m in Sources */,

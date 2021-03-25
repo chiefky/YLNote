@@ -1,5 +1,5 @@
 {
-    "group":"消息传递",
+    "group":"性能优化",
     "questions": [
         {
             "description":"所有相关demo",
@@ -8,11 +8,12 @@
             "type": 0
         },
         {
-            "description":"消息穿传递有几种方式",
+            "description":"离屏渲染",
             "answer":"pushToDemoWith:",
             "class": {"className":"YLArticleMDViewController","classType":1,"xibType": 0,"atrticleTitle":"Web-JS交互"},
             "type": 0
         },
     ]
 }
+
 

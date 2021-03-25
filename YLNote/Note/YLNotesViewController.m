@@ -460,42 +460,6 @@
         };
     }
     return headerView;
-
-        //1 自定义头部
-    
-//    UITableViewHeaderFooterView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"kYLNotesViewControllerHeader"];
-//    if (!view) {
-//          view = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, YLSCREEN_WIDTH, 40)];
-//        //    view.layer.borderWidth = 1;
-//        //    view.layer.borderColor = [UIColor whiteColor].CGColor;
-//        //
-//        NSString * title = [NSString stringWithFormat:@"%p", view];// group.groupName;
-//
-//        // 2 增加按钮
-//        UIButton * button=[UIButton buttonWithType:UIButtonTypeCustom];
-//        [button setTitle:title forState:UIControlStateNormal];
-//        [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-//        button.titleEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 0);
-//        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-//        button.titleLabel.font = [UIFont systemFontOfSize:16.0];
-//        button.frame = CGRectMake(0, 0, YLSCREEN_WIDTH, 40);
-//        button.tag = section + 1000;
-//        [button addTarget:self action:@selector(clickGroupAction:) forControlEvents:UIControlEventTouchUpInside];
-//        [view addSubview:button];
-//
-//        //3 添加左边的箭头
-//
-//        UIImageView * imageView=[[UIImageView alloc] initWithFrame:CGRectMake(5, 20.0-15.0/2, 15, 15)];
-//        if (unfoldStatus) { //展开
-//            imageView.image = [UIImage imageNamed:@"arrow_unfold"];
-//            }else{ //未展开
-//                imageView.image = [UIImage imageNamed:@"arrow_fold"];
-//        }
-//
-//        imageView.tag = 101;
-//        [view addSubview:imageView];
-//    }
-//    return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -539,15 +503,6 @@
 }
 
 #pragma mark - lazy
-//- (NSMutableDictionary *)groupHeaderImages {
-//    if (!_groupHeaderImages) {
-//        _groupHeaderImages = [NSMutableDictionary dictionary];
-//    }
-//    return _groupHeaderImages;
-//}
-//
-//
-
 - (NSMutableArray<YLNoteSectionData *> *)sectionDatas {
     if (!_sectionDatas) {
         _sectionDatas = [NSMutableArray array];
@@ -561,31 +516,6 @@
     }
     return _sectionDatas;
 }
-
-//- (NSArray *)keywords {
-//    return @[
-//        [YLUIKitNoteManger allNotes],
-//        [YLWebNoteManager allNotes],
-//        [YLRuntimeNoteManager allNotes],
-//
-//        //------- 1.7 to do -----
-//        [YLAutoReleaseNoteManager allNotes],
-//        [YLGCDNoteManager allNotes],
-//        [YLKVONoteManager allNotes],
-//
-////        @{
-////            @"group":@"NSNotificationCenter",
-////            @"questions":@[
-////                    @"testNotification:手动实现NSNotificationCenter",
-////                    @"testNotification_block:使用block接口"]},
-//
-//        //------- 1.8 to do -----
-//        [YLMessageNoteManager allNotes],
-//        [YLRunLoopNoteManager allNotes],
-//        [YLAnimationNoteManager allNotes],
-//        [YLThirdLibNoteManager allNotes],
-//    ];
-//}
 
 - (YLFather *)father {
     if (!_father) {

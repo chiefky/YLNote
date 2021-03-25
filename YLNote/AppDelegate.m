@@ -87,13 +87,15 @@ NSString *kTabBarItemKeySelectedColorName     = @"kTabBarItemKeySelectedColorNam
 //    YLUserViewController *userVC = [[YLUserViewController alloc] init];
 //     userVC.title = @"User";
 //    userVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"User" image:[UIImage imageNamed:@"user"] tag:5];
-    
-    YLMemoryViewController *memVC = [[YLMemoryViewController alloc] init];
-    
-    memVC.title = @"性能";
-    memVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"性能" image:[UIImage imageNamed:@"user"] tag:5];
+    YLHomeViewController *homeVC = [[YLHomeViewController alloc] initWithNibName:@"YLHomeViewController" bundle:nil];
+    homeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"user"] tag:5];
 
-    UINavigationController *naviUser = [[UINavigationController alloc] initWithRootViewController:memVC];
+//    YLMemoryViewController *memVC = [[YLMemoryViewController alloc] init];
+//
+//    memVC.title = @"性能";
+//    memVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"性能" image:[UIImage imageNamed:@"user"] tag:5];
+
+    UINavigationController *naviUser = [[UINavigationController alloc] initWithRootViewController:homeVC];
 
      UITabBarController *tab = [[UITabBarController alloc] init];
     tab.tabBar.translucent = NO;

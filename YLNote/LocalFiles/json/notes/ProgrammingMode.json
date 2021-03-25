@@ -1,5 +1,5 @@
 {
-    "group":"性能优化",
+    "group":"设计模式",
     "questions": [
         {
             "description":"所有相关demo",
@@ -8,12 +8,11 @@
             "type": 0
         },
         {
-            "description":"消息穿传递有几种方式",
+            "description":"代理模式",
             "answer":"pushToDemoWith:",
-            "class": {"className":"YLArticleMDViewController","classType":1,"xibType": 0,"atrticleTitle":"Web-JS交互"},
+            "class": {"className":"YLHomeViewController","classType":1,"xibType": 1},
             "type": 0
         },
     ]
 }
-
 
