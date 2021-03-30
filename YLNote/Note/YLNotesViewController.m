@@ -441,7 +441,7 @@
 }
 
 #pragma mark - datasource
-- (NSString *)jsonFile {
+- (NSString *)jsonFileName {
     return @"Note";
 }
 

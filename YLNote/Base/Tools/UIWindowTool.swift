@@ -10,14 +10,14 @@ import Foundation
 
 extension UIWindow {
     
-    
-    @objc static func pushToArticle(_ name: String) {
+    @objc static func pushToArticleVC(_ question: YLQuestion) {
         let artVC = YLArticleMDViewController()
-        artVC.fileName = name
+        artVC.fileName = question.article.fileName
+        artVC.title = question.title
         pushToVC(artVC)
     }
 
-    @objc static func pushToDemo(with question: YLQuestion) {
+    @objc static func pushToDemoVC(with question: YLQuestion) {
         let demoClass = question.demo
         var myVC: UIViewController
         var typeClass: AnyClass?

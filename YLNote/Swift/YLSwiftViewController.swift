@@ -42,7 +42,7 @@ class YLSwiftViewController: UIViewController {
 }
 
 extension YLSwiftViewController: YLQuestionDataProtocol {
-    var jsonFile: String {
+    var jsonFileName: String {
         return "Swift"
     }
     

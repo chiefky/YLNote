@@ -31,8 +31,6 @@ class YLArticleMDViewController: UIViewController {
     
     //MARK: func
     func setupUI() {
-        self.title = "\(fileName)"
-
         view.addSubview(self.mardownView)
         mardownView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

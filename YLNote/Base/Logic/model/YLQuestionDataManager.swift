@@ -12,18 +12,18 @@ import YYModel
 @objc protocol YLQuestionDataProtocol {
     
     // MARK: 必须实现
-    var jsonFile: String { get }
+    var jsonFileName: String { get }
     var headerIdentifier: String { get }
     var cellIdentifier: String { get }
     
-    //
-    //    // MARK: 可选实现
-     @objc optional func doFunction(with name: String, paramete: Any)
+    // MARK: 可选实现
+     @objc optional func doFunction(with name: String, parameter: Any)
     //    @objc optional func actionHandler()
 }
 
 class YLQuestionDataManager: NSObject {
     
+    @objc var allDatas = [YLNoteSectionData]()
     @objc weak var dataSource: YLQuestionDataProtocol? {
         didSet {
             if let tmp = dataSource {
@@ -31,21 +31,12 @@ class YLQuestionDataManager: NSObject {
             }
         }
     }
-    
-    //   @objc var allDatas: [YLNoteSectionData] {
-    //        guard let source = self.dataSource else { return [] }
-    //        return makeupDatas(source)
-    //    }
-    
-    @objc var allDatas = [YLNoteSectionData]()
-    
-    
+            
     func makeupDatas(_ source: YLQuestionDataProtocol) -> [YLNoteSectionData] {
-        let json = YLFileManager.jsonParse(withLocalFileName: source.jsonFile)
+        let json = YLFileManager.jsonParse(withLocalFileName: source.jsonFileName)
         let array = NSArray.yy_modelArray(with: YLNoteSectionData.self, json: json) as? [YLNoteSectionData]
         return array ?? []
     }
-    
     
 }
 
@@ -95,13 +86,15 @@ extension YLQuestionDataManager: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let datasource = self.dataSource,let cell = tableView.dequeueReusableCell(withIdentifier: datasource.cellIdentifier, for: indexPath) as? YLQuestionTableViewCell else { return UITableViewCell() }
+        cell.selectionStyle = .none
         let sectionData = self.allDatas[indexPath.section]
         let group = sectionData.group
         if let question = group.questions[safe: indexPath.row] {
             let title = question.title
             cell.titleLabel.text = "\(indexPath.row + 1). " + title
+            cell.nextPage.isHidden = !question.hasDemo
             cell.articleHandler = {
-                UIWindow.pushToArticle(question.article.fileName)
+                UIWindow.pushToArticleVC(question)
             }
         }        
         return cell;
@@ -111,10 +104,10 @@ extension YLQuestionDataManager: UITableViewDataSource,UITableViewDelegate {
         let sectionData = self.allDatas[indexPath.section]
         guard let question = sectionData.group.questions[safe: indexPath.row] else { return }
         if question.hasDemo {
-            UIWindow.pushToDemo(with: question)
+            UIWindow.pushToDemoVC(with: question)
         } else {           
             if let delegate = self.dataSource {
-                delegate.doFunction?(with: question.function, paramete: indexPath.row)
+                delegate.doFunction?(with: question.function, parameter: indexPath.row)
             }
         }
         

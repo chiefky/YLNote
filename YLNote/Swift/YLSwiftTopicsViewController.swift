@@ -104,7 +104,7 @@ extension YLSwiftTopicsViewController: YLQuestionDataProtocol {
         return "YLSwiftTopicsViewController.header"
     }
     
-    var jsonFile: String { return "Swift" }
+    var jsonFileName: String { return "Swift" }
     
 }
 

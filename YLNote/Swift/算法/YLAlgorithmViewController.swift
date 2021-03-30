@@ -46,7 +46,7 @@ class YLAlgorithmViewController: UIViewController {
 }
 
 extension YLAlgorithmViewController: YLQuestionDataProtocol {
-    var jsonFile: String {
+    var jsonFileName: String {
         return "Alfgo"
     }
     
@@ -58,8 +58,8 @@ extension YLAlgorithmViewController: YLQuestionDataProtocol {
         return "YLAlgorithmViewController.header"
     }
     
-    func doFunction(with name: String, paramete: Any) {
-        guard let index = paramete as? Int else { return }
+    func doFunction(with name: String, parameter: Any) {
+        guard let index = parameter as? Int else { return }
         let funcName = "test_" + name
         if funcName.contains(":") {
             /// 第1种 带参数

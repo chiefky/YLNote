@@ -54,6 +54,8 @@ class YLGroupHeaderView: UITableViewHeaderFooterView {
         didSet {
             headerButton.setTitle(title
                                   , for: .normal)
+            headerButton.setTitleColor(#colorLiteral(red: 1, green: 0.5200329423, blue: 0, alpha: 1), for: .normal)
+            headerButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17.0)
         }
     }
         

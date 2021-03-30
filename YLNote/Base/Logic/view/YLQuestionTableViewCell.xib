@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkA-e4-OzW">
-                        <rect key="frame" x="40" y="6.5" width="269" height="31"/>
+                        <rect key="frame" x="40" y="6.5" width="249" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="9UV-JU-Nn8"/>
                         </constraints>
@@ -37,23 +37,30 @@
                             <action selector="articleActionClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FfO-hc-WAK"/>
                         </connections>
                     </button>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="arrow_fold" translatesAutoresizingMaskIntoConstraints="NO" id="d4V-Cj-ifJ">
+                        <rect key="frame" x="294" y="14.5" width="15" height="15"/>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="d4V-Cj-ifJ" secondAttribute="trailing" constant="11" id="Arz-Gj-n79"/>
                     <constraint firstItem="mkA-e4-OzW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FCG-XZ-QFX"/>
                     <constraint firstItem="vVt-0e-YIb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aZ5-Vt-vd1"/>
-                    <constraint firstAttribute="trailing" secondItem="mkA-e4-OzW" secondAttribute="trailing" constant="11" id="qCq-gd-lqd"/>
                     <constraint firstItem="mkA-e4-OzW" firstAttribute="leading" secondItem="vVt-0e-YIb" secondAttribute="trailing" constant="5" id="qk0-ie-CSS"/>
+                    <constraint firstItem="d4V-Cj-ifJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tVe-BQ-aIb"/>
+                    <constraint firstItem="d4V-Cj-ifJ" firstAttribute="leading" secondItem="mkA-e4-OzW" secondAttribute="trailing" constant="5" id="unP-Y2-cAE"/>
                     <constraint firstItem="vVt-0e-YIb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="zcm-Jf-kWb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="nextPage" destination="d4V-Cj-ifJ" id="hiW-3B-b4X"/>
                 <outlet property="titleLabel" destination="mkA-e4-OzW" id="kFs-eK-cvw"/>
             </connections>
             <point key="canvasLocation" x="57.971014492753625" y="79.6875"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="arrow_fold" width="15" height="15"/>
         <image name="article" width="25" height="21.5"/>
     </resources>
 </document>
