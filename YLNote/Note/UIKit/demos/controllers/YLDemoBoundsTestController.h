@@ -1,5 +1,5 @@
 //
-//  YLViewBoundsTestController.h
+//  YLDemoBoundsTestController.h
 //  YLNote
 //
 //  Created by tangh on 2021/1/13.
@@ -15,7 +15,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YLViewBoundsTestController : UIViewController
+@interface YLDemoBoundsTestController : UIViewController
 
 @end
 

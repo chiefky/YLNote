@@ -1,15 +1,15 @@
 //
-//  YLViewBoundsTestController.m
+//  YLDemoBoundsTestController.m
 //  YLNote
 //
 //  Created by tangh on 2021/1/13.
 //  Copyright © 2021 tangh. All rights reserved.
 //
 
-#import "YLViewBoundsTestController.h"
+#import "YLDemoBoundsTestController.h"
 #import "UIView+Tools.h"
 
-@interface YLViewBoundsTestController ()
+@interface YLDemoBoundsTestController ()
 @property (nonatomic,strong)UIImageView *viewA;
 @property (nonatomic,strong)UIView *view_a;
 @property (nonatomic,strong)UIView *view_b;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation YLViewBoundsTestController
+@implementation YLDemoBoundsTestController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

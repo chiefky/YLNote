@@ -105,29 +105,17 @@ extension YLQuestionDataManager: UITableViewDataSource,UITableViewDelegate {
         guard let question = sectionData.group.questions[safe: indexPath.row] else { return }
         if question.hasDemo {
             UIWindow.pushToDemoVC(with: question)
-        } else {           
-            if let delegate = self.dataSource {
-                delegate.doFunction?(with: question.function, parameter: indexPath.row)
+        } else {
+            let functionName = question.function
+            guard functionName.count > 0,let delegate = self.dataSource else {
+                YLAlertManager.showToast(withMessage: "未定义响应事件", senconds: 1)
+                return
             }
+            delegate.doFunction?(with: question.function, parameter: indexPath.row)
+
         }
         
         return
     }
     
-    
-//    func doFunction(with question: YLQuestion, index: Int) {
-//        let functionName = "test_" + question.function
-//        if let delegate = self.dataSource as? NSObject {
-//            let function = Selector(functionName)
-//
-//            if delegate.responds(to: function) {
-//                if functionName.contains(":") {
-//                    delegate.perform(function, with: index)
-//                } else {
-//                    delegate.perform(function)
-//                }
-//            }
-//        }
-//
-//    }
 }

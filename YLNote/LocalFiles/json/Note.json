@@ -7,27 +7,21 @@
             "questions":[
                 {
                     "title":"iOS定义静态变量、静态常量、全局变量",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"",
-                        "style": 1,
-                        "useXib": 1
-                    },
+                    "hasDemo": false,
+                    "function":"",
+                    "demo": {},
                     "article": {
-                        "artTitle":"iOS定义静态变量、静态常量、全局变量",
+                        "artTitle":"",
                         "fileName":"Foundation-静态变量"
                     }
                 },
                 {
                     "title":"nil、NIL、NSNULL区别",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"",
-                        "style": 1,
-                        "useXib": 1
-                    },
+                    "hasDemo": false,
+                    "function":"nilAndNSNull",
+                    "demo": {},
                     "article": {
-                        "artTitle":"nil、NIL、NSNULL区别",
+                        "artTitle":"",
                         "fileName":""
                     }
                 },
@@ -47,60 +41,19 @@
                 {
                     "title": "atomic仅仅是对set线程安全并不保证对其数据的操作也安全",
                     "hasDemo": true,
-                    "demo": {
-                        "className":"YLDemoNonAutomicViewController",
-                        "style": 0,
-                        "useXib": 0
-                    },
+                    "function":"",
+                    "demo": {},
                     "article": {
-                        "artTitle":"atomic仅仅是对set线程安全并不保证对其数据的操作也安全",
+                        "artTitle":"",
                         "fileName":""
                     }
                 },
                 {
                     "title":"对nonatomic属性操作实现线程安全使用举例",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoNonAutomicViewController",
-                        "style": 0,
-                        "useXib": 0
-                    },
-                    "article": {
-                        "artTitle":"对nonatomic属性操作实现线程安全使用举例",
-                        "fileName":""
-                    }
-                },
-                {
-                    "title":"isEqual 和 hash 有什么联系",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"YLDemoHashEqualViewController",
-                        "style": 0,
-                        "useXib": 0
-                    },
-                    "article": {
-                        "artTitle":"isEqual 和 hash 有什么联系",
-                        "fileName":""
-                    }
-                },
-                {
-                    "title":"如何重写自己的hash方法",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"YLDemoHashEqualViewController",
-                        "style": 0,
-                        "useXib": 0
-                    },
-                    "article": {
-                        "artTitle":"isEqual 和 hash 有什么联系",
-                        "fileName":""
-                    }
-                },
-                {
-                    "title":"id 和 instanceType 有什么区别",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"",
                         "style": 0,
                         "useXib": 0
                     },
@@ -110,13 +63,48 @@
                     }
                 },
                 {
-                    "title":"self和super的区别",
+                    "title":"isEqual 和 hash 有什么联系",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
-                        "className":"",
+                        "className":"YLDemoHashEqualViewController",
                         "style": 0,
                         "useXib": 0
                     },
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"如何重写自己的hash方法",
+                    "hasDemo": true,
+                    "function":"",
+                    "demo": {
+                        "className":"YLDemoHashEqualViewController",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"id 和 instanceType 有什么区别",
+                    "hasDemo": false,
+                    "function":"idAndInstancetype",
+                    "demo": { },
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"self和super的区别",
+                    "hasDemo": false,
+                    "function":"selfAndSuper",
+                    "demo": {},
                     "article": {
                         "artTitle":"",
                         "fileName":""
@@ -125,6 +113,7 @@
                 {
                     "title":"@synthesize和@dynamic分别有什么作用",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoDynamicViewController",
                         "style": 0,
@@ -138,6 +127,7 @@
                 {
                     "title":"typeof() 和 __typeof__()，__typeof()区别",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoTypeofViewController",
                         "style": 0,
@@ -150,12 +140,9 @@
                 },
                 {
                     "title":"值类型(struct)和引用类型(class)",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
-                    },
+                    "hasDemo": false,
+                    "function":"structAndClass",
+                    "demo": {},
                     "article": {
                         "artTitle":"",
                         "fileName":""
@@ -173,6 +160,7 @@
                 {
                     "title":"UIViewController的生命周期",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoLifeCycleViewController",
                         "style": 1,
@@ -186,6 +174,7 @@
                 {
                     "title":"UIView 和 CALayer 是什么关系",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoLayerViewController",
                         "style": 0,
@@ -198,12 +187,9 @@
                 },
                 {
                     "title": "UIView的显示原理",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
-                    },
+                    "hasDemo": false,
+                    "function":"displayUIView",
+                    "demo": {},
                     "article": {
                         "artTitle":"",
                         "fileName":""
@@ -212,8 +198,9 @@
                 {
                     "title":"Bounds 和 Frame 的区别",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
-                        "className":"YLViewBoundsTestController",
+                        "className":"YLDemoBoundsTestController",
                         "style": 0,
                         "useXib": 0
                     },
@@ -225,6 +212,7 @@
                 {
                     "title":"layoutSubviews触发条件有哪些",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoLayoutViewController",
                         "style": 1,
@@ -238,6 +226,7 @@
                 {
                     "title":"layoutIfNeeded用法",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoAnimateViewController",
                         "style": 1,
@@ -251,6 +240,7 @@
                 {
                     "title":"setNeedsDisplay用法",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoDrawrectViewController",
                         "style": 0,
@@ -264,6 +254,7 @@
                 {
                     "title": "使用 drawRect有什么影响",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoDrawrectViewController",
                         "style": 0,
@@ -277,6 +268,7 @@
                 {
                     "title": "谈谈对UIResponder的理解",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoResponderViewController",
                         "style": 1,
@@ -290,6 +282,7 @@
                 {
                     "title": "抹去navigationbar 返回按钮title 有几种方式",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLDemoEmptyViewController",
                         "style": 1,
@@ -303,6 +296,7 @@
                 {
                     "title": "动画",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLAnimationViewController",
                         "style": 1,
@@ -322,14 +316,15 @@
         "index":2,
         "unfoldStatus":false,
         "group": {
-            "name":"Web",
+            "name":"WebKit",
             "questions": [
                 {
                     "title":"JS和native互相调用的几种方式",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
-                        "className":"",
-                        "style": 0,
+                        "className":"YLWKWebDemoListViewController",
+                        "style": 1,
                         "useXib": 0
                     },
                     "article": {
@@ -339,28 +334,22 @@
                 },
                 {
                     "title":"微信环境h5页面登录实现流程",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
-                    },
+                    "hasDemo": false,
+                    "function":"",
+                    "demo": {},
                     "article": {
                         "artTitle":"",
-                        "fileName":""
+                        "fileName":"Web-WeChatAuthon"
                     }
                 },
                 {
                     "title":"WKWebView Cookie",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
-                    },
+                    "hasDemo": false,
+                    "function":"",
+                    "demo": {},
                     "article": {
                         "artTitle":"",
-                        "fileName":""
+                        "fileName":"Web-Cookie"
                     }
                 },
             ]
@@ -375,6 +364,7 @@
                 {
                     "title":"isa指针换",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -397,6 +387,7 @@
                 {
                     "title":"isa指针换",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -418,24 +409,22 @@
             "questions": [
                 {
                     "title":"消息传递有几种方式",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
-                    },
+                    "hasDemo": false,
+                    "function":"",
+                    "demo": { },
                     "article": {
                         "artTitle":"",
-                        "fileName":""
+                        "fileName":"Message"
                     }
                 },
                 {
                     "title":"代理",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
+                        "className":"YLHomeViewController",
+                        "style": 1,
+                        "useXib": 1
                     },
                     "article": {
                         "artTitle":"",
@@ -444,12 +433,9 @@
                 },
                 {
                     "title":"KVO",
-                    "hasDemo": true,
-                    "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
-                    },
+                    "hasDemo": false,
+                    "function":"",
+                    "demo": {},
                     "article": {
                         "artTitle":"",
                         "fileName":""
@@ -457,11 +443,9 @@
                 },
                 {
                     "title":"通知",
-                    "hasDemo": true,
+                    "hasDemo": false,
+                    "function":"",
                     "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
                     },
                     "article": {
                         "artTitle":"",
@@ -470,11 +454,9 @@
                 },
                 {
                     "title":"block",
-                    "hasDemo": true,
+                    "hasDemo": false,
+                    "function":"",
                     "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
                     },
                     "article": {
                         "artTitle":"",
@@ -483,11 +465,9 @@
                 },
                 {
                     "title":"target action",
-                    "hasDemo": true,
+                    "hasDemo": false,
+                    "function":"",
                     "demo": {
-                        "className":"",
-                        "style": 0,
-                        "useXib": 0
                     },
                     "article": {
                         "artTitle":"",
@@ -504,8 +484,9 @@
             "name":"内存管理",
             "questions": [
                 {
-                    "title":"所有相关demo",
-                    "hasDemo": true,
+                    "title":"autorelease",
+                    "hasDemo": false,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -529,6 +510,7 @@
                 {
                     "title":"离屏渲染",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -551,6 +533,7 @@
                 {
                     "title":"所有相关demo",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -564,6 +547,7 @@
                 {
                     "title":"消息穿传递有几种方式",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -586,6 +570,7 @@
                 {
                     "title":"所有相关demo",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -599,6 +584,7 @@
                 {
                     "title":"AFNetWork",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -612,6 +598,7 @@
                 {
                     "title":"SDWebImage",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -625,6 +612,7 @@
                 {
                     "title":"YYImage",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"",
                         "style": 0,
@@ -647,6 +635,7 @@
                 {
                     "title":"代理模式",
                     "hasDemo": true,
+                    "function":"",
                     "demo": {
                         "className":"YLHomeViewController",
                         "style": 1,

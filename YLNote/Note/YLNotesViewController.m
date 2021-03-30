@@ -7,7 +7,7 @@
 //
 #import "YLNotesViewController.h"
 #import "YLNote-Swift.h"
-
+#import <YYModel/YYModel.h>
 #import <objc/runtime.h>
 
 #import "YLFoundationNoteManger.h"
@@ -439,8 +439,54 @@
     YLTestViewController *vc = [[YLTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+#pragma mark - Foundation
+// nil、NILL、NSNULL区别
+- (void)test_nilAndNSNull {
+    NSString *msg = @"nil、NIL 可以说是等价的，都代表内存中一块空地址。\n NSNULL 代表一个指向 nil 的对象。";
+    [YLAlertManager showAlertWithTitle:@"nil、NILL、NSNULL" message:msg actionTitle:@"OK" handler:nil];
+}
 
-#pragma mark - datasource
+/**
+ 相同点:
+instancetype 和 id 都是万能指针，指向对象。
+不同点：
+1.id 在编译的时候不能判断对象的真实类型，instancetype 在编译的时候可以判断对象的真实类型。
+2.id 可以用来定义变量，可以作为返回值类型，可以作为形参类型；instancetype 只能作为返回值类型。
+ */
+- (void)test_idAndInstancetype {
+    NSString *msg = @" 相同点:instancetype 和 id 都是万能指针，指向对象。\n不同点： 1.id 在编译的时候不能判断对象的真实类型，instancetype 在编译的时候可以判断对象的真实类型。\n    2.id 可以用来定义变量，可以作为返回值类型，可以作为形参类型；instancetype 只能作为返回值类型";
+    [YLAlertManager showAlertWithTitle:@"id & instancetype" message:msg actionTitle:@"OK" handler:nil];
+}
+
+/// self和super的区别
+- (void)test_selfAndSuper {
+    NSDictionary *plumDict = [YLFileManager jsonParseWithLocalFileName:@"TRex"];
+    YLDinodsaul *TRex = [YLDinodsaul yy_modelWithDictionary:plumDict];
+    [TRex testClass];
+}
+/**
+ 类： 引用类型（位于栈上面的指针（引用）和位于堆上的实体对象）
+ 结构体：值类型（实例直接位于栈中）
+ */
+// struct和class的区别
+- (void)test_structAndClass {
+    NSString *msg = @"类： 引用类型（位于栈上面的指针（引用）和位于堆上的实体对象）\n结构体：值类型（实例直接位于栈中）";
+    [YLAlertManager showAlertWithTitle:@"值类型&引用类型" message:msg actionTitle:@"OK" handler:nil];
+}
+
+#pragma mark - UIkit
+/**
+ 因为UIView依赖于CALayer提供的内容，而CALayer又依赖于UIView提供的容器来显示绘制的内容，所以UIView的显示可以说是CALayer要显示绘制的图形。当要显示时，CALayer会准备好一个CGContextRef(图形上下文)，然后调用它的delegate(这里就是UIView)的drawLayer:inContext:方法，并且传入已经准备好的CGContextRef对象，在drawLayer:inContext:方法中UIView又会调用自己的drawRect:方法。
+     我们可以把UIView的显示比作“在电脑上使用播放器播放U盘上得电影”，播放器相当于UIView，视频解码器相当于CALayer，U盘相当于CGContextRef，电影相当于绘制的图形信息。不同的图形上下文可以想象成不同接口的U盘
+
+ 注意：当我们需要绘图到根层上时，一般在drawRect:方法中绘制，不建议在drawLayer:inContext:方法中绘图
+
+ */
+- (void)test_displayUIView {
+    [YLAlertManager showAlertWithTitle:@"" message:@" 因为UIView依赖于CALayer提供的内容，而CALayer又依赖于UIView提供的容器来显示绘制的内容，所以UIView的显示可以说是CALayer要显示绘制的图形。当要显示时，CALayer会准备好一个CGContextRef(图形上下文)，然后调用它的delegate(这里就是UIView)的drawLayer:inContext:方法，并且传入已经准备好的CGContextRef对象，在drawLayer:inContext:方法中UIView又会调用自己的drawRect:方法。" actionTitle:@"ok" handler:nil];
+}
+
+#pragma mark - datasource Protocol
 - (NSString *)jsonFileName {
     return @"Note";
 }
@@ -452,86 +498,29 @@
 - (NSString *)headerIdentifier {
     return @"kYLGroupHeaderView";
 }
-#pragma mark - delegate & datadource
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return self.sectionDatas.count;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 40.0f;
-//}
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//
-//    YLNoteSectionData *sectionData = self.sectionDatas[section];
-//    BOOL unfoldStatus = sectionData.unfoldStatus;
-//
-//    YLGroupHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"kYLGroupHeaderView"];
-//    if (headerView) {
-//        headerView.title = self.sectionDatas[section].groupData.groupName;
-//        headerView.unfoldStatus = unfoldStatus;
-//        headerView.actionHandler = ^{
-//            sectionData.unfoldStatus = !unfoldStatus;
-//            //刷新当前的分组
-//            NSIndexSet * set = [[NSIndexSet alloc] initWithIndex:section];
-//            [self.table reloadSections:set withRowAnimation:UITableViewRowAnimationNone];
-//        };
-//    }
-//    return headerView;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return 0.01f;
-//}
-//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    UIView * view=[[UIView alloc] init];
-//    view.backgroundColor = [UIColor redColor];
-//    return view;
-//}
-//
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//    if (cell) {
-//        YLNoteGroup *group = self.sectionDatas[indexPath.section].groupData;
-//        YLQuestionItem *question = group.questions[indexPath.row];
-//        cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row + 1,question
-//                               .itemDesc];;
-//        cell.textLabel.textColor = [UIColor grayColor];
-//        cell.textLabel.font = [UIFont systemFontOfSize:13.0];
-//    }
-//    return cell;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    YLNoteSectionData *sectionData = self.sectionDatas[section];
-//    if(sectionData.unfoldStatus) {
-//        return sectionData.groupData.questions.count;
-//    } else {
-//        return 0;
-//    }
-//}
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    YLNoteGroup *group = self.sectionDatas[indexPath.section].groupData;
-//    YLQuestionItem *question = group.questions[indexPath.row];
-//    [self didSelectItem:question];
-//    return;
-//}
-//
-//- (void)didSelectItem: (YLQuestionItem *)item {
-//    NSString *functionName = item.functionName;
-//    if ([functionName containsString:@":"]) {
-//        SEL funcc = NSSelectorFromString(functionName);
-//        IMP imp = [self methodForSelector:funcc];
-//        void (*func)(id, SEL, YLQuestionItem *) = (void *)imp;
-//        func(self, funcc, item);
-//    } else {
-//        SEL function = NSSelectorFromString(functionName);
-//        IMP imp = [self methodForSelector:function];
-//        void (*func)(id, SEL) = (void *)imp;
-//        func(self, function);
-//    }
-//}
+
+- (void)doFunctionWith:(NSString *)name parameter:(id)parameter {
+    NSString *funcName = [NSString stringWithFormat:@"test_%@",name];
+    SEL selector = NSSelectorFromString(funcName);
+    
+    //检查是否有"myMethod"这个名称的方法
+    if ([self respondsToSelector:selector]) {
+        if (!self) { return; }
+        if ([name containsString:@":"]) {
+            IMP imp = [self methodForSelector:selector];
+            CGRect (*func)(id, SEL, id, id) = (void *)imp;
+            CGRect result = self ?
+            func(self, selector, @"2", @"3") : CGRectZero;
+            NSLog(@"result:: %@",NSStringFromCGRect(result));
+        } else {
+            IMP imp = [self methodForSelector:selector];
+            void (*func)(id, SEL) = (void *)imp;
+            func(self, selector);
+        }
+    }
+    
+    
+}
 
 #pragma mark - lazy
 

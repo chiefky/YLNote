@@ -60,9 +60,7 @@ class YLDemoEmptyViewController: UIViewController {
         case 3:
             // 方式三 还是使用设置标题位置的方式（推荐）
             UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -100, vertical: 0), for:UIBarMetrics.default)
-        default:
-            print("nothing");
-            break;
+        default: break;
         }
     }
     

@@ -14,6 +14,6 @@
 #import "YLNoteData.h"
 #import "YLWindowLoader.h"
 #import "YLDemoLayerViewController.h"
-#import "YLViewBoundsTestController.h"
+#import "YLDemoBoundsTestController.h"
 #import "YLDemoDrawrectViewController.h"
 #import "YLDinodsaul.h"
