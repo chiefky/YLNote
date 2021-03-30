@@ -36,7 +36,7 @@
 
 
 
-@interface YLNotesViewController ()<UITableViewDelegate,UITableViewDataSource,YLGroupDataProtocol>
+@interface YLNotesViewController ()<YLQuestionDataProtocol>
 @property (nonatomic,strong)YLFather *father;
 @property (nonatomic,strong)YLSon *son1;
 @property (nonatomic,strong)YLSon *son2;
@@ -48,9 +48,9 @@
 @property (nonatomic,strong)YLFather *stFather; // 测试strong属性
 
 @property (nonatomic,strong)UITableView *table;
-@property (nonatomic,strong) NSObject<YLGroupDataProtocol> *dataDelegate;
 
-@property (nonatomic,copy) NSMutableArray<YLNoteSectionData *> *sectionDatas;
+@property (nonatomic,strong) YLQuestionDataManager *dataManager;
+@property (nonatomic,copy) NSArray<YLNoteSectionData *> *sectionDatas;
 
 @end
 
@@ -58,14 +58,19 @@
 
 - (void)setupUI {
     self.table = [[UITableView alloc] initWithFrame:YLSCREEN_BOUNDS style:UITableViewStyleGrouped];
-    self.table.delegate = self;
-    self.table.dataSource = self;
     [self.view addSubview:self.table];
+    [self.table registerClass:[YLGroupHeaderView class] forHeaderFooterViewReuseIdentifier:[self headerIdentifier]];
     
-    [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [self.table registerClass:[YLGroupHeaderView class] forHeaderFooterViewReuseIdentifier:@"kYLGroupHeaderView"];
-
-    self.dataDelegate = [[YLNoteGroupDataManager alloc] init];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"YLQuestionTableViewCell" ofType:@"nib"];
+    if (path) {
+        [self.table registerNib:[UINib nibWithNibName:@"YLQuestionTableViewCell" bundle:nil] forCellReuseIdentifier:[self cellIdentifier]];
+    } else {
+        [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:[self cellIdentifier]];
+    }
+    self.dataManager.dataSource = self;
+    self.sectionDatas = self.dataManager.allDatas;
+    self.table.delegate = self.dataManager;
+    self.table.dataSource = self.dataManager;
 }
 
 
@@ -435,87 +440,100 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - datasource
+- (NSString *)jsonFile {
+    return @"Note";
+}
+
+- (NSString *)cellIdentifier {
+    return @"cell";
+}
+
+- (NSString *)headerIdentifier {
+    return @"kYLGroupHeaderView";
+}
 #pragma mark - delegate & datadource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionDatas.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40.0f;
-}
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-
-    YLNoteSectionData *sectionData = self.sectionDatas[section];
-    BOOL unfoldStatus = sectionData.unfoldStatus;
-
-    YLGroupHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"kYLGroupHeaderView"];
-    if (headerView) {
-        headerView.title = self.sectionDatas[section].groupData.groupName;
-        headerView.unfoldStatus = unfoldStatus;
-        headerView.actionHandler = ^{
-            sectionData.unfoldStatus = !unfoldStatus;
-            //刷新当前的分组
-            NSIndexSet * set = [[NSIndexSet alloc] initWithIndex:section];
-            [self.table reloadSections:set withRowAnimation:UITableViewRowAnimationNone];
-        };
-    }
-    return headerView;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.01f;
-}
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView * view=[[UIView alloc] init];
-    view.backgroundColor = [UIColor redColor];
-    return view;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    if (cell) {
-        YLNoteGroup *group = self.sectionDatas[indexPath.section].groupData;
-        YLQuestionItem *question = group.questions[indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row + 1,question
-                               .itemDesc];;
-        cell.textLabel.textColor = [UIColor grayColor];
-        cell.textLabel.font = [UIFont systemFontOfSize:13.0];
-    }
-    return cell;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    YLNoteSectionData *sectionData = self.sectionDatas[section];
-    if(sectionData.unfoldStatus) {
-        return sectionData.groupData.questions.count;
-    } else {
-        return 0;
-    }
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    YLNoteGroup *group = self.sectionDatas[indexPath.section].groupData;
-    YLQuestionItem *question = group.questions[indexPath.row];
-    [self.dataDelegate didSelectRowWith:question];
-    return;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return self.sectionDatas.count;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 40.0f;
+//}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//
+//    YLNoteSectionData *sectionData = self.sectionDatas[section];
+//    BOOL unfoldStatus = sectionData.unfoldStatus;
+//
+//    YLGroupHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"kYLGroupHeaderView"];
+//    if (headerView) {
+//        headerView.title = self.sectionDatas[section].groupData.groupName;
+//        headerView.unfoldStatus = unfoldStatus;
+//        headerView.actionHandler = ^{
+//            sectionData.unfoldStatus = !unfoldStatus;
+//            //刷新当前的分组
+//            NSIndexSet * set = [[NSIndexSet alloc] initWithIndex:section];
+//            [self.table reloadSections:set withRowAnimation:UITableViewRowAnimationNone];
+//        };
+//    }
+//    return headerView;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return 0.01f;
+//}
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+//    UIView * view=[[UIView alloc] init];
+//    view.backgroundColor = [UIColor redColor];
+//    return view;
+//}
+//
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    if (cell) {
+//        YLNoteGroup *group = self.sectionDatas[indexPath.section].groupData;
+//        YLQuestionItem *question = group.questions[indexPath.row];
+//        cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row + 1,question
+//                               .itemDesc];;
+//        cell.textLabel.textColor = [UIColor grayColor];
+//        cell.textLabel.font = [UIFont systemFontOfSize:13.0];
+//    }
+//    return cell;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    YLNoteSectionData *sectionData = self.sectionDatas[section];
+//    if(sectionData.unfoldStatus) {
+//        return sectionData.groupData.questions.count;
+//    } else {
+//        return 0;
+//    }
+//}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    YLNoteGroup *group = self.sectionDatas[indexPath.section].groupData;
+//    YLQuestionItem *question = group.questions[indexPath.row];
+//    [self didSelectItem:question];
+//    return;
+//}
+//
+//- (void)didSelectItem: (YLQuestionItem *)item {
+//    NSString *functionName = item.functionName;
+//    if ([functionName containsString:@":"]) {
+//        SEL funcc = NSSelectorFromString(functionName);
+//        IMP imp = [self methodForSelector:funcc];
+//        void (*func)(id, SEL, YLQuestionItem *) = (void *)imp;
+//        func(self, funcc, item);
+//    } else {
+//        SEL function = NSSelectorFromString(functionName);
+//        IMP imp = [self methodForSelector:function];
+//        void (*func)(id, SEL) = (void *)imp;
+//        func(self, function);
+//    }
+//}
 
 #pragma mark - lazy
-- (NSMutableArray<YLNoteSectionData *> *)sectionDatas {
-    if (!_sectionDatas) {
-        _sectionDatas = [NSMutableArray array];
-        if ([self.dataDelegate respondsToSelector:@selector(dataGroup)]) {
-            NSArray *tmpData = [self.dataDelegate dataGroup];
-            [tmpData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                YLNoteSectionData *sectionData = [[YLNoteSectionData alloc] initWithSection:idx status:NO data:obj];
-                [_sectionDatas addObject:sectionData];
-            }];
-        }
-    }
-    return _sectionDatas;
-}
 
 - (YLFather *)father {
     if (!_father) {
@@ -536,6 +554,13 @@
         _son2 = [YLSon new];
     }
     return _son2;
+}
+
+- (YLQuestionDataManager *)dataManager {
+    if (!_dataManager) {
+        _dataManager = [[YLQuestionDataManager alloc] init];
+    }
+    return _dataManager;
 }
 
 @end

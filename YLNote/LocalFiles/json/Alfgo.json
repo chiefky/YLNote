@@ -2,59 +2,97 @@
     {
         "index": 0,
         "unfoldStatus": false,
-        "groupData": {
-            "group":"数字交换",
+        "group": {
+            "name":"数字交换",
             "questions": [
                 {
-                    "description":"使用临时变量",
-                    "answer":"swapWithIndex:",
-                    "class": {},
+                    "title":"使用临时变量",
+                    "function":"swapWithIndex:",
+                    "hasDemo": false,
+                    "demo": {},
+                    "article": {
+                        
+                    }
                 },
                 {
-                    "description":"使用四则运算",
-                    "answer":"swapWithIndex:",
-                    "class": {},
+                    "title":"使用四则运算",
+                    "function":"swapWithIndex:",
+                    "hasDemo": false,
+                    "demo": {},
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
                 },
                 {
-                    "description":"使用异或运算",
-                    "answer":"swapWithIndex:",
-                    "class": {},
+                    "title":"使用异或运算",
+                    "function":"swapWithIndex:",
+                    "hasDemo": false,
+                    "demo": { },
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
                 }]
         },
     },
     {
         "index": 1,
         "unfoldStatus": false,
-        "groupData": {
-            "group":"求二叉树深度",
+        "group": {
+            "name":"求二叉树深度",
             "questions": [
                 {
-                    "description":"使用递归",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"使用递归",
+                    "function":"binaryDepthWithIndex:",
+                    "hasDemo": false,
+                    "demo": {},
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+
                 },
                 {
-                    "description":"使用栈+DFS",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"使用栈+DFS",
+                    "function":"binaryDepthWithIndex:",
+                    "hasDemo": false,
+                    "demo": {},
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+
                 },
                 {
-                    "description":"使用队列+BFS",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"使用队列+BFS",
+                    "function":"binaryDepthWithIndex:",
+                    "hasDemo": false,
+                    "demo": {},
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+
                 }]
         }
     },
     {
         "index": 2,
         "unfoldStatus": false,
-        "groupData": {
-            "group":"判断是否是平衡二叉树",
+        "group": {
+            "name":"判断是否是平衡二叉树",
             "questions": [
                 {
-                    "description":"使用递归",
-                    "answer":"isBalancedWithIndex:",
-                    "class": {},
+                    "title":"使用递归",
+                    "function":"isBalancedWithIndex:",
+                    "hasDemo": false,
+                    "demo": {},
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+
                 }]
         },
     }

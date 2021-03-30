@@ -37,7 +37,6 @@ extension UITabBarItem {
             let executor = self.addDeallocExecutor(tag: UITabBarItemAssociateKeys.deallocExecutor) { [unowned self] () -> () in
                 // __unsafe_unretained typeof(self) weakSelf = self; // NOTE: need to be __unsafe_unretained because __weak var will be reset to nil in dealloc
 
-                print("deallocing %@", self);
                 NotificationCenter.default.removeObserver(self)
             }
             objc_setAssociatedObject(self, &UITabBarItemAssociateKeys.deallocExecutor, executor, .OBJC_ASSOCIATION_ASSIGN);

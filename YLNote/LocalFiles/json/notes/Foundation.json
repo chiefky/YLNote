@@ -1,69 +1,155 @@
-{
-    "group":"Foundation",
-    "questions":[
-        {
-            "description":"iOS定义静态变量、静态常量、全局变量",
-            "answer":"pushToDemoWith:",
-            "class": {"className":"YLArticleMDViewController","classType":1,"xibType": 0,"atrticleTitle":"Foundation-静态变量"},
-            "type": 0
-        },
-        {"description":"nil、NIL、NSNULL区别",
-            "answer":"testNilAndNSNull",
-            "class": {"className":"","classType":0,"xibType": 0},
-            "type": 0
-        },
-        {"description":"实现一个线程安全的 NSMutableArray",
-            "answer":"pushToDemoWith:",
-            "class": {"className":"YLDemoSafeArrayViewController","classType":0,"xibType": 0},
-            "type": 0
-        },
-        {"description": "atomic仅仅是对set线程安全并不保证对其数据的操作也安全",
-            "answer":"pushToDemoWith:",
-            "class": {"className":"YLDemoNonAutomicViewController","classType":0,"xibType": 0},
-            "type": 0},
-        {"description":"对nonatomic属性操作实现线程安全使用举例",
-            "answer":"pushToDemoWith:",
-            "class": {"className":"YLDemoNonAutomicViewController","classType":0,"xibType": 0},
-            "type": 0
-        },
-        {"description":"isEqual 和 hash 有什么联系",
-            "answer":"pushToDemoWith:",
-            "class": {"className":"YLDemoHashEqualViewController","classType":0,"xibType": 0},
-            "type": 0
-        },
-        {"description":"如何重写自己的hash方法",
-            "answer":"pushToDemoWith:",
-            "class": {"className":"YLDemoHashEqualViewController","classType":0,"xibType": 0},
-            "type": 0
-        },
-        {"description":"id 和 instanceType 有什么区别",
-            "answer":"testIdAndInstancetype",
-            "class": {"className":"","classType":0,"xibType": 0},
-            "type": 0
-        },
-        {
-            "description":"self和super的区别",
-            "answer":"testSelfAndSuper_classFunc",
-            "class": {"className":"","classType":0,"xibType": 0},
-            "type": 0
-        },
-        {
-            "description":"@synthesize和@dynamic分别有什么作用",
-            "answer":"pushToDemoWith:",
-            "class": {"className":"YLDemoDynamicViewController","classType":0,"xibType": 0},
-            "type": 0
-        },
-        {
-            "description":"typeof() 和 __typeof__()，__typeof()区别",
-            "answer":"pushToDemoWith:",
-            "class": {"className":"YLDemoTypeofViewController","classType":0,"xibType": 0},
-            "type": 0
-        },
-        {
-            "description":"值类型(struct)和引用类型(class)",
-            "answer":"testStructAndClass",
-            "class": {"className":"","classType":0,"xibType": 0},
-            "type": 0
+[
+    {
+        "index":0,
+        "unfoldStatus":false,
+        "group": {
+            "name":"Foundation",
+            "questions":[
+                {
+                    "title":"iOS定义静态变量、静态常量、全局变量",
+                    "demo": {
+                        "className":"",
+                        "style": 1,
+                        "useXib": 1
+                    },
+                    "article": {
+                        "artTitle":"iOS定义静态变量、静态常量、全局变量",
+                        "fileName":"Foundation-静态变量"
+                    }
+                },
+                {
+                    "title":"nil、NIL、NSNULL区别",
+                    "demo": {
+                        "className":"",
+                        "style": 1,
+                        "useXib": 1
+                    },
+                    "article": {
+                        "artTitle":"nil、NIL、NSNULL区别",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"实现一个线程安全的 NSMutableArray",
+                    "demo": {
+                        "className":"YLDemoSafeArrayViewController",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"实现一个线程安全的 NSMutableArray",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title": "atomic仅仅是对set线程安全并不保证对其数据的操作也安全",
+                    "demo": {
+                        "className":"YLDemoNonAutomicViewController",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"atomic仅仅是对set线程安全并不保证对其数据的操作也安全",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"对nonatomic属性操作实现线程安全使用举例",
+                    "demo": {
+                        "className":"YLDemoNonAutomicViewController",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"对nonatomic属性操作实现线程安全使用举例",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"isEqual 和 hash 有什么联系",
+                    "demo": {
+                        "className":"YLDemoHashEqualViewController",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"isEqual 和 hash 有什么联系",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"如何重写自己的hash方法",
+                    "demo": {
+                        "className":"YLDemoHashEqualViewController",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"isEqual 和 hash 有什么联系",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"id 和 instanceType 有什么区别",
+                    "demo": {
+                        "className":"",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"self和super的区别",
+                    "demo": {
+                        "className":"",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"@synthesize和@dynamic分别有什么作用",
+                    "demo": {
+                        "className":"YLDemoDynamicViewController",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"typeof() 和 __typeof__()，__typeof()区别",
+                    "demo": {
+                        "className":"YLDemoTypeofViewController",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+                },
+                {
+                    "title":"值类型(struct)和引用类型(class)",
+                    "demo": {
+                        "className":"",
+                        "style": 0,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"",
+                        "fileName":""
+                    }
+                }
+            ]
         }
-    ]
-}
+    },
+]

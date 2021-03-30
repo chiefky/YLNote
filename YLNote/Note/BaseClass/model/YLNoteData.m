@@ -8,55 +8,6 @@
 
 #import "YLNoteData.h"
 #import <YYModel/YYModel.h>
-@implementation YLNoteData
-
-@end
-
-@implementation YLQuestionDemoItem
-
-@end
-
-@interface YLNoteGroup ()
-@end
-@implementation YLNoteGroup
-
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"groupName":@"group"};
-}
-
-+ (NSDictionary *) modelContainerPropertyGenericClass {
-    return @{@"questions": [YLQuestionItem class]};
-}
-
-- (instancetype)initWithName:(NSString *)groupName questions:(nullable NSArray *)array {
-    self = [super init];
-    if (self) {
-        self.groupName = groupName;
-        self.questions = [NSArray arrayWithArray:array];
-    }
-    return self;
-}
-
-@end
-
-
-@interface YLQuestionItem ()
-
-@end
-@implementation YLQuestionItem
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"functionName":@"answer",
-             @"itemDesc":@"description",
-             @"itemClass":@"class"
-    };
-}
-
-+ (NSDictionary *) modelContainerPropertyGenericClass {
-    return @{@"itemClass": [YLQuestionDemoItem class]};
-}
-
-
-@end
 
 
 @implementation YLNoteSectionData
@@ -66,14 +17,68 @@
     if (self) {
         self.unfoldStatus = status;
         self.index = index;
-        self.groupData = data;
+        self.group = data;
     }
     return self;
 }
 
 
 + (NSDictionary *) modelContainerPropertyGenericClass {
-    return @{@"groupData": [YLNoteGroup class]};
+    return @{@"group": [YLNoteGroup class]};
 }
 
 @end
+
+
+@implementation YLNoteGroup
+
+//+ (NSDictionary *)modelCustomPropertyMapper {
+//    return @{@"name":@"name"};
+//}
+
++ (NSDictionary *) modelContainerPropertyGenericClass {
+    return @{@"questions": [YLQuestion class]};
+}
+
+- (instancetype)initWithName:(NSString *)groupName questions:(NSArray *)array {
+
+    self = [super init];
+    if (self) {
+        self.name = groupName;
+        self.questions = [NSArray arrayWithArray:array];
+    }
+    return self;
+}
+
+@end
+
+
+@implementation YLQuestion
+//+ (NSDictionary *)modelCustomPropertyMapper {
+//    return @{
+//        @"title":@"title",
+//        @"article":@"article",
+//        @"demo":@"demo"
+//    };
+//}
+
++ (NSDictionary *) modelContainerPropertyGenericClass {
+    return @{
+        @"demo": [YLQuestionDemo class],
+        @"article": [YLQuestionArticle class],
+        
+    };
+}
+
+@end
+
+
+@implementation YLQuestionArticle
+
+@end
+
+
+@implementation YLQuestionDemo
+
+@end
+

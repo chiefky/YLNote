@@ -2,81 +2,190 @@
     {
         "index": 0,
         "unfoldStatus": false,
-        "groupData": {
-            "group":"基础知识",
+        "group": {
+            "name":"基础知识",
             "questions": [
                 {
-                    "description":"文章",
-                    "answer":"artical",
-                    "class": {},
+                    "title":"Swift总结",
+                    "hasDemo": false,
+                    "demo": {},
+                    "article": {
+                        "artTitle":"Swift基础知识",
+                        "fileName":"Swift-基础"
+                    },
                 },
                 {
-                    "description":"字符串分割区别",
-                    "answer":"separatorString",
-                    "class": {},
+                    "title":"字符串分割方法的区别",
+                    "hasDemo": true,
+                    "demo": {
+                        "className":"YLDemoSeparatorViewController",
+                        "style": 1,
+                        "useXib": 1
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    }
                 },
                 {
-                    "description":"Substring与String区别",
-                    "answer":"substring_vs_string",
-                    "class": {},
+                    "title":"Substring与String区别",
+                    "hasDemo": true,
+                    "demo": {
+                        "className":"YLDemoSubStringViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 }]
         },
     },
     {
-        "index": 0,
+        "index": 1,
         "unfoldStatus": false,
-        "groupData": {
-            "group":"Swift与OC使用对比",
+        "group": {
+            "name":"Swift与OC使用对比",
             "questions": [
                 {
-                    "description":"property:属性",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"property:属性",
+                    "hasDemo": true,
+                    "demo":
+                    {
+                        "className":"YLDemoPropertyViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 },
                 {
-                    "description":"enum:枚举",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"enum:枚举",
+                    "hasDemo": true,
+                    "demo": {
+                        "className":"YLDemoEnumViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
+                    
                 },
                 {
-                    "description":"lazy:懒加载",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"lazy:懒加载",
+                    "hasDemo": true,
+                    "demo":
+                    {
+                        "className":"YLDemoLazyViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 },
                 {
-                    "description":"block:闭包",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"block:闭包",
+                    "hasDemo": true,
+                    "demo":
+                    {
+                        "className":"YLDemoBlockViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 },
                 {
-                    "description":"singleton:单例",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
-                },                
-                {
-                    "description":"init_deinit:初始化和析构",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"singleton:单例",
+                    "hasDemo": true,
+                    "demo":
+                    {
+                        "className":"YLDemoSingletonViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 },
                 {
-                    "description":"function:函数调用",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"init_deinit:初始化和析构",
+                    "hasDemo": true,
+                    "demo": {
+                        "className":"YLDemoInitDeinitViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 },
                 {
-                    "description":"protocol:协议/代理",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"function:函数调用",
+                    "hasDemo": true,
+                    "demo":
+                    {
+                        "className":"YLDemoFunctionViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 },
                 {
-                    "description":"notification:通知",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"protocol:协议/代理",
+                    "hasDemo": true,
+                    "demo": {
+                        "className":"YLDemoProtocolViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 },
                 {
-                    "description":"extension:扩展",
-                    "answer":"binaryDepthWithIndex:",
-                    "class": {},
+                    "title":"notification:通知",
+                    "hasDemo": true,
+                    "demo":
+                    {
+                        "className":"YLDemoNotificationViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
+                },
+                {
+                    "title":"extension:扩展",
+                    "hasDemo": true,
+                    "demo": {
+                        "className":"YLDemoExtensionViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 },
                 
                 
@@ -86,31 +195,60 @@
     {
         "index": 2,
         "unfoldStatus": false,
-        "groupData": {
-            "group":"函数派发",
+        "group": {
+            "name":"函数派发",
             "questions": [
                 {
-                    "description":"function:函数派发机制",
-                    "answer":"isBalancedWithIndex:",
-                    "class": {},
+                    "title":"函数派发机制",
+                    "hasDemo": false,
+                    "demo":{},
+                    "article": {
+                        "artTitle":"函数派发机制",
+                        "fileName":"Swift-函数派发机制"
+                    },
                 },
                 {
-                    "description":"direct:直接派发",
-                    "answer":"isBalancedWithIndex:",
-                    "class": {},
+                    "title":"direct:直接派发",
+                    "hasDemo": true,
+                    "demo":
+                    {
+                        "className":"YLDemoFuncDirectViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },                },
+                {
+                    "title":"table:函数表派发",
+                    "hasDemo": true,
+                    "demo":
+                    {
+                        "className":"YLDemoFuncTableViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 },
                 {
-                    "description":"table:函数表派发",
-                    "answer":"isBalancedWithIndex:",
-                    "class": {},
-                },                    {
-                    "description":"message:消息派发",
-                    "answer":"isBalancedWithIndex:",
-                    "class": {},
+                    "title":"message:消息派发",
+                    "hasDemo": true,
+                    "demo":
+                    {
+                        "className":"YLDemoFuncMessageViewController",
+                        "style": 1,
+                        "useXib": 0
+                    },
+                    "article": {
+                        "artTitle":"Swift",
+                        "fileName":"Swift基础"
+                    },
                 }
             ]
         },
     }
-    
-    
 ]

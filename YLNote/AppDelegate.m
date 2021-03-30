@@ -75,7 +75,7 @@ NSString *kTabBarItemKeySelectedColorName     = @"kTabBarItemKeySelectedColorNam
 
     
     YLSwiftViewController *swiftVC = [[YLSwiftViewController alloc] init];
-    swiftVC.title = @"Swift";
+//    swiftVC.title = @"Swift";
     swiftVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Swift" image:[UIImage imageNamed:@"swift"] tag:3];
     UINavigationController *naviSwift = [[UINavigationController alloc] initWithRootViewController:swiftVC];
 

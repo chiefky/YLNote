@@ -14,11 +14,13 @@
 
 @implementation YLDemoBaseViewController
 
+- (void)dealloc {
+    NSLog(@"%s: %s",[self.description UTF8String],__func__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.view.backgroundColor = [UIColor grayColor];
-    
 }
 
 @end
